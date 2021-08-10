@@ -1,0 +1,36 @@
+get:
+  description: >-
+    Snapshots in time with all activated entities for the entity type. The
+    snapshots are taken with a frenquency based on the quantity of deployments,
+    if the information needed is back in time you may use the
+    /content/pointer-chages endpoint.
+  parameters:
+    - in: path
+      name: type
+      required: true
+      schema:
+        type: string
+        enum:
+          - scene
+          - profile
+          - wearable
+        example: scene
+      description: The type of entities that want to retrieve a snapshot
+  responses:
+    '200':
+      description: >-
+        Hash with a reference to a JSON file containing an Array of Arrays with
+        the list of all activete entities at the moment of the Snapshot. Once
+        you get the hash you can download it using the
+        /content/contents/{hashId} endpoint. The timestamp in the response is
+        thte time of the last deployment included in the snapshot.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example:
+            $ref: ./examples/200-snapshot.json
+    '400':
+      description: 'Bad Request: Unrecognized'
+    '503':
+      description: Snapshot not yet created

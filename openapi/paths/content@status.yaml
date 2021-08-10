@@ -1,0 +1,11 @@
+get:
+  description: Retrieve information about the server status
+  responses:
+    '200':
+      description: Content Server status information
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example:
+            $ref: ./examples/200-status.json

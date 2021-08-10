@@ -1,0 +1,40 @@
+openapi: 3.0.3
+info:
+  title: Content Server API
+  version: '1.0'
+servers:
+  - url: 'https://peer.decentraland.zone/content/'
+    description: Catalyst Development instance
+  - url: 'https://peer-testing.decentraland.org/'
+    description: Catalyst Staging instance
+  - url: 'https://peer.decentraland.org/'
+    description: First production Catalyst node
+paths:
+  /content/deployments:
+    $ref: paths/content@deployments.yaml
+  '/content/audit/{entityType}/{entityId}':
+    $ref: 'paths/content@audit@{entityType}@{entityId}.yaml'
+  /content/challenge:
+    $ref: paths/content@challenge.yaml
+  '/content/contents/{hashId}':
+    $ref: 'paths/content@contents@{hashId}.yaml'
+  '/content/contents/{hashId}/active-entities':
+    $ref: 'paths/content@contents@{hashId}@active-entities.yaml'
+  /content/available-content:
+    $ref: paths/content@available-content.yaml
+  /content/denylist:
+    $ref: paths/content@denylist.yaml
+  '/content/denylist/{type}/{id}':
+    $ref: 'paths/content@denylist@{type}@{id}.yaml'
+  /content/entities:
+    $ref: paths/content@entities.yaml
+  '/content/entities/{type}':
+    $ref: 'paths/content@entities@{type}.yaml'
+  /content/failed-deployments:
+    $ref: paths/content@failed-deployments.yaml
+  /content/pointer-changes:
+    $ref: paths/content@pointer-changes.yaml
+  '/content/snapshot/{type}':
+    $ref: 'paths/content@snapshot@{type}.yaml'
+  /content/status:
+    $ref: paths/content@status.yaml

@@ -1,0 +1,80 @@
+get:
+  description: List before and after details of deployment changes made to pointers
+  parameters:
+    - in: query
+      name: from
+      allowEmptyValue: true
+      schema:
+        type: integer
+        example: 1606829553969
+      description: >-
+        Acts as a filter in the collection of deployments, this value is the
+        minimum value of timestamp (of the field indicated by SortingField:
+        localTimestamp is the default) that any deployment in the collection
+        will have.
+    - in: query
+      name: to
+      allowEmptyValue: true
+      schema:
+        type: integer
+        example: 1606829553969
+      description: >-
+        Acts as a filter in the collection of deployments, this value is the
+        maximum value of timestamp (of the field indicated by SortingField:
+        localTimestamp is the default) that any deployment in the collection
+        will have.
+    - in: query
+      name: lastId
+      allowEmptyValue: true
+      schema:
+        type: string
+        example: QmNknKv8MuKbfZ73z4QdUEsNbTd1ZAN1fSuwTFGiNGeCt5
+      description: >-
+        It is the last entity id that was visited, so it will be skipped when
+        showing current page.
+    - in: query
+      name: limit
+      allowEmptyValue: true
+      schema:
+        type: integer
+        example: 100
+      description: >-
+        The deployments are a paginated collection, this parameter corresponds
+        to the limit for each page.
+    - in: query
+      name: entityType
+      allowEmptyValue: true
+      schema:
+        type: string
+        enum:
+          - scene
+          - profile
+          - wearable
+        example: profile
+      description: >-
+        The type of entities that will be shown in the collection, many values
+        can be sent.
+  responses:
+    '200':
+      description: List of deployment changes made to pointers
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example:
+            $ref: ./examples/200-pointer-changes.json
+    '400':
+      description: Bad Request
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          examples:
+            entityType:
+              summary: EntityType not recognized
+              value: Found an unrecognized entity type
+            offset:
+              summary: Wrong offset value
+              value: >-
+                Offset can't be higher than 5000. Please use the 'next' property
+                for pagination.

@@ -1,0 +1,63 @@
+post:
+  description: Deploy/Create a new entity
+  parameters:
+    - in: query
+      name: fixAttempt
+      schema:
+        type: boolean
+        example: true
+      description: if true tries to do the deployment a calculated amount of times
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            filename:
+              type: array
+              items:
+                type: string
+                format: binary
+            entityId:
+              type: string
+              example: QmY4GFuf2jR3ocfuXuFLgvUrGEpjo84Byg44Pv2wduuinW
+            authChain:
+              type: string
+              example:
+                $ref: ./examples/auth-chain.json
+            ethAddress:
+              type: string
+              example: '0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7'
+            signature:
+              type: string
+  responses:
+    '200':
+      description: >-
+        Entity created successfuly. The response will cointain the timestamp and
+        result.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example:
+            creationTimestamp: success
+    '400':
+      description: >-
+        Bad request. Returns the error object with the list of errors from the
+        server response.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example:
+            error: []
+    '500':
+      description: >-
+        Internal Server Error. Returns the error object with the list of errors
+        from the server response.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example:
+            error: []

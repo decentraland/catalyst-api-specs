@@ -1,0 +1,111 @@
+parameters:
+  - in: path
+    name: type
+    required: true
+    schema:
+      type: string
+      enum:
+        - entity
+        - pointer
+        - content
+        - address
+      example: content
+    description: Specify the type of Entity to block
+  - in: path
+    name: id
+    required: true
+    schema:
+      type: string
+      example: QmbcVjrVGDWwdCMdXQjpyzui2bCX4zaR8XwvkwFuBZvto3
+    description: Specify the id of the entity to block
+put:
+  description: Adds new denylist for the scpecified object type with given id
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+        example:
+          blocker: '0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7,'
+          timestamp: '1628534551726,'
+          signature: >-
+            block-content-QmbcVjrVGDWwdCMdXQjpyzui2bCX4zaR8XwvkwFuBZvto3-1628534551726
+  responses:
+    '201':
+      description: Denylist created successfuly
+    '400':
+      description: Bad request
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example: >-
+            Failed to authenticate the blocker. Error was: The signature is too
+            old or too far in the future
+    '500':
+      description: There was a server error while trying to create the denylist
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example: 500 Internal Server Error
+delete:
+  description: Remove object from the denylist
+  parameters:
+    - in: query
+      name: blocker
+      required: true
+      schema:
+        type: string
+        example: '0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7'
+      description: Blocker's Ethereum address
+    - in: query
+      name: timestamp
+      required: true
+      schema:
+        type: string
+        example: 1628534551726
+      description: Request timestamp
+    - in: query
+      name: signature
+      required: true
+      schema:
+        type: string
+        example: >-
+          unblock-content-QmbcVjrVGDWwdCMdXQjpyzui2bCX4zaR8XwvkwFuBZvto3-1628534551726
+      description: 'Must be of the form unblock-${type}-${id}-${timestamp}'
+  responses:
+    '200':
+      description: Object removed from denylist successfuly
+    '400':
+      description: Bad request
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example: >-
+            Failed to authenticate the blocker. Error was: The signature is too
+            old or too far in the future
+    '404':
+      description: Not Found
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example: >-
+            Cannot DELETE
+            /content/denylist/content/QmbcVjrVGDWwdCMdXQjpyzui2bCX4zaR8XwvkwFuBZvto3
+    '500':
+      description: There was a server error while trying to create the denylist
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example: 500 Internal Server Error
+head:
+  description: Check if a specific object is on the denylist
+  responses:
+    '200':
+      description: The object is on the denylist
+    '404':
+      description: The object is not on the denylist
