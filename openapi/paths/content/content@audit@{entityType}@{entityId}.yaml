@@ -1,4 +1,6 @@
 get:
+  operationId: getEntityInformation
+  summary: Get information about an entity
   parameters:
     - in: path
       name: entityType
@@ -18,7 +20,9 @@ get:
         type: string
         example: QmQgezF4UWTZpD5VqKs2AGCzucRJdm8zU87MxdSRH9heZR
       description: id of the entity
-  description: Get information about an entity with the specified entityId
+  description: >-
+    Get information about an entity, such us Scenes Profiles or Werables, 
+    with the specified entityId.      
   security: []
   responses:
     '200':
@@ -26,14 +30,14 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            type: object
           example:
-            $ref: ./examples/200-audit-response.json
+            $ref: ../../components/examples/200-audit-response.json
     '400':
       description: Unrecognized Entity type
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            type: object
           example:
-            error: 'Unrecognized type: houses'
+            error: 'Unrecognized type: Houses'

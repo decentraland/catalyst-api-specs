@@ -1,4 +1,6 @@
 get:
+  operationId: getListOfEntities
+  summary: List of entities of the specified Type
   description: >-
     Returns the list of entities of the specified type with the specified id or
     pointers. Only one of these filter can be specified as a query parameter.
@@ -46,9 +48,9 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            type: object
           example:
-            $ref: ./examples/200-entities-types.json
+            $ref: ../../components/examples/200-entities-types.json
     '400':
       description: >-
         Bad request: ids or pointers must be present in the request, but not

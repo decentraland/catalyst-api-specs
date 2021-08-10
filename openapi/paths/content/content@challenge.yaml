@@ -1,4 +1,6 @@
 get:
+  operationId: getIfPartOfTheDAO
+  summary: Validate if the Server is part of the DAO
   description: >-
     Used by the Server to figure out their identity on the DAO by themselves, so
     they will generate a random challenge text, and then query each server for
@@ -9,6 +11,6 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            type: object
           example:
             challengeText: 186a1c51-2c4c-4dae-913c-b87670600c56

@@ -1,5 +1,10 @@
-get:
-  description: List all deployments stored in the content server
+get:    
+  operationId: getAllDeployments
+  summary: List all deployments stored in the content server  
+  description: >-
+    This endpoint will return a complete list of the existing deployments 
+    in the Content Server. The result can be filterd using any of the optional 
+    query parameters in order to get a more specific result.  
   parameters:
     - in: query
       name: from
@@ -104,22 +109,20 @@ get:
           - metadata
           - auditInfo
         example: content
-      description: Fields that will be stored in the deployment.
+      description: Fields that will be stored in the deployment.      
   responses:
     '200':
       description: List of deployments
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            type: object
           example:
-            $ref: ./examples/200-deployments.json
+            $ref: ../../components/examples/200-deployments.json
     '400':
       description: Bad request
       content:
-        application/json; charset=utf-8:
-          schema:
-            type: string
+        application/json; charset=utf-8:          
           examples:
             entityType:
               summary: EntityType not recognized

@@ -1,4 +1,6 @@
 get:
+  operationId: getIfFileExists
+  summary: Validates if file exists on the Server
   description: 'Given a list of hases, validates if they exists in the server'
   parameters:
     - in: query
@@ -16,9 +18,9 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            type: object
           example:
-            $ref: ./examples/200-available-content.json
+            $ref: ../../components/examples/200-available-content.json
     '400':
       description: Missing query parameters in the request
       content:

@@ -1,5 +1,9 @@
 post:
-  description: Deploy/Create a new entity
+  operationId: postEntity
+  summary: Deploy/Create a new entity
+  description: >- 
+    Create a new entity on the content server. This request must contain the files
+    asociated with the entity, such as 3D models, and information about the entity and requester. 
   parameters:
     - in: query
       name: fixAttempt
@@ -24,7 +28,7 @@ post:
             authChain:
               type: string
               example:
-                $ref: ./examples/auth-chain.json
+                $ref: ../../components/examples/auth-chain.json
             ethAddress:
               type: string
               example: '0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7'
@@ -38,26 +42,15 @@ post:
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            type: object
           example:
             creationTimestamp: success
     '400':
       description: >-
         Bad request. Returns the error object with the list of errors from the
-        server response.
-      content:
-        application/json; charset=utf-8:
-          schema:
-            type: string
-          example:
-            error: []
+        server response.      
     '500':
       description: >-
         Internal Server Error. Returns the error object with the list of errors
         from the server response.
-      content:
-        application/json; charset=utf-8:
-          schema:
-            type: string
-          example:
-            error: []
+      

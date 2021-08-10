@@ -1,4 +1,6 @@
 get:
+  operationId: getContentFile
+  summary: Download content file
   description: Download the binary file associated with the specified hashId
   parameters:
     - in: path

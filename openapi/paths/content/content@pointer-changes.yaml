@@ -1,5 +1,7 @@
 get:
-  description: List before and after details of deployment changes made to pointers
+  operationId: getListPointerChanges
+  summary: List of changes made to a pointer
+  description: List of before and after details of deployment changes made to pointers
   parameters:
     - in: query
       name: from
@@ -60,9 +62,9 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            type: object
           example:
-            $ref: ./examples/200-pointer-changes.json
+            $ref: ../../components/examples/200-pointer-changes.json
     '400':
       description: Bad Request
       content:

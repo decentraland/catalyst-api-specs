@@ -1,4 +1,6 @@
 get:
+  operationId: getActiveEntities
+  summary: Snapshot with a list of active entities 
   description: >-
     Snapshots in time with all activated entities for the entity type. The
     snapshots are taken with a frenquency based on the quantity of deployments,
@@ -27,9 +29,9 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            type: object
           example:
-            $ref: ./examples/200-snapshot.json
+            $ref: ../../components/examples/200-snapshot.json
     '400':
       description: 'Bad Request: Unrecognized'
     '503':

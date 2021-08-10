@@ -1,4 +1,6 @@
 get:
+  operationId: getListEntityIdsByHashId
+  summary: List of entityIds asociated with a hashId
   description: >-
     Get the list of entity ids of the deployments associated with the specified
     content hash. This endpoint is currently intended for troubleshooting as
@@ -17,7 +19,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            type: array
           example:
             - QmY4GFuf2jR3ocfuXuFLgvUrGEpjo84Byg44Pv2wduuinW
             - QmZbAEFPF7LSq9xVZTCAZoHPNV1QX7YiSbKL2g881MJLj8
@@ -26,6 +28,6 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            type: object
           example:
             error: The entity was not found

@@ -19,6 +19,8 @@ parameters:
       example: QmbcVjrVGDWwdCMdXQjpyzui2bCX4zaR8XwvkwFuBZvto3
     description: Specify the id of the entity to block
 put:
+  operationId: putNewDenyList
+  summary: New denylist
   description: Adds new denylist for the scpecified object type with given id
   requestBody:
     content:
@@ -50,6 +52,8 @@ put:
             type: string
           example: 500 Internal Server Error
 delete:
+  operationId: deleteDenyList
+  summary: Remove object from the denylist
   description: Remove object from the denylist
   parameters:
     - in: query
@@ -103,6 +107,8 @@ delete:
             type: string
           example: 500 Internal Server Error
 head:
+  operationId: headDenyList
+  summary: Check if a specific object is on the denylist
   description: Check if a specific object is on the denylist
   responses:
     '200':
