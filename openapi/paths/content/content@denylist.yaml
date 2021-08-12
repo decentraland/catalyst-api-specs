@@ -1,6 +1,6 @@
 get:
   operationId: getDenyLists
-  summary: List of denylists with the asociated entity type.
+  summary: List all deny listed items
   description: >-
     The content servers have the option to denylist certain type of objects like
     Entities, Content, Pointers, Addresses. This can only be done by catalysts
