@@ -17,7 +17,7 @@ post:
         schema:
           type: object
           properties:
-            filename:
+            files:
               type: array
               items:
                 type: string
