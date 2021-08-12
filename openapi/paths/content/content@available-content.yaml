@@ -1,7 +1,7 @@
 get:
   operationId: getIfFileExists
   summary: Validates if file exists on the Server
-  description: 'Given a list of hases, validates if they exists in the server'
+  description: 'Given a list of hashes, validates if the corresponding files exist in the storage of the server'
   parameters:
     - in: query
       name: cid
