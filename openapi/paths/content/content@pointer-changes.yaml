@@ -22,8 +22,7 @@ get:
         example: 1606829553969
       description: >-
         Acts as a filter in the collection of deployments, this value is the
-        maximum value of timestamp (of the field indicated by SortingField:
-        localTimestamp is the default) that any deployment in the collection
+        maximum value of local timestamp that any deployment in the collection
         will have.
     - in: query
       name: lastId
