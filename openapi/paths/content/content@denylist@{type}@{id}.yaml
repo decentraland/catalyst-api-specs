@@ -93,6 +93,11 @@ delete:
   responses:
     '200':
       description: Object removed from denylist successfuly
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example: Object removed from denylist successfuly
     '400':
       description: Bad request
       content:
