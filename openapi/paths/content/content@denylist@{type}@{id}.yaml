@@ -21,7 +21,7 @@ parameters:
 put:
   operationId: putNewDenyList
   summary: Insert item in denylist
-  description: Adds new denylist for the scpecified object type with given id
+  description: Inserts an entry in the deny list for the specified object type with the given id. This action will succeed only if the item is not already deny-listed and if the blocker has the correct permission to do it.
   requestBody:
     content:
       application/json:
