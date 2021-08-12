@@ -27,6 +27,13 @@ put:
       application/json:
         schema:
           type: object
+          properties:
+            blocker:
+              type: string
+            timestamp:
+              type: integer
+            signature:
+              type: string
         example:
           blocker: '0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7,'
           timestamp: '1628534551726,'
