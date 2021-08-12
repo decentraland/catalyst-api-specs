@@ -2,8 +2,7 @@ post:
   operationId: postEntity
   summary: Deploys an entity
   description: >- 
-    Create a new entity on the content server. This request must contain the files
-    asociated with the entity, such as 3D models, and information about the entity and requester. 
+    Deploys an entity in the content server. This request must contain a file with the entity itself and also the files associated with it, such as 3D models, as well as information about the entity and requester. This request will succeed only if the hash of the entity file matches the entityId and also if the signature is valid has the correct permission to modify the pointers associated with it.
   parameters:
     - in: query
       name: fixAttempt
