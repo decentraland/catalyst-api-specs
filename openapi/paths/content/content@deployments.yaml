@@ -109,7 +109,7 @@ get:
           - metadata
           - auditInfo
         example: content
-      description: Fields that will be stored in the deployment.      
+      description: Fields that will be shown from the deployment.      
   responses:
     '200':
       description: List of deployments
