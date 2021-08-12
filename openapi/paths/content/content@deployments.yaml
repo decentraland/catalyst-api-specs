@@ -43,9 +43,11 @@ get:
     - in: query
       name: entityId
       schema:
-        type: array
-        example: QmNknKv8MuKbfZ73z4QdUEsNbTd1ZAN1fSuwTFGiNGeCt5
-      description: It is the hash value of the entire deployment object.
+        type: string
+        example: QmNknKv8MuKbfZ73z4QdUEsNbTd1ZAN1fSuwTFGiNGeCt5,FhdJnKv8MuKbfZ73z4QdUEsNbTd1ZAN1fSuwTFGiNGeCm7
+      description: >- 
+        Comma-separted list of deployment object hashes. You can specify just
+        one or many. 
     - in: query
       name: onlyCurrentlyPointed
       schema:
