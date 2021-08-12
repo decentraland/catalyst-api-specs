@@ -9,7 +9,7 @@ post:
       schema:
         type: boolean
         example: true
-      description: if true tries to do the deployment a calculated amount of times
+      description: Used to change the type of deployment validations that will be run
   requestBody:
     content:
       multipart/form-data:
@@ -22,7 +22,7 @@ post:
                 type: string
                 format: binary
             entityId:
-              type: string
+              type: array
               example: QmY4GFuf2jR3ocfuXuFLgvUrGEpjo84Byg44Pv2wduuinW
             authChain:
               type: string
