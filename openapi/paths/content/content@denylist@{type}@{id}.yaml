@@ -42,6 +42,11 @@ put:
   responses:
     '201':
       description: Denylist created successfuly
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example: Denylist created successfuly
     '400':
       description: Bad request
       content:
