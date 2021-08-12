@@ -41,3 +41,10 @@ get:
             type: object
           example:
             error: 'Unrecognized type: Houses'
+    '404':
+      description: Not Found
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example: Not Found          
