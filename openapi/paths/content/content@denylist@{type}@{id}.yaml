@@ -36,7 +36,7 @@ put:
               type: string
         example:
           blocker: '0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7,'
-          timestamp: '1628534551726,'
+          timestamp: 1628534551726
           signature: >-
             block-content-QmbcVjrVGDWwdCMdXQjpyzui2bCX4zaR8XwvkwFuBZvto3-1628534551726
   responses:

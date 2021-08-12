@@ -9,13 +9,9 @@ get:
       name: type
       required: true
       schema:
-        type: array
-        enum:
-          - profile
-          - scene
-          - wearable
+        type: array        
         example: profile
-      description: Entity Type that will be returned by the request
+      description: 'Entity Type that will be returned by the request. Valid values are: profile, scene and werable.'
     - in: query
       name: pointer
       allowEmptyValue: true
