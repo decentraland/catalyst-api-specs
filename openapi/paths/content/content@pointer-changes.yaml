@@ -45,7 +45,7 @@ get:
       name: entityType
       allowEmptyValue: true
       schema:
-        type: string
+        type: array
         enum:
           - scene
           - profile
