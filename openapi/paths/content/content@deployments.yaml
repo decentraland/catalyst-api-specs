@@ -120,6 +120,7 @@ get:
           schema:
             type: object
           example:
+            summary: request with limit=2
             $ref: ../../components/examples/200-deployments.json
     '400':
       description: Bad request
