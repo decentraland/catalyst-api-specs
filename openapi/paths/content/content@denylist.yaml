@@ -4,8 +4,7 @@ get:
   description: >-
     The content servers have the option to denylist certain type of objects like
     Entities, Content, Pointers, Addresses. This can only be done by catalysts
-    owners. This endpoint returns the list of denylists with the asociated
-    entity type.
+    owners. This endpoint returns the list of all denylist items in the format: `{entityType}-{id}`
   responses:
     '200':
       description: List of all the denylisted entities
