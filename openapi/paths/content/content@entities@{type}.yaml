@@ -9,7 +9,7 @@ get:
       name: type
       required: true
       schema:
-        type: string
+        type: array
         enum:
           - profile
           - scene
@@ -29,7 +29,7 @@ get:
       name: id
       allowEmptyValue: true
       schema:
-        type: string
+        type: array
         example: QmeA8RpAtqU6gCebNaWRXtM9nQs3ugzzbeQm3L7uKrP4Jp
       description: >-
         Entities must be filtered by pointer XOR entityId. Use this parameter if
