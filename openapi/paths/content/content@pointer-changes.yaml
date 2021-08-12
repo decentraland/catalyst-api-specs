@@ -40,7 +40,7 @@ get:
         example: 100
       description: >-
         The deployments are a paginated collection, this parameter corresponds
-        to the limit for each page.
+        to the limit for each page. The default value is 500.
     - in: query
       name: entityType
       allowEmptyValue: true
