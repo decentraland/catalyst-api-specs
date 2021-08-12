@@ -20,7 +20,7 @@ parameters:
     description: Specify the id of the entity to block
 put:
   operationId: putNewDenyList
-  summary: New denylist
+  summary: Insert item in denylist
   description: Adds new denylist for the scpecified object type with given id
   requestBody:
     content:
