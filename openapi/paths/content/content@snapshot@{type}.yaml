@@ -2,10 +2,10 @@ get:
   operationId: getActiveEntities
   summary: Snapshot with a list of active entities 
   description: >-
-    Snapshots in time with all activated entities for the entity type. The
-    snapshots are taken with a frenquency based on the quantity of deployments,
-    if the information needed is back in time you may use the
-    /content/pointer-chages endpoint.
+    Lists all active deployments of the given entity type from the snapshots stored in the database. The
+    snapshots are taken in batches of deployments with a configurable amount per entity type, they are not inforced in time. 
+    If the information needed is front in time, you may use the
+    `/content/pointer-changes` endpoint with the necessary `from` filter.
   parameters:
     - in: path
       name: type
