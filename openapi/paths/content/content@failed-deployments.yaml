@@ -1,0 +1,13 @@
+get:
+  operationId: getFailedDeployments
+  summary: List of failed deployments
+  description: Retrieves a list of the failed deployments
+  responses:
+    '200':
+      description: Failed deployments list
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/200-failed-deployments.json

@@ -1,0 +1,48 @@
+get:
+  operationId: getContentFile
+  summary: Download content file
+  description: Download the binary file associated with the specified hashId
+  parameters:
+    - in: path
+      name: hashId
+      required: true
+      schema:
+        type: string
+        example: QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu
+      description: >-
+        Hash of the file to be retrieved, you can search for the hashId in the
+        content section of a deployment. If the entity version greater than or equal to v4, 
+        then the hashing algorithm will be IPFS, if the entity version is v3 or below then 
+        it will be SHA-256
+  responses:
+    '200':
+      description: Binary file with the specified hashId
+      headers:
+        ETag:
+          schema:
+            type: string
+            example: QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu
+          description: Double-quoted string with the hashId
+        Access-Control-Expose-Headers:
+          schema:
+            type: string
+            example: ETag
+          description: Which headers can be exposed as part of the response
+        Cache-Control:
+          schema:
+            type: string
+            example: 'public,max-age=31536000,immutable'
+          description: Rules for caching in the request/response
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+            example: binary
+    '404':
+      description: File with the specified hashId Not Found
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+            example: Not Found

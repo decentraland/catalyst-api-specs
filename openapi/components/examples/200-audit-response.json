@@ -1,0 +1,21 @@
+{
+    "version": "v3",
+    "deployedTimestamp": 1628271052660,
+    "authChain": [
+      {
+        "type": "SIGNER",
+        "payload": "0x6B9d61D2AF37F0661dc3c3492fF74a6b13d13B86",
+        "signature": ""
+      },
+      {
+        "type": "ECDSA_EPHEMERAL",
+        "payload": "Decentraland Login\nEphemeral address: 0x422AF1a8705Caa58E16F21E7ECA64C8B868118Ca\nExpiration: 2021-08-13T11:30:32.697Z",
+        "signature": "0x35a35fa65783f963bab9faa73035eedef019b783394d414df583ab0b89d859444168e985b0d71ff6c7fca57e77c0b609bb48c83ca997687d6072abe70f7e99ed1b"
+      },
+      {
+        "type": "ECDSA_SIGNED_ENTITY",
+        "payload": "QmQgezF4UWTZpD5VqKs2AGCzucRJdm8zU87MxdSRH9heZR",
+        "signature": "0x085e17af656af3f60ee2cc98de99e458949b58cd5c5aa417f2cdb1f17cd1dde0370a719dc8385345969a9ee0c642d19b3650bc1076be593c59eb97f38ee0b2be1c"
+      }
+    ]
+  }

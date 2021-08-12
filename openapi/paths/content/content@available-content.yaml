@@ -1,0 +1,30 @@
+get:
+  operationId: getIfFileExists
+  summary: Validates if file exists on the Server
+  description: 'Given a list of hashes, validates if the corresponding files exist in the storage of the server'
+  parameters:
+    - in: query
+      name: cid
+      required: true
+      schema:
+        type: array
+        example: QmWFLwHGfvhB9a1epaRpS38HEwbHvhpaYzHEsNhDRgon7P
+      description: Hash of the content file
+  responses:
+    '200':
+      description: >-
+        List of objects with the hasIds and a boolean value specifying 'true' if
+        the files exists on the server and 'false' if it doesn't.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/200-available-content.json
+    '400':
+      description: Missing query parameters in the request
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          example: Please set at least one cid.

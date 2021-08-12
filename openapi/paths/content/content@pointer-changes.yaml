@@ -1,0 +1,80 @@
+get:
+  operationId: getListPointerChanges
+  summary: List of changes made to a pointer
+  description: List of all deltas from the deployments inside the filters that affect the given pointers. It returns a list of changes with the `before` field (the entity that was overridden with this deployment) and `after` (the entity that overrides the current one if present).
+  parameters:
+    - in: query
+      name: from
+      allowEmptyValue: true
+      schema:
+        type: integer
+        example: 1606829553969
+      description: >-
+        Acts as a filter in the collection of deployments, this value is the
+        minimum value of local timestamp that any deployment in the collection
+        will have.
+    - in: query
+      name: to
+      allowEmptyValue: true
+      schema:
+        type: integer
+        example: 1606829553969
+      description: >-
+        Acts as a filter in the collection of deployments, this value is the
+        maximum value of local timestamp that any deployment in the collection
+        will have.
+    - in: query
+      name: lastId
+      allowEmptyValue: true
+      schema:
+        type: string
+        example: QmNknKv8MuKbfZ73z4QdUEsNbTd1ZAN1fSuwTFGiNGeCt5
+      description: >-
+        It is the last entity id that was visited, so it will be skipped when
+        showing current page.
+    - in: query
+      name: limit
+      allowEmptyValue: true
+      schema:
+        type: integer
+        example: 100
+      description: >-
+        The deployments are a paginated collection, this parameter corresponds
+        to the limit for each page. The default value is 500.
+    - in: query
+      name: entityType
+      allowEmptyValue: true
+      schema:
+        type: array
+        enum:
+          - scene
+          - profile
+          - wearable
+        example: profile
+      description: >-
+        The type of entities that will be shown in the collection, many values
+        can be sent.
+  responses:
+    '200':
+      description: List of deployment changes made to pointers
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/200-pointer-changes.json
+    '400':
+      description: Bad Request
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          examples:
+            entityType:
+              summary: EntityType not recognized
+              value: Found an unrecognized entity type
+            offset:
+              summary: Wrong offset value
+              value: >-
+                Offset can't be higher than 5000. Please use the 'next' property
+                for pagination.

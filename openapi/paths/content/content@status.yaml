@@ -1,0 +1,13 @@
+get:
+  operationId: getStatus
+  summary: Server status
+  description: Retrieve deteailed information about the server status
+  responses:
+    '200':
+      description: Content Server status information
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/200-status.json
