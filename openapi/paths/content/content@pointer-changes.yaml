@@ -45,15 +45,11 @@ get:
       name: entityType
       allowEmptyValue: true
       schema:
-        type: array
-        enum:
-          - scene
-          - profile
-          - wearable
+        type: array      
         example: profile
       description: >-
         The type of entities that will be shown in the collection, many values
-        can be sent.
+        can be sent. Valid values are: profile, scene and werable.
   responses:
     '200':
       description: List of deployment changes made to pointers
