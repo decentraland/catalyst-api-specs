@@ -1,6 +1,6 @@
 post:
   operationId: postEntity
-  summary: Deploy/Create a new entity
+  summary: Deploys an entity
   description: >- 
     Create a new entity on the content server. This request must contain the files
     asociated with the entity, such as 3D models, and information about the entity and requester. 
