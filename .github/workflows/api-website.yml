@@ -15,7 +15,9 @@ jobs:
       - name: Build website
         run: |
           npm ci --no-audit
-          npm run build        
+          npm run build
+          npx redoc-cli bundle openapi/openapi.yaml
+          mv redoc-static.html docs/index.html
           
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
