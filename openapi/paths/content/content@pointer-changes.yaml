@@ -45,7 +45,11 @@ get:
       name: entityType
       allowEmptyValue: true
       schema:
-        type: array      
+        type: string
+        enum:
+          - scene
+          - profile
+          - wearable
         example: profile
       description: >-
         The type of entities that will be shown in the collection, many values
@@ -58,7 +62,7 @@ get:
           schema:
             type: object
           example:
-            $ref: ../../components/examples/200-pointer-changes.json
+            $ref: ../../components/examples/content/200-pointer-changes.json
     '400':
       description: Bad Request
       content:

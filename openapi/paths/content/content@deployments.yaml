@@ -121,7 +121,7 @@ get:
             type: object
           example:
             summary: request with limit=2
-            $ref: ../../components/examples/200-deployments.json
+            $ref: ../../components/examples/content/200-deployments.json
     '400':
       description: Bad request
       content:

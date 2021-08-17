@@ -9,7 +9,11 @@ get:
       name: type
       required: true
       schema:
-        type: array        
+        type: string
+        enum:
+          - profile
+          - scene
+          - wearable
         example: profile
       description: 'Entity Type that will be returned by the request. Valid values are: profile, scene and werable.'
     - in: query
@@ -46,7 +50,7 @@ get:
           schema:
             type: object
           example:
-            $ref: ../../components/examples/200-entities-types.json
+            $ref: ../../components/examples/content/200-entities-types.json
     '400':
       description: >-
         Bad request: ids or pointers must be present in the request, but not
