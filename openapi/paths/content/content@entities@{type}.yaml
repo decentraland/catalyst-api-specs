@@ -14,7 +14,7 @@ get:
           - profile
           - scene
           - wearable
-          example: profile
+        example: profile
       description: 'Entity Type that will be returned by the request. Valid values are: profile, scene and werable.'
     - in: query
       name: pointer
