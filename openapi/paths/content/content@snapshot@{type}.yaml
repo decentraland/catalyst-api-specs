@@ -31,7 +31,7 @@ get:
           schema:
             type: object
           example:
-            $ref: ../../components/examples/200-snapshot.json
+            $ref: ../../components/examples/content/200-snapshot.json
     '400':
       description: 'Bad Request: Unrecognized'
     '503':

@@ -32,7 +32,7 @@ get:
           schema:
             type: object
           example:
-            $ref: ../../components/examples/200-audit-response.json
+            $ref: ../../components/examples/content/200-audit-response.json
     '400':
       description: Unrecognized Entity type
       content:

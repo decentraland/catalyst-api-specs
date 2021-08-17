@@ -10,4 +10,4 @@ get:
           schema:
             type: object
           example:
-            $ref: ../../components/examples/200-failed-deployments.json
+            $ref: ../../components/examples/content/200-failed-deployments.json

@@ -62,7 +62,7 @@ get:
           schema:
             type: object
           example:
-            $ref: ../../components/examples/200-pointer-changes.json
+            $ref: ../../components/examples/content/200-pointer-changes.json
     '400':
       description: Bad Request
       content:

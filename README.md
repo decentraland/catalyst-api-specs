@@ -4,6 +4,8 @@ Starting this repository to build the API definition for the Catalyst Server imp
 
 For the time being, only the content-server API is present but more will be added soon :) 
 
+Check out the public API docs [here](https://decentraland.github.io/catalyst-api-specs/) 
+
 ## Working on the Catalyst API Definition
 
 ### Install

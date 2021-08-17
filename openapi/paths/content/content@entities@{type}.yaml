@@ -50,7 +50,7 @@ get:
           schema:
             type: object
           example:
-            $ref: ../../components/examples/200-entities-types.json
+            $ref: ../../components/examples/content/200-entities-types.json
     '400':
       description: >-
         Bad request: ids or pointers must be present in the request, but not

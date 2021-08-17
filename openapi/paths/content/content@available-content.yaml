@@ -20,7 +20,7 @@ get:
           schema:
             type: object
           example:
-            $ref: ../../components/examples/200-available-content.json
+            $ref: ../../components/examples/content/200-available-content.json
     '400':
       description: Missing query parameters in the request
       content:
