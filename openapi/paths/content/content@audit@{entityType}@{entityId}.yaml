@@ -8,11 +8,11 @@ get:
       schema:
         type: string
         enum:
-          - profile
-          - scene
-          - wearable
+          - 'profile'
+          - 'scene'
+          - 'wearable'
         example: profile
-      description: specify the type of entity to audit
+      description: Specify the type of entity to audit
     - in: path
       name: entityId
       required: true

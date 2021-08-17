@@ -9,7 +9,7 @@ get:
       name: type
       required: true
       schema:
-        type: array
+        type: string
         enum:
           - profile
           - scene
