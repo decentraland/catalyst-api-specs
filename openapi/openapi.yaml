@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.0.2
 info:
   title: Catalyst Server API
   version: '1.0'
@@ -52,4 +52,6 @@ paths:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@thumbnail.yaml' 
   /lambdas/collections/contents/{urn}/image:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image.yaml' 
+  /lambdas/collections/standard/erc721/{chainId}/{contract}/{option}/{emission}:
+    $ref: 'paths/lambdas/lambdas@collections@standard@erc721@chainId@{contract}@{option}@{emission}.yaml'
 
