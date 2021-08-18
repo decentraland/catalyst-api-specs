@@ -50,3 +50,6 @@ paths:
     $ref: paths/lambdas/lambdas@health.yaml
   /lambdas/collections/contents/{urn}/thumbail:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@thumbnail.yaml' 
+  /lambdas/collections/contents/{urn}/image:
+    $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image.yaml' 
+
