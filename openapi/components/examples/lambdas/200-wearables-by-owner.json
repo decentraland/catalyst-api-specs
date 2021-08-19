@@ -1,0 +1,30 @@
+[
+    {
+        "urn": "urn:decentraland:ethereum:collections-v1:exclusive_masks:asian_fox",
+        "amount": 1
+    },
+    {
+        "urn": "urn:decentraland:matic:collections-v2:0x127f8dc3d7dd91c66dc96958df1f0edb14511f84:0",
+        "amount": 1
+    },
+    {
+        "urn": "urn:decentraland:matic:collections-v2:0x3d2f64f34d163389ff9984d63325ea5a0a0181d6:0",
+        "amount": 1
+    },
+    {
+        "urn": "urn:decentraland:matic:collections-v2:0x66194b1abcbfbedd83841775404b245c8f9e4183:2",
+        "amount": 1
+    },
+    {
+        "urn": "urn:decentraland:matic:collections-v2:0xc73b75640bac8bced8829d07aa57e694b446b3f9:3",
+        "amount": 1
+    },
+    {
+        "urn": "urn:decentraland:matic:collections-v2:0xf07c79d4d8900a9d77fc3757549491d1df8df1b1:0",
+        "amount": 1
+    },
+    {
+        "urn": "urn:decentraland:matic:collections-v2:0xf6d8e606c862143556b342149a7fe0558c220375:4",
+        "amount": 1
+    }
+]
