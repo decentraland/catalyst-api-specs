@@ -1,6 +1,8 @@
 get:
   operationId: getImage
   summary: Download URN image
+  tags:
+    - Lambdas
   description: Downloads the image for the specified urn
   parameters:
     - in: path

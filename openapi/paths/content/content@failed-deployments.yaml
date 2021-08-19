@@ -2,6 +2,8 @@ get:
   operationId: getFailedDeployments
   summary: List of failed deployments
   description: Retrieves a list of the failed deployments
+  tags:
+    - Content Server
   responses:
     '200':
       description: Failed deployments list

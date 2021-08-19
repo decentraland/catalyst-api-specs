@@ -1,6 +1,8 @@
 get:
   operationId: getLambdaHealth
   summary: Catalyst Server health
+  tags:
+    - Lambdas
   description: Retrieve deteailed information about the services health
   responses:
     '200':

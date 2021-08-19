@@ -1,6 +1,8 @@
 get:
   operationId: getIfPartOfTheDAO
   summary: Validate if the Server is part of the DAO
+  tags:
+    - Content Server
   description: >-
     Used by the Server to figure out their identity on the DAO by themselves, so
     they will generate a random challenge text, and then query each server for

@@ -1,6 +1,8 @@
 get:
   operationId: getActiveEntities
   summary: Snapshot with a list of active entities 
+  tags:
+    - Content Server
   description: >-
     Lists all active deployments of the given entity type from the snapshots stored in the database. The
     snapshots are taken in batches of deployments with a configurable amount per entity type, they are not inforced in time. 

@@ -1,6 +1,8 @@
 get:
   operationId: getListOfEntities
   summary: List of entities of the specified Type
+  tags:
+    - Content Server
   description: >-
     Returns the list of entities of the specified type with the specified id or
     pointers. Only one of these filters must be specified as a query parameter.
