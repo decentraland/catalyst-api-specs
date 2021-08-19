@@ -1,6 +1,8 @@
 get:
   operationId: getLambdaStatus
   summary: Catalyst Server status
+  tags:
+    - Lambdas
   description: Retrieve deteailed information about the services
   responses:
     '200':

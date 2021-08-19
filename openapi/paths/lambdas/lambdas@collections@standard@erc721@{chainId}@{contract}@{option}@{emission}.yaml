@@ -1,0 +1,66 @@
+get: 
+  operationId: getStandardErc721
+  summary: Get ERC721 Entity
+  tags:
+    - Lambdas
+  description: Retrieve ERC721/NFT Entity details
+  parameters:
+    - in: path
+      name: chainId
+      required: true
+      schema:
+        type: string
+        example: 137
+      description: >- 
+        Ethereum chain ID: 
+          ETHEREUM_MAINNET = 1
+          ETHEREUM_ROPSTEN = 3
+          ETHEREUM_RINKEBY = 4
+          ETHEREUM_GOERLI = 5
+          ETHEREUM_KOVAN = 42
+          MATIC_MAINNET = 137
+          MATIC_MUMBAI = 80001
+    - in: path
+      name: contract
+      required: true
+      schema:
+        type: string        
+        example: '0x123db7844eaf7da11d88cf1754945bbd020742ef'
+      description: Hash of the Contract. This will be used to build the URN that identifies the NFT.
+    - in: path
+      name: option
+      required: true
+      schema:
+        type: string
+        example: '3'
+      description: Token Identifier  
+    - in: path
+      name: emission
+      required: false
+      schema:
+        type: string        
+        example: legendary
+      description: >- 
+          Optional rarity description that will be return as part of the NFT description      
+          common: 100000
+          uncommon: 10000
+          rare: 5000
+          epic: 1000
+          legendary: 100
+          mythic: 10
+          unique: 1
+  responses:
+    '200':
+      description: Resource image      
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/lambdas/200-erc721.json
+    '400':
+      description: 'Bad Request: invalid chain ID' 
+    '404':
+      description: Entity Not Found
+    '500': 
+      description: Internal Server Error

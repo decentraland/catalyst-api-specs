@@ -48,4 +48,10 @@ paths:
     $ref: paths/lambdas/lambdas@status.yaml
   /lambdas/health:
     $ref: paths/lambdas/lambdas@health.yaml
-  
+  /lambdas/collections/contents/{urn}/thumbail:
+    $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@thumbnail.yaml' 
+  /lambdas/collections/contents/{urn}/image:
+    $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image.yaml' 
+  /lambdas/collections/standard/erc721/{chainId}/{contract}/{option}/{emission}:
+    $ref: 'paths/lambdas/lambdas@collections@standard@erc721@{chainId}@{contract}@{option}@{emission}.yaml'
+

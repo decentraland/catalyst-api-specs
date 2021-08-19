@@ -1,6 +1,8 @@
 get:
   operationId: getListPointerChanges
   summary: List of changes made to a pointer
+  tags:
+    - Content Server
   description: List of all deltas from the deployments inside the filters that affect the given pointers. It returns a list of changes with the `before` field (the entity that was overridden with this deployment) and `after` (the entity that overrides the current one if present).
   parameters:
     - in: query

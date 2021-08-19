@@ -21,6 +21,8 @@ parameters:
 put:
   operationId: putNewDenyList
   summary: Insert item in denylist
+  tags:
+    - Content Server
   description: Inserts an entry in the deny list for the specified object type with the given id. This action will succeed only if the item is not already deny-listed and if the blocker has the correct permission to do it.
   requestBody:
     content:
@@ -66,6 +68,8 @@ put:
 delete:
   operationId: deleteDenyList
   summary: Remove object from the denylist
+  tags:
+    - Content Server
   description: Remove object from the denylist. This action will succeed only if the item is deny-listed and if the blocker has the correct permission to do it.
   parameters:
     - in: query
@@ -126,6 +130,8 @@ delete:
 head:
   operationId: headDenyList
   summary: Check if a specific object is on the denylist
+  tags:
+    - Content Server
   description: Check if a specific object is on the denylist
   responses:
     '200':

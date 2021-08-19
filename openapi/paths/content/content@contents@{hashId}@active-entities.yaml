@@ -1,6 +1,8 @@
 get:
   operationId: getListEntityIdsByHashId
   summary: List of entityIds asociated with a hashId
+  tags:
+    - Content Server
   description: >-
     Get the list of entity ids of the deployments associated with the specified
     content hash. This endpoint is currently intended for troubleshooting as

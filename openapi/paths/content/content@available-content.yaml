@@ -1,6 +1,8 @@
 get:
   operationId: getIfFileExists
   summary: Validates if file exists on the Server
+  tags:
+    - Content Server
   description: 'Given a list of hashes, validates if the corresponding files exist in the storage of the server'
   parameters:
     - in: query

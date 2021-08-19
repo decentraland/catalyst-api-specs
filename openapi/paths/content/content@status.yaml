@@ -1,6 +1,8 @@
 get:
   operationId: getStatus
   summary: Server status
+  tags:
+    - Content Server
   description: Retrieve deteailed information about the server status
   responses:
     '200':

@@ -1,6 +1,8 @@
 get:
   operationId: getEntityInformation
   summary: Get information about an entity
+  tags:
+    - Content Server
   parameters:
     - in: path
       name: entityType
