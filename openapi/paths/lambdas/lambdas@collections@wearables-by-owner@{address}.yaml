@@ -1,6 +1,6 @@
 get: 
   operationId: getWearablesByOwner
-  summary: Get list of werables URNs and Qtys
+  summary: Get list of werables by owner
   tags:
     - Lambdas
   description: Get a list of wearables URNs and the amount owned by the given address
