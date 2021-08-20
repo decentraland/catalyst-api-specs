@@ -38,7 +38,7 @@ get:
         type: string         
         example: urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat
       description: >-
-        The result will always be ordered by the specified fields but in case
+        The result will always be ordered by the local timestamp fields but in case
         of timestamp collitions, you can use the lastId field to filter the 
         result   
   responses:
