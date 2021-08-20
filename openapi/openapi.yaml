@@ -54,4 +54,8 @@ paths:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image.yaml' 
   /lambdas/collections/standard/erc721/{chainId}/{contract}/{option}/{emission}:
     $ref: 'paths/lambdas/lambdas@collections@standard@erc721@{chainId}@{contract}@{option}@{emission}.yaml'
+  /lambdas/collections/wearables:
+    $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
+  /lambdas/collections/wearables-by-owner/{address}:
+    $ref: 'paths/lambdas/lambdas@collections@wearables-by-owner@{address}.yaml'
 

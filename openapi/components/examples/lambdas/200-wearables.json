@@ -1,0 +1,204 @@
+{
+    "wearables": [
+      {
+        "id": "urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat",
+        "description": "Binance US Hat",
+        "image": "https://peer.decentraland.org/content/contents/QmP6kMEf1yTUfNVYPXGTyErBH3Ao3CHHwcUBcqkMaAGspk",
+        "thumbnail": "https://peer.decentraland.org/content/contents/QmcDJvsm6muyZyeAN9S3znX2HHzuybyscDxCh4pBoJ4axh",
+        "collectionAddress": "0xa8ee490e4c4da48cc1653502c1a77479d4d818de",
+        "rarity": "uncommon",
+        "data": {
+          "replaces": [
+            "helmet"
+          ],
+          "hides": [
+            "hair"
+          ],
+          "tags": [
+            "binance",
+            "us",
+            "hat",
+            "decentraland",
+            "exclusive"
+          ],
+          "category": "hat",
+          "representations": [
+            {
+              "bodyShapes": [
+                "urn:decentraland:off-chain:base-avatars:BaseMale"
+              ],
+              "mainFile": "M_BinanceUS_Hat.glb",
+              "overrideReplaces": [],
+              "overrideHides": [],
+              "contents": [
+                {
+                  "key": "AvatarWearables_TX_2.png",
+                  "url": "https://peer.decentraland.org/content/contents/QmYktkLr5rnn9zPPARkavhVowvTNTih8uWq8BVscTGxtZD"
+                },
+                {
+                  "key": "F_BinanceUS_Hat.glb",
+                  "url": "https://peer.decentraland.org/content/contents/QmQ1cK2KDyPYz4nF1j7kZPqztJmPkSiMP7dfSJP1cw8FPt"
+                },
+                {
+                  "key": "M_BinanceUS_Hat.glb",
+                  "url": "https://peer.decentraland.org/content/contents/QmSM2L7vRbPPqVBy97pdxHPTr83EnWAywekg4Pd4HAATvv"
+                },
+                {
+                  "key": "binance_hoddie.png",
+                  "url": "https://peer.decentraland.org/content/contents/QmcbRo8J4fkSuPjocgKEqyKZnkgqjZSVVd3URpmNkikfnc"
+                }
+              ]
+            },
+            {
+              "bodyShapes": [
+                "urn:decentraland:off-chain:base-avatars:BaseFemale"
+              ],
+              "mainFile": "F_BinanceUS_Hat.glb",
+              "overrideReplaces": [],
+              "overrideHides": [],
+              "contents": [
+                {
+                  "key": "AvatarWearables_TX_2.png",
+                  "url": "https://peer.decentraland.org/content/contents/QmYktkLr5rnn9zPPARkavhVowvTNTih8uWq8BVscTGxtZD"
+                },
+                {
+                  "key": "F_BinanceUS_Hat.glb",
+                  "url": "https://peer.decentraland.org/content/contents/QmQ1cK2KDyPYz4nF1j7kZPqztJmPkSiMP7dfSJP1cw8FPt"
+                },
+                {
+                  "key": "M_BinanceUS_Hat.glb",
+                  "url": "https://peer.decentraland.org/content/contents/QmSM2L7vRbPPqVBy97pdxHPTr83EnWAywekg4Pd4HAATvv"
+                },
+                {
+                  "key": "binance_hoddie.png",
+                  "url": "https://peer.decentraland.org/content/contents/QmcbRo8J4fkSuPjocgKEqyKZnkgqjZSVVd3URpmNkikfnc"
+                }
+              ]
+            }
+          ]
+        },
+        "i18n": [
+          {
+            "code": "en",
+            "text": "Binance US Hat"
+          },
+          {
+            "code": "es",
+            "text": "Gorra de Binance US"
+          }
+        ],
+        "createdAt": 1617888339603,
+        "updatedAt": 1617888339603
+      },
+      {
+        "id": "urn:decentraland:ethereum:collections-v1:community_contest:cw_bell_attendant_hat",
+        "description": "",
+        "image": "https://peer.decentraland.org/content/contents/QmfDGLvXyoD43iB2euMwqtxaRKKA1Y39BbmmpenCWKjw2n",
+        "thumbnail": "https://peer.decentraland.org/content/contents/Qmbs4UgxEhHwD8umiW3VWta8NBQy7mmBhxNgBRuNuE7pvw",
+        "collectionAddress": "0x32b7495895264ac9d0b12d32afd435453458b1c6",
+        "rarity": "legendary",
+        "data": {
+          "replaces": [
+            "helmet",
+            "tiara",
+            "top_head"
+          ],
+          "hides": [
+            "hair"
+          ],
+          "tags": [
+            "hat",
+            "exclusive",
+            "launch",
+            "20.02.20",
+            "decentraland",
+            "community",
+            "wearables",
+            "exclusive"
+          ],
+          "category": "hat",
+          "representations": [
+            {
+              "bodyShapes": [
+                "urn:decentraland:off-chain:base-avatars:BaseMale"
+              ],
+              "mainFile": "M_Hat_BellAttendant.glb",
+              "overrideReplaces": [],
+              "overrideHides": [],
+              "contents": [
+                {
+                  "key": "AvatarWearables_Emissive_TX.png",
+                  "url": "https://peer.decentraland.org/content/contents/QmUrULH5u6RB6BjX9MQD97oi8djrvGvgqvNXq5ULXceZ6j"
+                },
+                {
+                  "key": "AvatarWearables_TX.png",
+                  "url": "https://peer.decentraland.org/content/contents/QmXGZq67BhmGm8WpmXrSL8EqotM4nEs3CcP8e8fZE9dgWS"
+                },
+                {
+                  "key": "AvatarWearables_TX_2.png",
+                  "url": "https://peer.decentraland.org/content/contents/QmYktkLr5rnn9zPPARkavhVowvTNTih8uWq8BVscTGxtZD"
+                },
+                {
+                  "key": "F_Hat_BellAttendant.glb",
+                  "url": "https://peer.decentraland.org/content/contents/QmYJ8pS3hcF5RUu2G4F4gtrTaJEP6ZpKjPqUWfvAa3CBw8"
+                },
+                {
+                  "key": "M_Hat_BellAttendant.glb",
+                  "url": "https://peer.decentraland.org/content/contents/QmTw9sRvB5WhbLwrvk8QGMJbTqhXsrucds64Qfgs6HYaHu"
+                }
+              ]
+            },
+            {
+              "bodyShapes": [
+                "urn:decentraland:off-chain:base-avatars:BaseFemale"
+              ],
+              "mainFile": "F_Hat_BellAttendant.glb",
+              "overrideReplaces": [],
+              "overrideHides": [],
+              "contents": [
+                {
+                  "key": "AvatarWearables_Emissive_TX.png",
+                  "url": "https://peer.decentraland.org/content/contents/QmUrULH5u6RB6BjX9MQD97oi8djrvGvgqvNXq5ULXceZ6j"
+                },
+                {
+                  "key": "AvatarWearables_TX.png",
+                  "url": "https://peer.decentraland.org/content/contents/QmXGZq67BhmGm8WpmXrSL8EqotM4nEs3CcP8e8fZE9dgWS"
+                },
+                {
+                  "key": "AvatarWearables_TX_2.png",
+                  "url": "https://peer.decentraland.org/content/contents/QmYktkLr5rnn9zPPARkavhVowvTNTih8uWq8BVscTGxtZD"
+                },
+                {
+                  "key": "F_Hat_BellAttendant.glb",
+                  "url": "https://peer.decentraland.org/content/contents/QmYJ8pS3hcF5RUu2G4F4gtrTaJEP6ZpKjPqUWfvAa3CBw8"
+                },
+                {
+                  "key": "M_Hat_BellAttendant.glb",
+                  "url": "https://peer.decentraland.org/content/contents/QmTw9sRvB5WhbLwrvk8QGMJbTqhXsrucds64Qfgs6HYaHu"
+                }
+              ]
+            }
+          ]
+        },
+        "i18n": [
+          {
+            "code": "en",
+            "text": "Bell Attendant Hat"
+          },
+          {
+            "code": "es",
+            "text": "Sombrero de Botones"
+          }
+        ],
+        "createdAt": 1618845343458,
+        "updatedAt": 1618845343458
+      }
+    ],
+    "filters": {
+      "textSearch": "hat"
+    },
+    "pagination": {
+      "limit": 2,
+      "next": "?textSearch=hat&lastId=urn%3Adecentraland%3Aethereum%3Acollections-v1%3Acommunity_contest%3Acw_bell_attendant_hat&limit=2"
+    }
+  }
