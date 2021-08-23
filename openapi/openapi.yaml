@@ -66,4 +66,6 @@ paths:
     $ref: 'paths/lambdas/lambdas@contentv2@parcel_info.yaml'
   /lambdas/contracts/servers:
     $ref: 'paths/lambdas/lambdas@contracts@servers.yaml'
+  /lambdas/contracts/pois:
+    $ref: 'paths/lambdas/lambdas@contracts@pois.yaml'
 
