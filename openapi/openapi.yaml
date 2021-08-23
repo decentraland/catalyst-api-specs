@@ -60,4 +60,6 @@ paths:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
   /lambdas/collections/wearables-by-owner/{address}:
     $ref: 'paths/lambdas/lambdas@collections@wearables-by-owner@{address}.yaml'
+  /lambdas/contentv2/scenes:
+    $ref: 'paths/lambdas/lambdas@contentv2@scenes.yaml'   
 
