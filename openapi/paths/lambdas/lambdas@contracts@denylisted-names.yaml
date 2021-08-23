@@ -1,0 +1,15 @@
+get:
+  operationId: getDenylistedUserNames
+  summary: Denlylisted user names
+  tags:
+    - Lambdas
+  description: Retrieve list of forbidden user names
+  responses:
+    '200':
+      description: Array of forbidden names by the DAO
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/lambdas/200-denylisted-usernames.json

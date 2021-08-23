@@ -68,4 +68,6 @@ paths:
     $ref: 'paths/lambdas/lambdas@contracts@servers.yaml'
   /lambdas/contracts/pois:
     $ref: 'paths/lambdas/lambdas@contracts@pois.yaml'
+  /lambdas/contracts/denylisted-names:
+    $ref: 'paths/lambdas/lambdas@contracts@denylisted-names.yaml'
 
