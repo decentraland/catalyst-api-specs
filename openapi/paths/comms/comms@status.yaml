@@ -4,6 +4,14 @@ get:
   tags:
     - Comms
   description: Retrieves the Comms Service status
+  parameters: 
+    - in : query 
+      name: includeUsersParcels 
+      schema:
+        type: boolean
+        example: true
+      description: >- 
+        Set to 'true' to fetch a list of which parcels each user occupies.
   responses:
     '200':
       description: Comms Service Status
