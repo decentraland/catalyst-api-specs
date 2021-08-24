@@ -66,4 +66,6 @@ paths:
     $ref: 'paths/comms/comms@islands@{islandId}.yaml'
   /comms/peers: 
     $ref: 'paths/comms/comms@peers.yaml'
+  /comms/status:
+    $ref: 'paths/comms/comms@status.yaml'
   
