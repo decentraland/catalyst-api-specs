@@ -70,4 +70,7 @@ paths:
     $ref: 'paths/lambdas/lambdas@contracts@pois.yaml'
   /lambdas/contracts/denylisted-names:
     $ref: 'paths/lambdas/lambdas@contracts@denylisted-names.yaml'
+  /lambdas/crypto/validate-signature: 
+    $ref: 'paths/lambdas/lambdas@crypto@validate-signature.yaml'
+  
 
