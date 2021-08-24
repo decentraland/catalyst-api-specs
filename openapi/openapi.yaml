@@ -76,5 +76,7 @@ paths:
     $ref: 'paths/lambdas/lambdas@explore@hot-scenes.yaml'
   /lambdas/explore/realms:
     $ref: 'paths/lambdas/lambdas@explore@realms.yaml'
+  /lambdas/profiles/{id}:
+    $ref: 'paths/lambdas/lambdas@profiles@{id}.yaml'
   
 
