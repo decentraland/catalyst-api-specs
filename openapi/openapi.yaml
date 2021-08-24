@@ -1,10 +1,15 @@
 openapi: 3.0.3
 info:
-  title: Catalyst Server API
+  title: API Specification for the Decentraland Catalyst Server
   version: '1.0'
-  description: API Specification for the Decentraland Catalyst Server
-  license:
-    #TODOL Validate if this license is OK.
+  description: >-      
+     A Catalyst is a Server that runs different services. 
+     These services currently work as the backbone for Decentraland and work in a decetralize network.
+     The current specification details the following services: 
+     <br/><br/>- Comms Service
+     <br/>- Content Server
+     <br/>- Lambdas Service
+  license:    
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
  
@@ -15,6 +20,35 @@ servers:
     description: Catalyst Staging instance
   - url: 'https://peer.decentraland.org'
     description: First production Catalyst node
+tags:
+  - name: Content Server
+    description: >-
+     Decentraland is a virtual world that is owned by its users. One of the biggest differentiators about 
+     Decentraland is its level of decentralization. Users can own LAND, wearables, and probably other types of 
+     items in the future. Each of these items is an NFT in itself, and therefore ownership is determined by the 
+     Ethereum (or EVM-compatible) blockchain.
+     <br/><br/>Now, when a new wearable is created, or when a user uploads a scene to their LAND/parcel, all 
+     necessary files (3d models, textures, music, etc) are uploaded to a "content server". Why are we using 
+     these servers instead of the blockchain? Mainly because it would be prohibitively expensive to store files as 
+     big as 3d models in the blockchain. Users would have to pay fees so high to upload content to their parcels 
+     that nobody would do it.
+     <br/><br/>So this is where content servers come into play. The content server is mainly a server where users 
+     can upload these files we mentioned before. Each server will verify against the blockchain that the user making 
+     the upload is actually allowed to do so. For example, in the case of scenes, the server will check that the 
+     deployer owns all the parcels they are trying to modify.
+     <br/><br/>And the most important part is that all content servers will then sync with each other. 
+     So, for example, if a scene is modified in one server, the update itself will be broadcasted to the other ones. 
+     Then, in the case a content server goes down for some reason, all content will still be present in the other ones.
+  - name: Comms
+    description: >- 
+      Comms is comprised of two distinct modules: One for Catalyst server called "Lighthouse" and other for clients & 
+      P2P network called "Peer Library".
+      <br/>The Lighthouse is a server that tracks peers in different positions in order to enable them to make the 
+      necessary connections. It also handles authentication.
+  - name: Lambdas
+    description: >-  
+      This service provides a set of utilities requried by the Catalyst Server Clients\Consumers in order to 
+      retrieve or validate data. 
 paths:
   /content/deployments:
     $ref: paths/content/content@deployments.yaml
