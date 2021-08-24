@@ -1,0 +1,25 @@
+get:
+  operationId: getIsland
+  summary: Island Details
+  tags:
+    - Comms
+  description: >- 
+    Retrieve information about the specified islandId
+  parameters:
+    - in: path
+      name: islandId
+      required: true
+      schema:
+        type: string
+        example: I5n
+      description: >- 
+        ID of the Island. You can search for the list of islands using the /comms/islands endpoint. 
+  responses:
+    '200':
+      description: Island details
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/comms/200-islandId.json
