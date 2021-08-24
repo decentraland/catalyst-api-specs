@@ -1,0 +1,43 @@
+[
+    {
+        "id": "QmT2pZZ5XX5LZ8KTy9ExRnBEcMZzcChfnAXyBafyRp4sdY",
+        "name": "WonderMine Crafting Game",
+        "baseCoords": [
+            -29,
+            55
+        ],
+        "usersTotalCount": 107,
+        "parcels": [
+            [
+                -29,
+                55
+            ],
+            [
+                -29,
+                56
+            ]
+        ],
+        "thumbnail": "https://wonderzone.io/img/scenes/wondermine_thumb2.jpg",
+        "creator": "WonderZone",
+        "description": "Mine meteors, get loot, and craft wearables!",
+        "realms": [
+            {
+                "serverName": "loki",
+                "url": "https://interconnected.online",
+                "layer": "amber",
+                "usersCount": 45,
+                "maxUsers": 100,
+                "userParcels": [
+                    [
+                        -27,
+                        57
+                    ],
+                    [
+                        -27,
+                        60
+                    ]
+                ]
+            }
+        ]
+    }
+]
