@@ -58,4 +58,7 @@ paths:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
   /lambdas/collections/wearables-by-owner/{address}:
     $ref: 'paths/lambdas/lambdas@collections@wearables-by-owner@{address}.yaml'
-
+  /comms/config:
+    $ref: 'paths/comms/comms@config.yaml'
+  /comms/islands:
+    $ref: 'paths/comms/comms@islands.yaml'
