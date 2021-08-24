@@ -1,0 +1,23 @@
+get:
+  operationId: getCommsStatus
+  summary: Comms Service Status
+  tags:
+    - Comms
+  description: Retrieves the Comms Service status
+  parameters: 
+    - in : query 
+      name: includeUsersParcels 
+      schema:
+        type: boolean
+        example: true
+      description: >- 
+        Set to 'true' to fetch a list of which parcels each user occupies.
+  responses:
+    '200':
+      description: Comms Service Status
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/comms/200-status.json

@@ -1,0 +1,17 @@
+get:
+  operationId: getIslands
+  summary: List of islands
+  tags:
+    - Comms
+  description: >- 
+    Retrieves the list of communication islands in the server with details 
+    about the peers peresent in each island. 
+  responses:
+    '200':
+      description: List of Islands
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/comms/200-islands.json

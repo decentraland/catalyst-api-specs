@@ -1,0 +1,15 @@
+get:
+  operationId: getConfig
+  summary: Comms Service Configuration
+  tags:
+    - Comms
+  description: Retrieves the Catalyst comms service settings
+  responses:
+    '200':
+      description: Comms Service settings
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/comms/200-config.json
