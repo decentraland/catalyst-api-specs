@@ -23,6 +23,7 @@ put:
     with a list of key/value pair specifying the new values for the service 
     properties and a signature to varify that you have sufficient permissions 
     in order to perform these updates. 
+    Settings are restored to default every time the server restarts. Use this endpoint only to test parameters
   requestBody:
     content:
       application/json:          
