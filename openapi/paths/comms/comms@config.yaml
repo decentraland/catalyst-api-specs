@@ -13,3 +13,37 @@ get:
             type: object
           example:
             $ref: ../../components/examples/comms/200-config.json
+put:
+  operationId: updateConfig
+  summary: Update Service Configuration
+  tags:
+    - Comms
+  description: >- 
+    Update Comms Service settings, this request requires you to send a body
+    with a list of key/value pair specifying the new values for the service 
+    properties and a signature to varify that you have sufficient permissions 
+    in order to perform these updates.    
+    The signer must be configured in the Catalyst Server through an Environment variable called 
+    RESTRICTED_ACCESSS_ADDRESS. 
+    The signature is generated with the privateKey of the address using the following method
+    https://github.com/pubkey/eth-crypto#sign
+  requestBody:
+    content:
+      application/json:          
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/comms/put-config.json
+  responses:
+    '200':
+      description: Settings updated successfuly      
+    '400':
+      description: Bad Request 
+      content:
+        application/json:
+          example: 'Expected array body with {key: string, value?: string} elements'
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          example: The signature is too old or too far in the future
