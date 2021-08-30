@@ -1,0 +1,4 @@
+{
+    "valid": false,
+    "error": "ERROR. Link type: ECDSA_EPHEMERAL. Ephemeral key expired. Expiration: 1625950542215. Test: 1630347919478."
+  }
