@@ -3,18 +3,22 @@ get:
   summary: Get Scenes
   tags:
     - Lambdas
-  description: Retrieve the list of scenes in a given area
+  description: >- 
+   Retrieve the list of scenes in a given area. 
+   The maximun allowed area of the rectangle for this endpoint is 100x100.
   parameters:  
     - in: query
       name: x1
+      required: true
       schema:
-        type: integer
+        type: integer        
         example: 1
       description: >-
         Defines the first point in the X axis to define the rectangle from which 
         you want to retrieve the scenes. 
     - in: query
       name: x2
+      required: true
       schema:
         type: integer
         example: 2
@@ -23,6 +27,7 @@ get:
         you want to retrieve the scenes. 
     - in: query
       name: y1
+      required: true
       schema:
         type: integer
         example: 1
@@ -31,6 +36,7 @@ get:
         you want to retrieve the scenes. 
     - in: query
       name: y2
+      required: true
       schema:
         type: integer
         example: 2
