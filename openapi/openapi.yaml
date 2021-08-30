@@ -82,6 +82,8 @@ paths:
     $ref: paths/lambdas/lambdas@status.yaml
   /lambdas/health:
     $ref: paths/lambdas/lambdas@health.yaml
+  /lambdas/collections:
+    $ref: paths/lambdas/lambdas@collections.yaml   
   /lambdas/collections/contents/{urn}/thumbail:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@thumbnail.yaml' 
   /lambdas/collections/contents/{urn}/image:
@@ -92,6 +94,28 @@ paths:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
   /lambdas/collections/wearables-by-owner/{address}:
     $ref: 'paths/lambdas/lambdas@collections@wearables-by-owner@{address}.yaml'
+  /lambdas/contentv2/scenes:
+    $ref: 'paths/lambdas/lambdas@contentv2@scenes.yaml'   
+  /lambdas/contentv2/parcel_info: 
+    $ref: 'paths/lambdas/lambdas@contentv2@parcel_info.yaml'
+  /lambdas/contentv2/contents/{cid}:
+    $ref: 'paths/lambdas/lambdas@contentv2@contents@{cid}.yaml'
+  /lambdas/contracts/servers:
+    $ref: 'paths/lambdas/lambdas@contracts@servers.yaml'
+  /lambdas/contracts/pois:
+    $ref: 'paths/lambdas/lambdas@contracts@pois.yaml'
+  /lambdas/contracts/denylisted-names:
+    $ref: 'paths/lambdas/lambdas@contracts@denylisted-names.yaml'
+  /lambdas/crypto/validate-signature: 
+    $ref: 'paths/lambdas/lambdas@crypto@validate-signature.yaml'
+  /lambdas/explore/hot-scenes:
+    $ref: 'paths/lambdas/lambdas@explore@hot-scenes.yaml'
+  /lambdas/explore/realms:
+    $ref: 'paths/lambdas/lambdas@explore@realms.yaml'
+  /lambdas/profiles:
+    $ref: 'paths/lambdas/lambdas@profiles.yaml'
+  /lambdas/profiles/{id}:
+    $ref: 'paths/lambdas/lambdas@profiles@{id}.yaml'
   /comms/config:
     $ref: 'paths/comms/comms@config.yaml'
   /comms/islands:
@@ -102,4 +126,3 @@ paths:
     $ref: 'paths/comms/comms@peers.yaml'
   /comms/status:
     $ref: 'paths/comms/comms@status.yaml'
-  

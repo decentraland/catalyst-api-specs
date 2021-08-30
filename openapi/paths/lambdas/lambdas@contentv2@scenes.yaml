@@ -1,0 +1,56 @@
+get:
+  operationId: getScenes
+  summary: Get Scenes
+  tags:
+    - Lambdas
+  description: >- 
+   Retrieve the list of scenes in a given area. 
+   The maximun allowed area of the rectangle for this endpoint is 100x100.
+  parameters:  
+    - in: query
+      name: x1
+      required: true
+      schema:
+        type: integer        
+        example: 1
+      description: >-
+        Defines the first point in the X axis to define the rectangle from which 
+        you want to retrieve the scenes. 
+    - in: query
+      name: x2
+      required: true
+      schema:
+        type: integer
+        example: 2
+      description: >-
+        Defines the second point in the X axis to define the rectangle from which 
+        you want to retrieve the scenes. 
+    - in: query
+      name: y1
+      required: true
+      schema:
+        type: integer
+        example: 1
+      description: >-
+        Defines the first point in the Y axis to define the rectangle from which 
+        you want to retrieve the scenes. 
+    - in: query
+      name: y2
+      required: true
+      schema:
+        type: integer
+        example: 2
+      description: >-
+        Defines the second point in the Y axis to define the rectangle from which 
+        you want to retrieve the scenes. 
+  responses:
+    '200':
+      description: Array of collections URNs and names
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/lambdas/200-scenes.json            
+    '400':
+      description: Please make sure that the specified area contains 100 or less parcels.

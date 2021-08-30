@@ -1,0 +1,15 @@
+get:
+  operationId: getPois
+  summary: Retrieve DCL Point of Interests
+  tags:
+    - Lambdas
+  description: Retrieve the Point of Interest list of coordenates 
+  responses:
+    '200':
+      description: List of Point of Interest coordenates. These are currently highlighted in the DCL Atlas.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/lambdas/200-pois.json

@@ -1,0 +1,56 @@
+[
+    {
+        "serverName": "loki",
+        "url": "https://interconnected.online",        
+        "usersCount": 66,
+        "maxUsers": 100,
+        "userParcels": [
+            [
+                -27,
+                58
+            ]
+        ]
+    },
+    {
+        "serverName": "unicorn",
+        "url": "https://peer.kyllian.me",
+        "layer": "blue",
+        "usersCount": 62,
+        "maxUsers": 100,
+        "userParcels": [
+            [
+                -62,
+                -13
+            ],
+            [
+                87,
+                -83
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                133,
+                36
+            ]
+        ]
+    },
+    {
+        "serverName": "fenrir",
+        "url": "https://peer.decentraland.org",
+        "layer": "amber",
+        "usersCount": 61,
+        "maxUsers": 100,
+        "userParcels": [
+            [
+                -68,
+                60
+            ],
+            [
+                11,
+                139
+            ]
+        ]
+    }
+]

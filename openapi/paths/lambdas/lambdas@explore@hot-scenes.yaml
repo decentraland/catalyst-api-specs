@@ -1,0 +1,15 @@
+get:
+  operationId: getHotScenes
+  summary: Hot Scenes
+  tags:
+    - Lambdas
+  description: Returns the list of scenes where there are more users with coordinates and the list of parcels that compose the scene.
+  responses:
+    '200':
+      description: List of scenes
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/lambdas/200-hot-scenes.json

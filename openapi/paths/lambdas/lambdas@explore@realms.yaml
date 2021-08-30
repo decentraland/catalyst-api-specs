@@ -1,0 +1,17 @@
+get:
+  operationId: getRealms
+  summary: Get Realms status
+  tags:
+    - Lambdas
+  description: Returns the list of realms with details about the users in it
+  responses:
+    '200':
+      description: >- 
+        List of the current state of the realms. The userParcels array is the list 
+        of parcels in which there are users present. 
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:            
+            $ref: ../../components/examples/lambdas/200-realms.json
