@@ -1,6 +1,6 @@
 post:
   operationId: validateSignature
-  summary: Validated signed message 
+  summary: Validate signed message 
   tags:
     - Lambdas
   description: >- 
