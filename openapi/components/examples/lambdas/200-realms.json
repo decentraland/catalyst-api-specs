@@ -1,8 +1,7 @@
 [
     {
         "serverName": "loki",
-        "url": "https://interconnected.online",
-        "layer": "amber",
+        "url": "https://interconnected.online",        
         "usersCount": 66,
         "maxUsers": 100,
         "userParcels": [
