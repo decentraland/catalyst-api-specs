@@ -1,6 +1,6 @@
 get:
   operationId: getRealms
-  summary: Get Realms state
+  summary: Get Realms status
   tags:
     - Lambdas
   description: Returns the list of realms with details about the users in it
