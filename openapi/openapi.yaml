@@ -9,6 +9,8 @@ info:
      <br/><br/>- Comms Service
      <br/>- Content Server
      <br/>- Lambdas Service
+  x-logo:
+    url: 'https://cryptologos.cc/logos/decentraland-mana-logo.png'
   license:    
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
