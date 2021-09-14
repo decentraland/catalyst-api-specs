@@ -1,13 +1,31 @@
 {
-  "name": "content-server-api",
-  "version": "1.0.0",
-  "dependencies": {
-    "@redocly/openapi-cli": "^1.0.0-beta.54"
+  "name": "@dcl/catalyst-api-specs",
+  "version": "1.0.1",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "@redocly/openapi-cli": "1.0.0-beta.54",
+    "@types/jest": "27.0.1",
+    "express-openapi-validator": "4.13.1",
+    "jest": "27.2.0",
+    "npm-run-all": "4.1.5",
+    "ts-jest": "27.0.5",
+    "typescript": "4.4.3"
   },
-  "private": true,
   "scripts": {
     "start": "openapi preview-docs",
-    "build": "openapi bundle -o dist",
-    "test": "openapi lint"
+    "build": "run-s build:*",
+    "build:api": "openapi bundle -o lib/api",
+    "build:src": "tsc -b",
+    "test": "npm run build & run-s test:*",
+    "test:api": "openapi lint",
+    "test:src": "jest",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "dependencies": {
+    "yaml": "1.10.2"
   }
 }
