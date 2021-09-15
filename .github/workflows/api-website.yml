@@ -16,7 +16,7 @@ jobs:
         run: |
           npm ci --no-audit
           npm run build
-          npx redoc-cli bundle openapi/openapi.yaml
+          npx redoc-cli bundle openapi/catalyst.yaml
           mv redoc-static.html docs/index.html
           
       - name: Deploy 🚀

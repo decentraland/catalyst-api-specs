@@ -1,6 +1,9 @@
 # See https://redoc.ly/docs/cli/configuration/ for more information.
 apiDefinitions:
-  main: openapi/openapi.yaml
+  main: openapi/catalyst.yaml
+  comms: openapi/comms.yaml
+  content: openapi/content.yaml
+  lambdas: openapi/lambdas.yaml
 lint:
   extends:
     - recommended
