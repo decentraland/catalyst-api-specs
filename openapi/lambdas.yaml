@@ -1,0 +1,65 @@
+openapi: 3.0.3
+info:
+  title: API Specification for the Decentraland Catalyst Lambdas Service
+  version: '1.0'
+  description: >-      
+     The current specification details the Lambdas service
+  x-logo:
+    url: 'https://cryptologos.cc/logos/decentraland-mana-logo.png'
+  license:    
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+ 
+servers:
+  - url: 'https://peer.decentraland.zone/lambdas'
+    description: Catalyst Development instance
+  - url: 'https://peer-testing.decentraland.org/lambdas'
+    description: Catalyst Staging instance
+  - url: 'https://peer.decentraland.org/lambdas'
+    description: First production Catalyst node
+tags:
+  - name: Lambdas
+    description: >-  
+      This service provides a set of utilities requried by the Catalyst Server Clients\Consumers in order to 
+      retrieve or validate data. 
+
+paths:
+  /status:
+    $ref: paths/lambdas/lambdas@status.yaml
+  /health:
+    $ref: paths/lambdas/lambdas@health.yaml
+  /collections:
+    $ref: paths/lambdas/lambdas@collections.yaml   
+  /collections/contents/{urn}/thumbail:
+    $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@thumbnail.yaml' 
+  /collections/contents/{urn}/image:
+    $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image.yaml' 
+  /collections/standard/erc721/{chainId}/{contract}/{option}/{emission}:
+    $ref: 'paths/lambdas/lambdas@collections@standard@erc721@{chainId}@{contract}@{option}@{emission}.yaml'
+  /collections/wearables:
+    $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
+  /collections/wearables-by-owner/{address}:
+    $ref: 'paths/lambdas/lambdas@collections@wearables-by-owner@{address}.yaml'
+  /contentv2/scenes:
+    $ref: 'paths/lambdas/lambdas@contentv2@scenes.yaml'   
+  /contentv2/parcel_info: 
+    $ref: 'paths/lambdas/lambdas@contentv2@parcel_info.yaml'
+  /contentv2/contents/{cid}:
+    $ref: 'paths/lambdas/lambdas@contentv2@contents@{cid}.yaml'
+  /contracts/servers:
+    $ref: 'paths/lambdas/lambdas@contracts@servers.yaml'
+  /contracts/pois:
+    $ref: 'paths/lambdas/lambdas@contracts@pois.yaml'
+  /contracts/denylisted-names:
+    $ref: 'paths/lambdas/lambdas@contracts@denylisted-names.yaml'
+  /crypto/validate-signature: 
+    $ref: 'paths/lambdas/lambdas@crypto@validate-signature.yaml'
+  /explore/hot-scenes:
+    $ref: 'paths/lambdas/lambdas@explore@hot-scenes.yaml'
+  /explore/realms:
+    $ref: 'paths/lambdas/lambdas@explore@realms.yaml'
+  /profiles:
+    $ref: 'paths/lambdas/lambdas@profiles.yaml'
+  /profiles/{id}:
+    $ref: 'paths/lambdas/lambdas@profiles@{id}.yaml'
+  
