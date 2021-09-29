@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: API Specification for the Decentraland Catalyst Server
+  title: API Specification for the Decentraland Catalyst Server (BETA)
   version: '1.0'
   description: >-      
      A Catalyst is a Server that runs different services. 
@@ -9,6 +9,10 @@ info:
      <br/><br/>- Comms Service
      <br/>- Content Server
      <br/>- Lambdas Service
+     <br/>
+     <br/>WARNING: We are working to close the version 1.0 of the Catalyst Protocol defined by this API. 
+     So far this is what we have and it's public but we are still working on refinment and during this process we may decided 
+     to deperacte or change some of the endpoints.
   x-logo:
     url: 'https://cryptologos.cc/logos/decentraland-mana-logo.png'
   license:    
