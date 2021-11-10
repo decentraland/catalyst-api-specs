@@ -58,7 +58,7 @@ tags:
   - name: Secure
     description: >-
       These endpoints do not belong to the Catalyst Protocol definition and are not intended to be used externally. 
-      Their only objective is to be use for troubleshooting and in order to do so it will be required an API key.    
+      Their only objective is to be used for troubleshooting and in order to do so it will be required an API key.    
 paths:
   /content/pointers/{entityType}: 
     $ref: 'paths/content/content@pointers@{entityType}.yaml'
