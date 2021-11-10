@@ -1,6 +1,6 @@
 get:
   operationId: getPointers
-  summary: Get EntityType Pointers
+  summary: Get Entity Type Pointers
   tags:
     - Content Server
   description: >-

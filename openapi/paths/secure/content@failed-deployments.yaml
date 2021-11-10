@@ -3,7 +3,7 @@ get:
   summary: List of failed deployments
   description: Retrieves a list of the failed deployments
   tags:
-    - Internal
+    - Secure
   responses:
     '200':
       description: Failed deployments list

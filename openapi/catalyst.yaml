@@ -55,7 +55,7 @@ tags:
     description: >-  
       This service provides a set of utilities requried by the Catalyst Server Clients\Consumers in order to 
       retrieve or validate data. 
-  - name: Internal
+  - name: Secure
     description: >-
       These endpoints do not belong to the Catalyst Protocol definition and are not intended to be used externally. 
       Their only objective is to be use for troubleshooting and in order to do so it will be required an API key.    
@@ -134,17 +134,17 @@ paths:
   /comms/status:
     $ref: 'paths/comms/comms@status.yaml'
 
-
+  #SECURE ENDPOINTS
   /content/deployments:
-    $ref: paths/internal/content@deployments.yaml
+    $ref: paths/secure/content@deployments.yaml
   /content/contents/{hashId}/active-entities:
-    $ref: 'paths/internal/content@contents@{hashId}@entities.yaml'
+    $ref: 'paths/secure/content@contents@{hashId}@entities.yaml'
   /content/failed-deployments:
-    $ref: paths/internal/content@failed-deployments.yaml  
+    $ref: paths/secure/content@failed-deployments.yaml  
   /comms/islands:
-    $ref: 'paths/internal/comms@islands.yaml'
+    $ref: 'paths/secure/comms@islands.yaml'
   /comms/islands/{islandId}:
-    $ref: 'paths/internal/comms@islands@{islandId}.yaml'
+    $ref: 'paths/secure/comms@islands@{islandId}.yaml'
   /comms/peers: 
-    $ref: 'paths/internal/comms@peers.yaml'
+    $ref: 'paths/secure/comms@peers.yaml'
   

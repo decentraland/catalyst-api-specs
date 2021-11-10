@@ -2,7 +2,7 @@ get:
   operationId: getListEntityIdsByHash
   summary: List of entityIds asociated with a hashId
   tags:
-    - Internal
+    - Secure
   description: >-
     Get the list of entity ids of the deployments associated with the specified
     content hash. If you want to include inactive entities in the result, you have to use

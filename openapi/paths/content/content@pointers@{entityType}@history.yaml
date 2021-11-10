@@ -1,6 +1,6 @@
 get:
   operationId: getPointersHistory
-  summary: Get Pointers Deployment History
+  summary: Get Pointers Deployments History
   tags:
     - Content Server
   description: >-

@@ -2,7 +2,7 @@ get:
   operationId: getAllDeployments
   summary: List all deployments stored in the content server  
   tags:
-    - Internal
+    - Secure
   description: >-
     This endpoint will return a complete list of the existing deployments 
     in the Content Server. The result can be filterd using any of the optional 
