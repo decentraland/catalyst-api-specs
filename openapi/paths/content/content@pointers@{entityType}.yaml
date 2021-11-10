@@ -1,0 +1,28 @@
+get:
+  operationId: getPointers
+  summary: Get EntityType Pointers
+  tags:
+    - Content Server
+  description: >-
+    Given an entity type like scene or wearable, this endpoint returns the list of all the pointers of the 
+    given type in a paginated list.
+  parameters:
+    - in: path
+      name: entityType
+      required: true
+      schema:
+        type: string
+        enum:
+          - scene
+          - profile
+          - wearable
+        example: scene
+      description: The type of entities that want to retrieve the existing list of pointers
+  responses:
+    '200':
+      description: >-
+        List of pointers      
+    '400':
+      description: 'Bad Request: Unrecognized'
+    '503':
+      description: Snapshot not yet created

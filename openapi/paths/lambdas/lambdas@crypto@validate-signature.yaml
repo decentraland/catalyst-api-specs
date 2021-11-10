@@ -1,6 +1,7 @@
 post:
   operationId: validateSignature
   summary: Validate signed message 
+  deprecated: true 
   tags:
     - Lambdas
   description: >- 

@@ -55,17 +55,21 @@ tags:
     description: >-  
       This service provides a set of utilities requried by the Catalyst Server Clients\Consumers in order to 
       retrieve or validate data. 
+  - name: Internal
+    description: >-
+      These endpoints do not belong to the Catalyst Protocol definition and are not intended to be used externally. 
+      Their only objective is to be use for troubleshooting and in order to do so it will be required an API key.    
 paths:
-  /content/deployments:
-    $ref: paths/content/content@deployments.yaml
+  /content/pointers/{entityType}: 
+    $ref: 'paths/content/content@pointers@{entityType}.yaml'
+  /content/pointers/{entityType}/history: 
+    $ref: 'paths/content/content@pointers@{entityType}@history.yaml'    
   /content/audit/{entityType}/{entityId}:
     $ref: 'paths/content/content@audit@{entityType}@{entityId}.yaml'
   /content/challenge:
     $ref: paths/content/content@challenge.yaml
   /content/contents/{hashId}:
-    $ref: 'paths/content/content@contents@{hashId}.yaml'
-  /content/contents/{hashId}/active-entities:
-    $ref: 'paths/content/content@contents@{hashId}@active-entities.yaml'
+    $ref: 'paths/content/content@contents@{hashId}.yaml'  
   /content/available-content:
     $ref: paths/content/content@available-content.yaml
   /content/denylist:
@@ -76,14 +80,13 @@ paths:
     $ref: paths/content/content@entities.yaml
   /content/entities/{type}:
     $ref: 'paths/content/content@entities@{type}.yaml'
-  /content/failed-deployments:
-    $ref: paths/content/content@failed-deployments.yaml
   /content/pointer-changes:
     $ref: paths/content/content@pointer-changes.yaml
   /content/snapshot/{type}:
     $ref: 'paths/content/content@snapshot@{type}.yaml'
   /content/status:
     $ref: paths/content/content@status.yaml
+    
   /lambdas/status:
     $ref: paths/lambdas/lambdas@status.yaml
   /lambdas/health:
@@ -100,6 +103,8 @@ paths:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
   /lambdas/collections/wearables-by-owner/{address}:
     $ref: 'paths/lambdas/lambdas@collections@wearables-by-owner@{address}.yaml'
+  /lambdas/content/scenes:
+    $ref: 'paths/lambdas/lambdas@content@scenes.yaml'     
   /lambdas/contentv2/scenes:
     $ref: 'paths/lambdas/lambdas@contentv2@scenes.yaml'   
   /lambdas/contentv2/parcel_info: 
@@ -122,13 +127,24 @@ paths:
     $ref: 'paths/lambdas/lambdas@profiles.yaml'
   /lambdas/profiles/{id}:
     $ref: 'paths/lambdas/lambdas@profiles@{id}.yaml'
+
+
   /comms/config:
     $ref: 'paths/comms/comms@config.yaml'
-  /comms/islands:
-    $ref: 'paths/comms/comms@islands.yaml'
-  /comms/islands/{islandId}:
-    $ref: 'paths/comms/comms@islands@{islandId}.yaml'
-  /comms/peers: 
-    $ref: 'paths/comms/comms@peers.yaml'
   /comms/status:
     $ref: 'paths/comms/comms@status.yaml'
+
+
+  /content/deployments:
+    $ref: paths/internal/content@deployments.yaml
+  /content/contents/{hashId}/active-entities:
+    $ref: 'paths/internal/content@contents@{hashId}@entities.yaml'
+  /content/failed-deployments:
+    $ref: paths/internal/content@failed-deployments.yaml  
+  /comms/islands:
+    $ref: 'paths/internal/comms@islands.yaml'
+  /comms/islands/{islandId}:
+    $ref: 'paths/internal/comms@islands@{islandId}.yaml'
+  /comms/peers: 
+    $ref: 'paths/internal/comms@peers.yaml'
+  

@@ -1,6 +1,7 @@
 get:
   operationId: getContentByCid
   summary: Download content
+  deprecated: true 
   tags:
     - Lambdas
   description: Download the content file with the provided Content Identifier (CID)

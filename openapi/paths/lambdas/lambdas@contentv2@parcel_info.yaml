@@ -1,6 +1,7 @@
 get:
   operationId: getParcelInfo
   summary: Get Parcel Information
+  deprecated: true 
   tags:
     - Lambdas
   description: >- 

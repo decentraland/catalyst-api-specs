@@ -1,7 +1,6 @@
 get:
-  operationId: getScenesV2
+  operationId: getScenes
   summary: Get Scenes
-  deprecated: true 
   tags:
     - Lambdas
   description: >- 

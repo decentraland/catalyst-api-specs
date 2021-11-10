@@ -2,7 +2,7 @@ get:
   operationId: getIsland
   summary: Island Details
   tags:
-    - Comms
+    - Internal
   description: >- 
     Retrieve information about the specified islandId
   parameters:

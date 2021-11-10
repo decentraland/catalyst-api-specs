@@ -1,12 +1,12 @@
 get:
-  operationId: getListEntityIdsByHashId
+  operationId: getListEntityIdsByHash
   summary: List of entityIds asociated with a hashId
-  deprecated: true 
   tags:
-    - Content Server
+    - Internal
   description: >-
     Get the list of entity ids of the deployments associated with the specified
-    content hash. This endpoint is currently intended for troubleshooting as
+    content hash. If you want to include inactive entities in the result, you have to use
+    the inactive=true query parameter. This endpoint is currently intended for troubleshooting as
     there is no specific use case for it.
   parameters:
     - in: path
@@ -16,6 +16,14 @@ get:
         type: string
         example: QmWFLwHGfvhB9a1epaRpS38HEwbHvhpaYzHEsNhDRgon7P
       description: Hash of the content file
+    - in: query
+      name: inactive
+      schema:
+        type: boolean
+        example: false
+      description: >-
+        For auditability you may want to know if a hash was asociated with a an entity that is 
+        currently inactive, set this parameter to true to include that in the result. 
   responses:
     '200':
       description: List of all the entitties asociated with the hashId
