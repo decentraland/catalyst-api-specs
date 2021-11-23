@@ -79,6 +79,18 @@ get:
         collection. If no parameter is sent, then the default field to order
         with will be local_timestamp.
     - in: query
+      name: sortingOrder
+      schema:
+        type: string
+        enum:
+          - ASC
+          - DESC
+        example: ASC
+      description: >-
+        This value is used as the order for all the deployments in the
+        collection. If no parameter is sent, then the default field to order
+        with will be DESC.
+    - in: query
       name: pointer
       schema:
         type: array
