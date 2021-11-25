@@ -3,7 +3,7 @@ get:
   summary: Get Avatars details
   tags:
     - Lambdas
-  description: Given a list of Ethereum address of a user, return all the Avatars details asociated with them.
+  description: Given a list of Ethereum address of a user, return all the Avatars details associated with them.
   parameters:
     - in: query
       name: id
@@ -11,7 +11,7 @@ get:
       schema:
         type: array        
         example: '0x22480812a9a0669783c06d359182a583bd1d9fc2'      
-      description: List of Ehereum address of the users that you want to retrieve the profiles
+      description: List of Ethereum addresses of the users that you want to retrieve the profiles
   responses:
     '200':
       description: Array of Avatars      

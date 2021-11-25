@@ -4,12 +4,12 @@ post:
   tags:
     - Lambdas
   description: >- 
-    Given a signed message and it's authchain, validate it's authenticity.  
+    Given a signed message and it's AuthChain, validate it's authenticity.  
     A message can be signed, for example, to prove ownership of the Entity pointers that they want to modify.
   requestBody:
     description: >-
-       The body has 3 properties. The timestamp, the signedMessage that you wish to validate and the authChain. 
-       <br/>The structure of the authchain is described as follows: 
+       The body has 3 properties. The timestamp, the signedMessage that you wish to validate and the AuthChain. 
+       <br/>The structure of the AuthChain is described as follows: 
        <br/>- The first element of the chain is the original signer, and the one who will be used to validate against the blockchain
        <br/>- The last element of the chain contains the EHash and a signature
        <br/>- In between are ephemeral keys that can be used for signing      

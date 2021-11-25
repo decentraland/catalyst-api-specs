@@ -23,12 +23,12 @@ get:
         example: QmQgezF4UWTZpD5VqKs2AGCzucRJdm8zU87MxdSRH9heZR
       description: id of the entity
   description: >-
-    Get information about an entity, such us Scenes Profiles or Werables, 
+    Get information about an entity, such us Scenes Profiles or Wearables, 
     with the specified entityId.      
   security: []
   responses:
     '200':
-      description: 'Entity version, authchain and if the deployment was overwrriten'
+      description: 'Entity version, AuthChain and if the deployment was overwritten'
       content:
         application/json; charset=utf-8:
           schema:

@@ -4,15 +4,15 @@ info:
   version: '1.0'
   description: >-      
      A Catalyst is a Server that runs different services. 
-     These services currently work as the backbone for Decentraland and work in a decetralize network.
+     These services currently work as the backbone for Decentraland and work in a decentralized network.
      The current specification details the following services: 
      <br/><br/>- Comms Service
      <br/>- Content Server
      <br/>- Lambdas Service
      <br/>
      <br/>WARNING: We are working to close the version 1.0 of the Catalyst Protocol defined by this API. 
-     So far this is what we have and it's public but we are still working on refinment and during this process we may decided 
-     to deperacte or change some of the endpoints.
+     So far this is what we have and it's public but we are still working on refinement and
+     during this process we may decided to deprecate or change some of the endpoints.
   x-logo:
     url: 'https://cryptologos.cc/logos/decentraland-mana-logo.png'
   license:    
@@ -53,7 +53,7 @@ tags:
       necessary connections. It also handles authentication.
   - name: Lambdas
     description: >-  
-      This service provides a set of utilities requried by the Catalyst Server Clients\Consumers in order to 
+      This service provides a set of utilities required by the Catalyst Server Clients\Consumers in order to 
       retrieve or validate data. 
 paths:
   /content/deployments:
@@ -90,7 +90,7 @@ paths:
     $ref: paths/lambdas/lambdas@health.yaml
   /lambdas/collections:
     $ref: paths/lambdas/lambdas@collections.yaml   
-  /lambdas/collections/contents/{urn}/thumbail:
+  /lambdas/collections/contents/{urn}/thumbnail:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@thumbnail.yaml' 
   /lambdas/collections/contents/{urn}/image:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image.yaml' 

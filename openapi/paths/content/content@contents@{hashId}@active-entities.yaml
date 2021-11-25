@@ -1,6 +1,6 @@
 get:
   operationId: getListEntityIdsByHashId
-  summary: List of entityIds asociated with a hashId
+  summary: List of entityIds associated with a hashId
   tags:
     - Content Server
   description: >-
@@ -17,7 +17,7 @@ get:
       description: Hash of the content file
   responses:
     '200':
-      description: List of all the entitties asociated with the hashId
+      description: List of all the entities associated with the hashId
       content:
         application/json; charset=utf-8:
           schema:

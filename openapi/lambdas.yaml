@@ -20,7 +20,7 @@ servers:
 tags:
   - name: Lambdas
     description: >-  
-      This service provides a set of utilities requried by the Catalyst Server Clients\Consumers in order to 
+      This service provides a set of utilities required by the Catalyst Server Clients\Consumers in order to 
       retrieve or validate data. 
 
 paths:
@@ -30,7 +30,7 @@ paths:
     $ref: paths/lambdas/lambdas@health.yaml
   /collections:
     $ref: paths/lambdas/lambdas@collections.yaml   
-  /collections/contents/{urn}/thumbail:
+  /collections/contents/{urn}/thumbnail:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@thumbnail.yaml' 
   /collections/contents/{urn}/image:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image.yaml' 

@@ -23,7 +23,10 @@ put:
   summary: Insert item in denylist
   tags:
     - Content Server
-  description: Inserts an entry in the deny list for the specified object type with the given id. This action will succeed only if the item is not already deny-listed and if the blocker has the correct permission to do it.
+  description: >-
+    Inserts an entry in the deny list for the specified object type with the given id.
+    This action will succeed only if the item is not already deny-listed and
+    if the blocker has the correct permission to do it.
   requestBody:
     content:
       application/json:
@@ -43,12 +46,12 @@ put:
             block-content-QmbcVjrVGDWwdCMdXQjpyzui2bCX4zaR8XwvkwFuBZvto3-1628534551726
   responses:
     '201':
-      description: Denylist created successfuly
+      description: Denylist created successfully
       content:
         application/json; charset=utf-8:
           schema:
             type: string
-          example: Denylist created successfuly
+          example: Denylist created successfully
     '400':
       description: Bad request
       content:
@@ -70,7 +73,9 @@ delete:
   summary: Remove object from the denylist
   tags:
     - Content Server
-  description: Remove object from the denylist. This action will succeed only if the item is deny-listed and if the blocker has the correct permission to do it.
+  description: >-
+    Remove object from the denylist. This action will succeed only if the item is deny-listed and
+    if the blocker has the correct permission to do it.
   parameters:
     - in: query
       name: blocker
@@ -96,12 +101,12 @@ delete:
       description: 'Must be of the form unblock-${type}-${id}-${timestamp}'
   responses:
     '200':
-      description: Object removed from denylist successfuly
+      description: Object removed from denylist successfully
       content:
         application/json; charset=utf-8:
           schema:
             type: string
-          example: Object removed from denylist successfuly
+          example: Object removed from denylist successfully
     '400':
       description: Bad request
       content:
