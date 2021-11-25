@@ -81,7 +81,7 @@ paths:
   /content/pointer-changes:
     $ref: paths/content/content@pointer-changes.yaml
   /content/snapshot/{type}:
-    $ref: 'paths/content/content@snapshot@{type}.yaml'
+    $ref: 'paths/content/content@snapshot.yaml'
   /content/status:
     $ref: paths/content/content@status.yaml
   /lambdas/status:

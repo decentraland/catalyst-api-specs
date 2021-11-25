@@ -63,6 +63,6 @@ paths:
   /pointer-changes:
     $ref: paths/content/content@pointer-changes.yaml
   /snapshot/{type}:
-    $ref: 'paths/content/content@snapshot@{type}.yaml'
+    $ref: 'paths/content/content@snapshot.yaml'
   /status:
     $ref: paths/content/content@status.yaml
