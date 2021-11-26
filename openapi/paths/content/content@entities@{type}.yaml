@@ -17,7 +17,7 @@ get:
           - scene
           - wearable
         example: profile
-      description: 'Entity Type that will be returned by the request. Valid values are: profile, scene and werable.'
+      description: 'Entity Type that will be returned by the request. Valid values are: profile, scene and wearable.'
     - in: query
       name: pointer
       allowEmptyValue: true
@@ -41,11 +41,11 @@ get:
       schema:
         type: string
         example: 'entityVersion,entityType,entityId,pointers'
-      description: List of comma separeted fields to be retrieved in the request response.
+      description: List of comma separated fields to be retrieved in the request response.
   responses:
     '200':
       description: >-
-        Entity created successfuly. The response will cointain the timestamp and
+        Entity created successfully. The response will contain the timestamp and
         result.
       content:
         application/json; charset=utf-8:

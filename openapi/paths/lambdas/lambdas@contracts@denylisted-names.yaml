@@ -1,13 +1,13 @@
 get:
   operationId: getDenylistedUserNames
-  summary: Denlylisted user names
+  summary: Denylisted user names
   tags:
     - Lambdas
   description: >- 
     Retrieve list of forbidden user names. The prohibition of these names is decided through the DAO and 
-    need to be voted, the list lives in a Smart Contract and the Catlyst just consumes this information to 
+    need to be voted, the list lives in a Smart Contract and the Catalyst just consumes this information to 
     present it to the client. In order to add a new name a new proposal needs to be created, approved and 
-    a transaction should be sent by a DAO commitee member.
+    a transaction should be sent by a DAO committee member.
   responses:
     '200':
       description: Array of forbidden names by the DAO

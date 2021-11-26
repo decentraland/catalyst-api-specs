@@ -5,7 +5,7 @@ get:
     - Content Server
   description: >-
     This endpoint will return a complete list of the existing deployments 
-    in the Content Server. The result can be filterd using any of the optional 
+    in the Content Server. The result can be filtered using any of the optional 
     query parameters in order to get a more specific result.  
   parameters:
     - in: query
@@ -48,7 +48,7 @@ get:
         type: string
         example: QmNknKv8MuKbfZ73z4QdUEsNbTd1ZAN1fSuwTFGiNGeCt5,FhdJnKv8MuKbfZ73z4QdUEsNbTd1ZAN1fSuwTFGiNGeCm7
       description: >- 
-        Comma-separted list of deployment object hashes. You can specify just
+        Comma-separated list of deployment object hashes. You can specify just
         one or many. 
     - in: query
       name: onlyCurrentlyPointed
@@ -97,7 +97,7 @@ get:
         example: '106,-33'
       description: >-
         The pointer corresponding to the entity. For example, if the entity type
-        is an scene, then the pointer will be a coordenate. If the entity type
+        is an scene, then the pointer will be a coordinate. If the entity type
         is a profile, then the pointer will be an ethAddress.
     - in: query
       name: limit

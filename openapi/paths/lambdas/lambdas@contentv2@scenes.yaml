@@ -5,7 +5,7 @@ get:
     - Lambdas
   description: >- 
    Retrieve the list of scenes in a given area. 
-   The maximun allowed area of the rectangle for this endpoint is 100x100.
+   The maximum allowed area of the rectangle for this endpoint is 100x100.
   parameters:  
     - in: query
       name: x1

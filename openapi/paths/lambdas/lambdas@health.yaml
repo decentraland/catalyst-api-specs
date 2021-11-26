@@ -3,7 +3,7 @@ get:
   summary: Catalyst Server health
   tags:
     - Lambdas
-  description: Retrieve deteailed information about the services health
+  description: Retrieve detailed information about the services health
   responses:
     '200':
       description: Catalyst services health information

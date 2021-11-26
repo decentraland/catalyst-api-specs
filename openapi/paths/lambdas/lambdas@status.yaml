@@ -3,7 +3,7 @@ get:
   summary: Catalyst Server status
   tags:
     - Lambdas
-  description: Retrieve deteailed information about the services
+  description: Retrieve detailed information about the services
   responses:
     '200':
       description: Catalyst services information

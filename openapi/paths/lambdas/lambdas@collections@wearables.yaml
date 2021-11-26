@@ -11,13 +11,13 @@ get:
       schema:
         type: array 
         example: urn:decentraland:ethereum:collections-v1:mf_sammichgamer
-      description: Lis of URNs that identify the collection. Maximun amount of ids allowed is 500. 
+      description: Lis of URNs that identify the collection. Maximum amount of ids allowed is 500. 
     - in: query
       name: wearableId       
       schema:
         type: array 
         example: urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat
-      description: List of werables URNs to search. Maximun amount of ids allowed is 500.
+      description: List of wearables URNs to search. Maximum amount of ids allowed is 500.
     - in: query
       name: textSearch       
       schema:
@@ -39,7 +39,7 @@ get:
         example: urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat
       description: >-
         The result will always be ordered by the local timestamp fields but in case
-        of timestamp collitions, you can use the lastId field to filter the 
+        of timestamp collisions, you can use the lastId field to filter the 
         result   
   responses:
     '200':
