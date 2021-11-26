@@ -16,7 +16,7 @@ get:
       description: >-
         Acts as a filter in the collection of deployments, this value is the
         minimum value of timestamp (of the field indicated by SortingField:
-        localTimestamp is the default) that any deployment in the collection
+        local_timestamp is the default) that any deployment in the collection
         will have.
     - in: query
       name: to
@@ -26,7 +26,7 @@ get:
       description: >-
         Acts as a filter in the collection of deployments, this value is the
         maximum value of timestamp (of the field indicated by SortingField:
-        localTimestamp is the default) that any deployment in the collection
+        local_timestamp is the default) that any deployment in the collection
         will have.
     - in: query
       name: entityType
