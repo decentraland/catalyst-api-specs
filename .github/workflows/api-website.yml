@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build website
         run: |
-          npm ci --no-audit
+          npm i --no-audit
           npm run build
           npx redoc-cli bundle openapi/catalyst.yaml
           mv redoc-static.html docs/index.html
