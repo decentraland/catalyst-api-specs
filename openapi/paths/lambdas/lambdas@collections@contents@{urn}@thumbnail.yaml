@@ -1,6 +1,6 @@
 get:
   operationId: getThumbnail
-  summary: Download thumbnail image
+  summary: Download thumbnail image with default size
   tags:
     - Lambdas
   description: Downloads a thumbnail image for the specified urn
