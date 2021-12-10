@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "urn": "urn:decentraland:ethereum:ext:cryptopunks:0xContractAddressaaabbff999123",
+      "description": "Crypto punks (third party)"
+    },
+    {
+      "urn": "urn:decentraland:matic:collections-v1:halloween",
+      "description": "Decentraland Halloween 2019"
+    },
+    {
+      "urn": "urn:decentraland:matic:collections-v2:halloween",
+      "description": "Decentraland Halloween 2020"
+    }
+  ]
+}
