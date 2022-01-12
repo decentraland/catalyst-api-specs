@@ -1,0 +1,28 @@
+get:
+  operationId: getActiveEntities
+  summary: Snapshot with a list of active entities 
+  tags:
+    - Content Server
+  description: >-
+    Lists all active deployments from the snapshots stored in the database.
+    The snapshots are enforced in a time defined by the Catalyst owner (default is 15min). 
+    If the information needed is front in time, you may use the
+    `/content/pointer-changes` endpoint with the necessary `from` filter.
+  responses:
+    '200':
+      description: >-
+        Hash field references the snapshot of all entities, inside entities field there are the snapshots per entity.
+        Each hash is a reference to a JSON file containing one line per entity in a JSON format.
+        Once you get the hash you can download it using the
+        /content/contents/{hashId} endpoint. The timestamp in the response is
+        the time of the last deployment included in the snapshot.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/content/200-snapshot.json
+    '400':
+      description: 'Bad Request: Unrecognized'
+    '503':
+      description: Snapshot not yet created

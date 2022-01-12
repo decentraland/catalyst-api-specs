@@ -62,7 +62,7 @@ paths:
     $ref: paths/content/content@failed-deployments.yaml
   /pointer-changes:
     $ref: paths/content/content@pointer-changes.yaml
-  /snapshot/{type}:
-    $ref: 'paths/content/content@snapshot@{type}.yaml'
+  /snapshot:
+    $ref: 'paths/content/content@snapshot.yaml'
   /status:
     $ref: paths/content/content@status.yaml
