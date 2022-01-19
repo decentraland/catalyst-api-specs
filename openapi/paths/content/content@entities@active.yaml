@@ -6,25 +6,31 @@ post:
   description: >-
     Returns the list of entities of the specified type with the specified id or
     pointers. Only one of these filters must be specified in the body.
-  parameters:
-    - in: body
-      name: pointers
-      allowEmptyValue: true
-      schema:
-        type: array
-        example: urn:decentraland:mumbai:collections-v2:0xf6426e0c70c17509038aba78137e721d187499d6:0
-      description: >-
-        Entities must be filtered by pointer XOR entityId. Use this parameter if
-        you want to retrieve an entity of the specified type with this pointer.
-    - in: body
-      name: id
-      allowEmptyValue: true
-      schema:
-        type: array
-        example: QmeA8RpAtqU6gCebNaWRXtM9nQs3ugzzbeQm3L7uKrP4Jp
-      description: >-
-        Entities must be filtered by pointer XOR entityId. Use this parameter if
-        you want to retrieve an entity of the specified type with this entityId.
+
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            pointers:
+              description: >-
+                Entities must be filtered by pointer XOR entityId (ids). Use this parameter if
+                you want to retrieve an entity of the specified type with this pointer.
+              type: array
+              allowEmptyValue: true
+              items:
+                type: string
+                example: urn:decentraland:mumbai:collections-v2:0xf6426e0c70c17509038aba78137e721d187499d6:0
+            ids:
+              description: >-
+                Entities must be filtered by pointer (pointers) XOR entityId. Use this parameter if
+                you want to retrieve an entity of the specified type with this entityId.
+              type: array
+              allowEmptyValue: true
+              items:
+                type: string
+                example: QmeA8RpAtqU6gCebNaWRXtM9nQs3ugzzbeQm3L7uKrP4Jp
   responses:
     '200':
       description: >-
