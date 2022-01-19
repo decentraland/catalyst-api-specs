@@ -55,3 +55,33 @@ post:
         Internal Server Error. Returns the error object with the list of errors
         from the server response.
       
+get:
+  operationId: getListOfEntitiesById
+  summary: List of entities by id
+  tags:
+    - Content Server
+  description: >-
+    Returns the list of entities of the specified type with the specified id.
+  parameters:
+    - in: query
+      name: id
+      allowEmptyValue: true
+      schema:
+        type: array
+        example: QmeA8RpAtqU6gCebNaWRXtM9nQs3ugzzbeQm3L7uKrP4Jp
+      description: >-
+        Entities must be filtered by pointer XOR entityId. Use this parameter if
+        you want to retrieve an entity of the specified type with this entityId.
+  responses:
+    '200':
+      description: >-
+        List of entities corresponding to the matching ids
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/content/200-entities-types.json
+    '400':
+      description: >-
+        Bad request: ids must be present in the request

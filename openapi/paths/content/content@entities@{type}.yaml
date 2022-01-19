@@ -1,5 +1,5 @@
 get:
-  operationId: getListOfEntities
+  operationId: getListOfEntitiesByPointer
   summary: List of entities of the specified Type
   tags:
     - Content Server
@@ -17,7 +17,7 @@ get:
           - scene
           - wearable
         example: profile
-      description: 'Entity Type that will be returned by the request. Valid values are: profile, scene and wearable.'
+      description: 'Entity Type that will be returned by the request. Some values are: profile, scene and wearable.'
     - in: query
       name: pointer
       allowEmptyValue: true
@@ -25,28 +25,11 @@ get:
         type: string
         example: null
       description: >-
-        Entities must be filtered by pointer XOR entityId. Use this parameter if
-        you want to retrieve an entity of the specified type with this pointer.
-    - in: query
-      name: id
-      allowEmptyValue: true
-      schema:
-        type: array
-        example: QmeA8RpAtqU6gCebNaWRXtM9nQs3ugzzbeQm3L7uKrP4Jp
-      description: >-
-        Entities must be filtered by pointer XOR entityId. Use this parameter if
-        you want to retrieve an entity of the specified type with this entityId.
-    - in: query
-      name: fields
-      schema:
-        type: string
-        example: 'entityVersion,entityType,entityId,pointers'
-      description: List of comma separated fields to be retrieved in the request response.
+        Entities must be filtered by pointer. 
   responses:
     '200':
       description: >-
-        Entity created successfully. The response will contain the timestamp and
-        result.
+        List of entities corresponding to the matching pointers
       content:
         application/json; charset=utf-8:
           schema:
@@ -55,5 +38,4 @@ get:
             $ref: ../../components/examples/content/200-entities-types.json
     '400':
       description: >-
-        Bad request: ids or pointers must be present in the request, but not
-        both
+        Bad request: pointers must be present in the request

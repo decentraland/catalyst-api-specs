@@ -76,6 +76,8 @@ paths:
     $ref: paths/content/content@entities.yaml
   /content/entities/{type}:
     $ref: 'paths/content/content@entities@{type}.yaml'
+  /content/entities:
+    $ref: 'paths/content/content@entities.yaml'
   /content/failed-deployments:
     $ref: paths/content/content@failed-deployments.yaml
   /content/pointer-changes:
