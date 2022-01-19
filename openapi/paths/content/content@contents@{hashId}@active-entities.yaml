@@ -4,7 +4,7 @@ get:
   tags:
     - Content Server
   description: >-
-    Get the list of entity ids of the deployments associated with the specified
+    Get the list of entity ids whose deployments are associated with the specified
     content hash. This endpoint is currently intended for troubleshooting as
     there is no specific use case for it.
   parameters:
