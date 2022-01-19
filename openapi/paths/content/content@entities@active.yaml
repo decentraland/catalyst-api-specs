@@ -1,0 +1,41 @@
+post:
+  operationId: getListOfEntities
+  summary: List of entities of the specified Type
+  tags:
+    - Content Server
+  description: >-
+    Returns the list of entities of the specified type with the specified id or
+    pointers. Only one of these filters must be specified in the body.
+  parameters:
+    - in: body
+      name: pointers
+      allowEmptyValue: true
+      schema:
+        type: array
+        example: urn:decentraland:mumbai:collections-v2:0xf6426e0c70c17509038aba78137e721d187499d6:0
+      description: >-
+        Entities must be filtered by pointer XOR entityId. Use this parameter if
+        you want to retrieve an entity of the specified type with this pointer.
+    - in: query
+      name: id
+      allowEmptyValue: true
+      schema:
+        type: array
+        example: QmeA8RpAtqU6gCebNaWRXtM9nQs3ugzzbeQm3L7uKrP4Jp
+      description: >-
+        Entities must be filtered by pointer XOR entityId. Use this parameter if
+        you want to retrieve an entity of the specified type with this entityId.
+  responses:
+    '200':
+      description: >-
+        List of entities corresponding to the matching ids or pointers.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+          example:
+            $ref: ../../components/examples/content/200-entities-active.json
+    '400':
+      description: >-
+        Bad request: ids or pointers must be present in the request, but not
+        both
