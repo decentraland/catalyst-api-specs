@@ -16,7 +16,7 @@ post:
       description: >-
         Entities must be filtered by pointer XOR entityId. Use this parameter if
         you want to retrieve an entity of the specified type with this pointer.
-    - in: query
+    - in: body
       name: id
       allowEmptyValue: true
       schema:
