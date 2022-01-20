@@ -18,7 +18,6 @@ post:
                 Entities must be filtered by pointer XOR entityId (ids). Use this parameter if
                 you want to retrieve an entity of the specified type with this pointer.
               type: array
-              allowEmptyValue: true
               items:
                 type: string
                 example: urn:decentraland:mumbai:collections-v2:0xf6426e0c70c17509038aba78137e721d187499d6:0
@@ -27,7 +26,6 @@ post:
                 Entities must be filtered by pointer (pointers) XOR entityId. Use this parameter if
                 you want to retrieve an entity of the specified type with this entityId.
               type: array
-              allowEmptyValue: true
               items:
                 type: string
                 example: QmeA8RpAtqU6gCebNaWRXtM9nQs3ugzzbeQm3L7uKrP4Jp
