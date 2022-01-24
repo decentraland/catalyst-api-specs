@@ -50,7 +50,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
+            $ref: ../../components/schemas/content/200-entities-types.yaml
           example:
             $ref: ../../components/examples/content/200-entities-types.json
     '400':

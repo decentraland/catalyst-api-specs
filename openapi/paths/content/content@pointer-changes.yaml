@@ -89,7 +89,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
+            $ref: ../../components/schemas/content/200-pointer-changes.yaml
           example:
             $ref: ../../components/examples/content/200-pointer-changes.json
     '400':

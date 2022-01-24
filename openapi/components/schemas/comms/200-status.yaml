@@ -1,0 +1,21 @@
+type: object
+properties:
+  name:
+    type: string
+  version:
+    type: string
+  currenTime:
+    type: number
+  env:
+    type: object
+    properties:
+      secure:
+        type: boolean
+      commitHash:
+        type: string
+      catalystVersion:
+        type: string
+  ready:
+    type: boolean
+  usersCount:
+    type: number

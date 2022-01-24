@@ -1,0 +1,29 @@
+type: object
+properties:
+  data:
+    type: array
+    items:
+      type: object
+      properties:
+        root_cid:
+          type: string
+        scene_cid:
+          type: string
+        content:
+          type: object
+          properties:
+            parcel_id:
+              type: string
+            contents:
+              type: array
+              items:
+                type: object
+                properties:
+                  file:
+                    type: string
+                  hash:
+                    type: string
+            root_cid:
+              type: string
+            publisher:
+              type: string

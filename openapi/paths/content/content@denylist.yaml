@@ -14,6 +14,8 @@ get:
         application/json; charset=utf-8:
           schema:
             type: array
+            items:
+              type: string
           example:
             - 'content-QmY4GFuf2jR3ocfuXuFLgvUrGEpjo84Byg44Pv2wduuinW'
             - 'address-0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7'

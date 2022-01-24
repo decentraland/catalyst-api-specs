@@ -55,7 +55,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
+            $ref: ../../components/schemas/lambdas/200-erc721.yaml
           example:
             $ref: ../../components/examples/lambdas/200-erc721.json
     '400':

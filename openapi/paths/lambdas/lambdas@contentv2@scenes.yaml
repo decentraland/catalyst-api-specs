@@ -49,8 +49,8 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
+            $ref: ../../components/schemas/lambdas/200-scenes.yaml
           example:
-            $ref: ../../components/examples/lambdas/200-scenes.json            
+            $ref: ../../components/examples/lambdas/200-scenes.json
     '400':
       description: Please make sure that the specified area contains 100 or less parcels.

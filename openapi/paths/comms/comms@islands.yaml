@@ -12,6 +12,6 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
+            $ref: ../../components/schemas/comms/200-islands.yaml
           example:
             $ref: ../../components/examples/comms/200-islands.json

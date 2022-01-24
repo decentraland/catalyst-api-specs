@@ -19,7 +19,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
+            $ref: ../../components/schemas/lambdas/200-wearables-by-owner.yaml
           example:
             $ref: ../../components/examples/lambdas/200-wearables-by-owner.json
     '500':

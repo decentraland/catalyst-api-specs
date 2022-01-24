@@ -10,7 +10,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
+            $ref: ../../components/schemas/comms/200-config.yaml
           example:
             $ref: ../../components/examples/comms/200-config.json
 put:
@@ -31,7 +31,7 @@ put:
     content:
       application/json:          
           schema:
-            type: object
+            $ref: ../../components/schemas/comms/put-config.yaml
           example:
             $ref: ../../components/examples/comms/put-config.json
   responses:

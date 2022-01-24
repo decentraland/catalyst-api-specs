@@ -26,12 +26,12 @@ post:
         application/json:
           schema:
             type: object
-          examples:  
-            valid-singature:          
+          examples:
+            valid-signature:
+              summary: Valid Signature
               value:
-                summary: Valid Signature 
                 $ref: ../../components/examples/lambdas/200-validate-signature-true.json
-            invalid-key: 
+            invalid-key:
               summary: Invalid Signature
               value: 
                 $ref: ../../components/examples/lambdas/200-validate-signature-false.json

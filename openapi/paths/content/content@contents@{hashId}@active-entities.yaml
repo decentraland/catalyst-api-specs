@@ -31,5 +31,8 @@ get:
         application/json; charset=utf-8:
           schema:
             type: object
+            properties:
+              error:
+                type: string
           example:
             error: The entity was not found

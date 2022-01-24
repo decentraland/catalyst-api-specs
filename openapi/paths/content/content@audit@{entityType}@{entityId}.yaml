@@ -32,7 +32,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
+            $ref: ../../components/schemas/content/200-audit-response.yaml
           example:
             $ref: ../../components/examples/content/200-audit-response.json
     '400':
