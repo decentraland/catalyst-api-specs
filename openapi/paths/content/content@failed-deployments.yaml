@@ -11,5 +11,6 @@ get:
         application/json; charset=utf-8:
           schema:
             $ref: ../../components/schemas/content/200-failed-deployments.yaml
-          example:
-            $ref: ../../components/examples/content/200-failed-deployments.json
+          examples:
+            default:
+              $ref: ../../components/examples/content/200-failed-deployments.json

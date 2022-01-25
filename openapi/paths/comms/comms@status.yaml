@@ -18,6 +18,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/comms/200-status.yaml
-          example:
-            $ref: ../../components/examples/comms/200-status.json
+            $ref: ../../components/schemas/comms/200-status-comms.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/comms/200-status-comms.json

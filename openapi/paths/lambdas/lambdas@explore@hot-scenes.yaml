@@ -13,5 +13,6 @@ get:
         application/json; charset=utf-8:
           schema:
             $ref: ../../components/schemas/lambdas/200-hot-scenes.yaml
-          example:
-            $ref: ../../components/examples/lambdas/200-hot-scenes.json
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-hot-scenes.json

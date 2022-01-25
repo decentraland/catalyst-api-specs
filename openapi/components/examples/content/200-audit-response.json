@@ -1,4 +1,5 @@
 {
+  "value": {
     "version": "v3",
     "deployedTimestamp": 1628271052660,
     "authChain": [
@@ -19,3 +20,5 @@
       }
     ]
   }
+
+}

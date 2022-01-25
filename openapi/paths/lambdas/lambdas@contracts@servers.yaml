@@ -11,5 +11,6 @@ get:
         application/json; charset=utf-8:
           schema:
             $ref: ../../components/schemas/lambdas/200-servers.yaml
-          example:
-            $ref: ../../components/examples/lambdas/200-servers.json
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-servers.json

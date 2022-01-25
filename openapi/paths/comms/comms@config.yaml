@@ -11,8 +11,9 @@ get:
         application/json; charset=utf-8:
           schema:
             $ref: ../../components/schemas/comms/200-config.yaml
-          example:
-            $ref: ../../components/examples/comms/200-config.json
+          examples:
+            default:
+              $ref: ../../components/examples/comms/200-config.json
 put:
   operationId: updateConfig
   summary: Update Service Configuration
@@ -32,8 +33,9 @@ put:
       application/json:          
           schema:
             $ref: ../../components/schemas/comms/put-config.yaml
-          example:
-            $ref: ../../components/examples/comms/put-config.json
+          examples:
+            default:
+              $ref: ../../components/examples/comms/put-config.json
   responses:
     '200':
       description: Settings updated successfully      

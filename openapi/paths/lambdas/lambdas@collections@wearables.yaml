@@ -48,8 +48,9 @@ get:
         application/json; charset=utf-8:
           schema:
             $ref: ../../components/schemas/lambdas/200-wearables.yaml
-          example:
-            $ref: ../../components/examples/lambdas/200-wearables.json
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-wearables.json
     '400':
       description: Bad Request
       content:

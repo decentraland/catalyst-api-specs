@@ -6,6 +6,8 @@ items:
       type: string
     url:
       type: string
+    layer:
+      type: string
     usersCount:
       type: number
     maxUsers:

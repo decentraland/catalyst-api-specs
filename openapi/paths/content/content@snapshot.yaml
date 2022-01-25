@@ -20,8 +20,9 @@ get:
         application/json; charset=utf-8:
           schema:
             $ref: ../../components/schemas/content/200-snapshot.yaml
-          example:
-            $ref: ../../components/examples/content/200-snapshot.json
+          examples:
+            default:
+              $ref: ../../components/examples/content/200-snapshot.json
     '400':
       description: 'Bad Request: Unrecognized'
     '503':

@@ -1,4 +1,7 @@
 {
-    "valid": true,    
-    "ownerAddress": "0xa8ee490e4c4da48cc1653502c1a77479d4d818de"
+    "summary": "Valid Signature",
+    "value": {
+        "valid": true,    
+        "ownerAddress": "0xa8ee490e4c4da48cc1653502c1a77479d4d818de"
+    }
 }

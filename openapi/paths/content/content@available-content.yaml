@@ -21,8 +21,9 @@ get:
         application/json; charset=utf-8:
           schema:
             $ref: ../../components/schemas/content/200-available-content.yaml
-          example:
-            $ref: ../../components/examples/content/200-available-content.json
+          examples:
+            default:
+              $ref: ../../components/examples/content/200-available-content.json
     '400':
       description: Missing query parameters in the request
       content:

@@ -19,5 +19,6 @@ get:
         application/json:
           schema:
             $ref: ../../components/schemas/lambdas/200-profiles-id.yaml
-          example:
-            $ref: ../../components/examples/lambdas/200-profiles-id.json
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-profiles-id.json
