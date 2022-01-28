@@ -1,0 +1,47 @@
+type: array
+items:
+  type: object
+  properties:
+    id:
+      type: string
+    name:
+      type: string
+    baseCoords:
+      type: array
+      items:
+        type: number
+    usersTotalCount:
+      type: number
+    parcels:
+      type: array
+      items:
+        type: array
+        items:
+          type: number
+    thumbnail:
+      type: string
+    creator:
+      type: string
+    description:
+      type: string
+    realms:
+      type: array
+      items:
+        type: object
+        properties:
+          serverName:
+            type: string
+          url:
+            type: string
+          layer:
+            type: string
+          usersCount:
+            type: number
+          maxUsers:
+            type: number
+          userParcels:
+            type: array
+            items:
+              type: array
+              items:
+                type: number

@@ -1,36 +1,38 @@
 {
-    "collections": [
-        {
-            "id": "urn:decentraland:off-chain:base-avatars",
-            "name": "Base Wearables"
-        },
-        {
-            "id": "urn:decentraland:ethereum:collections-v1:3lau_basics",
-            "name": "dcl://3lau_basics"
-        },
-        {
-            "id": "urn:decentraland:ethereum:collections-v1:atari_launch",
-            "name": "dcl://atari_launch"
-        },
-        {
-            "id": "urn:decentraland:ethereum:collections-v1:binance_us_collection",
-            "name": "dcl://binance_us_collection"
-        },
-        {
-            "id": "urn:decentraland:ethereum:collections-v1:china_flying",
-            "name": "dcl://china_flying"
-        },
-        {
-            "id": "urn:decentraland:ethereum:collections-v1:community_contest",
-            "name": "dcl://community_contest"
-        },
-        {
-            "id": "urn:decentraland:ethereum:collections-v1:cybermike_cybersoldier_set",
-            "name": "dcl://cybermike_cybersoldier_set"
-        },
-        {
-            "id": "urn:decentraland:ethereum:collections-v1:cz_mercenary_mtz",
-            "name": "dcl://cz_mercenary_mtz"
-        }
-    ]
+    "value": {
+        "collections": [
+            {
+                "id": "urn:decentraland:off-chain:base-avatars",
+                "name": "Base Wearables"
+            },
+            {
+                "id": "urn:decentraland:ethereum:collections-v1:3lau_basics",
+                "name": "dcl://3lau_basics"
+            },
+            {
+                "id": "urn:decentraland:ethereum:collections-v1:atari_launch",
+                "name": "dcl://atari_launch"
+            },
+            {
+                "id": "urn:decentraland:ethereum:collections-v1:binance_us_collection",
+                "name": "dcl://binance_us_collection"
+            },
+            {
+                "id": "urn:decentraland:ethereum:collections-v1:china_flying",
+                "name": "dcl://china_flying"
+            },
+            {
+                "id": "urn:decentraland:ethereum:collections-v1:community_contest",
+                "name": "dcl://community_contest"
+            },
+            {
+                "id": "urn:decentraland:ethereum:collections-v1:cybermike_cybersoldier_set",
+                "name": "dcl://cybermike_cybersoldier_set"
+            },
+            {
+                "id": "urn:decentraland:ethereum:collections-v1:cz_mercenary_mtz",
+                "name": "dcl://cz_mercenary_mtz"
+            }
+        ]
+    }
 }

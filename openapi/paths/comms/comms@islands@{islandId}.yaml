@@ -20,6 +20,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/comms/200-islandId.json
+            $ref: ../../components/schemas/comms/200-islandId.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/comms/200-islandId.json

@@ -32,9 +32,10 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/content/200-audit-response.json
+            $ref: ../../components/schemas/content/200-audit-response.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/content/200-audit-response.json
     '400':
       description: Unrecognized Entity type
       content:

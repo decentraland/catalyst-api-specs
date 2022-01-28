@@ -1,27 +1,29 @@
 {
-    "data": [
-        {
-            "root_cid": "QmSitGssaKKYunu7hpSHrh4Mnv3QNdWwJDW5XYLaqwGaYe",
-            "scene_cid": "QmfSjDEi2a43aURjbNR3KTXmBB3wWfkJb6Vdmu3vmaNW5H",
-            "content": {
-                "parcel_id": "101,101",
-                "contents": [
-                    {
-                        "file": "bin/game.js",
-                        "hash": "QmaYYyMoHkv2Y619qLFNhwzVqoQZqYwNBZ2E1dCRuBkXEQ"
-                    },
-                    {
-                        "file": "models/SCENE.glb",
-                        "hash": "QmQgQtuAg9qsdrmLwnFiLRAYZ6Du4Dp7Yh7bw7ELn7AqkD"
-                    },
-                    {
-                        "file": "scene.json",
-                        "hash": "QmfSjDEi2a43aURjbNR3KTXmBB3wWfkJb6Vdmu3vmaNW5H"
-                    }
-                ],
+    "value": {
+        "data": [
+            {
                 "root_cid": "QmSitGssaKKYunu7hpSHrh4Mnv3QNdWwJDW5XYLaqwGaYe",
-                "publisher": ""
+                "scene_cid": "QmfSjDEi2a43aURjbNR3KTXmBB3wWfkJb6Vdmu3vmaNW5H",
+                "content": {
+                    "parcel_id": "101,101",
+                    "contents": [
+                        {
+                            "file": "bin/game.js",
+                            "hash": "QmaYYyMoHkv2Y619qLFNhwzVqoQZqYwNBZ2E1dCRuBkXEQ"
+                        },
+                        {
+                            "file": "models/SCENE.glb",
+                            "hash": "QmQgQtuAg9qsdrmLwnFiLRAYZ6Du4Dp7Yh7bw7ELn7AqkD"
+                        },
+                        {
+                            "file": "scene.json",
+                            "hash": "QmfSjDEi2a43aURjbNR3KTXmBB3wWfkJb6Vdmu3vmaNW5H"
+                        }
+                    ],
+                    "root_cid": "QmSitGssaKKYunu7hpSHrh4Mnv3QNdWwJDW5XYLaqwGaYe",
+                    "publisher": ""
+                }
             }
-        }
-    ]
+        ]
+    }
 }

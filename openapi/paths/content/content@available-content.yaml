@@ -20,9 +20,10 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/content/200-available-content.json
+            $ref: ../../components/schemas/content/200-available-content.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/content/200-available-content.json
     '400':
       description: Missing query parameters in the request
       content:

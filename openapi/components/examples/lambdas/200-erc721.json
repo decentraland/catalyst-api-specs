@@ -1,4 +1,5 @@
 {
+  "value": {
     "id": "urn:decentraland:matic:collections-v2:0x123db7844eaf7da11d88cf1754945bbd020742ef:3",
     "name": "4Skin Libre Upper Body",
     "description": "DCL Wearable {emission}/100",
@@ -26,3 +27,4 @@
 }
 
   
+}

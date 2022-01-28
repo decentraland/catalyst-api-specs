@@ -14,5 +14,8 @@ get:
         application/json; charset=utf-8:
           schema:
             type: object
+            properties:
+              challengeText:
+                type: string
           example:
             challengeText: 186a1c51-2c4c-4dae-913c-b87670600c56

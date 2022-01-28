@@ -1,5 +1,7 @@
 {
-    "lambda":"Healthy",
-    "content":"Healthy",
-    "comms":"Healthy"
- }
+    "value": {
+        "lambda":"Healthy",
+        "content":"Healthy",
+        "comms":"Healthy"
+     }
+}

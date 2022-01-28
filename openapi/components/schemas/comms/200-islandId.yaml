@@ -1,0 +1,33 @@
+type: object
+properties:
+  id:
+    type: string
+  peers:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+        address:
+          type: string
+        parcel:
+          type: array
+          items:
+            type: number
+        position:
+          type: array
+          items:
+            type: number
+        lastPing:
+          type: number
+        preferedIslandId:
+          type: string
+  maxPeers:
+    type: number
+  center:
+    type: array
+    items:
+      type: number
+  radius:
+    type: number

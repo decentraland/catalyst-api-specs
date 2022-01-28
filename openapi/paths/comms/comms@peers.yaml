@@ -12,6 +12,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/comms/200-peers.json
+            $ref: ../../components/schemas/comms/200-peers.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/comms/200-peers.json
