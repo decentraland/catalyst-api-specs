@@ -23,4 +23,4 @@ get:
           schema:
             type: object
           example:
-            $ref: ../../components/examples/content/200-entities-ids.json
+            $ref: ../../components/examples/content/200-currently-pointed.json
