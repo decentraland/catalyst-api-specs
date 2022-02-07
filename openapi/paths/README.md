@@ -14,9 +14,9 @@ It may help you to adopt some conventions:
 
 Example:
 ```
-GET /content/deployments
+GET /content/status
 
-/paths/content/content@deployments.yaml
+/paths/content/content@status.yaml
 ```
 
 In this case, the path id defined within subfolders which mirror the API URL structure.

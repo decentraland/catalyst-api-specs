@@ -1,17 +1,19 @@
-{ 
-    "config": [
-        {
-            "key":"maxPeersPerIsland",
-            "value":110
-        },
-        {
-            "key":"archipelagoJoinDistance",
-            "value":70
-        }
-    ],
-    "simpleSignature": { 
-        "signer": "0x716954738e57686a08902d9dd586e813490fee23", 
-        "signature": "0xe64e46fdd7d8789c0debec54422ae77e31b77e5a28287e072998e1114e252c57328c17756400d321e9e77032347c9d05e63fb59a3b6c3ab754565f9db86b8c481b" 
-    }, 
-    "timestamp": 1629829127040
+{
+    "value": { 
+        "config": [
+            {
+                "key":"maxPeersPerIsland",
+                "value":110
+            },
+            {
+                "key":"archipelagoJoinDistance",
+                "value":70
+            }
+        ],
+        "simpleSignature": { 
+            "signer": "0x716954738e57686a08902d9dd586e813490fee23", 
+            "signature": "0xe64e46fdd7d8789c0debec54422ae77e31b77e5a28287e072998e1114e252c57328c17756400d321e9e77032347c9d05e63fb59a3b6c3ab754565f9db86b8c481b" 
+        }, 
+        "timestamp": 1629829127040
+    }
 }

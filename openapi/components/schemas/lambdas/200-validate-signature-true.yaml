@@ -1,0 +1,6 @@
+type: object
+properties:
+  valid:
+    type: boolean
+  ownerAddress:
+    type: string

@@ -38,8 +38,6 @@ tags:
      Then, in the case a content server goes down for some reason, all content will still be present in the other ones.
 
 paths:
-  /deployments:
-    $ref: paths/content/content@deployments.yaml
   /audit/{entityType}/{entityId}:
     $ref: 'paths/content/content@audit@{entityType}@{entityId}.yaml'
   /challenge:

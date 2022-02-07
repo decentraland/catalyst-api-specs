@@ -20,8 +20,9 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/lambdas/200-scenes.json            
+            $ref: ../../components/schemas/lambdas/200-scenes.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-scenes.json
     '500':
       description: Internal Server Error

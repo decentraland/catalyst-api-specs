@@ -47,9 +47,10 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/lambdas/200-wearables.json
+            $ref: ../../components/schemas/lambdas/200-wearables.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-wearables.json
     '400':
       description: Bad Request
       content:

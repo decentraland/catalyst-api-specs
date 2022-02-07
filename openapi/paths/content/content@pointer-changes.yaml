@@ -89,9 +89,10 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/content/200-pointer-changes.json
+            $ref: ../../components/schemas/content/200-pointer-changes.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/content/200-pointer-changes.json
     '400':
       description: Bad Request
       content:

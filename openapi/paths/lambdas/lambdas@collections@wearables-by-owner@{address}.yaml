@@ -19,8 +19,9 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/lambdas/200-wearables-by-owner.json
+            $ref: ../../components/schemas/lambdas/200-wearables-by-owner.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-wearables-by-owner.json
     '500':
       description: 'Failed to fetch wearables by owner' 

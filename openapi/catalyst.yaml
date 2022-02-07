@@ -56,8 +56,6 @@ tags:
       This service provides a set of utilities required by the Catalyst Server Clients\Consumers in order to 
       retrieve or validate data. 
 paths:
-  /content/deployments:
-    $ref: paths/content/content@deployments.yaml
   /content/audit/{entityType}/{entityId}:
     $ref: 'paths/content/content@audit@{entityType}@{entityId}.yaml'
   /content/challenge:

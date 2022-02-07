@@ -1,0 +1,24 @@
+type: object
+properties:
+  deltas:
+    type: array
+    items:
+      type: object
+      properties:
+        entityType:
+          type: string
+        entityId:
+          type: string
+        localTimestamp:
+          type: number
+        changes:
+          type: array
+          items:
+            type: object
+            properties:
+              pointer:
+                type: string
+              before:
+                type: string
+              after:
+                type: string

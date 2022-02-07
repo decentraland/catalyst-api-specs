@@ -1,0 +1,17 @@
+type: object
+properties:
+  version:
+    type: string
+  deployedTimestamp:
+    type: number
+  authChain:
+    type: array
+    items:
+      type: object
+      properties:
+        type:
+          type: string
+        payload:
+          type: string
+        signature:
+          type: string

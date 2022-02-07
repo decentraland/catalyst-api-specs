@@ -12,6 +12,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:            
-            $ref: ../../components/examples/lambdas/200-realms.json
+            $ref: ../../components/schemas/lambdas/200-realms.yaml
+          examples:
+            default:         
+              $ref: ../../components/examples/lambdas/200-realms.json
