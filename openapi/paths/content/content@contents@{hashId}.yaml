@@ -16,6 +16,16 @@ get:
         content section of a deployment. If the entity version greater than or equal to v4, 
         then the hashing algorithm will be IPFS, if the entity version is v3 or below then 
         it will be SHA-256
+    - in: header
+      name: range
+      required: false
+      schema:
+        type: string
+        example: 'bytes=0-1023'
+      description: >-
+        Indicates the part of a document that the server should return.
+        If the server sends back ranges, it uses the `206 Partial Content` for the response.
+        The server can also ignore the header and return the whole document with a `200` status code.
   responses:
     '200':
       description: Binary file with the specified hashId
@@ -35,6 +45,55 @@ get:
             type: string
             example: 'public,max-age=31536000,immutable'
           description: Rules for caching in the request/response
+        Content-Length:
+          schema:
+            type: string
+            example: 1024
+          description: Size of the message body, in bytes, sent to the recipient
+        Accept-Ranges:
+          schema:
+            type: string
+            example: bytes
+          description: Advertise server support for partial requests from the client for file downloads
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+            example: binary
+    '206':
+      description: Partial content for the binary file with the specified hashId
+      headers:
+        ETag:
+          schema:
+            type: string
+            example: QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu
+          description: Double-quoted string with the hashId
+        Access-Control-Expose-Headers:
+          schema:
+            type: string
+            example: ETag
+          description: Which headers can be exposed as part of the response
+        Cache-Control:
+          schema:
+            type: string
+            example: 'public,max-age=31536000,immutable'
+          description: Rules for caching in the request/response
+        Content-Length:
+          schema:
+            type: string
+            example: 1024
+          description: Size of the message body, in bytes, sent to the recipient
+        Accept-Ranges:
+          schema:
+            type: string
+            example: bytes
+          description: Advertise server support for partial requests from the client for file downloads
+        Content-Range:
+          schema:
+            type: string
+            example: 'bytes 0-1023/2048'
+          description: Indicates where in a full body message a partial message belongs
       content:
         application/octet-stream:
           schema:
