@@ -2,6 +2,7 @@
     "value": {
         "lambda":"Healthy",
         "content":"Healthy",
-        "comms":"Healthy"
+        "comms":"Healthy",
+        "readyToUse": true
      }
 }

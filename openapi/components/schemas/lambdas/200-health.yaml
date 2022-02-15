@@ -6,3 +6,5 @@ properties:
     type: string
   comms:
     type: string
+  readyToUse:
+    type: boolean
