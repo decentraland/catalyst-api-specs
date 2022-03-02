@@ -17,6 +17,8 @@ servers:
     description: Catalyst Staging instance
   - url: 'https://peer.decentraland.org/content'
     description: First production Catalyst node
+  - url: 'http://localhost'
+    description: Catalyst instance for local development
 tags:
   - name: Content Server
     description: >-
