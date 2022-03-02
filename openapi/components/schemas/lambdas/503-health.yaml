@@ -1,0 +1,8 @@
+type: object
+properties:
+  lambda:
+    type: string
+  content:
+    type: string
+  comms:
+    type: string
