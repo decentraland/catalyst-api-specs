@@ -23,7 +23,5 @@ get:
           examples:
             default:
               $ref: ../../components/examples/content/200-snapshot.json
-    '400':
-      description: 'Bad Request: Unrecognized'
     '503':
       description: Snapshot not yet created
