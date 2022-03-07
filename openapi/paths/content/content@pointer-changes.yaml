@@ -98,13 +98,18 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            type: object
+            properties:
+              error:
+                type: string
           examples:
             entityType:
               summary: EntityType not recognized
-              value: Found an unrecognized entity type
+              value:
+                error: Found an unrecognized entity type
             offset:
               summary: Wrong offset value
-              value: >-
-                Offset can't be higher than 5000. Please use the 'next' property
-                for pagination.
+              value:
+                error: >-
+                  Offset can't be higher than 5000. Please use the 'next' property
+                  for pagination.
