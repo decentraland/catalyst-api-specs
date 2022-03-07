@@ -49,7 +49,16 @@ post:
     '400':
       description: >-
         Bad request. Returns the error object with the list of errors from the
-        server response.      
+        server response.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: string
     '500':
       description: >-
         Internal Server Error. Returns the error object with the list of errors
