@@ -66,10 +66,6 @@ paths:
     $ref: 'paths/content/content@contents@{hashId}@active-entities.yaml'
   /content/available-content:
     $ref: paths/content/content@available-content.yaml
-  /content/denylist:
-    $ref: paths/content/content@denylist.yaml
-  /content/denylist/{type}/{id}:
-    $ref: 'paths/content/content@denylist@{type}@{id}.yaml'
   /content/entities:
     $ref: paths/content/content@entities.yaml
   /content/entities/{type}:
