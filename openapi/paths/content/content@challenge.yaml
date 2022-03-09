@@ -13,6 +13,8 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
+            required:
+              - challengeText
             type: object
             properties:
               challengeText:

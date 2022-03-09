@@ -1,5 +1,11 @@
 type: array
 items:
+  required:
+    - version
+    - id
+    - type
+    - timestamp
+    - pointers
   type: object
   properties:
     version:

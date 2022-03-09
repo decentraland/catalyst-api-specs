@@ -53,6 +53,8 @@ post:
       content:
         application/json; charset=utf-8:
           schema:
+            required:
+              - errors
             type: object
             properties:
               errors:

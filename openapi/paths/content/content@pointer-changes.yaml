@@ -98,6 +98,8 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
+            required:
+              - error
             type: object
             properties:
               error:

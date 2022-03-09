@@ -1,3 +1,7 @@
+required:
+  - version
+  - deployedTimestamp
+  - authChain
 type: object
 properties:
   version:
@@ -7,6 +11,10 @@ properties:
   authChain:
     type: array
     items:
+      required:
+        - type
+        - payload
+        - signature
       type: object
       properties:
         type:

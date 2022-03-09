@@ -1,3 +1,9 @@
+required:
+  - version
+  - synchronizationStatus
+  - commitHash
+  - catalystVersion
+  - ethNetwork
 type: object
 properties:
   name:
@@ -11,11 +17,18 @@ properties:
   historySize:
     type: number
   synchronizationStatus:
+    required:
+      - lastSyncWithDAO
+      - synchronizationState
     type: object
     properties:
       otherServers:
         type: array
         items:
+          required:
+            - address
+            - connectionState
+            - lastDeploymentTimestamp
           type: object
           properties:
             address:

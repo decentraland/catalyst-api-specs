@@ -1,3 +1,7 @@
+required:
+  - hash
+  - lastIncludedDeploymentTimestamp
+  - entities
 type: object
 properties:
   hash:
@@ -5,9 +9,16 @@ properties:
   lastIncludedDeploymentTimestamp:
     type: number
   entities:
+    required:
+      - scene
+      - profile
+      - wearable
     type: object
     properties:
       scene:
+        required:
+          - hash
+          - lastIncludedDeploymentTimestamp
         type: object
         properties:
           hash:
@@ -15,6 +26,9 @@ properties:
           lastIncludedDeploymentTimestamp:
             type: number
       profile:
+        required:
+          - hash
+          - lastIncludedDeploymentTimestamp
         type: object
         properties:
           hash:
@@ -22,6 +36,9 @@ properties:
           lastIncludedDeploymentTimestamp:
             type: number
       wearable:
+        required:
+          - hash
+          - lastIncludedDeploymentTimestamp
         type: object
         properties:
           hash:
