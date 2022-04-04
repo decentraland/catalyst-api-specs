@@ -18,6 +18,7 @@ get:
       content:
         application/json:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/lambdas/200-profiles-ids.json
+            $ref: ../../components/schemas/lambdas/200-profiles-ids.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-profiles-ids.json

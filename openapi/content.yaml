@@ -17,6 +17,8 @@ servers:
     description: Catalyst Staging instance
   - url: 'https://peer.decentraland.org/content'
     description: First production Catalyst node
+  - url: 'http://localhost'
+    description: Catalyst instance for local development
 tags:
   - name: Content Server
     description: >-
@@ -48,16 +50,12 @@ paths:
     $ref: 'paths/content/content@contents@{hashId}@active-entities.yaml'
   /available-content:
     $ref: paths/content/content@available-content.yaml
-  /denylist:
-    $ref: paths/content/content@denylist.yaml
-  /denylist/{type}/{id}:
-    $ref: 'paths/content/content@denylist@{type}@{id}.yaml'
   /entities:
     $ref: paths/content/content@entities.yaml
-  /entities/{type}:
-    $ref: 'paths/content/content@entities@{type}.yaml'
   /entities/currently-pointed/{urnPrefix}:
     $ref: paths/content/content@entities@currently-pointed@{urnPrefix}.yaml
+  /entities/active:
+    $ref: 'paths/content/content@entities@active.yaml'
   /failed-deployments:
     $ref: paths/content/content@failed-deployments.yaml
   /pointer-changes:

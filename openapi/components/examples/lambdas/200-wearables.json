@@ -1,4 +1,5 @@
 {
+  "value": {
     "wearables": [
       {
         "id": "urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat",
@@ -202,3 +203,4 @@
       "next": "?textSearch=hat&lastId=urn%3Adecentraland%3Aethereum%3Acollections-v1%3Acommunity_contest%3Acw_bell_attendant_hat&limit=2"
     }
   }
+}

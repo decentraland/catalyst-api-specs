@@ -1,0 +1,19 @@
+type: array
+items:
+  required:
+    - entityType
+    - entityId
+    - reason
+    - errorDescription
+  type: object
+  properties:
+    failedDeploymentsRepo:
+      type: string
+    entityType:
+      type: string
+    entityId:
+      type: string
+    reason:
+      type: string
+    errorDescription:
+      type: string

@@ -10,6 +10,16 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/lambdas/200-health.json
+            $ref: ../../components/schemas/lambdas/200-health.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-health.json
+    '503':
+      description: Service Unavailable - Some catalyst service is not Healthy
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/lambdas/503-health.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/503-health.json

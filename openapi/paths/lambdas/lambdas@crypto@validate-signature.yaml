@@ -17,8 +17,9 @@ post:
       application/json; charset=utf-8:
         schema:
           type: object        
-        example:
-          $ref: ../../components/examples/lambdas/body-validate-signature.json
+        examples:
+          default:
+            $ref: ../../components/examples/lambdas/body-validate-signature.json
   responses:
     '200':
       description: Result of the signature validation with owner address or errors
@@ -26,15 +27,11 @@ post:
         application/json:
           schema:
             type: object
-          examples:  
-            valid-singature:          
-              value:
-                summary: Valid Signature 
-                $ref: ../../components/examples/lambdas/200-validate-signature-true.json
-            invalid-key: 
-              summary: Invalid Signature
-              value: 
-                $ref: ../../components/examples/lambdas/200-validate-signature-false.json
+          examples:
+            valid-signature:
+              $ref: ../../components/examples/lambdas/200-validate-signature-true.json  
+            invalid-key:
+              $ref: ../../components/examples/lambdas/200-validate-signature-false.json
     '400':
       description: >- 
         Bad Request: Expected 'signedMessage' property to be set

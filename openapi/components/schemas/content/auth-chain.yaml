@@ -1,0 +1,11 @@
+type: array
+items:
+  required:
+    - type
+    - payload
+  type: object
+  properties:
+    type:
+      type: string
+    payload:
+      type: string

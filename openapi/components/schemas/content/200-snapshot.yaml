@@ -1,0 +1,47 @@
+required:
+  - hash
+  - lastIncludedDeploymentTimestamp
+  - entities
+type: object
+properties:
+  hash:
+    type: string
+  lastIncludedDeploymentTimestamp:
+    type: number
+  entities:
+    required:
+      - scene
+      - profile
+      - wearable
+    type: object
+    properties:
+      scene:
+        required:
+          - hash
+          - lastIncludedDeploymentTimestamp
+        type: object
+        properties:
+          hash:
+            type: string
+          lastIncludedDeploymentTimestamp:
+            type: number
+      profile:
+        required:
+          - hash
+          - lastIncludedDeploymentTimestamp
+        type: object
+        properties:
+          hash:
+            type: string
+          lastIncludedDeploymentTimestamp:
+            type: number
+      wearable:
+        required:
+          - hash
+          - lastIncludedDeploymentTimestamp
+        type: object
+        properties:
+          hash:
+            type: string
+          lastIncludedDeploymentTimestamp:
+            type: number
