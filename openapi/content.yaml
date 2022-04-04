@@ -52,6 +52,8 @@ paths:
     $ref: paths/content/content@available-content.yaml
   /entities:
     $ref: paths/content/content@entities.yaml
+  /entities/currently-pointed/{urnPrefix}:
+    $ref: paths/content/content@entities@currently-pointed@{urnPrefix}.yaml
   /entities/active:
     $ref: 'paths/content/content@entities@active.yaml'
   /failed-deployments:
