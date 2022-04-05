@@ -1,0 +1,11 @@
+type: array
+items:
+  required:
+    - pointer
+    - entityId
+  type: object
+  properties:
+    pointer:
+      type: string
+    entityId:
+      type: string

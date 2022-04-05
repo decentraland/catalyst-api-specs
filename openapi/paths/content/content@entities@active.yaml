@@ -36,9 +36,10 @@ post:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/content/200-entities-active.json
+            $ref: ../../components/schemas/content/200-entities-active.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/content/200-entities-active.json
     '400':
       description: >-
         Bad request: ids or pointers must be present in the request, but not
