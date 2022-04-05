@@ -1,63 +1,57 @@
-[
-   {
-      "version":"v3",
-      "id":"QmQ9UorFsVTpaVpCwJZAzFyCmaGf7Ksi6aQHYTJVKyzVMh",
-      "type":"scene",
-      "timestamp":1581034082829,
-      "pointers":[
-         "100,0"
+{
+  "value": [
+    {
+      "version": "v3",
+      "id": "QmQ9UorFsVTpaVpCwJZAzFyCmaGf7Ksi6aQHYTJVKyzVMh",
+      "type": "scene",
+      "timestamp": 1581034082829,
+      "pointers": ["100,0"],
+      "content": [
+        {
+          "file": "Fork_0.glb",
+          "hash": "QmdnkhnMwaFWs5ysAQ4Y8r9CSYMoMvpiAcaLr1PJoQFbZU"
+        },
+        {
+          "file": "game.js",
+          "hash": "QmXdgLxwgBRr3igNoJAu7Qi6KtMR6WR5kUSRtZVERnQH9A"
+        },
+        {
+          "file": "OpenRoad_0.glb",
+          "hash": "QmRF2LA6AdTP8ZTsKpf6WGW8iZesfmKqMzYrg7Yx1nbLU9"
+        },
+        {
+          "file": "scene.json",
+          "hash": "QmPgaz3kzicJKAtagqGHN5LYFvECimz4te5CVU9y4EbPgo"
+        }
       ],
-      "content":[
-         {
-            "file":"Fork_0.glb",
-            "hash":"QmdnkhnMwaFWs5ysAQ4Y8r9CSYMoMvpiAcaLr1PJoQFbZU"
-         },
-         {
-            "file":"game.js",
-            "hash":"QmXdgLxwgBRr3igNoJAu7Qi6KtMR6WR5kUSRtZVERnQH9A"
-         },
-         {
-            "file":"OpenRoad_0.glb",
-            "hash":"QmRF2LA6AdTP8ZTsKpf6WGW8iZesfmKqMzYrg7Yx1nbLU9"
-         },
-         {
-            "file":"scene.json",
-            "hash":"QmPgaz3kzicJKAtagqGHN5LYFvECimz4te5CVU9y4EbPgo"
-         }
-      ],
-      "metadata":{
-         "display":{
-            "title":"Road at 100,0 (open road OpenRoad_0)",
-            "favicon":"favicon_asset"
-         },
-         "contact":{
-            "name":"",
-            "email":""
-         },
-         "owner":"",
-         "scene":{
-            "parcels":[
-               "100,0"
-            ],
-            "base":"100,0"
-         },
-         "communications":{
-            "type":"webrtc",
-            "signalling":"https://signalling-01.decentraland.org"
-         },
-         "policy":{
-            "contentRating":"E",
-            "fly":true,
-            "voiceEnabled":true,
-            "blacklist":[
-               
-            ],
-            "teleportPosition":""
-         },
-         "main":"game.js",
-         "tags":[
-            
-         ]
+      "metadata": {
+        "display": {
+          "title": "Road at 100,0 (open road OpenRoad_0)",
+          "favicon": "favicon_asset"
+        },
+        "contact": {
+          "name": "",
+          "email": ""
+        },
+        "owner": "",
+        "scene": {
+          "parcels": ["100,0"],
+          "base": "100,0"
+        },
+        "communications": {
+          "type": "webrtc",
+          "signalling": "https://signalling-01.decentraland.org"
+        },
+        "policy": {
+          "contentRating": "E",
+          "fly": true,
+          "voiceEnabled": true,
+          "blacklist": [],
+          "teleportPosition": ""
+        },
+        "main": "game.js",
+        "tags": []
       }
-   }
-]
+    }
+  ]
+}
