@@ -1,6 +1,6 @@
 get:
-  operationId: getImage
-  summary: Download URN image with default size
+  operationId: getSizedImage
+  summary: Download URN image
   tags:
     - Lambdas
   description: Downloads the image for the specified urn
@@ -9,26 +9,32 @@ get:
       name: urn
       required: true
       schema:
-        type: string        
+        type: string
         example: urn:decentraland:matic:collections-v2:0x04e43281f36e1f1bfae6f38bc276cb48fb8ac632:0
       description: Uniform Resource Name (URN) that identifies the asset
+    - in: path
+      name: size
+      required: true
+      schema:
+        type: string
+        enum: [128, 256, 512, 1024]
+      description: Image size to be return
   responses:
-    '200':
+    "200":
       description: Resource image
-      headers: 
+      headers:
         ETag:
           schema:
             type: string
-            example: QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu-size
-          description: Double-quoted string with the hashId-size        
+            example: QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu
+          description: Double-quoted string with the hashId
         Cache-Control:
           schema:
             type: string
-            example: 'public,max-age=31536000,immutable'
+            example: "public,max-age=31536000,immutable"
           description: Rules for caching in the request/response
       content:
         image/png:
           schema:
             type: string
             format: binary
-            example: binary

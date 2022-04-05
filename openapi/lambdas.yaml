@@ -34,6 +34,10 @@ paths:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@thumbnail.yaml' 
   /collections/contents/{urn}/image:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image.yaml' 
+  /collections/contents/{urn}/thumbail/{size}:
+    $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@thumbnail@{size}.yaml' 
+  /collections/contents/{urn}/image/{size}:
+    $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image@{size}.yaml' 
   /collections/standard/erc721/{chainId}/{contract}/{option}/{emission}:
     $ref: 'paths/lambdas/lambdas@collections@standard@erc721@{chainId}@{contract}@{option}@{emission}.yaml'
   /collections/wearables:

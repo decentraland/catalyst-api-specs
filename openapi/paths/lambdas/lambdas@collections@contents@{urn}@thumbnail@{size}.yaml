@@ -1,9 +1,9 @@
 get:
-  operationId: getImage
-  summary: Download URN image with default size
+  operationId: getSizedThumbnail
+  summary: Download thumbnail image
   tags:
     - Lambdas
-  description: Downloads the image for the specified urn
+  description: Downloads a thumbnail image for the specified urn
   parameters:
     - in: path
       name: urn
@@ -12,14 +12,22 @@ get:
         type: string        
         example: urn:decentraland:matic:collections-v2:0x04e43281f36e1f1bfae6f38bc276cb48fb8ac632:0
       description: Uniform Resource Name (URN) that identifies the asset
+    - in: path
+      name: size
+      required: true
+      schema:
+        type: string
+        enum: [128, 256, 512, 1024]
+      description: Image size to be return
+
   responses:
     '200':
-      description: Resource image
+      description: Thumbnail image 
       headers: 
         ETag:
           schema:
             type: string
-            example: QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu-size
+            example: QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu-1024
           description: Double-quoted string with the hashId-size        
         Cache-Control:
           schema:
