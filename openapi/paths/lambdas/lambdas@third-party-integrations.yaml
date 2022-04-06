@@ -11,5 +11,6 @@ get:
         application/json; charset=utf-8:
           schema:
             $ref: ../../components/schemas/lambdas/200-third-party-integrations.yaml
-          example:
-            $ref: ../../components/examples/lambdas/200-third-party-integrations.json
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-third-party-integrations.json

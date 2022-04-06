@@ -1,18 +1,17 @@
 type: object
-properties:
-  required:
+required:
   - data
-  properties:
-    data:
-      type: array
-      items:
-        type: object
-        required:
-        - urn
-        properties:
-          urn: 
-            type: string
-          name: 
-            type: string
-          description:
-            type: text
+properties:
+  data:
+    type: array
+    items:
+      type: object
+      required:
+      - urn
+      properties:
+        urn: 
+          type: string
+        name: 
+          type: string
+        description:
+          type: string
