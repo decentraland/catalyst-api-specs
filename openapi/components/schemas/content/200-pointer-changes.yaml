@@ -9,7 +9,6 @@ properties:
         - entityType
         - entityId
         - localTimestamp
-        - changes
       type: object
       properties:
         entityType:
@@ -18,17 +17,3 @@ properties:
           type: string
         localTimestamp:
           type: number
-        changes:
-          type: array
-          items:
-            required:
-              - pointer
-              - after
-            type: object
-            properties:
-              pointer:
-                type: string
-              before:
-                type: string
-              after:
-                type: string
