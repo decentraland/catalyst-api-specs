@@ -1,0 +1,16 @@
+get:
+  operationId: getThirdPartyIntegrations
+  summary: Returns the list of third party integrations as well as collections
+  tags:
+    - Lambdas
+  description: Returns the list of third party integrations as well as collections
+  responses:
+    '200':
+      description: Returns the list of third party integrations as well as collections
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/lambdas/200-third-party-integrations.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-third-party-integrations.json

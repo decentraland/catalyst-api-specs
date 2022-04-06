@@ -62,4 +62,6 @@ paths:
     $ref: 'paths/lambdas/lambdas@profiles.yaml'
   /profiles/{id}:
     $ref: 'paths/lambdas/lambdas@profiles@{id}.yaml'
+  /third-party-integrations:
+    $ref: 'paths/lambdas/lambdas@third-party-integrations.yaml'
   
