@@ -1,0 +1,14 @@
+type: object
+properties:
+  maxPeersPerIsland:
+    type: number
+  archipelagoJoinDistance:
+    type: number
+  archipelagoLeaveDistance:
+    type: number
+  archipelagoFlushFrequency:
+    type: number
+  highLoadPeersCount:
+    type: number
+  peersCheckInterval:
+    type: number

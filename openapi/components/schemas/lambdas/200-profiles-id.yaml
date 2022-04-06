@@ -1,0 +1,85 @@
+type: object
+properties:
+  avatars:
+    type: array
+    items:
+      type: object
+      properties:
+        userId:
+          type: string
+        email:
+          type: string
+        name:
+          type: string
+        hasClaimedName:
+          type: boolean
+        description:
+          type: string
+        ethAddress:
+          type: string
+        version:
+          type: number
+        avatar:
+          type: object
+          properties:
+            bodyShape:
+              type: string
+            snapshots:
+              type: object
+              properties:
+                face:
+                  type: string
+                face128:
+                  type: string
+                face256:
+                  type: string
+                body:
+                  type: string
+            eyes:
+              type: object
+              properties:
+                color:
+                  type: object
+                  properties:
+                    r:
+                      type: number
+                    g:
+                      type: number
+                    b:
+                      type: number
+            hair:
+              type: object
+              properties:
+                color:
+                  type: object
+                  properties:
+                    r:
+                      type: number
+                    g:
+                      type: number
+                    b:
+                      type: number
+            skin:
+              type: object
+              properties:
+                color:
+                  type: object
+                  properties:
+                    r:
+                      type: number
+                    g:
+                      type: number
+                    b:
+                      type: number
+            wearables:
+              type: array
+              items:
+                type: string
+        tutorialStep:
+          type: number
+        interests:
+          type: array
+          items:
+            type: object
+        unclaimedName:
+          type: string

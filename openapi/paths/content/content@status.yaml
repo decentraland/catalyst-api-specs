@@ -10,6 +10,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/content/200-status.json
+            $ref: ../../components/schemas/content/200-status-content.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/content/200-status-content.json

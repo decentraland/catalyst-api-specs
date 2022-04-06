@@ -1,0 +1,51 @@
+required:
+  - version
+  - synchronizationStatus
+  - commitHash
+  - catalystVersion
+  - ethNetwork
+type: object
+properties:
+  name:
+    type: string
+  version:
+    type: string
+  currentTime:
+    type: number
+  lastImmutableTime:
+    type: number
+  historySize:
+    type: number
+  synchronizationStatus:
+    required:
+      - lastSyncWithDAO
+      - synchronizationState
+    type: object
+    properties:
+      otherServers:
+        type: array
+        items:
+          required:
+            - address
+            - connectionState
+            - lastDeploymentTimestamp
+          type: object
+          properties:
+            address:
+              type: string
+            connectionState:
+              type: string
+            lastDeploymentTimestamp:
+              type: number
+      lastSyncWithDAO:
+        type: number
+      synchronizationState:
+        type: string
+      lastSyncWithOtherServers:
+        type: number
+  commitHash:
+    type: string
+  catalystVersion:
+    type: string
+  ethNetwork:
+    type: string

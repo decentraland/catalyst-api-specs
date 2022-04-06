@@ -1,0 +1,34 @@
+required:
+  - deltas
+type: object
+properties:
+  deltas:
+    type: array
+    items:
+      required:
+        - entityType
+        - entityId
+        - localTimestamp
+        - changes
+      type: object
+      properties:
+        entityType:
+          type: string
+        entityId:
+          type: string
+        localTimestamp:
+          type: number
+        changes:
+          type: array
+          items:
+            required:
+              - pointer
+              - after
+            type: object
+            properties:
+              pointer:
+                type: string
+              before:
+                type: string
+              after:
+                type: string

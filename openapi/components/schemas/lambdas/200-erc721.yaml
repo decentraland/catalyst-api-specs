@@ -1,0 +1,23 @@
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  description:
+    type: string
+  language:
+    type: string
+  image:
+    type: string
+  thumbnail:
+    type: string
+  attributes:
+    type: array
+    items:
+      type: object
+      properties:
+        trait_type:
+          type: string
+        value:
+          type: string

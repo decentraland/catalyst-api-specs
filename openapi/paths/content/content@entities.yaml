@@ -39,15 +39,30 @@ post:
       content:
         application/json; charset=utf-8:
           schema:
-            type: number
+            type: object
+            required: ['creationTimestamp']
+            properties: 
+              creationTimestamp: 
+                type: number
           example:
             creationTimestamp: 1628607669304
     '400':
       description: >-
         Bad request. Returns the error object with the list of errors from the
-        server response.      
+        server response.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            required:
+              - errors
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: string
     '500':
       description: >-
         Internal Server Error. Returns the error object with the list of errors
         from the server response.
-      
+   

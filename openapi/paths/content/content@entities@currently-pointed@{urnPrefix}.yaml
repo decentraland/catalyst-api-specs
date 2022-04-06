@@ -1,0 +1,27 @@
+get:
+  operationId: getEntitiesByPointerPrefix
+  summary: List of active entities matching urn prefix
+  tags:
+    - Content Server
+  description: >-
+    Returns the list of active entities which have at least one pointer that matches the prefix given
+  parameters:
+    - in: path
+      name: urnPrefix
+      required: true
+      schema:
+        type: string
+        example: 'urn:decentraland:matic:collections-v2:0x8e674db9b2fc0759b2d94cace9c4bae334a8f0c3'
+      description: 'urn prefix to filter the entities by'
+  
+  responses:
+    '200':
+      description: >-
+        List of entity Ids matching the condition
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/content/200-currently-pointed.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/content/200-currently-pointed.json

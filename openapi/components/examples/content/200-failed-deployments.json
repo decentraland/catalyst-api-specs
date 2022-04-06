@@ -1,7 +1,10 @@
-[{
-    "failedDeploymentsRepo": "https://peer.dclnodes.io/content",
-    "entityType": "profile",
-    "entityId": "Qmej2ASCw4ubcjd2KHyMkcQz8HbMUfLqGbtheWoxykBt38",
-    "reason": "No entity or audit",
-    "errorDescription": "During sync, we couldn't fetch the entity or the audit info"
-}]
+{
+    "value": [{
+        "failedDeploymentsRepo": "https://peer.dclnodes.io/content",
+        "entityType": "profile",
+        "entityId": "Qmej2ASCw4ubcjd2KHyMkcQz8HbMUfLqGbtheWoxykBt38",
+        "reason": "No entity or audit",
+        "errorDescription": "During sync, we couldn't fetch the entity or the audit info"
+    }]
+    
+}

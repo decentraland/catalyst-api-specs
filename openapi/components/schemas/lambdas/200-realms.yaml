@@ -1,0 +1,20 @@
+type: array
+items:
+  type: object
+  properties:
+    serverName:
+      type: string
+    url:
+      type: string
+    layer:
+      type: string
+    usersCount:
+      type: number
+    maxUsers:
+      type: number
+    userParcels:
+      type: array
+      items:
+        type: array
+        items:
+          type: number

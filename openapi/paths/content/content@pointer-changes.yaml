@@ -3,7 +3,10 @@ get:
   summary: List of changes made to a pointer
   tags:
     - Content Server
-  description: List of all deltas from the deployments inside the filters that affect the given pointers. It returns a list of changes with the `before` field (the entity that was overridden with this deployment) and `after` (the entity that overrides the current one if present).
+  description: >-
+    List of all deltas from the deployments inside the filters that affect the given pointers.
+    It returns a list of changes with the `before` field (the entity that was overridden with this deployment) and
+    `after` (the entity that overrides the current one if present).
   parameters:
     - in: query
       name: from
@@ -55,28 +58,60 @@ get:
         example: profile
       description: >-
         The type of entities that will be shown in the collection, many values
-        can be sent. Valid values are: profile, scene and werable.
+        can be sent. Valid values are: profile, scene and wearable.
+    - in: query
+      name: sortingField
+      schema:
+        type: string
+        enum:
+          - local_timestamp
+          - entity_timestamp
+        example: local_timestamp
+      description: >-
+        This value is used as the field to order all the deployments in the
+        collection. If no parameter is sent, then the default field to order
+        with will be local_timestamp.
+    - in: query
+      name: sortingOrder
+      schema:
+        type: string
+        enum:
+          - ASC
+          - DESC
+        example: ASC
+      description: >-
+        This value is used as the order for all the deployments in the
+        collection. If no parameter is sent, then the default field to order
+        with will be DESC.
   responses:
     '200':
       description: List of deployment changes made to pointers
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/content/200-pointer-changes.json
+            $ref: ../../components/schemas/content/200-pointer-changes.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/content/200-pointer-changes.json
     '400':
       description: Bad Request
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            required:
+              - error
+            type: object
+            properties:
+              error:
+                type: string
           examples:
             entityType:
               summary: EntityType not recognized
-              value: Found an unrecognized entity type
+              value:
+                error: Found an unrecognized entity type
             offset:
               summary: Wrong offset value
-              value: >-
-                Offset can't be higher than 5000. Please use the 'next' property
-                for pagination.
+              value:
+                error: >-
+                  Offset can't be higher than 5000. Please use the 'next' property
+                  for pagination.

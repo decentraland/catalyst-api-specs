@@ -48,3 +48,44 @@ get:
           schema:
             type: string
             example: Not Found
+head:
+  operationId: headContentFile
+  summary: Check if a content file exists
+  tags:
+    - Content Server
+  description: Check if a content file exists
+  parameters:
+    - in: path
+      name: hashId
+      required: true
+      schema:
+        type: string
+        example: QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu
+      description: >-
+        Hash of the file to be checked
+  responses:
+    '200':
+      description: Content file exists
+      headers:
+        ETag:
+          schema:
+            type: string
+            example: QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu
+          description: Double-quoted string with the hashId
+        Access-Control-Expose-Headers:
+          schema:
+            type: string
+            example: ETag
+          description: Which headers can be exposed as part of the response
+        Cache-Control:
+          schema:
+            type: string
+            example: 'public,max-age=31536000,immutable'
+          description: Rules for caching in the request/response
+    '404':
+      description: File with the specified hashId Not Found
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+            example: Not Found

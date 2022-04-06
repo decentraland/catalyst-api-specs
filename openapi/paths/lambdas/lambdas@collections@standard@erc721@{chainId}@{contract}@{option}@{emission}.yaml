@@ -55,9 +55,10 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: object
-          example:
-            $ref: ../../components/examples/lambdas/200-erc721.json
+            $ref: ../../components/schemas/lambdas/200-erc721.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-erc721.json
     '400':
       description: 'Bad Request: invalid chain ID' 
     '404':

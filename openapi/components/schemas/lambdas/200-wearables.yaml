@@ -1,0 +1,89 @@
+type: object
+properties:
+  wearables:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        thumbnail:
+          type: string
+        collectionAddress:
+          type: string
+        rarity:
+          type: string
+        data:
+          type: object
+          properties:
+            replaces:
+              type: array
+              items:
+                type: string
+            hides:
+              type: array
+              items:
+                type: string
+            tags:
+              type: array
+              items:
+                type: string
+            category:
+              type: string
+            representations:
+              type: array
+              items:
+                type: object
+                properties:
+                  bodyShapes:
+                    type: array
+                    items:
+                      type: string
+                  mainFile:
+                    type: string
+                  overrideReplaces:
+                    type: array
+                    items:
+                      type: object
+                  overrideHides:
+                    type: array
+                    items:
+                      type: object
+                  contents:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                        url:
+                          type: string
+        i18n:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
+                type: string
+              text:
+                type: string
+        createdAt:
+          type: number
+        updatedAt:
+          type: number
+  filters:
+    type: object
+    properties:
+      textSearch:
+        type: string
+  pagination:
+    type: object
+    properties:
+      limit:
+        type: number
+      next:
+        type: string

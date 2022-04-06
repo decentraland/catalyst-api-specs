@@ -1,0 +1,11 @@
+type: array
+items:
+  required:
+    - cid
+    - available
+  type: object
+  properties:
+    cid:
+      type: string
+    available:
+      type: boolean
