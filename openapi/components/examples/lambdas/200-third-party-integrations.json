@@ -1,16 +1,21 @@
 {
-  "data": [
-    {
-      "urn": "urn:decentraland:ethereum:ext:cryptopunks:0xContractAddressaaabbff999123",
-      "description": "Crypto punks (third party)"
-    },
-    {
-      "urn": "urn:decentraland:matic:collections-v1:halloween",
-      "description": "Decentraland Halloween 2019"
-    },
-    {
-      "urn": "urn:decentraland:matic:collections-v2:halloween",
-      "description": "Decentraland Halloween 2020"
-    }
-  ]
+  "value": {
+    "data": [
+      {
+        "urn": "urn:decentraland:ethereum:ext:cryptopunks:0xContractAddressaaabbff999123",
+        "name": "Jean Pier",
+        "description": "Crypto punks (third party)"
+      },
+      {
+        "urn": "urn:decentraland:matic:collections-v1:halloween",
+        "name": "Halloween hat",
+        "description": "Decentraland Halloween 2019"
+      },
+      {
+        "urn": "urn:decentraland:matic:collections-v2:halloween",
+        "name": "Halloween tshirt",
+        "description": "Decentraland Halloween 2020"
+      }
+    ]
+  }
 }
