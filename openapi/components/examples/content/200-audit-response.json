@@ -1,7 +1,7 @@
 {
   "value": {
     "version": "v3",
-    "deployedTimestamp": 1628271052660,
+    "localTimestamp": 1628271052660,
     "authChain": [
       {
         "type": "SIGNER",
