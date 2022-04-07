@@ -1,12 +1,12 @@
 required:
   - version
-  - deployedTimestamp
+  - localTimestamp
   - authChain
 type: object
 properties:
   version:
     type: string
-  deployedTimestamp:
+  localTimestamp:
     type: number
   authChain:
     type: array
@@ -23,3 +23,11 @@ properties:
           type: string
         signature:
           type: string
+  overwrittenBy:
+    type: string
+  isDenylisted:
+    type: boolean
+  denylistedContent:
+    type: array
+    items:
+      type: string
