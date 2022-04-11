@@ -9,7 +9,8 @@ properties:
         - entityType
         - entityId
         - localTimestamp
-        - changes
+        - pointers
+        - authChain
       type: object
       properties:
         entityType:
@@ -18,17 +19,22 @@ properties:
           type: string
         localTimestamp:
           type: number
-        changes:
+        pointers:
+          type: array
+          items: 
+            type: string
+        authChain:
           type: array
           items:
             required:
-              - pointer
-              - after
+              - type
+              - payload
+              - signature
             type: object
             properties:
-              pointer:
+              type:
                 type: string
-              before:
+              payload:
                 type: string
-              after:
+              signature:
                 type: string
