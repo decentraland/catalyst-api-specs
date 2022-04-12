@@ -7,7 +7,7 @@ get:
     Returns the list of active entities which have at least one pointer that matches the prefix given
   parameters:
     - in: path
-      name: urnPrefix
+      name: collectionUrn
       required: true
       schema:
         type: string
