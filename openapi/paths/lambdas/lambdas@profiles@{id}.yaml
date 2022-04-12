@@ -3,7 +3,7 @@ get:
   summary: Get Avatar details
   tags:
     - Lambdas
-  description: Given a Ethereum address of a user, return the Avatars details associated with it.
+  description: Given a Ethereum address of a user, return the Avatars details associated with it. It doesn't check against the graph the ownership of the assets.
   parameters:
     - in: path
       name: id

@@ -3,7 +3,7 @@ get:
   summary: Get Avatars details
   tags:
     - Lambdas
-  description: Given a list of Ethereum address of a user, return all the Avatars details associated with them.
+  description: Given a list of Ethereum address of a user, return all the Avatars details associated with them filtering the assets that are currently owned against The Graph.
   parameters:
     - in: query
       name: id
@@ -12,6 +12,15 @@ get:
         type: array        
         example: '0x22480812a9a0669783c06d359182a583bd1d9fc2'      
       description: List of Ethereum addresses of the users that you want to retrieve the profiles
+    - in: header
+      name: If-Modified-Since
+      schema:
+        type: string
+      description: |
+        This is a standard HTTP header. See the link below for more information
+        https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since
+        
+
   responses:
     '200':
       description: Array of Avatars      
