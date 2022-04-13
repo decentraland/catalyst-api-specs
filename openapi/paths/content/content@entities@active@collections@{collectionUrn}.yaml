@@ -7,7 +7,7 @@ get:
     Returns the list of active entities which have at least one pointer that matches the prefix given
   parameters:
     - in: path
-      name: urnPrefix
+      name: collectionUrn
       required: true
       schema:
         type: string
@@ -21,7 +21,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/content/200-currently-pointed.yaml
+            $ref: ../../components/schemas/content/200-active-collections.yaml
           examples:
             default:
-              $ref: ../../components/examples/content/200-currently-pointed.json
+              $ref: ../../components/examples/content/200-active-collections.json
