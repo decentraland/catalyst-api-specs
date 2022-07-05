@@ -2,7 +2,7 @@ type: array
 items:
   type: object
   properties:
-    address:
+    baseUrl:
       type: string
     owner:
       type: string
