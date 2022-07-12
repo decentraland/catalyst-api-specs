@@ -9,7 +9,7 @@ on:
 name: Release and publish NPM package
 jobs:
 
-  build:
+  build-and-test:
     uses: ./.github/workflows/build-and-test.yml
 
   release:
@@ -27,6 +27,7 @@ jobs:
     needs: release
     if: ${{ success() }}
     steps:
+      - uses: actions/checkout@master
       - name: NPM Publish
         uses: menduz/oddish-action@master
         with:
