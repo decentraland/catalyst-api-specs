@@ -1,4 +1,5 @@
 get:
+  deprecated: true 
   operationId: getScenes
   summary: Get Scenes
   tags:
