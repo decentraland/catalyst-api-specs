@@ -40,12 +40,6 @@ paths:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
   /collections/wearables-by-owner/{address}:
     $ref: 'paths/lambdas/lambdas@collections@wearables-by-owner@{address}.yaml'
-  /contentv2/scenes:
-    $ref: 'paths/lambdas/lambdas@contentv2@scenes.yaml'   
-  /contentv2/parcel_info: 
-    $ref: 'paths/lambdas/lambdas@contentv2@parcel_info.yaml'
-  /contentv2/contents/{cid}:
-    $ref: 'paths/lambdas/lambdas@contentv2@contents@{cid}.yaml'
   /contracts/servers:
     $ref: 'paths/lambdas/lambdas@contracts@servers.yaml'
   /contracts/pois:
@@ -60,8 +54,6 @@ paths:
     $ref: 'paths/lambdas/lambdas@explore@realms.yaml'
   /profiles:
     $ref: 'paths/lambdas/lambdas@profiles.yaml'
-  /profiles/{id}:
-    $ref: 'paths/lambdas/lambdas@profiles@{id}.yaml'
   /third-party-integrations:
     $ref: 'paths/lambdas/lambdas@third-party-integrations.yaml'
   
