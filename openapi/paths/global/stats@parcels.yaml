@@ -14,3 +14,4 @@ get:
           examples:
             default:
               $ref: ../../components/examples/global/200-stats-parcels.json
+

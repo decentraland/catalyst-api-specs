@@ -1,18 +1,20 @@
-{ 
-	"parcels": [
-		{
-			"peersCount": 100,
-			"parcel": {
+{
+	"value": {
+		"parcels": [
+			{
+				"peersCount": 100,
+				"parcel": {
 					"x": -100,
 					"y": 127
-      }
-		},
-		{
-			"peersCount": 43,
-			"parcel": {
+				}
+			},
+			{
+				"peersCount": 43,
+				"parcel": {
 					"x": 12,
 					"y": 1
-      }
-		}
-	]
+				}
+			}
+		]
+	}
 }

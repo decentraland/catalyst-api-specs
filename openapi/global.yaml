@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: API Specification for endpoints about the whole Catalyst or about shared services
+  version: '1.0'
+  description: >-      
+     Endpoints that are about the whole catalyst or about shared services
+  x-logo:
+    url: 'https://cryptologos.cc/logos/decentraland-mana-logo.png'
+  license:    
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+ 
+servers:
+  - url: 'https://peer.decentraland.zone'
+    description: Catalyst Development instance
+  - url: 'https://peer-testing.decentraland.org'
+    description: Catalyst Staging instance
+  - url: 'https://peer.decentraland.org'
+    description: First production Catalyst node
+tags:
+  - name: Global
+    description: >-  
+      Endpoints that are about the whole catalyst or about shared services
+
+paths:
+  /about:
+    $ref: 'paths/global/about.yaml'
+  /stats/parcels:
+    $ref: 'paths/global/stats@parcels.yaml'
+  
