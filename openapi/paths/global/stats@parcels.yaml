@@ -1,0 +1,16 @@
+get:
+  operationId: getStatsParcels
+  summary: The stats from all parcels
+  tags:
+    - Global
+  description: Retrieves the amount of users on each parcel
+  responses:
+    '200':
+      description: Parcels with peers connected to
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/global/200-stats-parcels.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/global/200-stats-parcels.json
