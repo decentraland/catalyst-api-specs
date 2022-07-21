@@ -23,8 +23,6 @@ properties:
           type: string
         signature:
           type: string
-  overwrittenBy:
-    type: string
   isDenylisted:
     type: boolean
   denylistedContent:
