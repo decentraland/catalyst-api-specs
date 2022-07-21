@@ -21,7 +21,7 @@ properties:
     properties:
       healthy:
         type: boolean
-      commsProtocol:
+      protocol:
         type: string
       commitHash:
         type: string
