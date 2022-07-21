@@ -11,6 +11,6 @@ properties:
           type: object
           properties:
             x: 
-              type: string
+              type: number
             y: 
-              type: string
+              type: number
