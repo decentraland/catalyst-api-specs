@@ -27,6 +27,9 @@ servers:
   - url: 'https://peer.decentraland.org'
     description: First production Catalyst node
 tags:
+  - name: Global
+    description: >-  
+      Endpoints that are about the whole catalyst or about shared services
   - name: Content Server
     description: >-
      Decentraland is a virtual world that is owned by its users. One of the biggest differentiators about 
@@ -56,6 +59,11 @@ tags:
       This service provides a set of utilities required by the Catalyst Server Clients\Consumers in order to 
       retrieve or validate data. 
 paths:
+  
+  /about:
+    $ref: 'paths/global/about.yaml'
+  /stats/parcels:
+    $ref: 'paths/global/stats@parcels.yaml'
   /content/audit/{entityType}/{entityId}:
     $ref: 'paths/content/content@audit@{entityType}@{entityId}.yaml'
   /content/challenge:

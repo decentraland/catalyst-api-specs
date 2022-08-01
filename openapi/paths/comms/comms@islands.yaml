@@ -1,4 +1,5 @@
 get:
+  deprecated: true
   operationId: getIslands
   summary: List of islands
   tags:

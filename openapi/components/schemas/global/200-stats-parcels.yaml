@@ -1,0 +1,16 @@
+type: object
+properties:
+  parcels:
+    type: array
+    items:
+      type: object
+      properties:
+        peersCount:
+          type: number
+        parcel:
+          type: object
+          properties:
+            x: 
+              type: number
+            y: 
+              type: number

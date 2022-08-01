@@ -1,4 +1,5 @@
 get:
+  deprecated: true 
   operationId: getParcelInfo
   summary: Get Parcel Information
   tags:

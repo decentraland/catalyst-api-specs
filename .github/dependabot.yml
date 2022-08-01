@@ -8,3 +8,5 @@ updates:
     time: "09:00"
     timezone: "America/Buenos_Aires"
   open-pull-requests-limit: 10
+  commit-message:
+    prefix: "chore: "

@@ -1,4 +1,5 @@
 get:
+  deprecated: true
   operationId: getPeers
   summary: List of peers
   tags:

@@ -1,0 +1,45 @@
+type: object
+properties:
+  healthy:
+    type: boolean
+  configurations:
+    type: object
+    properties:
+      realmName: 
+        type: string
+  content:
+    type: object
+    properties:
+      healthy:
+        type: boolean
+      commitHash:
+        type: string
+      version: 
+        type: string
+  comms:
+    type: object
+    properties:
+      healthy:
+        type: boolean
+      protocol:
+        type: string
+      commitHash:
+        type: string
+  lambdas:
+    type: object
+    properties:
+      healthy:
+        type: boolean
+      commitHash:
+        type: string
+      version: 
+        type: string
+  bff:
+    type: object
+    properties:
+      healthy:
+        type: boolean
+      commitHash:
+        type: string
+      usersCount:
+        type: number

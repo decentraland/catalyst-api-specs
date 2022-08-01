@@ -1,4 +1,5 @@
 get:
+  deprecated: true
   operationId: getLambdaHealth
   summary: Catalyst Server health
   tags:
