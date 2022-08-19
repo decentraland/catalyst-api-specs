@@ -7,7 +7,7 @@
     "lib/**/*"
   ],
   "devDependencies": {
-    "@redocly/cli": "^1.0.0-beta.105",
+    "@redocly/cli": "^1.0.0-beta.106",
     "@types/jest": "27.0.1",
     "express-openapi-validator": "4.13.8",
     "jest": "27.2.0",
