@@ -1,7 +1,5 @@
 on:
   push:
-    tags:
-      - '*'
     branches:
       - main
       - master
@@ -18,6 +16,8 @@ jobs:
     needs: build
     if: ${{ success() }}
     steps:
+      - name: get latest release and export as GITHUB_REF
+        run:  echo "GIT_TAG=refs/tags/$(git tag | sort -V | tail -1)" > $GITHUB_ENV
       - uses: decentraland/gh-action-release@0.3.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: NPM Publish
-        uses: menduz/oddish-action@master
+        uses: hprivakos/oddish-action@3.0.1
         with:
           registry-url: 'https://registry.npmjs.org'
           access: public
