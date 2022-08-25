@@ -1,0 +1,25 @@
+get:
+  operationId: getAboutCatalystInfo
+  summary: Catalyst Server Configs and health
+  tags:
+    - Global
+  description: Retrieve detailed information about the services health and its configuration
+  responses:
+    '200':
+      description: Catalyst services health information
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/global/200-about.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/global/200-about.json
+    '503':
+      description: Service Unavailable - Some catalyst service is not Healthy
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/global/503-about.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/global/503-about.json

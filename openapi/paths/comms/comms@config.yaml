@@ -1,4 +1,5 @@
 get:
+  deprecated: true
   operationId: getConfig
   summary: Comms Service Configuration
   tags:
@@ -15,6 +16,7 @@ get:
             default:
               $ref: ../../components/examples/comms/200-config.json
 put:
+  deprecated: true
   operationId: updateConfig
   summary: Update Service Configuration
   tags:
