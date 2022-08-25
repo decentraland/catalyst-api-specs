@@ -27,7 +27,7 @@ jobs:
       - name: get latest release and export as GIT_TAG
         run:  echo "GIT_TAG=refs/tags/$(git tag | sort -V | tail -1)" > $GITHUB_ENV
       - name: NPM Publish
-        uses: hprivakos/oddish-action@3.0.1
+        uses: menduz/oddish-action@master
         with:
           registry-url: 'https://registry.npmjs.org'
           access: public
