@@ -11,11 +11,9 @@ jobs:
   release:
     runs-on: ubuntu-latest
     permissions: write-all
-    needs: build
+    needs: build-and-test
     if: ${{ success() }}
     steps:
-      - name: get latest release and export as GITHUB_REF
-        run:  echo "GIT_TAG=refs/tags/$(git tag | sort -V | tail -1)" > $GITHUB_ENV
       - uses: decentraland/gh-action-release@0.3.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -26,6 +24,8 @@ jobs:
     if: ${{ success() }}
     steps:
       - uses: actions/checkout@master
+      - name: get latest release and export as GIT_TAG
+        run:  echo "GIT_TAG=refs/tags/$(git tag | sort -V | tail -1)" > $GITHUB_ENV
       - name: NPM Publish
         uses: hprivakos/oddish-action@3.0.1
         with:
