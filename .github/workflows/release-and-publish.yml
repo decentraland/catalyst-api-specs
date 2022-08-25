@@ -24,6 +24,8 @@ jobs:
     if: ${{ success() }}
     steps:
       - uses: actions/checkout@master
+        with:
+          fetch-depth: 0
       - name: get latest release and export as GIT_TAG
         run:  echo "GIT_TAG=refs/tags/$(git tag | sort -V | tail -1)" > $GITHUB_ENV
       - name: Use Node.js 14.x
