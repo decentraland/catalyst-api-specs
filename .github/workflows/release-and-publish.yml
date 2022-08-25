@@ -1,8 +1,6 @@
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: [ main ]
 
 name: Release and publish NPM package
 jobs:
