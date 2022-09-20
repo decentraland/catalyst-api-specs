@@ -1,5 +1,5 @@
 post:
-  operationId: getAvatarsDetails
+  operationId: getAvatarsDetailsByPost
   summary: Get Avatars details
   tags:
     - Lambdas
