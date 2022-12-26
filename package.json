@@ -27,6 +27,6 @@
     "prepublishOnly": "npm run build && npm run test"
   },
   "dependencies": {
-    "yaml": "2.1.3"
+    "yaml": "2.2.0"
   }
 }
