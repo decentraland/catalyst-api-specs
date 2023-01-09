@@ -1,0 +1,88 @@
+type: object
+properties:
+  emotes:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        collectionAddress:
+          type: string
+        rarity:
+          type: string
+        i18n:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
+                type: string
+              text:
+                type: string
+        emoteDataADR74:
+          type: object
+          properties:
+            category:
+              type: string
+            representations:
+              type: array
+              items:
+                type: object
+                properties:
+                  bodyShapes:
+                    type: array
+                    items:
+                      type: string
+                  mainFile:
+                    type: string
+                  contents:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                        url:
+                          type: string
+            tags:
+              type: array
+              items:
+                type: string
+            loop:
+              type: boolean
+        image:
+          type: string
+        thumbnail:
+          type: string
+        metrics:
+          type: object
+          properties:
+            triangles:
+              type: number
+            materials:
+              type: number
+            textures:
+              type: number
+            meshes:
+              type: number
+            bodies:
+              type: number
+            entities:
+              type: number
+  filters:
+    type: object
+    properties:
+      textSearch:
+        type: string
+  pagination:
+    type: object
+    properties:
+      limit:
+        type: number
+      next:
+        type: string
