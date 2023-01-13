@@ -1,0 +1,30 @@
+type: array
+  items:
+  required:
+  - hash
+  - timeRange
+  - replacedSnapshotHashes
+  - numberOfEntities
+  - generationTimestamp
+  type: object
+  properties:
+    hash:
+      type: string
+    timeRange:
+      required:
+        - initTimestamp
+        - endTimestamp
+      type: object
+      properties:
+        initTimestamp:
+          type: number
+        endTimestamp:
+          type: number
+    replacedSnapshotHashes:
+      type: array
+      items:
+        type: string
+    numberOfEntities:
+      type: number
+    generationTimestamp:
+      type: number
