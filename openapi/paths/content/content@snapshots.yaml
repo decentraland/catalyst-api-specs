@@ -1,6 +1,6 @@
 get:
-  operationId: getActiveEntities
-  summary: Snapshot with a list of active entities 
+  operationId: getSnapshots
+  summary: Snapshots with a list of active entities 
   tags:
     - Content Server
   description: >-

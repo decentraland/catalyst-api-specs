@@ -1,5 +1,5 @@
 type: array
-  items:
+items:
   required:
   - hash
   - timeRange
