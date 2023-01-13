@@ -1,0 +1,66 @@
+{
+  "value": {
+    "emotes": [
+        {
+            "id": "urn:decentraland:mumbai:collections-v2:0x74f2e45377ce59616f5f9f8c492b6a7aaee70a0f:0",
+            "name": "Love",
+            "description": "",
+            "collectionAddress": "0x74f2e45377ce59616f5f9f8c492b6a7aaee70a0f",
+            "rarity": "mythic",
+            "i18n": [
+                {
+                    "code": "en",
+                    "text": "Love"
+                }
+            ],
+            "emoteDataADR74": {
+                "category": "reactions",
+                "representations": [
+                    {
+                        "bodyShapes": [
+                            "urn:decentraland:off-chain:base-avatars:BaseMale"
+                        ],
+                        "mainFile": "male/love.glb",
+                        "contents": [
+                            {
+                                "key": "male/love.glb",
+                                "url": "https://peer-ap1.decentraland.zone/content/contents/bafybeifjc5hgu4l6upbjohndab6gxzhtlmlc7kcl4yeqfko6d6nokw5i7i"
+                            }
+                        ]
+                    },
+                    {
+                        "bodyShapes": [
+                            "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                        ],
+                        "mainFile": "female/love.glb",
+                        "contents": [
+                            {
+                                "key": "female/love.glb",
+                                "url": "https://peer-ap1.decentraland.zone/content/contents/bafybeifjc5hgu4l6upbjohndab6gxzhtlmlc7kcl4yeqfko6d6nokw5i7i"
+                            }
+                        ]
+                    }
+                ],
+                "tags": ["exclusive"],
+                "loop": false
+            },
+            "image": "https://peer-ap1.decentraland.zone/content/contents/bafkreidgtmiajqs42dppy4uzeuycmyf23ti6pyzmti7lkstlky7bg7ijda",
+            "thumbnail": "https://peer-ap1.decentraland.zone/content/contents/bafkreiazd4gb43q2sndulbiy46wrgcqbavl5bcr6mautg23asyoe6qugee",
+            "metrics": {
+                "triangles": 0,
+                "materials": 0,
+                "textures": 0,
+                "meshes": 0,
+                "bodies": 0,
+                "entities": 1
+            }
+        }
+    ],
+    "filters": {
+        "textSearch": "love"
+    },
+    "pagination": {
+        "limit": 500
+    }
+}
+}

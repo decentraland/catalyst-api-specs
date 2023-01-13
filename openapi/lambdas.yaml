@@ -40,6 +40,10 @@ paths:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
   /collections/wearables-by-owner/{address}:
     $ref: 'paths/lambdas/lambdas@collections@wearables-by-owner@{address}.yaml'
+  /collections/emotes:
+    $ref: 'paths/lambdas/lambdas@collections@emotes.yaml'
+  /collections/emotes-by-owner/{address}:
+    $ref: 'paths/lambdas/lambdas@collections@emotes-by-owner@{address}.yaml'
   /contentv2/scenes:
     $ref: 'paths/lambdas/lambdas@contentv2@scenes.yaml'   
   /contentv2/parcel_info: 

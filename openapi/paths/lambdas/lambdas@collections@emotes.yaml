@@ -1,0 +1,76 @@
+get:
+  operationId: getEmotes
+  summary: Search Emotes
+  tags:
+    - Lambdas  
+  description: >-
+    Search for emotes based on the applied filters and retrieve detailed information
+  parameters:
+    - in: query
+      name: collectionId       
+      schema:
+        type: array 
+        example: urn:decentraland:ethereum:collections-v1:mf_sammichgamer
+      description: Lis of URNs that identify the collection. Maximum amount of ids allowed is 500. 
+    - in: query
+      name: emoteId       
+      schema:
+        type: array
+        example: urn:decentraland:mumbai:collections-v2:0x74f2e45377ce59616f5f9f8c492b6a7aaee70a0f:0
+      description: List of emotes URNs to search. Maximum amount of ids allowed is 500.
+    - in: query
+      name: textSearch       
+      schema:
+        type: string 
+        example: Love
+      description: Search text       
+    - in: query
+      name: limit
+      schema:
+        type: integer 
+        example: 2
+      description: >- 
+         Limit the quantity of results that will be returned by the request.
+         You can only request up to 500 results.            
+    - in: query
+      name: lastId
+      schema:
+        type: string         
+        example: urn:decentraland:mumbai:collections-v2:0x74f2e45377ce59616f5f9f8c492b6a7aaee70a0f:0
+      description: >-
+        The result will always be ordered by the local timestamp fields but in case
+        of timestamp collisions, you can use the lastId field to filter the 
+        result   
+  responses:
+    '200':
+      description: Catalyst services health information
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/lambdas/200-emotes.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-emotes.json
+    '400':
+      description: Bad Request
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: string
+          examples:
+            MissingFilter:
+              summary: Missing Filter
+              value: >- 
+                You must use one of the filters: 'textSearch', 'collectionId' or 'emoteId'
+            TextSearch:
+              summary: Bad search text
+              value: >-
+                The text search must be at least 3 characters long
+            Limit:
+              summary: Too many emotes requested
+              value: >-
+                You can't ask for more than 500 emotes
+            Collection:
+              summary: Too many items in the collection
+              value: >-
+                You can't filter for more than 500 collection ids
