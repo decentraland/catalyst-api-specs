@@ -1,0 +1,26 @@
+{
+    "value": [
+        {
+            "hash": "bafkreig6sfhegnp4okzecgx3v6gj6pohh5qzw6zjtrdqtggx64743rkmz4",
+            "timeRange": {
+                "initTimestamp": 1577836800000,
+                "endTimestamp": 1606867200000
+            },
+            "replacedSnapshotHashes": [
+                "bafkreig6sfhegnp4okzecgx3v6gj6pohh5qzw6zjtrdqtggx64743rkmz4"
+            ],
+            "numberOfEntities": 0,
+            "generationTimestamp": 1671126919124
+        },
+        {
+            "hash": "bafkreig6sfhegnp4okzecgx3v6gj6pohh5qzw6zjtrdqtggx64743rkmz4",
+            "timeRange": {
+                "initTimestamp": 1606867200000,
+                "endTimestamp": 1635897600000
+            },
+            "replacedSnapshotHashes": [],
+            "numberOfEntities": 0,
+            "generationTimestamp": 1671126611185
+        }
+    ]
+}

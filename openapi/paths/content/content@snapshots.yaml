@@ -1,0 +1,25 @@
+get:
+  operationId: getSnapshots
+  summary: Snapshots with a list of active entities 
+  tags:
+    - Content Server
+  description: >-
+    Lists all active deployments stored in the database in multiple snapshots for different time ranges.
+    If the information needed is front in time of the most recent snapshot, you may use the
+    `/content/pointer-changes` endpoint with the necessary `from` filter.
+  responses:
+    '200':
+      description: >-
+        The result is a list of snapshots. Each "hash" field references the a snapshot with all the active entities that has an entity timestamp within the specified time range.
+        Each hash is a reference to a JSON file containing one line per entity in a JSON format.
+        Once you get the hashes you can download them using the
+        /content/contents/{hashId} endpoint.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/content/200-snapshots.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/content/200-snapshots.json
+    '503':
+      description: New Snapshots not yet created
