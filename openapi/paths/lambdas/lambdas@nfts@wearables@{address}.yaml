@@ -1,0 +1,70 @@
+get: 
+  operationId: getWearables
+  summary: Get list of wearables for an address
+  tags:
+    - Lambdas
+  description: Get a list of wearables owned by the given address
+  parameters:
+    - in: path
+      name: address
+      required: true
+      schema:
+        type: string
+        example: '0xa87d168717538e86d71ac48baccaeb84162de602'
+      description: >- 
+        Ethereum address from which you want to get the list of wearables
+    - in: query
+      name: collectionId
+      schema:
+        type: string
+        example: 'urn:decentraland:matic:collections-thirdparty:ntr1-meta:ntr1-meta-1ef79e7b'
+      description: >- 
+        Third Party collection Id to filter wearables, if this param is not sent then the 3rd parties wearables are not shown. If it is sent, only the 3rd parties wearables are shown.
+    - in: query
+      name: includeDefinitions
+      schema:
+        type: boolean
+        example: true
+      description: >- 
+        If present, response will be extended with the definition data.
+    - in: query
+      name: includeThirdParty
+      schema:
+        type: boolean
+        example: true
+      description: >- 
+        If present, response will include the third-party wearables owned by the address. They will appear before other wearables if the response is paginated.
+    - in: query
+      name: pageNum
+      schema:
+        type: number
+        example: 1
+      description: >- 
+        The number of the requested page. It needs `pageSize` to be present to enable a paginated response.
+    - in: query
+      name: pageSize
+      schema:
+        type: number
+        example: 10
+      description: >- 
+        The size of the requested page. It needs `pageNum` to be present to enable a paginated response.
+    - in: query
+      name: orderBy
+      schema:
+        type: string
+        example: rarity
+      description: >- 
+        Determines the field to be sort by. By default it will be by `transferredAt`. Possible values: `transferredAt` and `rarity`.
+
+  responses:
+    '200':
+      description: List of wearables owned by the given address
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/lambdas/200-wearables-paginated.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-wearables-paginated.json
+    '500':
+      description: 'Failed to fetch wearables by owner' 

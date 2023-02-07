@@ -1,0 +1,93 @@
+{
+    "value": {
+        "wearables": [
+            {
+                "urn": "urn:decentraland:matic:collections-v2:0x6d83706836e820e79252edd48da419d2d03592d4:0",
+                "individualData": [
+                    {
+                        "id": "0x6d83706836e820e79252edd48da419d2d03592d4-6407",
+                        "tokenId": "6407",
+                        "transferredAt": "1662738697",
+                        "price": "10000000000000000000000000"
+                    },
+                    {
+                        "id": "0x6d83706836e820e79252edd48da419d2d03592d4-5452",
+                        "tokenId": "5452",
+                        "transferredAt": "1662738325",
+                        "price": "10000000000000000000000000"
+                    },
+                    {
+                        "id": "0x6d83706836e820e79252edd48da419d2d03592d4-4497",
+                        "tokenId": "4497",
+                        "transferredAt": "1662737945",
+                        "price": "10000000000000000000000000"
+                    },
+                    {
+                        "id": "0x6d83706836e820e79252edd48da419d2d03592d4-3542",
+                        "tokenId": "3542",
+                        "transferredAt": "1662737595",
+                        "price": "10000000000000000000000000"
+                    },
+                    {
+                        "id": "0x6d83706836e820e79252edd48da419d2d03592d4-2587",
+                        "tokenId": "2587",
+                        "transferredAt": "1662737239",
+                        "price": "10000000000000000000000000"
+                    },
+                    {
+                        "id": "0x6d83706836e820e79252edd48da419d2d03592d4-1632",
+                        "tokenId": "1632",
+                        "transferredAt": "1662736881",
+                        "price": "10000000000000000000000000"
+                    },
+                    {
+                        "id": "0x6d83706836e820e79252edd48da419d2d03592d4-677",
+                        "tokenId": "677",
+                        "transferredAt": "1662736515",
+                        "price": "10000000000000000000000000"
+                    }
+                ],
+                "amount": 7
+            },
+            {
+                "urn": "urn:decentraland:matic:collections-v2:0x475abb52a7e925209b1334e52bfb62e1da9ebf62:1",
+                "individualData": [
+                    {
+                        "id": "0x475abb52a7e925209b1334e52bfb62e1da9ebf62-105312291668557186697918027683670432318895095400549111254310977681",
+                        "tokenId": "105312291668557186697918027683670432318895095400549111254310977681",
+                        "transferredAt": "1662040489",
+                        "price": "1000000000000000000"
+                    }
+                ],
+                "amount": 1
+            },
+            {
+                "urn": "urn:decentraland:matic:collections-v2:0x710dce41dceace2f0e06c0cffee25fe65ad6f64c:0",
+                "individualData": [
+                    {
+                        "id": "0x710dce41dceace2f0e06c0cffee25fe65ad6f64c-339",
+                        "tokenId": "339",
+                        "transferredAt": "1662040423",
+                        "price": "500000000000000000"
+                    }
+                ],
+                "amount": 1
+            },
+            {
+                "urn": "urn:decentraland:matic:collections-v2:0x293d1ae40b28c39d7b013d4a1fe3c5a8c016bf19:1",
+                "individualData": [
+                    {
+                        "id": "0x293d1ae40b28c39d7b013d4a1fe3c5a8c016bf19-105312291668557186697918027683670432318895095400549111254310977722",
+                        "tokenId": "105312291668557186697918027683670432318895095400549111254310977722",
+                        "transferredAt": "1662040329",
+                        "price": "100000000000000000"
+                    }
+                ],
+                "amount": 1
+            }
+        ],
+        "totalAmount": 23,
+        "pageNum": "2",
+        "pageSize": "4"
+    }
+}
