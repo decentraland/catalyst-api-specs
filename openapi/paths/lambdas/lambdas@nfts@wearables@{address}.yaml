@@ -37,15 +37,15 @@ get:
     - in: query
       name: pageNum
       schema:
-        type: number
-        example: 1
+        type: string
+        example: "1"
       description: >- 
         The number of the requested page. It needs `pageSize` to be present to enable a paginated response.
     - in: query
       name: pageSize
       schema:
-        type: number
-        example: 10
+        type: string
+        example: "10"
       description: >- 
         The size of the requested page. It needs `pageNum` to be present to enable a paginated response.
     - in: query
