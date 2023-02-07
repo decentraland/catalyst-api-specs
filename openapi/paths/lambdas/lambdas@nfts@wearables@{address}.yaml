@@ -67,4 +67,4 @@ get:
             default:
               $ref: ../../components/examples/lambdas/200-wearables-paginated.json
     '500':
-      description: 'Failed to fetch wearables by owner' 
+      description: 'Failed to fetch wearables for the address' 
