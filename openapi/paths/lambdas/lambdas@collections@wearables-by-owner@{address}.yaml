@@ -1,5 +1,6 @@
 get: 
   operationId: getWearablesByOwner
+  deprecated: true
   summary: Get list of wearables by owner
   tags:
     - Lambdas
