@@ -1,0 +1,42 @@
+get: 
+  operationId: getLands
+  summary: Get list of lands for an address
+  tags:
+    - Lambdas
+  description: Get a list of lands owned by the given address
+  parameters:
+    - in: path
+      name: address
+      required: true
+      schema:
+        type: string
+        example: '0xddf1eec586d8f8f0eb8c5a3bf51fb99379a55684'
+      description: >- 
+        Ethereum address from which you want to get the list of lands
+    - in: query
+      name: pageNum
+      schema:
+        type: number
+        example: 1
+      description: >- 
+        The number of the requested page. It needs `pageSize` to be present to enable a paginated response.
+    - in: query
+      name: pageSize
+      schema:
+        type: number
+        example: 10
+      description: >- 
+        The size of the requested page. It needs `pageNum` to be present to enable a paginated response.
+
+  responses:
+    '200':
+      description: List of lands owned by the given address
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/lambdas/200-lands-paginated.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-lands-paginated.json
+    '500':
+      description: 'Failed to fetch lands for the address' 

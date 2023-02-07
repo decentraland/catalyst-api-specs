@@ -104,6 +104,8 @@ paths:
     $ref: 'paths/lambdas/lambdas@nfts@wearables@{address}.yaml'
   /lambdas/nfts/names/{address}:
     $ref: 'paths/lambdas/lambdas@nfts@names@{address}.yaml'
+  /lambdas/nfts/lands/{address}:
+    $ref: 'paths/lambdas/lambdas@nfts@lands@{address}.yaml'
   /lambdas/collections/wearables:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
   /lambdas/collections/wearables-by-owner/{address}:
