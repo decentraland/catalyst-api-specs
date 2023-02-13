@@ -14,10 +14,14 @@ properties:
           items:
             type: object
             properties:
-                id: string,
-                tokenId: string,
-                transferredAt: string,
-                price: string
+                id: 
+                  type: string
+                tokenId:
+                  type: string
+                transferredAt:
+                  type: string
+                price:
+                  type: string
   totalAmount:
     type: number
   pageNum:
