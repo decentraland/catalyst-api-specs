@@ -1,6 +1,6 @@
 type: object
 properties:
-  names:
+  lands:
     type: array
     items:
       type: object
@@ -24,6 +24,6 @@ properties:
         description:
           type: string
   pageNum:
-    type: number
+    type: string
   pageSize:
-    type: number
+    type: string

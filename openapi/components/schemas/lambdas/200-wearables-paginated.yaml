@@ -12,6 +12,6 @@ properties:
   totalAmount:
     type: number
   pageNum:
-    type: number
+    type: string
   pageSize:
-    type: number
+    type: string

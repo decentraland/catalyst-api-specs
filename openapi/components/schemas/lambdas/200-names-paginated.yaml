@@ -14,6 +14,6 @@ properties:
         price:
           type: string
   pageNum:
-    type: number
+    type: string
   pageSize:
-    type: number
+    type: string
