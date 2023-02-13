@@ -21,6 +21,7 @@
                 "image": "https://api.decentraland.org/v1/parcels/-68/-26/map.png"
             }
         ],
+        "totalAmount": 692,
         "pageNum": "1",
         "pageSize": "2"
     }

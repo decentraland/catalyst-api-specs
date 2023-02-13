@@ -13,6 +13,8 @@ properties:
           type: string
         price:
           type: string
+  totalAmount:
+    type: number
   pageNum:
     type: string
   pageSize:
