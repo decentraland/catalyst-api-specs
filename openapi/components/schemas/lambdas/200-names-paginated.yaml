@@ -1,0 +1,21 @@
+type: object
+properties:
+  names:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+        price:
+          type: string
+  totalAmount:
+    type: number
+  pageNum:
+    type: string
+  pageSize:
+    type: string

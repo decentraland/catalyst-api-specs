@@ -1,0 +1,56 @@
+get: 
+  operationId: getPaginatedEmotes
+  summary: Get list of emotes for an address
+  tags:
+    - Lambdas
+  description: Get a list of emotes owned by the given address
+  parameters:
+    - in: query
+      name: collectionId
+      schema:
+        type: string
+        example: 'urn:decentraland:matic:collections-thirdparty:ntr1-meta:ntr1-meta-1ef79e7b'
+      description: >- 
+        Third Party collection Id to filter emotes, if this param is not sent then the 3rd parties emotes are not shown. If it is sent, only the 3rd parties emotes are shown.
+    - in: query
+      name: includeDefinitions
+      schema:
+        type: boolean
+        example: true
+      description: >- 
+        If present, response will be extended with the definition data.
+    - in: path
+      name: address
+      required: true
+      schema:
+        type: string
+        example: '0xf4f7512c68f358856514cd4e449fc6c5ac04bb15'
+      description: >- 
+        Ethereum address from which you want to get the list of emotes
+    - in: query
+      name: pageNum
+      schema:
+        type: string
+        example: "1"
+      description: >- 
+        The number of the requested page. It needs `pageSize` to be present to enable a paginated response.
+    - in: query
+      name: pageSize
+      schema:
+        type: string
+        example: "10"
+      description: >- 
+        The size of the requested page. It needs `pageNum` to be present to enable a paginated response.
+
+  responses:
+    '200':
+      description: List of emotes owned by the given address
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/lambdas/200-emotes-paginated.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-emotes-paginated.json
+    '500':
+      description: 'Failed to fetch emotes for the address' 

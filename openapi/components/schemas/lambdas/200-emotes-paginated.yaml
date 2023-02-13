@@ -1,0 +1,17 @@
+type: object
+properties:
+  emotes:
+    type: array
+    items:
+      type: object
+      properties:
+        urn:
+          type: string
+        amount:
+          type: number
+  totalAmount:
+    type: number
+  pageNum:
+    type: string
+  pageSize:
+    type: string

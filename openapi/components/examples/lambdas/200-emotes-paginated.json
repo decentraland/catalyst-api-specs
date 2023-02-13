@@ -1,0 +1,25 @@
+{
+    "value": {
+        "emotes": [
+            {
+                "urn": "urn:decentraland:matic:collections-v2:0xa5b27856547a7d7c238b0e6c2de7a73556b915ba:0",
+                "amount": 1
+            },
+            {
+                "urn": "urn:decentraland:matic:collections-v2:0x7f26599ad1e9ad0ce6d47c5043d70d3bcd3d259a:0",
+                "amount": 1
+            },
+            {
+                "urn": "urn:decentraland:matic:collections-v2:0xeed6bdbdec460e258688e15816e8a9f760c3651a:0",
+                "amount": 1
+            },
+            {
+                "urn": "urn:decentraland:matic:collections-v2:0xa6c722476bdd17bf2adb65e96388345d83259f3b:0",
+                "amount": 1
+            }
+        ],
+        "totalAmount": 973,
+        "pageNum": "3",
+        "pageSize": "4"
+    }
+}

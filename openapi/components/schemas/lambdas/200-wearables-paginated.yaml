@@ -1,0 +1,30 @@
+type: object
+properties:
+  wearables:
+    type: array
+    items:
+      type: object
+      properties:
+        urn:
+          type: string
+        amount:
+          type: number
+        individualData:
+          type: array
+          items:
+            type: object
+            properties:
+                id: 
+                  type: string
+                tokenId:
+                  type: string
+                transferredAt:
+                  type: string
+                price:
+                  type: string
+  totalAmount:
+    type: number
+  pageNum:
+    type: string
+  pageSize:
+    type: string

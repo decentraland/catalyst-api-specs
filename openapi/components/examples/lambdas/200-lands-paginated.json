@@ -1,0 +1,28 @@
+{
+    "value": {
+        "lands": [
+            {
+                "name": "No rules red light",
+                "contractAddress": "0x959e104e1a4db6317fa58f8295f586e1a978c297",
+                "tokenId": "2178",
+                "category": "estate",
+                "description": "No rules red light",
+                "price": "13850000000000000000000",
+                "image": "https://api.decentraland.org/v1/estates/2178/map.png"
+            },
+            {
+                "name": null,
+                "contractAddress": "0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d",
+                "tokenId": "115792089237316195423570985008687907830471066081937686987411485309984659472358",
+                "category": "parcel",
+                "x": "-68",
+                "y": "-26",
+                "price": null,
+                "image": "https://api.decentraland.org/v1/parcels/-68/-26/map.png"
+            }
+        ],
+        "totalAmount": 692,
+        "pageNum": "1",
+        "pageSize": "2"
+    }
+}
