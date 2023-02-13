@@ -9,6 +9,16 @@ properties:
           type: string
         amount:
           type: number
+        individualData:
+          type: array
+          items:
+            type: object
+            properties:
+                id: string,
+                tokenId: string,
+                transferredAt: string,
+                price: string
+          
   totalAmount:
     type: number
   pageNum:
