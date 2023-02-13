@@ -18,7 +18,6 @@ properties:
                 tokenId: string,
                 transferredAt: string,
                 price: string
-          
   totalAmount:
     type: number
   pageNum:
