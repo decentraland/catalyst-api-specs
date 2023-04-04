@@ -60,8 +60,6 @@ paths:
     $ref: paths/content/content@failed-deployments.yaml
   /pointer-changes:
     $ref: paths/content/content@pointer-changes.yaml
-  /snapshot:
-    $ref: 'paths/content/content@snapshot.yaml'
   /snapshots:
     $ref: 'paths/content/content@snapshots.yaml'  
   /status:
