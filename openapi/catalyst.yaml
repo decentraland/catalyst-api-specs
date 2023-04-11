@@ -84,6 +84,8 @@ paths:
     $ref: paths/content/content@failed-deployments.yaml
   /content/pointer-changes:
     $ref: paths/content/content@pointer-changes.yaml
+  /content/snapshots:
+    $ref: paths/content/content@snapshots.yaml
   /content/status:
     $ref: paths/content/content@status.yaml
   /lambdas/status:
