@@ -20,10 +20,7 @@ servers:
 tags:
   - name: Comms
     description: >-
-      Comms is comprised of two distinct modules: One for Catalyst server called "Lighthouse" and other for clients &
-      P2P network called "Peer Library".
-      <br/>The Lighthouse is a server that tracks peers in different positions in order to enable them to make the
-      necessary connections. It also handles authentication.
+      Comms is comprised of a clustering system called "Archipelago" and a transport that lives outside of the catalyst node.
 
 paths:
   /islands:
