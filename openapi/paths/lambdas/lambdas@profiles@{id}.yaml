@@ -1,5 +1,4 @@
 get:
-  deprecated: true
   operationId: getAvatarDetails
   summary: Get Avatar details
   tags:
@@ -10,12 +9,12 @@ get:
       name: id
       required: true
       schema:
-        type: string        
-        example: '0x22480812a9a0669783c06d359182a583bd1d9fc2'      
+        type: string
+        example: '0x22480812a9a0669783c06d359182a583bd1d9fc2'
       description: Ethereum address of the user
   responses:
     '200':
-      description: Array of Avatars      
+      description: Array of Avatars
       content:
         application/json:
           schema:
