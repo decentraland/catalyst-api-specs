@@ -2,14 +2,14 @@ openapi: 3.0.3
 info:
   title: API Specification for the Decentraland Catalyst Comms Service
   version: '1.0'
-  description: >-      
+  description: >-
      The current specification details the Comms service
   x-logo:
     url: 'https://cryptologos.cc/logos/decentraland-mana-logo.png'
-  license:    
+  license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
- 
+
 servers:
   - url: 'https://peer.decentraland.zone/comms'
     description: Catalyst Development instance
@@ -19,21 +19,13 @@ servers:
     description: First production Catalyst node
 tags:
   - name: Comms
-    description: >- 
-      Comms is comprised of two distinct modules: One for Catalyst server called "Lighthouse" and other for clients & 
-      P2P network called "Peer Library".
-      <br/>The Lighthouse is a server that tracks peers in different positions in order to enable them to make the 
-      necessary connections. It also handles authentication.
+    description: >-
+      Comms is comprised of a clustering system called "Archipelago" and a transport that lives outside of the catalyst node.
 
 paths:
-  /config:
-    $ref: 'paths/comms/comms@config.yaml'
   /islands:
     $ref: 'paths/comms/comms@islands.yaml'
   /islands/{islandId}:
     $ref: 'paths/comms/comms@islands@{islandId}.yaml'
-  /peers: 
+  /peers:
     $ref: 'paths/comms/comms@peers.yaml'
-  /status:
-    $ref: 'paths/comms/comms@status.yaml'
-  
