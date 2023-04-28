@@ -134,8 +134,6 @@ paths:
     $ref: 'paths/lambdas/lambdas@profiles.yaml'
   /lambdas/profiles/{id}:
     $ref: 'paths/lambdas/lambdas@profiles@{id}.yaml'
-  /comms/config:
-    $ref: 'paths/comms/comms@config.yaml'
   /comms/islands:
     $ref: 'paths/comms/comms@islands.yaml'
   /comms/islands/{islandId}:
