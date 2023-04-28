@@ -2,23 +2,23 @@ openapi: 3.0.3
 info:
   title: API Specification for the Decentraland Catalyst Server (BETA)
   version: '1.0'
-  description: >-      
-     A Catalyst is a Server that runs different services. 
+  description: >-
+     A Catalyst is a Server that runs different services.
      These services currently work as the backbone for Decentraland and work in a decentralized network.
-     The current specification details the following services: 
+     The current specification details the following services:
      <br/><br/>- Comms Service
      <br/>- Content Server
      <br/>- Lambdas Service
      <br/>
-     <br/>WARNING: We are working to close the version 1.0 of the Catalyst Protocol defined by this API. 
+     <br/>WARNING: We are working to close the version 1.0 of the Catalyst Protocol defined by this API.
      So far this is what we have and it's public but we are still working on refinement and
      during this process we may decided to deprecate or change some of the endpoints.
   x-logo:
     url: 'https://cryptologos.cc/logos/decentraland-mana-logo.png'
-  license:    
+  license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
- 
+
 servers:
   - url: 'https://peer.decentraland.zone'
     description: Catalyst Development instance
@@ -28,38 +28,38 @@ servers:
     description: First production Catalyst node
 tags:
   - name: Global
-    description: >-  
+    description: >-
       Endpoints that are about the whole catalyst or about shared services
   - name: Content Server
     description: >-
-     Decentraland is a virtual world that is owned by its users. One of the biggest differentiators about 
-     Decentraland is its level of decentralization. Users can own LAND, wearables, and probably other types of 
-     items in the future. Each of these items is an NFT in itself, and therefore ownership is determined by the 
+     Decentraland is a virtual world that is owned by its users. One of the biggest differentiators about
+     Decentraland is its level of decentralization. Users can own LAND, wearables, and probably other types of
+     items in the future. Each of these items is an NFT in itself, and therefore ownership is determined by the
      Ethereum (or EVM-compatible) blockchain.
-     <br/><br/>Now, when a new wearable is created, or when a user uploads a scene to their LAND/parcel, all 
-     necessary files (3d models, textures, music, etc) are uploaded to a "content server". Why are we using 
-     these servers instead of the blockchain? Mainly because it would be prohibitively expensive to store files as 
-     big as 3d models in the blockchain. Users would have to pay fees so high to upload content to their parcels 
+     <br/><br/>Now, when a new wearable is created, or when a user uploads a scene to their LAND/parcel, all
+     necessary files (3d models, textures, music, etc) are uploaded to a "content server". Why are we using
+     these servers instead of the blockchain? Mainly because it would be prohibitively expensive to store files as
+     big as 3d models in the blockchain. Users would have to pay fees so high to upload content to their parcels
      that nobody would do it.
-     <br/><br/>So this is where content servers come into play. The content server is mainly a server where users 
-     can upload these files we mentioned before. Each server will verify against the blockchain that the user making 
-     the upload is actually allowed to do so. For example, in the case of scenes, the server will check that the 
+     <br/><br/>So this is where content servers come into play. The content server is mainly a server where users
+     can upload these files we mentioned before. Each server will verify against the blockchain that the user making
+     the upload is actually allowed to do so. For example, in the case of scenes, the server will check that the
      deployer owns all the parcels they are trying to modify.
-     <br/><br/>And the most important part is that all content servers will then sync with each other. 
-     So, for example, if a scene is modified in one server, the update itself will be broadcasted to the other ones. 
+     <br/><br/>And the most important part is that all content servers will then sync with each other.
+     So, for example, if a scene is modified in one server, the update itself will be broadcasted to the other ones.
      Then, in the case a content server goes down for some reason, all content will still be present in the other ones.
   - name: Comms
-    description: >- 
-      Comms is comprised of two distinct modules: One for Catalyst server called "Lighthouse" and other for clients & 
+    description: >-
+      Comms is comprised of two distinct modules: One for Catalyst server called "Lighthouse" and other for clients &
       P2P network called "Peer Library".
-      <br/>The Lighthouse is a server that tracks peers in different positions in order to enable them to make the 
+      <br/>The Lighthouse is a server that tracks peers in different positions in order to enable them to make the
       necessary connections. It also handles authentication.
   - name: Lambdas
-    description: >-  
-      This service provides a set of utilities required by the Catalyst Server Clients\Consumers in order to 
-      retrieve or validate data. 
+    description: >-
+      This service provides a set of utilities required by the Catalyst Server Clients\Consumers in order to
+      retrieve or validate data.
 paths:
-  
+
   /about:
     $ref: 'paths/global/about.yaml'
   /stats/parcels:
@@ -93,11 +93,11 @@ paths:
   /lambdas/health:
     $ref: paths/lambdas/lambdas@health.yaml
   /lambdas/collections:
-    $ref: paths/lambdas/lambdas@collections.yaml   
+    $ref: paths/lambdas/lambdas@collections.yaml
   /lambdas/collections/contents/{urn}/thumbnail:
-    $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@thumbnail.yaml' 
+    $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@thumbnail.yaml'
   /lambdas/collections/contents/{urn}/image:
-    $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image.yaml' 
+    $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image.yaml'
   /lambdas/collections/standard/erc721/{chainId}/{contract}/{option}/{emission}:
     $ref: 'paths/lambdas/lambdas@collections@standard@erc721@{chainId}@{contract}@{option}@{emission}.yaml'
   /lambdas/nfts/wearables/{address}:
@@ -113,8 +113,8 @@ paths:
   /lambdas/collections/wearables-by-owner/{address}:
     $ref: 'paths/lambdas/lambdas@collections@wearables-by-owner@{address}.yaml'
   /lambdas/contentv2/scenes:
-    $ref: 'paths/lambdas/lambdas@contentv2@scenes.yaml'   
-  /lambdas/contentv2/parcel_info: 
+    $ref: 'paths/lambdas/lambdas@contentv2@scenes.yaml'
+  /lambdas/contentv2/parcel_info:
     $ref: 'paths/lambdas/lambdas@contentv2@parcel_info.yaml'
   /lambdas/contentv2/contents/{cid}:
     $ref: 'paths/lambdas/lambdas@contentv2@contents@{cid}.yaml'
@@ -124,7 +124,7 @@ paths:
     $ref: 'paths/lambdas/lambdas@contracts@pois.yaml'
   /lambdas/contracts/denylisted-names:
     $ref: 'paths/lambdas/lambdas@contracts@denylisted-names.yaml'
-  /lambdas/crypto/validate-signature: 
+  /lambdas/crypto/validate-signature:
     $ref: 'paths/lambdas/lambdas@crypto@validate-signature.yaml'
   /lambdas/explore/hot-scenes:
     $ref: 'paths/lambdas/lambdas@explore@hot-scenes.yaml'
@@ -140,7 +140,5 @@ paths:
     $ref: 'paths/comms/comms@islands.yaml'
   /comms/islands/{islandId}:
     $ref: 'paths/comms/comms@islands@{islandId}.yaml'
-  /comms/peers: 
+  /comms/peers:
     $ref: 'paths/comms/comms@peers.yaml'
-  /comms/status:
-    $ref: 'paths/comms/comms@status.yaml'
