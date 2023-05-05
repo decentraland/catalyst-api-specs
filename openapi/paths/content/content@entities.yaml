@@ -3,7 +3,7 @@ post:
   summary: Deploys an entity
   tags:
     - Content Server
-  description: >- 
+  description: >-
     Deploys an entity in the content server. This request must contain a file with the entity itself and
     also the files associated with it, such as 3D models, as well as information about the entity and requester.
     This request will succeed only if the hash of the entity file matches the entityId and also
@@ -41,8 +41,8 @@ post:
           schema:
             type: object
             required: ['creationTimestamp']
-            properties: 
-              creationTimestamp: 
+            properties:
+              creationTimestamp:
                 type: number
           example:
             creationTimestamp: 1628607669304
@@ -61,8 +61,3 @@ post:
                 type: array
                 items:
                   type: string
-    '500':
-      description: >-
-        Internal Server Error. Returns the error object with the list of errors
-        from the server response.
-   
