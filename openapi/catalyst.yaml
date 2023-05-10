@@ -90,8 +90,6 @@ paths:
     $ref: paths/content/content@status.yaml
   /lambdas/status:
     $ref: paths/lambdas/lambdas@status.yaml
-  /lambdas/health:
-    $ref: paths/lambdas/lambdas@health.yaml
   /lambdas/collections:
     $ref: paths/lambdas/lambdas@collections.yaml
   /lambdas/collections/contents/{urn}/thumbnail:
