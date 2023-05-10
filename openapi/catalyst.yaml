@@ -90,8 +90,6 @@ paths:
     $ref: paths/content/content@status.yaml
   /lambdas/status:
     $ref: paths/lambdas/lambdas@status.yaml
-  /lambdas/health:
-    $ref: paths/lambdas/lambdas@health.yaml
   /lambdas/collections:
     $ref: paths/lambdas/lambdas@collections.yaml
   /lambdas/collections/contents/{urn}/thumbnail:
@@ -100,13 +98,13 @@ paths:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image.yaml'
   /lambdas/collections/standard/erc721/{chainId}/{contract}/{option}/{emission}:
     $ref: 'paths/lambdas/lambdas@collections@standard@erc721@{chainId}@{contract}@{option}@{emission}.yaml'
-  /lambdas/nfts/wearables/{address}:
+  /lambdas/nfts/users/{address}/wearables:
     $ref: 'paths/lambdas/lambdas@nfts@wearables@{address}.yaml'
-  /lambdas/nfts/emotes/{address}:
+  /lambdas/nfts/users/{address}/emotes:
     $ref: 'paths/lambdas/lambdas@nfts@emotes@{address}.yaml'
-  /lambdas/nfts/names/{address}:
+  /lambdas/nfts/users/{address}/names:
     $ref: 'paths/lambdas/lambdas@nfts@names@{address}.yaml'
-  /lambdas/nfts/lands/{address}:
+  /lambdas/nfts/users/{address}/lands:
     $ref: 'paths/lambdas/lambdas@nfts@lands@{address}.yaml'
   /lambdas/collections/wearables:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'

@@ -6,43 +6,17 @@ post:
   description: Returns all the Avatars details associated with the Ethereum addresses in the body
   requestBody:
     description: >-
-       The body only has the `ids` property representing a list of Ethereum addresses    
+       The body only has the `ids` property representing a list of Ethereum addresses
     content:
       application/json; charset=utf-8:
         schema:
-          $ref: ../../components/schemas/lambdas/post-profiles.yaml        
+          $ref: ../../components/schemas/lambdas/post-profiles.yaml
         examples:
           default:
             $ref: ../../components/examples/lambdas/post-profiles.json
   responses:
     '200':
-      description: Array of Avatars      
-      content:
-        application/json:
-          schema:
-            $ref: ../../components/schemas/lambdas/200-profiles-ids.yaml
-          examples:
-            default:
-              $ref: ../../components/examples/lambdas/200-profiles-ids.json
-
-get:
-  deprecated: true
-  operationId: getAvatarsDetails
-  summary: Get Avatars details
-  tags:
-    - Lambdas
-  description: Given a list of Ethereum address of a user, return all the Avatars details associated with them.
-  parameters:
-    - in: query
-      name: id
-      required: true
-      schema:
-        type: array        
-        example: '0x22480812a9a0669783c06d359182a583bd1d9fc2'      
-      description: List of Ethereum addresses of the users that you want to retrieve the profiles
-  responses:
-    '200':
-      description: Array of Avatars      
+      description: Array of Avatars
       content:
         application/json:
           schema:
