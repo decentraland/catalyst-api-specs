@@ -42,12 +42,6 @@ paths:
     $ref: 'paths/lambdas/lambdas@collections@emotes.yaml'
   /collections/emotes-by-owner/{address}:
     $ref: 'paths/lambdas/lambdas@collections@emotes-by-owner@{address}.yaml'
-  /contentv2/scenes:
-    $ref: 'paths/lambdas/lambdas@contentv2@scenes.yaml'
-  /contentv2/parcel_info:
-    $ref: 'paths/lambdas/lambdas@contentv2@parcel_info.yaml'
-  /contentv2/contents/{cid}:
-    $ref: 'paths/lambdas/lambdas@contentv2@contents@{cid}.yaml'
   /contracts/servers:
     $ref: 'paths/lambdas/lambdas@contracts@servers.yaml'
   /contracts/pois:
