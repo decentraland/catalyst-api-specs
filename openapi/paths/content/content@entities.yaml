@@ -20,7 +20,7 @@ post:
                 type: string
                 format: binary
             entityId:
-              type: array
+              type: string
               example: QmY4GFuf2jR3ocfuXuFLgvUrGEpjo84Byg44Pv2wduuinW
             authChain:
               type: string
