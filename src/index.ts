@@ -3,11 +3,11 @@ import { resolve } from 'path'
 import { parse } from 'yaml'
 
 function parseAPI(fileName: string) {
-  const file = readFileSync(resolve(__dirname, 'api', fileName), 'utf8')
+  const file = readFileSync(resolve(__dirname, fileName), 'utf8')
   return parse(file)
 }
 
-export const CATALYST_API = parseAPI('catalyst.yaml')
+export const CATALYST_API = parseAPI('api.yaml')
 
 function extractAPI(prefix: string): any {
   const paths: Record<string, any> = {}
