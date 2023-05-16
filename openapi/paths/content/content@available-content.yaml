@@ -10,7 +10,9 @@ get:
       required: true
       schema:
         type: array
-        example: QmWFLwHGfvhB9a1epaRpS38HEwbHvhpaYzHEsNhDRgon7P
+        items:
+          format: string
+          example: QmWFLwHGfvhB9a1epaRpS38HEwbHvhpaYzHEsNhDRgon7P
       description: Hash of the content file
   responses:
     '200':

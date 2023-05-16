@@ -2,45 +2,49 @@ get:
   operationId: getWearables
   summary: Search Wearables
   tags:
-    - Lambdas  
+    - Lambdas
   description: >-
     Search for wearables based on the applied filters and retrieve detailed information
   parameters:
     - in: query
-      name: collectionId       
+      name: collectionId
       schema:
-        type: array 
-        example: urn:decentraland:ethereum:collections-v1:mf_sammichgamer
-      description: Lis of URNs that identify the collection. Maximum amount of ids allowed is 500. 
+        type: array
+        items:
+          format: string
+          example: urn:decentraland:ethereum:collections-v1:mf_sammichgamer
+      description: Lis of URNs that identify the collection. Maximum amount of ids allowed is 500.
     - in: query
-      name: wearableId       
+      name: wearableId
       schema:
-        type: array 
-        example: urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat
+        type: array
+        items:
+          format: string
+          example: urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat
       description: List of wearables URNs to search. Maximum amount of ids allowed is 500.
     - in: query
-      name: textSearch       
+      name: textSearch
       schema:
-        type: string 
+        type: string
         example: Hoodie
-      description: Search text       
+      description: Search text
     - in: query
       name: limit
       schema:
-        type: integer 
+        type: integer
         example: 2
-      description: >- 
+      description: >-
          Limit the quantity of results that will be returned by the request.
-         You can only request up to 500 results.            
+         You can only request up to 500 results.
     - in: query
       name: lastId
       schema:
-        type: string         
+        type: string
         example: urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat
       description: >-
         The result will always be ordered by the local timestamp fields but in case
-        of timestamp collisions, you can use the lastId field to filter the 
-        result   
+        of timestamp collisions, you can use the lastId field to filter the
+        result
   responses:
     '200':
       description: Catalyst services health information
@@ -60,7 +64,7 @@ get:
           examples:
             MissingFilter:
               summary: Missing Filter
-              value: >- 
+              value: >-
                 You must use one of the filters: 'textSearch', 'collectionId' or 'wearableId'
             TextSearch:
               summary: Bad search text

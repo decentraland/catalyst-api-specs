@@ -1,17 +1,13 @@
 # See https://redoc.ly/docs/cli/configuration/ for more information.
-apiDefinitions:
-  main: openapi/catalyst.yaml
-  comms: openapi/comms.yaml
-  content: openapi/content.yaml
-  lambdas: openapi/lambdas.yaml
-lint:
-  extends:
-    - recommended
-  rules:
-    no-unused-components: warning
-referenceDocs:
-  htmlTemplate: ./docs/index.html
-  theme:
-    colors:
-      primary:
-        main: "#32329f"
+apis:
+  main@v1:
+    root: openapi/catalyst.yaml
+rules:
+  no-unused-components: warn
+theme:
+  openapi:
+    htmlTemplate: ./docs/index.html
+    theme:
+      colors:
+        primary:
+          main: "#32329f"

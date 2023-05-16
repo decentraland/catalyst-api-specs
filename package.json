@@ -1,5 +1,6 @@
 {
   "name": "@dcl/catalyst-api-specs",
+  "license": "Apache-2.0",
   "version": "1.1.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -7,12 +8,14 @@
     "lib/**/*"
   ],
   "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.6.0",
     "@redocly/cli": "^1.0.0-beta.108",
     "@types/jest": "27.0.1",
-    "express-openapi-validator": "4.13.8",
+    "express-openapi-validator": "^5.0.4",
     "jest": "27.2.0",
     "npm-run-all": "4.1.5",
-    "redoc-cli": "0.13.21",
+    "prettier": "^2.8.8",
+    "redoc-cli": "^0.13.21",
     "ts-jest": "27.0.5",
     "typescript": "4.9.5"
   },
@@ -21,10 +24,18 @@
     "build": "run-s build:*",
     "build:api": "openapi bundle -o lib/api",
     "build:src": "tsc -b",
-    "test": "npm run build & run-s test:*",
+    "test": "yarn build & run-s test:*",
     "test:api": "openapi lint",
     "test:src": "jest",
-    "prepublishOnly": "npm run build && npm run test"
+    "prepublishOnly": "yarn build && yarn test",
+    "validate": "openapi-generator-cli validate -i openapi/catalyst.yaml"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "tabWidth": 2
   },
   "dependencies": {
     "yaml": "2.2.2"

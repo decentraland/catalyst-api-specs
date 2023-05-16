@@ -12,11 +12,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build website
         run: |
-          npm i --no-audit
-          npm run build
+          yarn install
+          yarn build
           npx redoc-cli bundle openapi/catalyst.yaml
           mv redoc-static.html docs/index.html
-          
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
