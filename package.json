@@ -26,6 +26,7 @@
     "build:src": "tsc -b",
     "test": "yarn build & run-s test:*",
     "test:api": "openapi lint",
+    "lint:check": "openapi lint",
     "test:src": "jest",
     "prepublishOnly": "yarn build && yarn test",
     "validate": "openapi-generator-cli validate -i openapi/catalyst.yaml"
