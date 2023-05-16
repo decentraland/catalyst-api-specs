@@ -18,7 +18,9 @@ get:
       name: wearableId
       schema:
         type: array
-        example: urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat
+        items:
+          format: string
+          example: urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat
       description: List of wearables URNs to search. Maximum amount of ids allowed is 500.
     - in: query
       name: textSearch
