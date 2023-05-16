@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
         with:
-          node-version: 14.x
+          node-version: 16.x
       - name: Cache node modules
         uses: actions/cache@v2
         env:
@@ -23,8 +23,8 @@ jobs:
           restore-keys: |
             npm-
       - name: Install node dependencies
-        run: npm install
+        run: yarn install
       - name: Build library
-        run: npm run build
+        run: yarn build
       - name: Run tests
-        run: npm run test
+        run: yarn test
