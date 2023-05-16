@@ -8,6 +8,3 @@ const parseAPI = (fileName: string): any => {
 }
 
 export const CATALYST_API = parseAPI('catalyst.yaml')
-export const CONTENT_API = parseAPI('content.yaml')
-export const COMMS_API = parseAPI('comms.yaml')
-export const LAMBDAS_API = parseAPI('lambdas.yaml')
