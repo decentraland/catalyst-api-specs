@@ -14,7 +14,7 @@ jobs:
         run: |
           yarn install
           yarn build
-          npx redoc-cli bundle openapi/catalyst.yaml
+          npx @redocly/cli build-docs openapi/catalyst.yaml
           mv redoc-static.html docs/index.html
 
       - name: Deploy 🚀
