@@ -10,7 +10,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/global/200-about.yaml
+            $ref: ../../components/schemas/global/about.yaml
           examples:
             default:
               $ref: ../../components/examples/global/200-about.json
@@ -19,7 +19,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/global/503-about.yaml
+            $ref: ../../components/schemas/global/about.yaml
           examples:
             default:
               $ref: ../../components/examples/global/503-about.json

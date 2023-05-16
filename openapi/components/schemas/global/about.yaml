@@ -1,11 +1,17 @@
 type: object
+required:
+  - healthy
+  - configurations
+  - content
+  - comms
+  - lambdas
 properties:
   healthy:
     type: boolean
   configurations:
     type: object
     properties:
-      realmName: 
+      realmName:
         type: string
   content:
     type: object
@@ -14,7 +20,7 @@ properties:
         type: boolean
       commitHash:
         type: string
-      version: 
+      version:
         type: string
   comms:
     type: object
@@ -32,7 +38,7 @@ properties:
         type: boolean
       commitHash:
         type: string
-      version: 
+      version:
         type: string
   bff:
     type: object

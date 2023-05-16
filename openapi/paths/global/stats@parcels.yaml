@@ -10,8 +10,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/global/200-stats-parcels.yaml
+            $ref: ../../components/schemas/global/stats-parcels.yaml
           examples:
             default:
               $ref: ../../components/examples/global/200-stats-parcels.json
-

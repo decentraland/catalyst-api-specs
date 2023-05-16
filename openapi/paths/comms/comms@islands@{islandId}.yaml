@@ -3,7 +3,7 @@ get:
   summary: Island Details
   tags:
     - Comms
-  description: >- 
+  description: >-
     Retrieve information about the specified islandId
   parameters:
     - in: path
@@ -12,15 +12,15 @@ get:
       schema:
         type: string
         example: I5n
-      description: >- 
-        ID of the Island. You can search for the list of islands using the /comms/islands endpoint. 
+      description: >-
+        ID of the Island. You can search for the list of islands using the /comms/islands endpoint.
   responses:
     '200':
       description: Island details
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/comms/200-islandId.yaml
+            $ref: ../../components/schemas/comms/islandId.yaml
           examples:
             default:
               $ref: ../../components/examples/comms/200-islandId.json

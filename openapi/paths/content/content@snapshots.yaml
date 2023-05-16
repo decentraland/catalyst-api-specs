@@ -1,6 +1,6 @@
 get:
   operationId: getSnapshots
-  summary: Snapshots with a list of active entities 
+  summary: Snapshots with a list of active entities
   tags:
     - Content Server
   description: >-
@@ -17,7 +17,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/content/200-snapshots.yaml
+            $ref: ../../components/schemas/content/snapshots.yaml
           examples:
             default:
               $ref: ../../components/examples/content/200-snapshots.json

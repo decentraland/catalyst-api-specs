@@ -3,16 +3,16 @@ get:
   summary: List of islands
   tags:
     - Comms
-  description: >- 
-    Retrieves the list of communication islands in the server with details 
-    about the peers present in each island. 
+  description: >-
+    Retrieves the list of communication islands in the server with details
+    about the peers present in each island.
   responses:
     '200':
       description: List of Islands
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/comms/200-islands.yaml
+            $ref: ../../components/schemas/comms/islands.yaml
           examples:
             default:
               $ref: ../../components/examples/comms/200-islands.json
