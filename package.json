@@ -8,6 +8,7 @@
     "lib/**/*"
   ],
   "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.6.0",
     "@redocly/cli": "^1.0.0-beta.108",
     "@types/jest": "27.0.1",
     "express-openapi-validator": "^5.0.4",
@@ -26,7 +27,8 @@
     "test": "yarn build & run-s test:*",
     "test:api": "openapi lint",
     "test:src": "jest",
-    "prepublishOnly": "yarn build && yarn test"
+    "prepublishOnly": "yarn build && yarn test",
+    "validate": "openapi-generator-cli validate -i openapi/catalyst.yaml"
   },
   "prettier": {
     "printWidth": 120,
