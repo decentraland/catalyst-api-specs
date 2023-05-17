@@ -36,7 +36,7 @@ post:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/content/200-entities-active.yaml
+            $ref: ../../components/schemas/content/entities-active.yaml
           examples:
             default:
               $ref: ../../components/examples/content/200-entities-active.json

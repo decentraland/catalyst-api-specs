@@ -3,16 +3,16 @@ get:
   summary: List of peers
   tags:
     - Comms
-  description: >- 
-    Retrieves the list peers in the server with details 
-    about their positions and islands. 
+  description: >-
+    Retrieves the list peers in the server with details
+    about their positions and islands.
   responses:
     '200':
       description: List of Peers
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/comms/200-peers.yaml
+            $ref: ../../components/schemas/comms/peers.yaml
           examples:
-            default:
-              $ref: ../../components/examples/comms/200-peers.json
+            ok:
+              $ref: ../../components/examples/comms/peers-ok.json

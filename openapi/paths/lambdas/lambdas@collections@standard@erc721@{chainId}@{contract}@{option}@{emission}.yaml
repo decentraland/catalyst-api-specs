@@ -11,8 +11,8 @@ get:
       schema:
         type: string
         example: 137
-      description: >- 
-        Ethereum chain ID: 
+      description: >-
+        Ethereum chain ID:
           ETHEREUM_MAINNET = 1
           ETHEREUM_RINKEBY = 4
           ETHEREUM_GOERLI = 5
@@ -39,8 +39,8 @@ get:
       schema:
         type: string
         example: legendary
-      description: >- 
-          Optional rarity description that will be return as part of the NFT description      
+      description: >-
+          Optional rarity description that will be return as part of the NFT description
           common: 100000
           uncommon: 10000
           rare: 5000
@@ -54,7 +54,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/lambdas/200-erc721.yaml
+            $ref: ../../components/schemas/lambdas/erc721.yaml
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-erc721.json

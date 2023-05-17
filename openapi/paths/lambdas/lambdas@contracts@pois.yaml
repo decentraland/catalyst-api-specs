@@ -3,14 +3,14 @@ get:
   summary: Retrieve DCL Point of Interests
   tags:
     - Lambdas
-  description: Retrieve the Point of Interest list of coordinates 
+  description: Retrieve the Point of Interest list of coordinates
   responses:
     '200':
       description: List of Point of Interest coordinates. These are currently highlighted in the DCL Atlas.
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/lambdas/200-pois.yaml
+            $ref: ../../components/schemas/lambdas/pois.yaml
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-pois.json

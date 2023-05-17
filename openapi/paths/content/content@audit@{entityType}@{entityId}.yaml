@@ -23,8 +23,8 @@ get:
         example: QmQgezF4UWTZpD5VqKs2AGCzucRJdm8zU87MxdSRH9heZR
       description: id of the entity
   description: >-
-    Get information about an entity, such us Scenes Profiles or Wearables, 
-    with the specified entityId.      
+    Get information about an entity, such us Scenes Profiles or Wearables,
+    with the specified entityId.
   security: []
   responses:
     '200':
@@ -32,7 +32,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/content/200-audit-response.yaml
+            $ref: ../../components/schemas/content/audit-response.yaml
           examples:
             default:
               $ref: ../../components/examples/content/200-audit-response.json
@@ -55,4 +55,4 @@ get:
         application/json; charset=utf-8:
           schema:
             type: string
-          example: Not Found          
+          example: Not Found

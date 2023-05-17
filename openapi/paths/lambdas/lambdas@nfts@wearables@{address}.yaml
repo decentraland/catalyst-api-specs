@@ -62,7 +62,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/lambdas/200-wearables-paginated.yaml
+            $ref: ../../components/schemas/lambdas/wearables-paginated.yaml
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-wearables-paginated.json
