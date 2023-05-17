@@ -17,8 +17,8 @@ import type {
   PostEntity200,
   PostEntityBody,
   GetEntitiesByPointerPrefix200Item,
-  GetListOfEntities200Item,
-  GetListOfEntitiesBody,
+  GetActiveEntities200Item,
+  GetActiveEntitiesBody,
   GetFailedDeployments200Item,
   GetListPointerChanges200,
   GetListPointerChangesParams,
@@ -185,13 +185,13 @@ export const getEntitiesByPointerPrefix = <TData = AxiosResponse<GetEntitiesByPo
 
 /**
  * Returns the list of entities of the specified type with the specified id or pointers. Only one of these filters must be specified in the body.
- * @summary List of entities of the specified Type
+ * @summary List active entities by pointers or ids
  */
-export const getListOfEntities = <TData = AxiosResponse<GetListOfEntities200Item[]>>(
-  getListOfEntitiesBody: GetListOfEntitiesBody,
+export const getActiveEntities = <TData = AxiosResponse<GetActiveEntities200Item[]>>(
+  getActiveEntitiesBody: GetActiveEntitiesBody,
   options?: AxiosRequestConfig
 ): Promise<TData> => {
-  return axios.post(`/content/entities/active`, getListOfEntitiesBody, options)
+  return axios.post(`/content/entities/active`, getActiveEntitiesBody, options)
 }
 
 /**
@@ -502,7 +502,7 @@ export type GetListEntityIdsByHashIdResult = AxiosResponse<string[]>
 export type GetIfFileExistsResult = AxiosResponse<GetIfFileExists200Item[]>
 export type PostEntityResult = AxiosResponse<PostEntity200>
 export type GetEntitiesByPointerPrefixResult = AxiosResponse<GetEntitiesByPointerPrefix200Item[]>
-export type GetListOfEntitiesResult = AxiosResponse<GetListOfEntities200Item[]>
+export type GetActiveEntitiesResult = AxiosResponse<GetActiveEntities200Item[]>
 export type GetFailedDeploymentsResult = AxiosResponse<GetFailedDeployments200Item[]>
 export type GetListPointerChangesResult = AxiosResponse<GetListPointerChanges200>
 export type GetSnapshotsResult = AxiosResponse<GetSnapshots200Item[]>

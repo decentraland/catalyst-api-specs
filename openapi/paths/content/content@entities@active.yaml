@@ -1,6 +1,6 @@
 post:
-  operationId: getListOfEntities
-  summary: List of entities of the specified Type
+  operationId: getActiveEntities
+  summary: List active entities by pointers or ids
   tags:
     - Content Server
   description: >-
@@ -36,7 +36,9 @@ post:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/content/entities-active.yaml
+            type: array
+            items:
+              $ref: ../../components/schemas/content/entity.yaml
           examples:
             default:
               $ref: ../../components/examples/content/200-entities-active.json

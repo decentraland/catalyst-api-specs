@@ -618,24 +618,24 @@ export type GetFailedDeployments200Item = {
   errorDescription: string
 }
 
-export type GetListOfEntities200ItemMetadata = { [key: string]: any }
+export type GetActiveEntities200ItemMetadata = { [key: string]: any }
 
-export type GetListOfEntities200ItemContentItem = {
+export type GetActiveEntities200ItemContentItem = {
   file: string
   hash: string
 }
 
-export type GetListOfEntities200Item = {
+export type GetActiveEntities200Item = {
   version: string
   id: string
   type: string
   timestamp: number
   pointers: string[]
-  content: GetListOfEntities200ItemContentItem[]
-  metadata: GetListOfEntities200ItemMetadata
+  content: GetActiveEntities200ItemContentItem[]
+  metadata: GetActiveEntities200ItemMetadata
 }
 
-export type GetListOfEntitiesBody = {
+export type GetActiveEntitiesBody = {
   /** Entities must be filtered by pointer XOR entityId (ids). Use this parameter if you want to retrieve an entity of the specified type with this pointer. */
   pointers?: string[]
   /** Entities must be filtered by pointer (pointers) XOR entityId. Use this parameter if you want to retrieve an entity of the specified type with this entityId. */
