@@ -46,3 +46,13 @@ post:
       description: >-
         Bad request: ids or pointers must be present in the request, but not
         both
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/content/bad-request.yaml
+          examples:
+            default:
+              value:
+                {
+                "error": "ids or pointers must be present in the request, but not both"
+                }

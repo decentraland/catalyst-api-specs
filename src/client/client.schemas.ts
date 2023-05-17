@@ -254,17 +254,15 @@ export type GetWearables200Filters = {
   textSearch?: string
 }
 
+export type GetWearables200 = {
+  wearables?: GetWearables200WearablesItem[]
+  filters?: GetWearables200Filters
+  pagination?: GetWearables200Pagination
+}
+
 export type GetWearables200WearablesItemI18nItem = {
   code?: string
   text?: string
-}
-
-export type GetWearables200WearablesItemData = {
-  replaces?: string[]
-  hides?: string[]
-  tags?: string[]
-  category?: string
-  representations?: GetWearables200WearablesItemDataRepresentationsItem[]
 }
 
 export type GetWearables200WearablesItem = {
@@ -278,12 +276,6 @@ export type GetWearables200WearablesItem = {
   i18n?: GetWearables200WearablesItemI18nItem[]
   createdAt?: number
   updatedAt?: number
-}
-
-export type GetWearables200 = {
-  wearables?: GetWearables200WearablesItem[]
-  filters?: GetWearables200Filters
-  pagination?: GetWearables200Pagination
 }
 
 export type GetWearables200WearablesItemDataRepresentationsItemContentsItem = {
@@ -301,6 +293,14 @@ export type GetWearables200WearablesItemDataRepresentationsItem = {
   overrideReplaces?: GetWearables200WearablesItemDataRepresentationsItemOverrideReplacesItem[]
   overrideHides?: GetWearables200WearablesItemDataRepresentationsItemOverrideHidesItem[]
   contents?: GetWearables200WearablesItemDataRepresentationsItemContentsItem[]
+}
+
+export type GetWearables200WearablesItemData = {
+  replaces?: string[]
+  hides?: string[]
+  tags?: string[]
+  category?: string
+  representations?: GetWearables200WearablesItemDataRepresentationsItem[]
 }
 
 export type GetWearablesParams = {
@@ -618,6 +618,10 @@ export type GetFailedDeployments200Item = {
   errorDescription: string
 }
 
+export type GetActiveEntities400 = {
+  error?: string
+}
+
 export type GetActiveEntities200ItemMetadata = { [key: string]: any }
 
 export type GetActiveEntities200ItemContentItem = {
@@ -632,7 +636,7 @@ export type GetActiveEntities200Item = {
   timestamp: number
   pointers: string[]
   content: GetActiveEntities200ItemContentItem[]
-  metadata: GetActiveEntities200ItemMetadata
+  metadata?: GetActiveEntities200ItemMetadata
 }
 
 export type GetActiveEntitiesBody = {

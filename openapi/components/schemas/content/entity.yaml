@@ -5,7 +5,6 @@ required:
   - timestamp
   - pointers
   - content
-  - metadata
 type: object
 properties:
   version:
