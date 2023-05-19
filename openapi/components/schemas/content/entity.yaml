@@ -1,0 +1,35 @@
+required:
+  - version
+  - id
+  - type
+  - timestamp
+  - pointers
+  - content
+type: object
+properties:
+  version:
+    type: string
+  id:
+    type: string
+  type:
+    type: string
+  timestamp:
+    type: number
+  pointers:
+    type: array
+    items:
+      type: string
+  content:
+    type: array
+    items:
+      type: object
+      required:
+      - file
+      - hash
+      properties:
+        file:
+          type: string
+        hash:
+          type: string
+  metadata:
+    type: object

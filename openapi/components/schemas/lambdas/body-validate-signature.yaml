@@ -5,11 +5,4 @@ properties:
   signedMessage:
     type: string
   authChain:
-    type: array
-    items:
-      type: object
-      properties:
-        type:
-          type: string
-        payload:
-          type: string
+    $ref: '../content/auth-chain.yaml'

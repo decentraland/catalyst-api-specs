@@ -7,5 +7,5 @@
     "rootDir": "src",
     "outDir": "lib"
   },
-  "exclude": ["**/__tests__", "lib"]
+  "exclude": ["**/__tests__", "lib", "./orval.config.ts"]
 }

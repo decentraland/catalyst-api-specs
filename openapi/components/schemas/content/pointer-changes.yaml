@@ -21,20 +21,7 @@ properties:
           type: number
         pointers:
           type: array
-          items: 
+          items:
             type: string
         authChain:
-          type: array
-          items:
-            required:
-              - type
-              - payload
-              - signature
-            type: object
-            properties:
-              type:
-                type: string
-              payload:
-                type: string
-              signature:
-                type: string
+          $ref: 'auth-chain.yaml'
