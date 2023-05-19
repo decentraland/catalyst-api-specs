@@ -9,3 +9,5 @@ items:
       type: string
     payload:
       type: string
+    signature:
+      type: string

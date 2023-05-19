@@ -536,7 +536,7 @@ export type GetListPointerChanges400 = {
 export type GetListPointerChanges200DeltasItemAuthChainItem = {
   type: string
   payload: string
-  signature: string
+  signature?: string
 }
 
 export type GetListPointerChanges200DeltasItem = {
@@ -698,7 +698,7 @@ export type GetEntityInformation400 = {
 export type GetEntityInformation200AuthChainItem = {
   type: string
   payload: string
-  signature: string
+  signature?: string
 }
 
 export type GetEntityInformation200 = {
