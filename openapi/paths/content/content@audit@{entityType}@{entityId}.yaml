@@ -1,5 +1,5 @@
 get:
-  operationId: getEntityInformation
+  operationId: getEntityAuditInformation
   summary: Get information about an entity
   tags:
     - Content Server

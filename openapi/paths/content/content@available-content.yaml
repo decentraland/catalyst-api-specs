@@ -31,5 +31,4 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
-          example: Please set at least one cid.
+            $ref: ../../components/schemas/content/error.yaml

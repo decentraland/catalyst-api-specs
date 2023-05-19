@@ -10,7 +10,7 @@ import type { AxiosRequestConfig, AxiosResponse } from 'axios'
 import type {
   GetAboutCatalystInfo200,
   GetStatsParcels200,
-  GetEntityInformation200,
+  GetEntityAuditInformation200,
   GetIfPartOfTheDAO200,
   GetAvailableContent200Item,
   GetAvailableContentParams,
@@ -76,7 +76,7 @@ export const getStatsParcels = <TData = AxiosResponse<GetStatsParcels200>>(
  * Get information about an entity, such us Scenes Profiles or Wearables, with the specified entityId.
  * @summary Get information about an entity
  */
-export const getEntityInformation = <TData = AxiosResponse<GetEntityInformation200>>(
+export const getEntityAuditInformation = <TData = AxiosResponse<GetEntityAuditInformation200>>(
   entityType: 'profile' | 'scene' | 'wearable',
   entityId: string,
   options?: AxiosRequestConfig
@@ -496,7 +496,7 @@ export const getPeers = <TData = AxiosResponse<GetPeers200>>(options?: AxiosRequ
 
 export type GetAboutCatalystInfoResult = AxiosResponse<GetAboutCatalystInfo200>
 export type GetStatsParcelsResult = AxiosResponse<GetStatsParcels200>
-export type GetEntityInformationResult = AxiosResponse<GetEntityInformation200>
+export type GetEntityAuditInformationResult = AxiosResponse<GetEntityAuditInformation200>
 export type GetIfPartOfTheDAOResult = AxiosResponse<GetIfPartOfTheDAO200>
 export type GetContentFileResult = AxiosResponse<Blob>
 export type HeadContentFileResult = AxiosResponse<void>

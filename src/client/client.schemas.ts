@@ -672,6 +672,10 @@ export type PostEntityBody = {
   signature?: string
 }
 
+export type GetAvailableContent400 = {
+  error: string
+}
+
 export type GetAvailableContent200Item = {
   cid: string
   available: boolean
@@ -692,24 +696,24 @@ export type GetIfPartOfTheDAO200 = {
   challengeText: string
 }
 
-export type GetEntityInformation404 = {
+export type GetEntityAuditInformation404 = {
   error: string
 }
 
-export type GetEntityInformation400 = {
+export type GetEntityAuditInformation400 = {
   error: string
 }
 
-export type GetEntityInformation200AuthChainItem = {
+export type GetEntityAuditInformation200AuthChainItem = {
   type: string
   payload: string
   signature?: string
 }
 
-export type GetEntityInformation200 = {
+export type GetEntityAuditInformation200 = {
   version: string
   localTimestamp: number
-  authChain: GetEntityInformation200AuthChainItem[]
+  authChain: GetEntityAuditInformation200AuthChainItem[]
   overwrittenBy?: string
   isDenylisted?: boolean
   denylistedContent?: string[]
