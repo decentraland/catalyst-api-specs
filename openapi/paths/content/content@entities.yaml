@@ -53,11 +53,6 @@ post:
       content:
         application/json; charset=utf-8:
           schema:
-            required:
-              - errors
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  type: string
+            oneOf:
+              - $ref: '../../components/schemas/content/error.yaml'
+              - $ref: '../../components/schemas/content/errors.yaml'

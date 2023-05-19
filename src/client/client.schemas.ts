@@ -491,26 +491,26 @@ export type GetLambdaStatus200 = {
   catalystVersion?: string
 }
 
-export type GetStatus200SynchronizationStatusOtherServersItem = {
+export type GetContentStatus200SynchronizationStatusOtherServersItem = {
   address: string
   connectionState: string
   lastDeploymentTimestamp: number
 }
 
-export type GetStatus200SynchronizationStatus = {
-  otherServers?: GetStatus200SynchronizationStatusOtherServersItem[]
+export type GetContentStatus200SynchronizationStatus = {
+  otherServers?: GetContentStatus200SynchronizationStatusOtherServersItem[]
   lastSyncWithDAO: number
   synchronizationState: string
   lastSyncWithOtherServers?: number
 }
 
-export type GetStatus200 = {
+export type GetContentStatus200 = {
   name?: string
   version: string
   currentTime?: number
   lastImmutableTime?: number
   historySize?: number
-  synchronizationStatus: GetStatus200SynchronizationStatus
+  synchronizationStatus: GetContentStatus200SynchronizationStatus
   commitHash: string
   catalystVersion: string
   ethNetwork: string
@@ -650,9 +650,15 @@ export type GetEntitiesByPointerPrefix200Item = {
   entityId: string
 }
 
-export type PostEntity400 = {
+export type PostEntity400OneOfTwo = {
   errors: string[]
 }
+
+export type PostEntity400OneOf = {
+  error: string
+}
+
+export type PostEntity400 = PostEntity400OneOf | PostEntity400OneOfTwo
 
 export type PostEntity200 = {
   creationTimestamp: number

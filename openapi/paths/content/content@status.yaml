@@ -1,9 +1,9 @@
 get:
-  operationId: getStatus
-  summary: Server status
+  operationId: getContentStatus
+  summary: Content Server status
   tags:
     - Content Server
-  description: Retrieve deteailed information about the server status
+  description: Retrieve deteailed information about the content server status
   responses:
     '200':
       description: Content Server status information

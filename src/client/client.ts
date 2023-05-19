@@ -23,7 +23,7 @@ import type {
   GetPointerChanges200,
   GetPointerChangesParams,
   GetSnapshots200Item,
-  GetStatus200,
+  GetContentStatus200,
   GetLambdaStatus200,
   GetCollections200,
   GetStandardErc721200,
@@ -229,10 +229,12 @@ export const getSnapshots = <TData = AxiosResponse<GetSnapshots200Item[]>>(
 }
 
 /**
- * Retrieve deteailed information about the server status
- * @summary Server status
+ * Retrieve deteailed information about the content server status
+ * @summary Content Server status
  */
-export const getStatus = <TData = AxiosResponse<GetStatus200>>(options?: AxiosRequestConfig): Promise<TData> => {
+export const getContentStatus = <TData = AxiosResponse<GetContentStatus200>>(
+  options?: AxiosRequestConfig
+): Promise<TData> => {
   return axios.get(`/content/status`, options)
 }
 
@@ -506,7 +508,7 @@ export type GetActiveEntitiesResult = AxiosResponse<GetActiveEntities200Item[]>
 export type GetFailedDeploymentsResult = AxiosResponse<GetFailedDeployments200Item[]>
 export type GetPointerChangesResult = AxiosResponse<GetPointerChanges200>
 export type GetSnapshotsResult = AxiosResponse<GetSnapshots200Item[]>
-export type GetStatusResult = AxiosResponse<GetStatus200>
+export type GetContentStatusResult = AxiosResponse<GetContentStatus200>
 export type GetLambdaStatusResult = AxiosResponse<GetLambdaStatus200>
 export type GetCollectionsResult = AxiosResponse<GetCollections200>
 export type GetThumbnailResult = AxiosResponse<Blob>
