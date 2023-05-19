@@ -12,8 +12,8 @@ import type {
   GetStatsParcels200,
   GetEntityInformation200,
   GetIfPartOfTheDAO200,
-  GetIfFileExists200Item,
-  GetIfFileExistsParams,
+  GetAvailableContent200Item,
+  GetAvailableContentParams,
   PostEntity200,
   PostEntityBody,
   GetEntitiesByPointerPrefix200Item,
@@ -134,8 +134,8 @@ export const getListEntityIdsByHashId = <TData = AxiosResponse<string[]>>(
  * Given a list of hashes, validates if the corresponding files exist in the storage of the server
  * @summary Validates if file exists on the Server
  */
-export const getIfFileExists = <TData = AxiosResponse<GetIfFileExists200Item[]>>(
-  params: GetIfFileExistsParams,
+export const getAvailableContent = <TData = AxiosResponse<GetAvailableContent200Item[]>>(
+  params: GetAvailableContentParams,
   options?: AxiosRequestConfig
 ): Promise<TData> => {
   return axios.get(`/content/available-content`, {
@@ -501,7 +501,7 @@ export type GetIfPartOfTheDAOResult = AxiosResponse<GetIfPartOfTheDAO200>
 export type GetContentFileResult = AxiosResponse<Blob>
 export type HeadContentFileResult = AxiosResponse<void>
 export type GetListEntityIdsByHashIdResult = AxiosResponse<string[]>
-export type GetIfFileExistsResult = AxiosResponse<GetIfFileExists200Item[]>
+export type GetAvailableContentResult = AxiosResponse<GetAvailableContent200Item[]>
 export type PostEntityResult = AxiosResponse<PostEntity200>
 export type GetEntitiesByPointerPrefixResult = AxiosResponse<GetEntitiesByPointerPrefix200Item[]>
 export type GetActiveEntitiesResult = AxiosResponse<GetActiveEntities200Item[]>

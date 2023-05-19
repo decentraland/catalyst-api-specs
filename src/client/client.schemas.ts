@@ -672,12 +672,12 @@ export type PostEntityBody = {
   signature?: string
 }
 
-export type GetIfFileExists200Item = {
+export type GetAvailableContent200Item = {
   cid: string
   available: boolean
 }
 
-export type GetIfFileExistsParams = {
+export type GetAvailableContentParams = {
   /**
    * Hash of the content file
    */

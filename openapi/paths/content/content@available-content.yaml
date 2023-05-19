@@ -1,5 +1,5 @@
 get:
-  operationId: getIfFileExists
+  operationId: getAvailableContent
   summary: Validates if file exists on the Server
   tags:
     - Content Server
