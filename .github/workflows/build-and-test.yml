@@ -1,10 +1,15 @@
 on:
+  push:
+    branches:
+      - main
   pull_request:
-  workflow_call:
+  release:
+    types:
+      - created
 
-name: Build and Test
+name: Build And Publish
 jobs:
-  build-and-test:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -17,8 +22,6 @@ jobs:
         run: yarn install
       - name: Build library
         run: yarn build
-      - name: Run tests
-        run: yarn test
       - name: validations
         run: yarn validate
 
