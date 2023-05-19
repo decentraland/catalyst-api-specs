@@ -1,5 +1,5 @@
 get:
-  operationId: getListPointerChanges
+  operationId: getPointerChanges
   summary: List of changes made to a pointer
   tags:
     - Content Server

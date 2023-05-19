@@ -20,8 +20,8 @@ import type {
   GetActiveEntities200Item,
   GetActiveEntitiesBody,
   GetFailedDeployments200Item,
-  GetListPointerChanges200,
-  GetListPointerChangesParams,
+  GetPointerChanges200,
+  GetPointerChangesParams,
   GetSnapshots200Item,
   GetStatus200,
   GetLambdaStatus200,
@@ -208,8 +208,8 @@ export const getFailedDeployments = <TData = AxiosResponse<GetFailedDeployments2
  * List of all deltas from the deployments inside the filters that affect the given pointers. It returns a list of changes with the `before` field (the entity that was overridden with this deployment) and `after` (the entity that overrides the current one if present).
  * @summary List of changes made to a pointer
  */
-export const getListPointerChanges = <TData = AxiosResponse<GetListPointerChanges200>>(
-  params?: GetListPointerChangesParams,
+export const getPointerChanges = <TData = AxiosResponse<GetPointerChanges200>>(
+  params?: GetPointerChangesParams,
   options?: AxiosRequestConfig
 ): Promise<TData> => {
   return axios.get(`/content/pointer-changes`, {
@@ -504,7 +504,7 @@ export type PostEntityResult = AxiosResponse<PostEntity200>
 export type GetEntitiesByPointerPrefixResult = AxiosResponse<GetEntitiesByPointerPrefix200Item[]>
 export type GetActiveEntitiesResult = AxiosResponse<GetActiveEntities200Item[]>
 export type GetFailedDeploymentsResult = AxiosResponse<GetFailedDeployments200Item[]>
-export type GetListPointerChangesResult = AxiosResponse<GetListPointerChanges200>
+export type GetPointerChangesResult = AxiosResponse<GetPointerChanges200>
 export type GetSnapshotsResult = AxiosResponse<GetSnapshots200Item[]>
 export type GetStatusResult = AxiosResponse<GetStatus200>
 export type GetLambdaStatusResult = AxiosResponse<GetLambdaStatus200>

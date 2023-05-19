@@ -529,57 +529,56 @@ export type GetSnapshots200Item = {
   generationTimestamp: number
 }
 
-export type GetListPointerChanges400 = {
+export type GetPointerChanges400 = {
   error: string
 }
 
-export type GetListPointerChanges200DeltasItemAuthChainItem = {
+export type GetPointerChanges200DeltasItemAuthChainItem = {
   type: string
   payload: string
   signature?: string
 }
 
-export type GetListPointerChanges200DeltasItem = {
+export type GetPointerChanges200DeltasItem = {
   entityType: string
   entityId: string
   localTimestamp: number
   pointers: string[]
-  authChain: GetListPointerChanges200DeltasItemAuthChainItem[]
+  authChain: GetPointerChanges200DeltasItemAuthChainItem[]
 }
 
-export type GetListPointerChanges200 = {
-  deltas: GetListPointerChanges200DeltasItem[]
+export type GetPointerChanges200 = {
+  deltas: GetPointerChanges200DeltasItem[]
 }
 
-export type GetListPointerChangesSortingOrder =
-  (typeof GetListPointerChangesSortingOrder)[keyof typeof GetListPointerChangesSortingOrder]
+export type GetPointerChangesSortingOrder =
+  (typeof GetPointerChangesSortingOrder)[keyof typeof GetPointerChangesSortingOrder]
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
-export const GetListPointerChangesSortingOrder = {
+export const GetPointerChangesSortingOrder = {
   ASC: 'ASC',
   DESC: 'DESC'
 } as const
 
-export type GetListPointerChangesSortingField =
-  (typeof GetListPointerChangesSortingField)[keyof typeof GetListPointerChangesSortingField]
+export type GetPointerChangesSortingField =
+  (typeof GetPointerChangesSortingField)[keyof typeof GetPointerChangesSortingField]
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
-export const GetListPointerChangesSortingField = {
+export const GetPointerChangesSortingField = {
   local_timestamp: 'local_timestamp',
   entity_timestamp: 'entity_timestamp'
 } as const
 
-export type GetListPointerChangesEntityType =
-  (typeof GetListPointerChangesEntityType)[keyof typeof GetListPointerChangesEntityType]
+export type GetPointerChangesEntityType = (typeof GetPointerChangesEntityType)[keyof typeof GetPointerChangesEntityType]
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
-export const GetListPointerChangesEntityType = {
+export const GetPointerChangesEntityType = {
   scene: 'scene',
   profile: 'profile',
   wearable: 'wearable'
 } as const
 
-export type GetListPointerChangesParams = {
+export type GetPointerChangesParams = {
   /**
    * Acts as a filter in the collection of deployments, this value is the minimum value of local timestamp that any deployment in the collection will have.
    */
@@ -599,15 +598,15 @@ export type GetListPointerChangesParams = {
   /**
    * The type of entities that will be shown in the collection, many values can be sent. Valid values are: profile, scene and wearable.
    */
-  entityType?: GetListPointerChangesEntityType
+  entityType?: GetPointerChangesEntityType
   /**
    * This value is used as the field to order all the deployments in the collection. If no parameter is sent, then the default field to order with will be local_timestamp.
    */
-  sortingField?: GetListPointerChangesSortingField
+  sortingField?: GetPointerChangesSortingField
   /**
    * This value is used as the order for all the deployments in the collection. If no parameter is sent, then the default field to order with will be DESC.
    */
-  sortingOrder?: GetListPointerChangesSortingOrder
+  sortingOrder?: GetPointerChangesSortingOrder
 }
 
 export type GetFailedDeployments200Item = {
