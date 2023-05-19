@@ -49,7 +49,7 @@ post:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/content/bad-request.yaml
+            $ref: ../../components/schemas/content/error.yaml
           examples:
             default:
               value:

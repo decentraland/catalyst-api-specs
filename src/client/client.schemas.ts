@@ -619,7 +619,7 @@ export type GetFailedDeployments200Item = {
 }
 
 export type GetActiveEntities400 = {
-  error?: string
+  error: string
 }
 
 export type GetActiveEntities200ItemMetadata = { [key: string]: any }
@@ -685,6 +685,10 @@ export type GetListEntityIdsByHashId404 = {
 
 export type GetIfPartOfTheDAO200 = {
   challengeText: string
+}
+
+export type GetEntityInformation404 = {
+  error: string
 }
 
 export type GetEntityInformation400 = {

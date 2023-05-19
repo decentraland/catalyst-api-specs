@@ -41,12 +41,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            required:
-              - error
-            type: object
-            properties:
-              error:
-                type: string
+            $ref: ../../components/schemas/content/error.yaml
           example:
             error: 'Unrecognized type: Houses'
     '404':
@@ -54,5 +49,5 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            type: string
+            $ref: ../../components/schemas/content/error.yaml
           example: Not Found

@@ -98,12 +98,7 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            required:
-              - error
-            type: object
-            properties:
-              error:
-                type: string
+            $ref: ../../components/schemas/content/error.yaml
           examples:
             entityType:
               summary: EntityType not recognized
