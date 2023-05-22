@@ -265,6 +265,14 @@ export type GetWearables200WearablesItemI18nItem = {
   text?: string
 }
 
+export type GetWearables200WearablesItemData = {
+  replaces?: string[]
+  hides?: string[]
+  tags?: string[]
+  category?: string
+  representations?: GetWearables200WearablesItemDataRepresentationsItem[]
+}
+
 export type GetWearables200WearablesItem = {
   id?: string
   description?: string
@@ -293,14 +301,6 @@ export type GetWearables200WearablesItemDataRepresentationsItem = {
   overrideReplaces?: GetWearables200WearablesItemDataRepresentationsItemOverrideReplacesItem[]
   overrideHides?: GetWearables200WearablesItemDataRepresentationsItemOverrideHidesItem[]
   contents?: GetWearables200WearablesItemDataRepresentationsItemContentsItem[]
-}
-
-export type GetWearables200WearablesItemData = {
-  replaces?: string[]
-  hides?: string[]
-  tags?: string[]
-  category?: string
-  representations?: GetWearables200WearablesItemDataRepresentationsItem[]
 }
 
 export type GetWearablesParams = {
@@ -524,7 +524,7 @@ export type GetSnapshots200ItemTimeRange = {
 export type GetSnapshots200Item = {
   hash: string
   timeRange: GetSnapshots200ItemTimeRange
-  replacedSnapshotHashes: string[]
+  replacedSnapshotHashes?: string[]
   numberOfEntities: number
   generationTimestamp: number
 }
@@ -645,9 +645,37 @@ export type GetActiveEntitiesBody = {
   ids?: string[]
 }
 
-export type GetEntitiesByPointerPrefix200Item = {
-  pointer: string
-  entityId: string
+export type GetEntitiesByPointerPrefix200EntitiesItemMetadata = { [key: string]: any }
+
+export type GetEntitiesByPointerPrefix200EntitiesItemContentItem = {
+  file: string
+  hash: string
+}
+
+export type GetEntitiesByPointerPrefix200EntitiesItem = {
+  version: string
+  id: string
+  type: string
+  timestamp: number
+  pointers: string[]
+  content: GetEntitiesByPointerPrefix200EntitiesItemContentItem[]
+  metadata?: GetEntitiesByPointerPrefix200EntitiesItemMetadata
+}
+
+export type GetEntitiesByPointerPrefix200 = {
+  total: number
+  entities: GetEntitiesByPointerPrefix200EntitiesItem[]
+}
+
+export type GetEntitiesByPointerPrefixParams = {
+  /**
+   * Page size (max 1000)
+   */
+  pageSize?: number
+  /**
+   * Page number (default: 1)
+   */
+  pageNumber?: number
 }
 
 export type PostEntity400OneOfTwo = {

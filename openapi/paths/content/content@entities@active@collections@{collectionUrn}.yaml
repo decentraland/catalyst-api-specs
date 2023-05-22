@@ -13,7 +13,18 @@ get:
         type: string
         example: 'urn:decentraland:matic:collections-v2:0x8e674db9b2fc0759b2d94cace9c4bae334a8f0c3'
       description: 'urn prefix to filter the entities by'
-
+    - in: query
+      name: pageSize
+      required: false
+      schema:
+        type: number
+      description: Page size (max 1000)
+    - in: query
+      name: pageNumber
+      required: false
+      schema:
+        type: number
+      description: "Page number (default: 1)"
   responses:
     '200':
       description: >-
@@ -21,7 +32,17 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/content/active-collections.yaml
+            type: object
+            required:
+              - total
+              - entities
+            properties:
+              total:
+                type: number
+              entities:
+                type: array
+                items:
+                  $ref: ../../components/schemas/content/entity.yaml
           examples:
             default:
               $ref: ../../components/examples/content/200-active-collections.json
