@@ -3,7 +3,6 @@ items:
   required:
   - hash
   - timeRange
-  - replacedSnapshotHashes
   - numberOfEntities
   - generationTimestamp
   type: object

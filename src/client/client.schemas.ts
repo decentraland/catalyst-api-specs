@@ -524,7 +524,7 @@ export type GetSnapshots200ItemTimeRange = {
 export type GetSnapshots200Item = {
   hash: string
   timeRange: GetSnapshots200ItemTimeRange
-  replacedSnapshotHashes: string[]
+  replacedSnapshotHashes?: string[]
   numberOfEntities: number
   generationTimestamp: number
 }
