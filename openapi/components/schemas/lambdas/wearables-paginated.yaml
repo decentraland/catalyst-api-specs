@@ -1,6 +1,6 @@
 type: object
 properties:
-  wearables:
+  elements:
     type: array
     items:
       type: object
