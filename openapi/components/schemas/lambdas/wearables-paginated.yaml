@@ -11,11 +11,20 @@ properties:
       type: object
       required:
         - urn
+        - name
+        - rarity
+        - category
       properties:
         urn:
           type: string
         amount:
           type: number
+        name:
+          type: string
+        rarity:
+          type: string
+        category:
+          type: string
         entity:
           $ref: ../content/entity.yaml
         individualData:

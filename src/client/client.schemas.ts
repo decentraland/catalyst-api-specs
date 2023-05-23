@@ -427,6 +427,9 @@ export type GetPaginatedWearables200ElementsItemEntity = {
 export type GetPaginatedWearables200ElementsItem = {
   urn: string
   amount?: number
+  name: string
+  rarity: string
+  category: string
   entity?: GetPaginatedWearables200ElementsItemEntity
   individualData?: GetPaginatedWearables200ElementsItemIndividualDataItem[]
 }
