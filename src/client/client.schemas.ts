@@ -716,11 +716,11 @@ export type GetAvailableContentParams = {
   cid: unknown[]
 }
 
-export type GetListEntityIdsByHashId404 = {
+export type GetEntityIdsByHashId404 = {
   error: string
 }
 
-export type GetIfPartOfTheDAO200 = {
+export type GetChallenge200 = {
   challengeText: string
 }
 

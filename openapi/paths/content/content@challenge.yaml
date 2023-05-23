@@ -1,5 +1,5 @@
 get:
-  operationId: getIfPartOfTheDAO
+  operationId: getChallenge
   summary: Validate if the Server is part of the DAO
   tags:
     - Content Server
