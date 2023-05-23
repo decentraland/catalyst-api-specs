@@ -233,18 +233,6 @@ export type GetServers200Item = {
   id?: string
 }
 
-export type GetWearablesByOwner200Item = {
-  urn?: string
-  amount?: number
-}
-
-export type GetWearablesByOwnerParams = {
-  /**
-   * Third Party collection Id to filter wearables, if this param is not sent then the 3rd parties wearables are not shown
-   */
-  collectionId?: string
-}
-
 export type GetWearables200Pagination = {
   limit?: number
   next?: string
@@ -412,24 +400,42 @@ export type GetPaginatedEmotesParams = {
   pageSize?: string
 }
 
-export type GetPaginatedWearables200WearablesItemIndividualDataItem = {
+export type GetPaginatedWearables200 = {
+  elements?: GetPaginatedWearables200ElementsItem[]
+  totalAmount?: number
+  pageNum?: string
+  pageSize?: string
+}
+
+export type GetPaginatedWearables200ElementsItemIndividualDataItem = {
   id?: string
   tokenId?: string
   transferredAt?: string
   price?: string
 }
 
-export type GetPaginatedWearables200WearablesItem = {
-  urn?: string
-  amount?: number
-  individualData?: GetPaginatedWearables200WearablesItemIndividualDataItem[]
+export type GetPaginatedWearables200ElementsItemEntity = {
+  version: string
+  id: string
+  type: string
+  timestamp: number
+  pointers: string[]
+  content: GetPaginatedWearables200ElementsItemEntityContentItem[]
+  metadata?: GetPaginatedWearables200ElementsItemEntityMetadata
 }
 
-export type GetPaginatedWearables200 = {
-  wearables?: GetPaginatedWearables200WearablesItem[]
-  totalAmount?: number
-  pageNum?: string
-  pageSize?: string
+export type GetPaginatedWearables200ElementsItem = {
+  urn?: string
+  amount?: number
+  entity?: GetPaginatedWearables200ElementsItemEntity
+  individualData?: GetPaginatedWearables200ElementsItemIndividualDataItem[]
+}
+
+export type GetPaginatedWearables200ElementsItemEntityMetadata = { [key: string]: any }
+
+export type GetPaginatedWearables200ElementsItemEntityContentItem = {
+  file: string
+  hash: string
 }
 
 export type GetPaginatedWearablesParams = {
