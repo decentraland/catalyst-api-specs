@@ -1,6 +1,0 @@
-type: object
-properties:
-  valid:
-    type: boolean
-  error:
-    type: string
