@@ -1,5 +1,5 @@
 get:
-  operationId: getPaginatedLands
+  operationId: getLands
   summary: Get list of lands for an address
   tags:
     - Lambdas

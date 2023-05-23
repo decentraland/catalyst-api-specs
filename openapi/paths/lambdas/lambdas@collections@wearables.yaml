@@ -1,5 +1,6 @@
 get:
-  operationId: getWearables
+  deprecated: true
+  operationId: searchWearables
   summary: Search Wearables
   tags:
     - Lambdas

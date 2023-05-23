@@ -1,5 +1,5 @@
 get:
-  operationId: getPaginatedWearables
+  operationId: getWearables
   summary: Get list of wearables for an address
   tags:
     - Lambdas

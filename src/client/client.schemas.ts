@@ -233,65 +233,65 @@ export type GetServers200Item = {
   id?: string
 }
 
-export type GetWearables200Pagination = {
+export type SearchWearables200Pagination = {
   limit?: number
   next?: string
 }
 
-export type GetWearables200Filters = {
+export type SearchWearables200Filters = {
   textSearch?: string
 }
 
-export type GetWearables200 = {
-  wearables?: GetWearables200WearablesItem[]
-  filters?: GetWearables200Filters
-  pagination?: GetWearables200Pagination
+export type SearchWearables200 = {
+  wearables?: SearchWearables200WearablesItem[]
+  filters?: SearchWearables200Filters
+  pagination?: SearchWearables200Pagination
 }
 
-export type GetWearables200WearablesItemI18nItem = {
+export type SearchWearables200WearablesItemI18nItem = {
   code?: string
   text?: string
 }
 
-export type GetWearables200WearablesItemData = {
+export type SearchWearables200WearablesItemData = {
   replaces?: string[]
   hides?: string[]
   tags?: string[]
   category?: string
-  representations?: GetWearables200WearablesItemDataRepresentationsItem[]
+  representations?: SearchWearables200WearablesItemDataRepresentationsItem[]
 }
 
-export type GetWearables200WearablesItem = {
+export type SearchWearables200WearablesItem = {
   id?: string
   description?: string
   image?: string
   thumbnail?: string
   collectionAddress?: string
   rarity?: string
-  data?: GetWearables200WearablesItemData
-  i18n?: GetWearables200WearablesItemI18nItem[]
+  data?: SearchWearables200WearablesItemData
+  i18n?: SearchWearables200WearablesItemI18nItem[]
   createdAt?: number
   updatedAt?: number
 }
 
-export type GetWearables200WearablesItemDataRepresentationsItemContentsItem = {
+export type SearchWearables200WearablesItemDataRepresentationsItemContentsItem = {
   key?: string
   url?: string
 }
 
-export type GetWearables200WearablesItemDataRepresentationsItemOverrideHidesItem = { [key: string]: any }
+export type SearchWearables200WearablesItemDataRepresentationsItemOverrideHidesItem = { [key: string]: any }
 
-export type GetWearables200WearablesItemDataRepresentationsItemOverrideReplacesItem = { [key: string]: any }
+export type SearchWearables200WearablesItemDataRepresentationsItemOverrideReplacesItem = { [key: string]: any }
 
-export type GetWearables200WearablesItemDataRepresentationsItem = {
+export type SearchWearables200WearablesItemDataRepresentationsItem = {
   bodyShapes?: string[]
   mainFile?: string
-  overrideReplaces?: GetWearables200WearablesItemDataRepresentationsItemOverrideReplacesItem[]
-  overrideHides?: GetWearables200WearablesItemDataRepresentationsItemOverrideHidesItem[]
-  contents?: GetWearables200WearablesItemDataRepresentationsItemContentsItem[]
+  overrideReplaces?: SearchWearables200WearablesItemDataRepresentationsItemOverrideReplacesItem[]
+  overrideHides?: SearchWearables200WearablesItemDataRepresentationsItemOverrideHidesItem[]
+  contents?: SearchWearables200WearablesItemDataRepresentationsItemContentsItem[]
 }
 
-export type GetWearablesParams = {
+export type SearchWearablesParams = {
   /**
    * Lis of URNs that identify the collection. Maximum amount of ids allowed is 500.
    */
@@ -314,26 +314,26 @@ export type GetWearablesParams = {
   lastId?: string
 }
 
-export type GetPaginatedLands200LandsItem = {
+export type GetLands200ElementsItem = {
   name?: string
-  contractAddress?: string
-  tokenId?: string
+  contractAddress: string
+  tokenId: string
   price?: number
-  category?: string
+  category: string
   x?: string
   y?: string
   image?: string
   description?: string
 }
 
-export type GetPaginatedLands200 = {
-  lands?: GetPaginatedLands200LandsItem[]
-  totalAmount?: number
-  pageNum?: number
-  pageSize?: number
+export type GetLands200 = {
+  elements: GetLands200ElementsItem[]
+  totalAmount: number
+  pageNum: number
+  pageSize: number
 }
 
-export type GetPaginatedLandsParams = {
+export type GetLandsParams = {
   /**
    * The number of the requested page. It needs `pageSize` to be present to enable a paginated response.
    */
@@ -400,48 +400,48 @@ export type GetPaginatedEmotesParams = {
   pageSize?: string
 }
 
-export type GetPaginatedWearables200 = {
-  elements: GetPaginatedWearables200ElementsItem[]
+export type GetWearables200 = {
+  elements: GetWearables200ElementsItem[]
   totalAmount: number
   pageNum: number
   pageSize: number
 }
 
-export type GetPaginatedWearables200ElementsItemIndividualDataItem = {
+export type GetWearables200ElementsItemIndividualDataItem = {
   id?: string
   tokenId?: string
   transferredAt?: number
   price?: number
 }
 
-export type GetPaginatedWearables200ElementsItemEntity = {
+export type GetWearables200ElementsItemEntity = {
   version: string
   id: string
   type: string
   timestamp: number
   pointers: string[]
-  content: GetPaginatedWearables200ElementsItemEntityContentItem[]
-  metadata?: GetPaginatedWearables200ElementsItemEntityMetadata
+  content: GetWearables200ElementsItemEntityContentItem[]
+  metadata?: GetWearables200ElementsItemEntityMetadata
 }
 
-export type GetPaginatedWearables200ElementsItem = {
+export type GetWearables200ElementsItem = {
   urn: string
   amount?: number
   name: string
   rarity: string
   category: string
-  entity?: GetPaginatedWearables200ElementsItemEntity
-  individualData?: GetPaginatedWearables200ElementsItemIndividualDataItem[]
+  entity?: GetWearables200ElementsItemEntity
+  individualData?: GetWearables200ElementsItemIndividualDataItem[]
 }
 
-export type GetPaginatedWearables200ElementsItemEntityMetadata = { [key: string]: any }
+export type GetWearables200ElementsItemEntityMetadata = { [key: string]: any }
 
-export type GetPaginatedWearables200ElementsItemEntityContentItem = {
+export type GetWearables200ElementsItemEntityContentItem = {
   file: string
   hash: string
 }
 
-export type GetPaginatedWearablesParams = {
+export type GetWearablesParams = {
   /**
    * Third Party collection Id to filter wearables, if this param is not sent then the 3rd parties wearables are not shown. If it is sent, only the 3rd parties wearables are shown.
    */
