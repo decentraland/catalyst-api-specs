@@ -99,7 +99,7 @@ paths:
   /lambdas/collections/standard/erc721/{chainId}/{contract}/{option}/{emission}:
     $ref: 'paths/lambdas/lambdas@collections@standard@erc721@{chainId}@{contract}@{option}@{emission}.yaml'
   /lambdas/users/{address}/wearables:
-    $ref: 'paths/lambdas/lambdas@nfts@wearables@{address}.yaml'
+    $ref: 'paths/lambdas/lambdas@users@{address}@wearables.yaml'
   /lambdas/users/{address}/emotes:
     $ref: 'paths/lambdas/lambdas@nfts@emotes@{address}.yaml'
   /lambdas/users/{address}/names:

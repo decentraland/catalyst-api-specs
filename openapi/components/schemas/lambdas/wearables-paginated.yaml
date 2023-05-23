@@ -9,12 +9,14 @@ properties:
           type: string
         amount:
           type: number
+        entity:
+          $ref: ../content/entity.yaml
         individualData:
           type: array
           items:
             type: object
             properties:
-                id: 
+                id:
                   type: string
                 tokenId:
                   type: string
