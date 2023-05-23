@@ -1,5 +1,5 @@
 get:
-  operationId: getPaginatedEmotes
+  operationId: getEmotes
   summary: Get list of emotes for an address
   tags:
     - Lambdas

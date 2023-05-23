@@ -369,38 +369,38 @@ export type GetPaginatedNamesParams = {
   pageSize?: string
 }
 
-export type GetPaginatedEmotes200ElementsItem = {
+export type GetEmotes200ElementsItem = {
   urn: string
   amount?: number
   category: string
-  entity?: GetPaginatedEmotes200ElementsItemEntity
+  entity?: GetEmotes200ElementsItemEntity
 }
 
-export type GetPaginatedEmotes200 = {
-  elements: GetPaginatedEmotes200ElementsItem[]
+export type GetEmotes200 = {
+  elements: GetEmotes200ElementsItem[]
   totalAmount: number
   pageNum: number
   pageSize: number
 }
 
-export type GetPaginatedEmotes200ElementsItemEntityMetadata = { [key: string]: any }
+export type GetEmotes200ElementsItemEntityMetadata = { [key: string]: any }
 
-export type GetPaginatedEmotes200ElementsItemEntityContentItem = {
+export type GetEmotes200ElementsItemEntityContentItem = {
   file: string
   hash: string
 }
 
-export type GetPaginatedEmotes200ElementsItemEntity = {
+export type GetEmotes200ElementsItemEntity = {
   version: string
   id: string
   type: string
   timestamp: number
   pointers: string[]
-  content: GetPaginatedEmotes200ElementsItemEntityContentItem[]
-  metadata?: GetPaginatedEmotes200ElementsItemEntityMetadata
+  content: GetEmotes200ElementsItemEntityContentItem[]
+  metadata?: GetEmotes200ElementsItemEntityMetadata
 }
 
-export type GetPaginatedEmotesParams = {
+export type GetEmotesParams = {
   /**
    * Third Party collection Id to filter emotes, if this param is not sent then the 3rd parties emotes are not shown. If it is sent, only the 3rd parties emotes are shown.
    */
