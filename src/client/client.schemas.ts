@@ -153,15 +153,6 @@ export type GetAvatarsDetailsByPost200ItemAvatarsItemAvatarSkin = {
   color?: GetAvatarsDetailsByPost200ItemAvatarsItemAvatarSkinColor
 }
 
-export type GetAvatarsDetailsByPost200ItemAvatarsItemAvatar = {
-  bodyShape?: string
-  snapshots?: GetAvatarsDetailsByPost200ItemAvatarsItemAvatarSnapshots
-  eyes?: GetAvatarsDetailsByPost200ItemAvatarsItemAvatarEyes
-  hair?: GetAvatarsDetailsByPost200ItemAvatarsItemAvatarHair
-  skin?: GetAvatarsDetailsByPost200ItemAvatarsItemAvatarSkin
-  wearables?: string[]
-}
-
 export type GetAvatarsDetailsByPost200ItemAvatarsItemAvatarHairColor = {
   r?: number
   g?: number
@@ -187,6 +178,15 @@ export type GetAvatarsDetailsByPost200ItemAvatarsItemAvatarSnapshots = {
   face128?: string
   face256?: string
   body?: string
+}
+
+export type GetAvatarsDetailsByPost200ItemAvatarsItemAvatar = {
+  bodyShape?: string
+  snapshots?: GetAvatarsDetailsByPost200ItemAvatarsItemAvatarSnapshots
+  eyes?: GetAvatarsDetailsByPost200ItemAvatarsItemAvatarEyes
+  hair?: GetAvatarsDetailsByPost200ItemAvatarsItemAvatarHair
+  skin?: GetAvatarsDetailsByPost200ItemAvatarsItemAvatarSkin
+  wearables?: string[]
 }
 
 export type GetAvatarsDetailsByPostBody = {
@@ -369,16 +369,35 @@ export type GetPaginatedNamesParams = {
   pageSize?: string
 }
 
-export type GetPaginatedEmotes200EmotesItem = {
-  urn?: string
+export type GetPaginatedEmotes200ElementsItem = {
+  urn: string
   amount?: number
+  category: string
+  entity?: GetPaginatedEmotes200ElementsItemEntity
 }
 
 export type GetPaginatedEmotes200 = {
-  emotes?: GetPaginatedEmotes200EmotesItem[]
-  totalAmount?: number
-  pageNum?: number
-  pageSize?: number
+  elements: GetPaginatedEmotes200ElementsItem[]
+  totalAmount: number
+  pageNum: number
+  pageSize: number
+}
+
+export type GetPaginatedEmotes200ElementsItemEntityMetadata = { [key: string]: any }
+
+export type GetPaginatedEmotes200ElementsItemEntityContentItem = {
+  file: string
+  hash: string
+}
+
+export type GetPaginatedEmotes200ElementsItemEntity = {
+  version: string
+  id: string
+  type: string
+  timestamp: number
+  pointers: string[]
+  content: GetPaginatedEmotes200ElementsItemEntityContentItem[]
+  metadata?: GetPaginatedEmotes200ElementsItemEntityMetadata
 }
 
 export type GetPaginatedEmotesParams = {
@@ -400,28 +419,11 @@ export type GetPaginatedEmotesParams = {
   pageSize?: string
 }
 
-export type GetWearables200 = {
-  elements: GetWearables200ElementsItem[]
-  totalAmount: number
-  pageNum: number
-  pageSize: number
-}
-
 export type GetWearables200ElementsItemIndividualDataItem = {
   id?: string
   tokenId?: string
   transferredAt?: number
   price?: number
-}
-
-export type GetWearables200ElementsItemEntity = {
-  version: string
-  id: string
-  type: string
-  timestamp: number
-  pointers: string[]
-  content: GetWearables200ElementsItemEntityContentItem[]
-  metadata?: GetWearables200ElementsItemEntityMetadata
 }
 
 export type GetWearables200ElementsItem = {
@@ -434,11 +436,28 @@ export type GetWearables200ElementsItem = {
   individualData?: GetWearables200ElementsItemIndividualDataItem[]
 }
 
+export type GetWearables200 = {
+  elements: GetWearables200ElementsItem[]
+  totalAmount: number
+  pageNum: number
+  pageSize: number
+}
+
 export type GetWearables200ElementsItemEntityMetadata = { [key: string]: any }
 
 export type GetWearables200ElementsItemEntityContentItem = {
   file: string
   hash: string
+}
+
+export type GetWearables200ElementsItemEntity = {
+  version: string
+  id: string
+  type: string
+  timestamp: number
+  pointers: string[]
+  content: GetWearables200ElementsItemEntityContentItem[]
+  metadata?: GetWearables200ElementsItemEntityMetadata
 }
 
 export type GetWearablesParams = {
