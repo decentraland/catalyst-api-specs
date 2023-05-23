@@ -24,3 +24,6 @@ post:
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-profiles-ids.json
+
+    '304':
+      description: No profile was modified since `If-Modified-Since` header
