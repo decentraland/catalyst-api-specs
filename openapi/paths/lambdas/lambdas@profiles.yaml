@@ -20,7 +20,9 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../../components/schemas/lambdas/profiles-ids.yaml
+            type: array
+            items:
+              $ref: ../../components/schemas/lambdas/profile.yaml
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-profiles-ids.json
