@@ -401,10 +401,10 @@ export type GetPaginatedEmotesParams = {
 }
 
 export type GetPaginatedWearables200 = {
-  elements?: GetPaginatedWearables200ElementsItem[]
-  totalAmount?: number
-  pageNum?: number
-  pageSize?: number
+  elements: GetPaginatedWearables200ElementsItem[]
+  totalAmount: number
+  pageNum: number
+  pageSize: number
 }
 
 export type GetPaginatedWearables200ElementsItemIndividualDataItem = {
@@ -425,7 +425,7 @@ export type GetPaginatedWearables200ElementsItemEntity = {
 }
 
 export type GetPaginatedWearables200ElementsItem = {
-  urn?: string
+  urn: string
   amount?: number
   entity?: GetPaginatedWearables200ElementsItemEntity
   individualData?: GetPaginatedWearables200ElementsItemIndividualDataItem[]

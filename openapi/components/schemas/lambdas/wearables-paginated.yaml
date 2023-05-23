@@ -1,9 +1,16 @@
 type: object
+required:
+  - elements
+  - pageNum
+  - pageSize
+  - totalAmount
 properties:
   elements:
     type: array
     items:
       type: object
+      required:
+        - urn
       properties:
         urn:
           type: string
