@@ -66,5 +66,9 @@ get:
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-wearables-paginated.json
-    '500':
-      description: 'Failed to fetch wearables for the address'
+    '503':
+      description: 'Failed to fetch wearables'
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/lambdas/error.yaml

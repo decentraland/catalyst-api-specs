@@ -419,11 +419,9 @@ export type GetEmotesParams = {
   pageSize?: string
 }
 
-export type GetWearables200ElementsItemIndividualDataItem = {
-  id?: string
-  tokenId?: string
-  transferredAt?: number
-  price?: number
+export type GetWearables503 = {
+  error: string
+  message: string
 }
 
 export type GetWearables200ElementsItem = {
@@ -441,6 +439,13 @@ export type GetWearables200 = {
   totalAmount: number
   pageNum: number
   pageSize: number
+}
+
+export type GetWearables200ElementsItemIndividualDataItem = {
+  id?: string
+  tokenId?: string
+  transferredAt?: number
+  price?: number
 }
 
 export type GetWearables200ElementsItemEntityMetadata = { [key: string]: any }
