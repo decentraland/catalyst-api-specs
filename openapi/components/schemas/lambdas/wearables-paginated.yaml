@@ -23,7 +23,7 @@ properties:
                 transferredAt:
                   type: number
                 price:
-                  type: string
+                  type: number
   totalAmount:
     type: number
   pageNum:
