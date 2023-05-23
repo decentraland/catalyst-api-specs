@@ -12,10 +12,10 @@ properties:
         tokenId:
           type: string
         price:
-          type: string
+          type: number
   totalAmount:
     type: number
   pageNum:
-    type: string
+    type: number
   pageSize:
-    type: string
+    type: number

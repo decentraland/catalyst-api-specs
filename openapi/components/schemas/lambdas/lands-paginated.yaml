@@ -12,7 +12,7 @@ properties:
         tokenId:
           type: string
         price:
-          type: string
+          type: number
         category:
           type: string
         x:
@@ -26,6 +26,6 @@ properties:
   totalAmount:
     type: number
   pageNum:
-    type: string
+    type: number
   pageSize:
-    type: string
+    type: number

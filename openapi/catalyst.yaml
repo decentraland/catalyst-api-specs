@@ -101,11 +101,11 @@ paths:
   /lambdas/users/{address}/wearables:
     $ref: 'paths/lambdas/lambdas@users@{address}@wearables.yaml'
   /lambdas/users/{address}/emotes:
-    $ref: 'paths/lambdas/lambdas@nfts@emotes@{address}.yaml'
+    $ref: 'paths/lambdas/lambdas@users@{address}@emotes.yaml'
   /lambdas/users/{address}/names:
-    $ref: 'paths/lambdas/lambdas@nfts@names@{address}.yaml'
+    $ref: 'paths/lambdas/lambdas@users@{address}@names.yaml'
   /lambdas/users/{address}/lands:
-    $ref: 'paths/lambdas/lambdas@nfts@lands@{address}.yaml'
+    $ref: 'paths/lambdas/lambdas@users@{address}@lands.yaml'
   /lambdas/collections/wearables:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
   /lambdas/contracts/servers:
