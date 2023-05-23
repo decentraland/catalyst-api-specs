@@ -403,8 +403,8 @@ export type GetPaginatedEmotesParams = {
 export type GetPaginatedWearables200 = {
   elements?: GetPaginatedWearables200ElementsItem[]
   totalAmount?: number
-  pageNum?: string
-  pageSize?: string
+  pageNum?: number
+  pageSize?: number
 }
 
 export type GetPaginatedWearables200ElementsItemIndividualDataItem = {
