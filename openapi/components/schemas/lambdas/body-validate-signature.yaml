@@ -1,8 +1,0 @@
-type: object
-properties:
-  timestamp:
-    type: string
-  signedMessage:
-    type: string
-  authChain:
-    $ref: '../content/auth-chain.yaml'
