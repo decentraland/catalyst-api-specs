@@ -1,9 +1,9 @@
 get:
-  operationId: getPaginatedNames
-  summary: Get list of names for an address
+  operationId: getLands
+  summary: Get list of lands for an address
   tags:
     - Lambdas
-  description: Get a list of names owned by the given address
+  description: Get a list of lands owned by the given address
   parameters:
     - in: path
       name: address
@@ -12,7 +12,7 @@ get:
         type: string
         example: '0xddf1eec586d8f8f0eb8c5a3bf51fb99379a55684'
       description: >-
-        Ethereum address from which you want to get the list of names
+        Ethereum address from which you want to get the list of lands
     - in: query
       name: pageNum
       schema:
@@ -30,13 +30,13 @@ get:
 
   responses:
     '200':
-      description: List of names owned by the given address
+      description: List of lands owned by the given address
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/lambdas/names-paginated.yaml
+            $ref: ../../components/schemas/lambdas/lands-paginated.yaml
           examples:
             default:
-              $ref: ../../components/examples/lambdas/200-names-paginated.json
+              $ref: ../../components/examples/lambdas/200-lands-paginated.json
     '500':
-      description: 'Failed to fetch names for the address'
+      description: 'Failed to fetch lands for the address'

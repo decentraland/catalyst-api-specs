@@ -1,9 +1,18 @@
 type: object
+required:
+  - elements
+  - totalAmount
+  - pageNum
+  - pageSize
 properties:
-  lands:
+  elements:
     type: array
     items:
       type: object
+      required:
+        - contractAddress
+        - tokenId
+        - category
       properties:
         name:
           type: string
@@ -12,7 +21,7 @@ properties:
         tokenId:
           type: string
         price:
-          type: string
+          type: number
         category:
           type: string
         x:
@@ -26,6 +35,6 @@ properties:
   totalAmount:
     type: number
   pageNum:
-    type: string
+    type: number
   pageSize:
-    type: string
+    type: number

@@ -80,6 +80,6 @@ properties:
         interests:
           type: array
           items:
-            type: object
+            type: string
         unclaimedName:
           type: string

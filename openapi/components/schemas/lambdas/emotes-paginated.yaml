@@ -1,17 +1,30 @@
 type: object
+required:
+  - elements
+  - totalAmount
+  - pageNum
+  - pageSize
 properties:
-  emotes:
+  elements:
     type: array
     items:
       type: object
+      required:
+        - urn
+        - name
+        - category
       properties:
         urn:
           type: string
         amount:
           type: number
+        category:
+          type: string
+        entity:
+          $ref: ../content/entity.yaml
   totalAmount:
     type: number
   pageNum:
-    type: string
+    type: number
   pageSize:
-    type: string
+    type: number
