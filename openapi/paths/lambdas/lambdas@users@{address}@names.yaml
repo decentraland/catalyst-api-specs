@@ -1,5 +1,5 @@
 get:
-  operationId: getPaginatedNames
+  operationId: getNames
   summary: Get list of names for an address
   tags:
     - Lambdas

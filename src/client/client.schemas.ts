@@ -344,21 +344,21 @@ export type GetLandsParams = {
   pageSize?: string
 }
 
-export type GetPaginatedNames200NamesItem = {
-  name?: string
-  contractAddress?: string
-  tokenId?: string
+export type GetNames200ElementsItem = {
+  name: string
+  contractAddress: string
+  tokenId: string
   price?: number
 }
 
-export type GetPaginatedNames200 = {
-  names?: GetPaginatedNames200NamesItem[]
-  totalAmount?: number
-  pageNum?: number
-  pageSize?: number
+export type GetNames200 = {
+  elements: GetNames200ElementsItem[]
+  totalAmount: number
+  pageNum: number
+  pageSize: number
 }
 
-export type GetPaginatedNamesParams = {
+export type GetNamesParams = {
   /**
    * The number of the requested page. It needs `pageSize` to be present to enable a paginated response.
    */
