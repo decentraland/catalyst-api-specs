@@ -318,7 +318,7 @@ export type GetPaginatedLands200LandsItem = {
   name?: string
   contractAddress?: string
   tokenId?: string
-  price?: string
+  price?: number
   category?: string
   x?: string
   y?: string
@@ -329,8 +329,8 @@ export type GetPaginatedLands200LandsItem = {
 export type GetPaginatedLands200 = {
   lands?: GetPaginatedLands200LandsItem[]
   totalAmount?: number
-  pageNum?: string
-  pageSize?: string
+  pageNum?: number
+  pageSize?: number
 }
 
 export type GetPaginatedLandsParams = {
@@ -348,14 +348,14 @@ export type GetPaginatedNames200NamesItem = {
   name?: string
   contractAddress?: string
   tokenId?: string
-  price?: string
+  price?: number
 }
 
 export type GetPaginatedNames200 = {
   names?: GetPaginatedNames200NamesItem[]
   totalAmount?: number
-  pageNum?: string
-  pageSize?: string
+  pageNum?: number
+  pageSize?: number
 }
 
 export type GetPaginatedNamesParams = {
@@ -377,8 +377,8 @@ export type GetPaginatedEmotes200EmotesItem = {
 export type GetPaginatedEmotes200 = {
   emotes?: GetPaginatedEmotes200EmotesItem[]
   totalAmount?: number
-  pageNum?: string
-  pageSize?: string
+  pageNum?: number
+  pageSize?: number
 }
 
 export type GetPaginatedEmotesParams = {
