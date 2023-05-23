@@ -108,8 +108,6 @@ paths:
     $ref: 'paths/lambdas/lambdas@nfts@lands@{address}.yaml'
   /lambdas/collections/wearables:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
-  /lambdas/collections/wearables-by-owner/{address}:
-    $ref: 'paths/lambdas/lambdas@collections@wearables-by-owner@{address}.yaml'
   /lambdas/contracts/servers:
     $ref: 'paths/lambdas/lambdas@contracts@servers.yaml'
   /lambdas/contracts/pois:
