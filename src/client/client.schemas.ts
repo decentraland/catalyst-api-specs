@@ -503,8 +503,8 @@ export type GetStandardErc721200 = {
 }
 
 export type GetCollections200CollectionsItem = {
-  id?: string
-  name?: string
+  id: string
+  name: string
 }
 
 export type GetCollections200 = {
