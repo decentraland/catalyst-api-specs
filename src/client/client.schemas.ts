@@ -410,7 +410,7 @@ export type GetPaginatedWearables200 = {
 export type GetPaginatedWearables200ElementsItemIndividualDataItem = {
   id?: string
   tokenId?: string
-  transferredAt?: string
+  transferredAt?: number
   price?: string
 }
 

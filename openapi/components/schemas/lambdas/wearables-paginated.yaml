@@ -21,7 +21,7 @@ properties:
                 tokenId:
                   type: string
                 transferredAt:
-                  type: string
+                  type: number
                 price:
                   type: string
   totalAmount:
