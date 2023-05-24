@@ -12,7 +12,7 @@ get:
       schema:
         type: array
         items:
-          format: string
+          type: string
           example: urn:decentraland:ethereum:collections-v1:mf_sammichgamer
       description: Lis of URNs that identify the collection. Maximum amount of ids allowed is 500.
     - in: query
@@ -20,7 +20,7 @@ get:
       schema:
         type: array
         items:
-          format: string
+          type: string
           example: urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat
       description: List of wearables URNs to search. Maximum amount of ids allowed is 500.
     - in: query
