@@ -3,6 +3,7 @@ required:
   - urn
   - name
   - category
+  - entity
 properties:
   urn:
     type: string

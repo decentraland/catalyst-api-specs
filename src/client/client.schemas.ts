@@ -329,7 +329,7 @@ export type GetThirdPartyCollection200ElementsItem = {
   amount?: number
   name: string
   category: string
-  entity?: GetThirdPartyCollection200ElementsItemEntity
+  entity: GetThirdPartyCollection200ElementsItemEntity
   individualData?: GetThirdPartyCollection200ElementsItemIndividualDataItem[]
 }
 
@@ -401,7 +401,7 @@ export type GetThirdPartyWearables200ElementsItem = {
   amount?: number
   name: string
   category: string
-  entity?: GetThirdPartyWearables200ElementsItemEntity
+  entity: GetThirdPartyWearables200ElementsItemEntity
   individualData?: GetThirdPartyWearables200ElementsItemIndividualDataItem[]
 }
 
