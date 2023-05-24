@@ -105,7 +105,7 @@ paths:
     $ref: 'paths/lambdas/lambdas@users@{address}@lands.yaml'
   /lambdas/users/{address}/third-party-wearables:
     $ref: 'paths/lambdas/lambdas@users@{address}@third-party-wearables.yaml'
-  /lambdas/users/{address}/third-party-wearables-collection:
+  /lambdas/users/{address}/third-party-wearables/{collectionId}:
     $ref: 'paths/lambdas/lambdas@users@{address}@third-party-wearables@{collectionId}.yaml'
   /lambdas/collections/wearables:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'

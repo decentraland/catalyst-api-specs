@@ -259,14 +259,6 @@ export type SearchWearables200WearablesItemI18nItem = {
   text?: string
 }
 
-export type SearchWearables200WearablesItemData = {
-  replaces?: string[]
-  hides?: string[]
-  tags?: string[]
-  category?: string
-  representations?: SearchWearables200WearablesItemDataRepresentationsItem[]
-}
-
 export type SearchWearables200WearablesItem = {
   id?: string
   description?: string
@@ -297,6 +289,14 @@ export type SearchWearables200WearablesItemDataRepresentationsItem = {
   contents?: SearchWearables200WearablesItemDataRepresentationsItemContentsItem[]
 }
 
+export type SearchWearables200WearablesItemData = {
+  replaces?: string[]
+  hides?: string[]
+  tags?: string[]
+  category?: string
+  representations?: SearchWearables200WearablesItemDataRepresentationsItem[]
+}
+
 export type SearchWearablesParams = {
   /**
    * Lis of URNs that identify the collection. Maximum amount of ids allowed is 500.
@@ -318,6 +318,110 @@ export type SearchWearablesParams = {
    * The result will always be ordered by the local timestamp fields but in case of timestamp collisions, you can use the lastId field to filter the result
    */
   lastId?: string
+}
+
+export type GetThirdPartyCollection200ElementsItemIndividualDataItem = {
+  id?: string
+  tokenId?: string
+  transferredAt?: number
+  price?: number
+}
+
+export type GetThirdPartyCollection200ElementsItem = {
+  urn: string
+  amount?: number
+  name: string
+  rarity: string
+  category: string
+  entity?: GetThirdPartyCollection200ElementsItemEntity
+  individualData?: GetThirdPartyCollection200ElementsItemIndividualDataItem[]
+}
+
+export type GetThirdPartyCollection200 = {
+  elements: GetThirdPartyCollection200ElementsItem[]
+  totalAmount: number
+  pageNum: number
+  pageSize: number
+}
+
+export type GetThirdPartyCollection200ElementsItemEntityMetadata = { [key: string]: any }
+
+export type GetThirdPartyCollection200ElementsItemEntityContentItem = {
+  file: string
+  hash: string
+}
+
+export type GetThirdPartyCollection200ElementsItemEntity = {
+  version: string
+  id: string
+  type: string
+  timestamp: number
+  pointers: string[]
+  content: GetThirdPartyCollection200ElementsItemEntityContentItem[]
+  metadata?: GetThirdPartyCollection200ElementsItemEntityMetadata
+}
+
+export type GetThirdPartyCollectionParams = {
+  /**
+   * The number of the requested page.
+   */
+  pageNum?: string
+  /**
+   * The size of the requested page.
+   */
+  pageSize?: string
+}
+
+export type GetThirdPartyWearables200 = {
+  elements: GetThirdPartyWearables200ElementsItem[]
+  totalAmount: number
+  pageNum: number
+  pageSize: number
+}
+
+export type GetThirdPartyWearables200ElementsItemIndividualDataItem = {
+  id?: string
+  tokenId?: string
+  transferredAt?: number
+  price?: number
+}
+
+export type GetThirdPartyWearables200ElementsItemEntityMetadata = { [key: string]: any }
+
+export type GetThirdPartyWearables200ElementsItemEntityContentItem = {
+  file: string
+  hash: string
+}
+
+export type GetThirdPartyWearables200ElementsItemEntity = {
+  version: string
+  id: string
+  type: string
+  timestamp: number
+  pointers: string[]
+  content: GetThirdPartyWearables200ElementsItemEntityContentItem[]
+  metadata?: GetThirdPartyWearables200ElementsItemEntityMetadata
+}
+
+export type GetThirdPartyWearables200ElementsItem = {
+  urn: string
+  amount?: number
+  name: string
+  rarity: string
+  category: string
+  entity?: GetThirdPartyWearables200ElementsItemEntity
+  individualData?: GetThirdPartyWearables200ElementsItemIndividualDataItem[]
+}
+
+export type GetThirdPartyWearablesParams = {
+  /**
+   * The number of the requested page.
+   */
+  pageNum?: string
+  /**
+   * The size of the requested page.
+   */
+  pageSize?: string
 }
 
 export type GetLands200ElementsItem = {
@@ -416,11 +520,11 @@ export type GetEmotesParams = {
    */
   includeEntities?: boolean
   /**
-   * The number of the requested page. It needs `pageSize` to be present to enable a paginated response.
+   * The number of the requested page.
    */
   pageNum?: string
   /**
-   * The size of the requested page. It needs `pageNum` to be present to enable a paginated response.
+   * The size of the requested page
    */
   pageSize?: string
 }
@@ -428,16 +532,6 @@ export type GetEmotesParams = {
 export type GetWearables503 = {
   error: string
   message: string
-}
-
-export type GetWearables200ElementsItem = {
-  urn: string
-  amount?: number
-  name: string
-  rarity: string
-  category: string
-  entity?: GetWearables200ElementsItemEntity
-  individualData?: GetWearables200ElementsItemIndividualDataItem[]
 }
 
 export type GetWearables200 = {
@@ -471,11 +565,17 @@ export type GetWearables200ElementsItemEntity = {
   metadata?: GetWearables200ElementsItemEntityMetadata
 }
 
+export type GetWearables200ElementsItem = {
+  urn: string
+  amount?: number
+  name: string
+  rarity: string
+  category: string
+  entity?: GetWearables200ElementsItemEntity
+  individualData?: GetWearables200ElementsItemIndividualDataItem[]
+}
+
 export type GetWearablesParams = {
-  /**
-   * Third Party collection Id to filter wearables, if this param is not sent then the 3rd parties wearables are not shown. If it is sent, only the 3rd parties wearables are shown.
-   */
-  collectionId?: string
   /**
    * If present, response will be extended with the entity data.
    */
@@ -485,11 +585,11 @@ export type GetWearablesParams = {
    */
   includeThirdParty?: boolean
   /**
-   * The number of the requested page. It needs `pageSize` to be present to enable a paginated response.
+   * The number of the requested page.
    */
   pageNum?: string
   /**
-   * The size of the requested page. It needs `pageNum` to be present to enable a paginated response.
+   * The size of the requested page.
    */
   pageSize?: string
   /**

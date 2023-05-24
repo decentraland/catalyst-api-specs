@@ -1,0 +1,14 @@
+type: object
+required:
+  - urn
+  - name
+  - category
+properties:
+  urn:
+    type: string
+  amount:
+    type: number
+  category:
+    type: string
+  entity:
+    $ref: ../content/entity.yaml

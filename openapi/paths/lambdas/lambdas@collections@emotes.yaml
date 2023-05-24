@@ -48,7 +48,23 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/lambdas/emotes.yaml
+            type: object
+            required:
+              - elements
+              - pageNum
+              - pageSize
+              - totalAmount
+            properties:
+              elements:
+                type: array
+                items:
+                  $ref: ../../components/schemas/lambdas/emote.yaml
+              totalAmount:
+                type: number
+              pageNum:
+                type: number
+              pageSize:
+                type: number
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-emotes.json

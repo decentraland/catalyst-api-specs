@@ -33,14 +33,14 @@ get:
         type: string
         example: "1"
       description: >-
-        The number of the requested page. It needs `pageSize` to be present to enable a paginated response.
+        The number of the requested page.
     - in: query
       name: pageSize
       schema:
         type: string
         example: "10"
       description: >-
-        The size of the requested page. It needs `pageNum` to be present to enable a paginated response.
+        The size of the requested page
 
   responses:
     '200':
@@ -48,7 +48,23 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/lambdas/emotes-paginated.yaml
+            type: object
+            required:
+              - elements
+              - totalAmount
+              - pageNum
+              - pageSize
+            properties:
+              elements:
+                type: array
+                items:
+                  $ref: ../../components/schemas/lambdas/emote.yaml
+              totalAmount:
+                type: number
+              pageNum:
+                type: number
+              pageSize:
+                type: number
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-emotes-paginated.json
