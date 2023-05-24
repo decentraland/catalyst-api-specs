@@ -3,10 +3,10 @@ get:
   summary: Returns the list of third party integrations as well as collections
   tags:
     - Lambdas
-  description: Returns the list of third party integrations as well as collections
+  description: Returns the list of third party integrations and collections
   responses:
     '200':
-      description: Returns the list of third party integrations as well as collections
+      description: Returns the list of third party integrations and collections
       content:
         application/json; charset=utf-8:
           schema:
