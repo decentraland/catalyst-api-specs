@@ -1,0 +1,23 @@
+get:
+  operationId: getThirdPartyCollection
+  summary: Returns the list of third party wearables for the given collection
+  tags:
+    - Lambdas
+  description: Returns the list of third party wearables for the given collection
+  parameters:
+    - in: path
+      name: address
+      required: true
+      schema:
+        type: string
+        example: '0xf4f7512c68f358856514cd4e449fc6c5ac04bb15'
+      description: >-
+        Ethereum address from which you want to get the list of wearables
+  responses:
+    '200':
+      description: Returns the list of third party wearables
+      content:
+        application/json; charset=utf-8:
+          type: array
+          items:
+            $ref: ../../components/schemas/lambdas/third-party-wearable.yaml
