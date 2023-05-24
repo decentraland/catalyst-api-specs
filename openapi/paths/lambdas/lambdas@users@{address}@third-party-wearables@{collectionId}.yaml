@@ -1,0 +1,60 @@
+get:
+  operationId: getThirdPartyCollection
+  summary: Returns the list of third party wearables for the given collection
+  tags:
+    - Lambdas
+  description: Returns the list of third party wearables for the given collection
+  parameters:
+    - in: path
+      name: address
+      required: true
+      schema:
+        type: string
+        example: '0xf4f7512c68f358856514cd4e449fc6c5ac04bb15'
+      description: >-
+        Ethereum address from which you want to get the list of wearables
+    - in: path
+      name: collectionId
+      required: true
+      schema:
+        type: string
+        example: 'urn:decentraland:matic:collections-thirdparty:ntr1-meta:ntr1-meta-1ef79e7b'
+      description: >-
+        Third Party collection Id to filter wearables.
+    - in: query
+      name: pageNum
+      schema:
+        type: string
+        example: "1"
+      description: >-
+        The number of the requested page.
+    - in: query
+      name: pageSize
+      schema:
+        type: string
+        example: "10"
+      description: >-
+        The size of the requested page.
+  responses:
+    '200':
+      description: Returns the list of third party wearables
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+            required:
+              - elements
+              - totalAmount
+              - pageNum
+              - pageSize
+            properties:
+              elements:
+                type: array
+                items:
+                  $ref: ../../components/schemas/lambdas/third-party-wearable.yaml
+              totalAmount:
+                type: number
+              pageNum:
+                type: number
+              pageSize:
+                type: number

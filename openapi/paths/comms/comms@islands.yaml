@@ -2,7 +2,7 @@ get:
   operationId: getIslands
   summary: List of islands
   tags:
-    - Comms
+    - Archipelago
   description: >-
     Retrieves the list of communication islands in the server with details
     about the peers present in each island.

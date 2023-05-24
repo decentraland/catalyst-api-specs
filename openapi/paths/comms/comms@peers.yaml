@@ -2,7 +2,7 @@ get:
   operationId: getPeers
   summary: List of peers
   tags:
-    - Comms
+    - Archipelago
   description: >-
     Retrieves the list peers in the server with details
     about their positions and islands.

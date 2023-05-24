@@ -6,7 +6,7 @@ info:
      A Catalyst is a Server that runs different services.
      These services currently work as the backbone for Decentraland and work in a decentralized network.
      The current specification details the following services:
-     <br/><br/>- Comms Service
+     <br/><br/>- Archipelago
      <br/>- Content Server
      <br/>- Lambdas Service
      <br/>
@@ -48,12 +48,9 @@ tags:
      <br/><br/>And the most important part is that all content servers will then sync with each other.
      So, for example, if a scene is modified in one server, the update itself will be broadcasted to the other ones.
      Then, in the case a content server goes down for some reason, all content will still be present in the other ones.
-  - name: Comms
+  - name: Archipelago
     description: >-
-      Comms is comprised of two distinct modules: One for Catalyst server called "Lighthouse" and other for clients &
-      P2P network called "Peer Library".
-      <br/>The Lighthouse is a server that tracks peers in different positions in order to enable them to make the
-      necessary connections. It also handles authentication.
+      This service is in charge of clustering users according to their position and assigning a connection string that will allow the user to connect to an specifig transport.
   - name: Lambdas
     description: >-
       This service provides a set of utilities required by the Catalyst Server Clients\Consumers in order to
@@ -106,6 +103,10 @@ paths:
     $ref: 'paths/lambdas/lambdas@users@{address}@names.yaml'
   /lambdas/users/{address}/lands:
     $ref: 'paths/lambdas/lambdas@users@{address}@lands.yaml'
+  /lambdas/users/{address}/third-party-wearables:
+    $ref: 'paths/lambdas/lambdas@users@{address}@third-party-wearables.yaml'
+  /lambdas/users/{address}/third-party-wearables/{collectionId}:
+    $ref: 'paths/lambdas/lambdas@users@{address}@third-party-wearables@{collectionId}.yaml'
   /lambdas/collections/wearables:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
   /lambdas/contracts/servers:
@@ -124,6 +125,8 @@ paths:
     $ref: 'paths/lambdas/lambdas@profiles.yaml'
   /lambdas/profiles/{id}:
     $ref: 'paths/lambdas/lambdas@profiles@{id}.yaml'
+  /lambdas/third-party-integrations:
+    $ref: 'paths/lambdas/lambdas@third-party-integrations.yaml'
   /comms/islands:
     $ref: 'paths/comms/comms@islands.yaml'
   /comms/islands/{islandId}:

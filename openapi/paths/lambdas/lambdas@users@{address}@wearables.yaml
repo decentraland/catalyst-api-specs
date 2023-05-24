@@ -14,13 +14,6 @@ get:
       description: >-
         Ethereum address from which you want to get the list of wearables
     - in: query
-      name: collectionId
-      schema:
-        type: string
-        example: 'urn:decentraland:matic:collections-thirdparty:ntr1-meta:ntr1-meta-1ef79e7b'
-      description: >-
-        Third Party collection Id to filter wearables, if this param is not sent then the 3rd parties wearables are not shown. If it is sent, only the 3rd parties wearables are shown.
-    - in: query
       name: includeEntities
       schema:
         type: boolean
@@ -40,14 +33,14 @@ get:
         type: string
         example: "1"
       description: >-
-        The number of the requested page. It needs `pageSize` to be present to enable a paginated response.
+        The number of the requested page.
     - in: query
       name: pageSize
       schema:
         type: string
         example: "10"
       description: >-
-        The size of the requested page. It needs `pageNum` to be present to enable a paginated response.
+        The size of the requested page.
     - in: query
       name: orderBy
       schema:
@@ -62,7 +55,23 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/lambdas/wearables-paginated.yaml
+            type: object
+            required:
+              - elements
+              - pageNum
+              - pageSize
+              - totalAmount
+            properties:
+              elements:
+                type: array
+                items:
+                  $ref: ../../components/schemas/lambdas/wearable.yaml
+              totalAmount:
+                type: number
+              pageNum:
+                type: number
+              pageSize:
+                type: number
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-wearables-paginated.json
@@ -71,4 +80,4 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/lambdas/error.yaml
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

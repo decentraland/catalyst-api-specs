@@ -1,0 +1,24 @@
+type: object
+required:
+  - urn
+  - name
+  - category
+  - entity
+properties:
+  urn:
+    type: string
+  amount:
+    type: number
+  name:
+    type: string
+  category:
+    type: string
+  entity:
+    $ref: ../content/entity.yaml
+  individualData:
+    type: array
+    items:
+      type: object
+      properties:
+          id:
+            type: string
