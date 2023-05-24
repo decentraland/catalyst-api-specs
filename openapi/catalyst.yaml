@@ -121,6 +121,8 @@ paths:
     $ref: 'paths/lambdas/lambdas@profiles.yaml'
   /lambdas/profiles/{id}:
     $ref: 'paths/lambdas/lambdas@profiles@{id}.yaml'
+  /lambdas/third-party-integrations:
+    $ref: 'paths/lambdas/lambdas@third-party-integrations.yaml'
   /comms/islands:
     $ref: 'paths/comms/comms@islands.yaml'
   /comms/islands/{islandId}:

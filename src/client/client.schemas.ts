@@ -57,6 +57,16 @@ export type GetIslands200 = {
   islands?: GetIslands200IslandsItem[]
 }
 
+export type GetThirdPartyIntegrations200DataItem = {
+  urn: string
+  name?: string
+  description?: string
+}
+
+export type GetThirdPartyIntegrations200 = {
+  data: GetThirdPartyIntegrations200DataItem[]
+}
+
 export type GetAvatarDetails200AvatarsItem = {
   userId?: string
   email?: string
@@ -365,6 +375,13 @@ export type GetNamesParams = {
   pageSize?: string
 }
 
+export type GetEmotes200ElementsItem = {
+  urn: string
+  amount?: number
+  category: string
+  entity?: GetEmotes200ElementsItemEntity
+}
+
 export type GetEmotes200 = {
   elements: GetEmotes200ElementsItem[]
   totalAmount: number
@@ -387,13 +404,6 @@ export type GetEmotes200ElementsItemEntity = {
   pointers: string[]
   content: GetEmotes200ElementsItemEntityContentItem[]
   metadata?: GetEmotes200ElementsItemEntityMetadata
-}
-
-export type GetEmotes200ElementsItem = {
-  urn: string
-  amount?: number
-  category: string
-  entity?: GetEmotes200ElementsItemEntity
 }
 
 export type GetEmotesParams = {
@@ -420,13 +430,6 @@ export type GetWearables503 = {
   message: string
 }
 
-export type GetWearables200ElementsItemIndividualDataItem = {
-  id?: string
-  tokenId?: string
-  transferredAt?: number
-  price?: number
-}
-
 export type GetWearables200ElementsItem = {
   urn: string
   amount?: number
@@ -442,6 +445,13 @@ export type GetWearables200 = {
   totalAmount: number
   pageNum: number
   pageSize: number
+}
+
+export type GetWearables200ElementsItemIndividualDataItem = {
+  id?: string
+  tokenId?: string
+  transferredAt?: number
+  price?: number
 }
 
 export type GetWearables200ElementsItemEntityMetadata = { [key: string]: any }
