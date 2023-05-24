@@ -11,7 +11,7 @@ get:
       schema:
         type: array
         items:
-          format: string
+          type: string
           example: QmWFLwHGfvhB9a1epaRpS38HEwbHvhpaYzHEsNhDRgon7P
       description: Hash of the content file
   responses:
