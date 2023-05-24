@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "openapi preview-docs",
-    "build": "node bin/index.js yarn build:api && yarn build:src",
+    "build": "yarn build:api && node bin/index.js && yarn build:src",
     "build:api": "openapi bundle -o lib/api.yaml && openapi bundle -o lib/api.json",
     "build:client": "orval && rm src/client/client.ts",
     "build:src": "tsc -b",
