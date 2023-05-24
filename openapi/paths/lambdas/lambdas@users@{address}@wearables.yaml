@@ -80,4 +80,4 @@ get:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/lambdas/error.yaml
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

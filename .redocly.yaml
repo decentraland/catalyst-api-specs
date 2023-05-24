@@ -6,7 +6,7 @@ rules:
   no-unused-components: warn
 theme:
   openapi:
-    sideNavStyle: path-only
+    sideNavStyle: id-only
     htmlTemplate: ./docs/index.html
     theme:
       colors:
