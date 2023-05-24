@@ -12,6 +12,7 @@
     "url": "git+https://github.com/decentraland/catalyst-api-specs.git"
   },
   "devDependencies": {
+    "@openapi-contrib/openapi-schema-to-json-schema": "^4.0.4",
     "@openapitools/openapi-generator-cli": "^2.6.0",
     "@redocly/cli": "^1.0.0-beta.108",
     "@types/jest": "27.0.1",
