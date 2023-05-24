@@ -35,8 +35,7 @@ async function main() {
 
   }
 
-  console.log(validators)
-  writeFileSync('lib/validators.json', JSON.stringify(validators));
+  writeFileSync('lib/validators.json', JSON.stringify(validators, null, 2));
 }
 
 
