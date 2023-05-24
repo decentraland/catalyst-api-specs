@@ -322,16 +322,12 @@ export type SearchWearablesParams = {
 
 export type GetThirdPartyCollection200ElementsItemIndividualDataItem = {
   id?: string
-  tokenId?: string
-  transferredAt?: number
-  price?: number
 }
 
 export type GetThirdPartyCollection200ElementsItem = {
   urn: string
   amount?: number
   name: string
-  rarity: string
   category: string
   entity?: GetThirdPartyCollection200ElementsItemEntity
   individualData?: GetThirdPartyCollection200ElementsItemIndividualDataItem[]
@@ -381,9 +377,6 @@ export type GetThirdPartyWearables200 = {
 
 export type GetThirdPartyWearables200ElementsItemIndividualDataItem = {
   id?: string
-  tokenId?: string
-  transferredAt?: number
-  price?: number
 }
 
 export type GetThirdPartyWearables200ElementsItemEntityMetadata = { [key: string]: any }
@@ -407,7 +400,6 @@ export type GetThirdPartyWearables200ElementsItem = {
   urn: string
   amount?: number
   name: string
-  rarity: string
   category: string
   entity?: GetThirdPartyWearables200ElementsItemEntity
   individualData?: GetThirdPartyWearables200ElementsItemIndividualDataItem[]

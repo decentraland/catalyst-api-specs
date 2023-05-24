@@ -2,7 +2,6 @@ type: object
 required:
   - urn
   - name
-  - rarity
   - category
 properties:
   urn:
@@ -10,8 +9,6 @@ properties:
   amount:
     type: number
   name:
-    type: string
-  rarity:
     type: string
   category:
     type: string
@@ -24,9 +21,3 @@ properties:
       properties:
           id:
             type: string
-          tokenId:
-            type: string
-          transferredAt:
-            type: number
-          price:
-            type: number
