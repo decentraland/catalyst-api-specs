@@ -93,7 +93,7 @@ properties:
     required:
       - healthy
       - publicUrl
-      - protocol
+      - protocolVersion
     properties:
       healthy:
         type: boolean
@@ -103,5 +103,5 @@ properties:
         type: number
       publicUrl:
         type: string
-      protocol:
+      protocolVersion:
         type: string

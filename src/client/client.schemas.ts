@@ -897,7 +897,7 @@ export type GetAboutCatalystInfo503Bff = {
   commitHash?: string
   usersCount?: number
   publicUrl: string
-  protocol: string
+  protocolVersion: string
 }
 
 export type GetAboutCatalystInfo503Lambdas = {
@@ -954,7 +954,7 @@ export type GetAboutCatalystInfo200Bff = {
   commitHash?: string
   usersCount?: number
   publicUrl: string
-  protocol: string
+  protocolVersion: string
 }
 
 export type GetAboutCatalystInfo200Lambdas = {
