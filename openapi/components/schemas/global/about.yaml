@@ -67,6 +67,7 @@ properties:
     type: object
     required:
       - healthy
+      - protocol
     properties:
       healthy:
         type: boolean

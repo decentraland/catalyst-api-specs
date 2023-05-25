@@ -909,7 +909,7 @@ export type GetAboutCatalystInfo503Lambdas = {
 
 export type GetAboutCatalystInfo503Comms = {
   healthy: boolean
-  protocol?: string
+  protocol: string
   commitHash?: string
   userCount?: string
 }
@@ -967,7 +967,7 @@ export type GetAboutCatalystInfo200Lambdas = {
 
 export type GetAboutCatalystInfo200Comms = {
   healthy: boolean
-  protocol?: string
+  protocol: string
   commitHash?: string
   userCount?: string
 }
