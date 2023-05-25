@@ -13,13 +13,47 @@ properties:
     type: boolean
   configurations:
     type: object
+    required:
+      - networkId
+      - globalScenesUrn
+      - scenesUrn
     properties:
       realmName:
         type: string
+      networkId:
+        type: number
+      globalScenesUrn:
+        type: array
+        items:
+          type: string
+      scenesUrn:
+        type: array
+        items:
+          type: string
+      minimap:
+        type: object
+        required:
+          - enabled
+        properties:
+          enabled:
+            type: boolean
+          dataImage:
+            type: string
+          estateImage:
+            type: string
+      skybox:
+        type: object
+        properties:
+          fixedHour:
+            type: number
+
+
+
   content:
     type: object
     required:
       - healthy
+      - publicUrl
     properties:
       healthy:
         type: boolean
@@ -27,10 +61,13 @@ properties:
         type: string
       version:
         type: string
+      publicUrl:
+        type: string
   comms:
     type: object
     required:
       - healthy
+      - protocol
     properties:
       healthy:
         type: boolean
@@ -38,10 +75,13 @@ properties:
         type: string
       commitHash:
         type: string
+      userCount:
+        type: string
   lambdas:
     type: object
     required:
       - healthy
+      - publicUrl
     properties:
       healthy:
         type: boolean
@@ -49,8 +89,14 @@ properties:
         type: string
       version:
         type: string
+      publicUrl:
+        type: string
   bff:
     type: object
+    required:
+      - healthy
+      - publicUrl
+      - protocolVersion
     properties:
       healthy:
         type: boolean
@@ -58,3 +104,7 @@ properties:
         type: string
       usersCount:
         type: number
+      publicUrl:
+        type: string
+      protocolVersion:
+        type: string

@@ -131,20 +131,6 @@ export type GetAvatarDetails200AvatarsItemAvatar = {
   wearables?: string[]
 }
 
-export type GetAvatarsDetailsByPost200ItemAvatarsItem = {
-  userId?: string
-  email?: string
-  name?: string
-  hasClaimedName?: boolean
-  description?: string
-  ethAddress?: string
-  version?: number
-  avatar?: GetAvatarsDetailsByPost200ItemAvatarsItemAvatar
-  tutorialStep?: number
-  interests?: string[]
-  unclaimedName?: string
-}
-
 export type GetAvatarsDetailsByPost200Item = {
   avatars?: GetAvatarsDetailsByPost200ItemAvatarsItem[]
 }
@@ -193,6 +179,20 @@ export type GetAvatarsDetailsByPost200ItemAvatarsItemAvatar = {
   hair?: GetAvatarsDetailsByPost200ItemAvatarsItemAvatarHair
   skin?: GetAvatarsDetailsByPost200ItemAvatarsItemAvatarSkin
   wearables?: string[]
+}
+
+export type GetAvatarsDetailsByPost200ItemAvatarsItem = {
+  userId?: string
+  email?: string
+  name?: string
+  hasClaimedName?: boolean
+  description?: string
+  ethAddress?: string
+  version?: number
+  avatar?: GetAvatarsDetailsByPost200ItemAvatarsItemAvatar
+  tutorialStep?: number
+  interests?: string[]
+  unclaimedName?: string
 }
 
 export type GetAvatarsDetailsByPostBody = {
@@ -368,13 +368,6 @@ export type GetThirdPartyCollectionParams = {
   pageSize?: string
 }
 
-export type GetThirdPartyWearables200 = {
-  elements: GetThirdPartyWearables200ElementsItem[]
-  totalAmount: number
-  pageNum: number
-  pageSize: number
-}
-
 export type GetThirdPartyWearables200ElementsItemIndividualDataItem = {
   id?: string
 }
@@ -403,6 +396,13 @@ export type GetThirdPartyWearables200ElementsItem = {
   category: string
   entity: GetThirdPartyWearables200ElementsItemEntity
   individualData?: GetThirdPartyWearables200ElementsItemIndividualDataItem[]
+}
+
+export type GetThirdPartyWearables200 = {
+  elements: GetThirdPartyWearables200ElementsItem[]
+  totalAmount: number
+  pageNum: number
+  pageSize: number
 }
 
 export type GetThirdPartyWearablesParams = {
@@ -471,6 +471,18 @@ export type GetNamesParams = {
   pageSize?: string
 }
 
+export type GetEmotes200ElementsItemEntityMetadata = { [key: string]: any }
+
+export type GetEmotes200ElementsItemEntity = {
+  version: string
+  id: string
+  type: string
+  timestamp: number
+  pointers: string[]
+  content: GetEmotes200ElementsItemEntityContentItem[]
+  metadata?: GetEmotes200ElementsItemEntityMetadata
+}
+
 export type GetEmotes200ElementsItem = {
   urn: string
   amount?: number
@@ -485,21 +497,9 @@ export type GetEmotes200 = {
   pageSize: number
 }
 
-export type GetEmotes200ElementsItemEntityMetadata = { [key: string]: any }
-
 export type GetEmotes200ElementsItemEntityContentItem = {
   file: string
   hash: string
-}
-
-export type GetEmotes200ElementsItemEntity = {
-  version: string
-  id: string
-  type: string
-  timestamp: number
-  pointers: string[]
-  content: GetEmotes200ElementsItemEntityContentItem[]
-  metadata?: GetEmotes200ElementsItemEntityMetadata
 }
 
 export type GetEmotesParams = {
@@ -524,13 +524,6 @@ export type GetEmotesParams = {
 export type GetWearables503 = {
   error: string
   message: string
-}
-
-export type GetWearables200 = {
-  elements: GetWearables200ElementsItem[]
-  totalAmount: number
-  pageNum: number
-  pageSize: number
 }
 
 export type GetWearables200ElementsItemIndividualDataItem = {
@@ -565,6 +558,13 @@ export type GetWearables200ElementsItem = {
   category: string
   entity?: GetWearables200ElementsItemEntity
   individualData?: GetWearables200ElementsItemIndividualDataItem[]
+}
+
+export type GetWearables200 = {
+  elements: GetWearables200ElementsItem[]
+  totalAmount: number
+  pageNum: number
+  pageSize: number
 }
 
 export type GetWearablesParams = {
@@ -776,13 +776,6 @@ export type GetActiveEntitiesBody = {
   ids?: string[]
 }
 
-export type GetEntitiesByPointerPrefix200EntitiesItemMetadata = { [key: string]: any }
-
-export type GetEntitiesByPointerPrefix200EntitiesItemContentItem = {
-  file: string
-  hash: string
-}
-
 export type GetEntitiesByPointerPrefix200EntitiesItem = {
   version: string
   id: string
@@ -796,6 +789,13 @@ export type GetEntitiesByPointerPrefix200EntitiesItem = {
 export type GetEntitiesByPointerPrefix200 = {
   total: number
   entities: GetEntitiesByPointerPrefix200EntitiesItem[]
+}
+
+export type GetEntitiesByPointerPrefix200EntitiesItemMetadata = { [key: string]: any }
+
+export type GetEntitiesByPointerPrefix200EntitiesItemContentItem = {
+  file: string
+  hash: string
 }
 
 export type GetEntitiesByPointerPrefixParams = {
@@ -893,31 +893,32 @@ export type GetStatsParcels200 = {
 }
 
 export type GetAboutCatalystInfo503Bff = {
-  healthy?: boolean
+  healthy: boolean
   commitHash?: string
   usersCount?: number
+  publicUrl: string
+  protocolVersion: string
 }
 
 export type GetAboutCatalystInfo503Lambdas = {
   healthy: boolean
   commitHash?: string
   version?: string
+  publicUrl: string
 }
 
 export type GetAboutCatalystInfo503Comms = {
   healthy: boolean
-  protocol?: string
+  protocol: string
   commitHash?: string
+  userCount?: string
 }
 
 export type GetAboutCatalystInfo503Content = {
   healthy: boolean
   commitHash?: string
   version?: string
-}
-
-export type GetAboutCatalystInfo503Configurations = {
-  realmName?: string
+  publicUrl: string
 }
 
 export type GetAboutCatalystInfo503 = {
@@ -930,32 +931,52 @@ export type GetAboutCatalystInfo503 = {
   bff?: GetAboutCatalystInfo503Bff
 }
 
+export type GetAboutCatalystInfo503ConfigurationsSkybox = {
+  fixedHour?: number
+}
+
+export type GetAboutCatalystInfo503ConfigurationsMinimap = {
+  enabled: boolean
+  dataImage?: string
+  estateImage?: string
+}
+
+export type GetAboutCatalystInfo503Configurations = {
+  realmName?: string
+  networkId: number
+  globalScenesUrn: string[]
+  scenesUrn: string[]
+  minimap?: GetAboutCatalystInfo503ConfigurationsMinimap
+  skybox?: GetAboutCatalystInfo503ConfigurationsSkybox
+}
+
 export type GetAboutCatalystInfo200Bff = {
-  healthy?: boolean
+  healthy: boolean
   commitHash?: string
   usersCount?: number
+  publicUrl: string
+  protocolVersion: string
 }
 
 export type GetAboutCatalystInfo200Lambdas = {
   healthy: boolean
   commitHash?: string
   version?: string
+  publicUrl: string
 }
 
 export type GetAboutCatalystInfo200Comms = {
   healthy: boolean
-  protocol?: string
+  protocol: string
   commitHash?: string
+  userCount?: string
 }
 
 export type GetAboutCatalystInfo200Content = {
   healthy: boolean
   commitHash?: string
   version?: string
-}
-
-export type GetAboutCatalystInfo200Configurations = {
-  realmName?: string
+  publicUrl: string
 }
 
 export type GetAboutCatalystInfo200 = {
@@ -966,4 +987,23 @@ export type GetAboutCatalystInfo200 = {
   comms: GetAboutCatalystInfo200Comms
   lambdas: GetAboutCatalystInfo200Lambdas
   bff?: GetAboutCatalystInfo200Bff
+}
+
+export type GetAboutCatalystInfo200ConfigurationsSkybox = {
+  fixedHour?: number
+}
+
+export type GetAboutCatalystInfo200ConfigurationsMinimap = {
+  enabled: boolean
+  dataImage?: string
+  estateImage?: string
+}
+
+export type GetAboutCatalystInfo200Configurations = {
+  realmName?: string
+  networkId: number
+  globalScenesUrn: string[]
+  scenesUrn: string[]
+  minimap?: GetAboutCatalystInfo200ConfigurationsMinimap
+  skybox?: GetAboutCatalystInfo200ConfigurationsSkybox
 }
