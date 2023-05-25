@@ -893,15 +893,17 @@ export type GetStatsParcels200 = {
 }
 
 export type GetAboutCatalystInfo503Bff = {
-  healthy?: boolean
+  healthy: boolean
   commitHash?: string
   usersCount?: number
+  publicUrl: string
 }
 
 export type GetAboutCatalystInfo503Lambdas = {
   healthy: boolean
   commitHash?: string
   version?: string
+  publicUrl: string
 }
 
 export type GetAboutCatalystInfo503Comms = {
@@ -914,6 +916,7 @@ export type GetAboutCatalystInfo503Content = {
   healthy: boolean
   commitHash?: string
   version?: string
+  publicUrl: string
 }
 
 export type GetAboutCatalystInfo503 = {
@@ -946,15 +949,17 @@ export type GetAboutCatalystInfo503Configurations = {
 }
 
 export type GetAboutCatalystInfo200Bff = {
-  healthy?: boolean
+  healthy: boolean
   commitHash?: string
   usersCount?: number
+  publicUrl: string
 }
 
 export type GetAboutCatalystInfo200Lambdas = {
   healthy: boolean
   commitHash?: string
   version?: string
+  publicUrl: string
 }
 
 export type GetAboutCatalystInfo200Comms = {
@@ -967,6 +972,7 @@ export type GetAboutCatalystInfo200Content = {
   healthy: boolean
   commitHash?: string
   version?: string
+  publicUrl: string
 }
 
 export type GetAboutCatalystInfo200 = {
