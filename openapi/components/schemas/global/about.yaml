@@ -93,6 +93,7 @@ properties:
     required:
       - healthy
       - publicUrl
+      - protocol
     properties:
       healthy:
         type: boolean
@@ -101,4 +102,6 @@ properties:
       usersCount:
         type: number
       publicUrl:
+        type: string
+      protocol:
         type: string
