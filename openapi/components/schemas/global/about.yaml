@@ -53,12 +53,15 @@ properties:
     type: object
     required:
       - healthy
+      - publicUrl
     properties:
       healthy:
         type: boolean
       commitHash:
         type: string
       version:
+        type: string
+      publicUrl:
         type: string
   comms:
     type: object
@@ -75,6 +78,7 @@ properties:
     type: object
     required:
       - healthy
+      - publicUrl
     properties:
       healthy:
         type: boolean
@@ -82,8 +86,13 @@ properties:
         type: string
       version:
         type: string
+      publicUrl:
+        type: string
   bff:
     type: object
+    required:
+      - healthy
+      - publicUrl
     properties:
       healthy:
         type: boolean
@@ -91,3 +100,5 @@ properties:
         type: string
       usersCount:
         type: number
+      publicUrl:
+        type: string
