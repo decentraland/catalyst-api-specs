@@ -74,6 +74,8 @@ properties:
         type: string
       commitHash:
         type: string
+      userCount:
+        type: string
   lambdas:
     type: object
     required:

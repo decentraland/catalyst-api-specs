@@ -911,6 +911,7 @@ export type GetAboutCatalystInfo503Comms = {
   healthy: boolean
   protocol?: string
   commitHash?: string
+  userCount?: string
 }
 
 export type GetAboutCatalystInfo503Content = {
@@ -968,6 +969,7 @@ export type GetAboutCatalystInfo200Comms = {
   healthy: boolean
   protocol?: string
   commitHash?: string
+  userCount?: string
 }
 
 export type GetAboutCatalystInfo200Content = {
