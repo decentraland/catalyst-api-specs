@@ -1,12 +1,15 @@
 type: object
 required:
   - healthy
+  - acceptingUsers
   - configurations
   - content
   - comms
   - lambdas
 properties:
   healthy:
+    type: boolean
+  acceptingUsers:
     type: boolean
   configurations:
     type: object
@@ -15,6 +18,8 @@ properties:
         type: string
   content:
     type: object
+    required:
+      - healthy
     properties:
       healthy:
         type: boolean
@@ -24,6 +29,8 @@ properties:
         type: string
   comms:
     type: object
+    required:
+      - healthy
     properties:
       healthy:
         type: boolean
@@ -33,6 +40,8 @@ properties:
         type: string
   lambdas:
     type: object
+    required:
+      - healthy
     properties:
       healthy:
         type: boolean

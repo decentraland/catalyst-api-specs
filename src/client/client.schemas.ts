@@ -301,11 +301,11 @@ export type SearchWearablesParams = {
   /**
    * Lis of URNs that identify the collection. Maximum amount of ids allowed is 500.
    */
-  collectionId?: unknown[]
+  collectionId?: string[]
   /**
    * List of wearables URNs to search. Maximum amount of ids allowed is 500.
    */
-  wearableId?: unknown[]
+  wearableId?: string[]
   /**
    * Search text
    */
@@ -844,7 +844,7 @@ export type GetAvailableContentParams = {
   /**
    * Hash of the content file
    */
-  cid: unknown[]
+  cid: string[]
 }
 
 export type GetEntityIdsByHashId404 = {
@@ -899,19 +899,19 @@ export type GetAboutCatalystInfo503Bff = {
 }
 
 export type GetAboutCatalystInfo503Lambdas = {
-  healthy?: boolean
+  healthy: boolean
   commitHash?: string
   version?: string
 }
 
 export type GetAboutCatalystInfo503Comms = {
-  healthy?: boolean
+  healthy: boolean
   protocol?: string
   commitHash?: string
 }
 
 export type GetAboutCatalystInfo503Content = {
-  healthy?: boolean
+  healthy: boolean
   commitHash?: string
   version?: string
 }
@@ -922,6 +922,7 @@ export type GetAboutCatalystInfo503Configurations = {
 
 export type GetAboutCatalystInfo503 = {
   healthy: boolean
+  acceptingUsers: boolean
   configurations: GetAboutCatalystInfo503Configurations
   content: GetAboutCatalystInfo503Content
   comms: GetAboutCatalystInfo503Comms
@@ -936,19 +937,19 @@ export type GetAboutCatalystInfo200Bff = {
 }
 
 export type GetAboutCatalystInfo200Lambdas = {
-  healthy?: boolean
+  healthy: boolean
   commitHash?: string
   version?: string
 }
 
 export type GetAboutCatalystInfo200Comms = {
-  healthy?: boolean
+  healthy: boolean
   protocol?: string
   commitHash?: string
 }
 
 export type GetAboutCatalystInfo200Content = {
-  healthy?: boolean
+  healthy: boolean
   commitHash?: string
   version?: string
 }
@@ -959,6 +960,7 @@ export type GetAboutCatalystInfo200Configurations = {
 
 export type GetAboutCatalystInfo200 = {
   healthy: boolean
+  acceptingUsers: boolean
   configurations: GetAboutCatalystInfo200Configurations
   content: GetAboutCatalystInfo200Content
   comms: GetAboutCatalystInfo200Comms
