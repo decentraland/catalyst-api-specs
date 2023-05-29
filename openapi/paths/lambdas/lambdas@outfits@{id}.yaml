@@ -18,7 +18,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../../content/entity.yaml
+            $ref: ../../components/schemas/content/entity.yaml
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-outfits-id.json
