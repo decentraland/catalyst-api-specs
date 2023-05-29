@@ -1,9 +1,9 @@
 get:
-  operationId: getAvatarDetails
-  summary: Get Avatar details
+  operationId: getOutfits
+  summary: Get Outfits
   tags:
     - Lambdas
-  description: Given a Ethereum address of a user, return the Outfits details associated with it.
+  description: Given a Ethereum address of a user, return the Outfits entity.
   parameters:
     - in: path
       name: id
