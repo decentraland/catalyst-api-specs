@@ -1,0 +1,85 @@
+{
+    "value": [
+        {
+            "version": "v3",
+            "id": "QmQ9UorFsVTpaVpCwJZAzFyCmaGf7Ksi6aQHYTJVKyzVMh",
+            "type": "outfits",
+            "timestamp": 1581034082829,
+            "pointers": [
+                "0xa87d168717538e86d71ac48baccaeb84162de602:outfits"
+            ],
+            "content": [],
+            "metadata": {
+                "outfits": [
+                    {
+                        "slot": 1,
+                        "outfit": {
+                            "bodyShape": "urn:decentraland:off-chain:base-avatars:BaseMale",
+                            "eyes": {
+                                "color": {
+                                    "r": 0.23046875,
+                                    "g": 0.625,
+                                    "b": 0.3125
+                                }
+                            },
+                            "hair": {
+                                "color": {
+                                    "r": 0.35546875,
+                                    "g": 0.19140625,
+                                    "b": 0.05859375
+                                }
+                            },
+                            "skin": {
+                                "color": {
+                                    "r": 0.94921875,
+                                    "g": 0.76171875,
+                                    "b": 0.6484375
+                                }
+                            },
+                            "wearables": [
+                                "urn:decentraland:matic:collections-v2: 0xf6f601efee04e74cecac02c8c5bdc8cc0fc1c721:0",
+                                "urn:decentraland:matic:collections-v2: 0x04e7f74e73e951c61edd80910e46c3fece5ebe80:2",
+                                "urn:decentraland:ethereum:collections-v1:rtfkt_x_atari:p_rtfkt_x_atari_feet"
+                            ]
+                        }
+                    },
+                    {
+                        "slot": 5,
+                        "outfit": {
+                            "bodyShape": "urn:decentraland:off-chain:base-avatars:BaseMale",
+                            "eyes": {
+                                "color": {
+                                    "r": 0.23046875,
+                                    "g": 0.625,
+                                    "b": 0.3125
+                                }
+                            },
+                            "hair": {
+                                "color": {
+                                    "r": 0.35546875,
+                                    "g": 0.19140625,
+                                    "b": 0.05859375
+                                }
+                            },
+                            "skin": {
+                                "color": {
+                                    "r": 0.94921875,
+                                    "g": 0.76171875,
+                                    "b": 0.6484375
+                                }
+                            },
+                            "wearables": [
+                                "urn:decentraland:matic:collections-v2: 0xf6f601efee04e74cecac02c8c5bdc8cc0fc1c721:0",
+                                "urn:decentraland:matic:collections-v2: 0x04e7f74e73e951c61edd80910e46c3fece5ebe80:2",
+                                "urn:decentraland:ethereum:collections-v1:rtfkt_x_atari:p_rtfkt_x_atari_feet"
+                            ]
+                        }
+                    }
+                ],
+                "namesForExtraSlots": [
+                    "perro"
+                ]
+            }
+        }
+    ]
+}
