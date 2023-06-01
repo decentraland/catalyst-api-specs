@@ -1,0 +1,15 @@
+allOf:
+  - $ref: 'base-entity.yaml'
+  - type: object
+    properties:
+      metadata:
+        type: object
+        required:
+          - id
+        properties:
+          id:
+            type: string
+      type:
+        type: string
+        enum:
+          - "emote"
