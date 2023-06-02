@@ -2,7 +2,6 @@ required:
   - version
   - synchronizationStatus
   - commitHash
-  - catalystVersion
   - ethNetwork
 type: object
 properties:
@@ -44,8 +43,6 @@ properties:
       lastSyncWithOtherServers:
         type: number
   commitHash:
-    type: string
-  catalystVersion:
     type: string
   ethNetwork:
     type: string

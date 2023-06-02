@@ -46,15 +46,15 @@ properties:
         properties:
           fixedHour:
             type: number
-
-
-
   content:
     type: object
     required:
       - healthy
       - publicUrl
+      - synchronizationStatus
     properties:
+      synchronizationStatus:
+        type: string
       healthy:
         type: boolean
       commitHash:

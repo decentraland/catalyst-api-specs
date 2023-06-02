@@ -4,9 +4,5 @@ properties:
     type: string
   currentTime:
     type: number
-  contentServerUrl:
-    type: string
   commitHash:
-    type: string
-  catalystVersion:
     type: string
