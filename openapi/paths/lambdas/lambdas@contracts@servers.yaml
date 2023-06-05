@@ -1,6 +1,6 @@
 get:
-  operationId: getServers
-  summary: Get Servers list
+  operationId: getCatalystServers
+  summary: Get Catalyst Servers
   tags:
     - Lambdas
   description: Retrieve the list of Catalyst Servers

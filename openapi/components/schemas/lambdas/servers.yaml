@@ -1,6 +1,10 @@
 type: array
 items:
   type: object
+  required:
+    - baseUrl
+    - owner
+    - id
   properties:
     baseUrl:
       type: string
