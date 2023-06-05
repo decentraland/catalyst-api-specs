@@ -42,5 +42,7 @@
     "trailingComma": "none",
     "tabWidth": 2
   },
-  "dependencies": {}
+  "dependencies": {
+    "yaml": "^2.3.1"
+  }
 }
