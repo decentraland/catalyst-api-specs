@@ -44,5 +44,8 @@
   },
   "dependencies": {
     "yaml": "^2.3.1"
+  },
+  "resolutions": {
+    "orval/**/ibm-openapi-validator": "^1.2.0"
   }
 }

@@ -1,4 +1,5 @@
 # Dir for bundles
+yarn-error.log
 lib
 node_modules
 .DS_Store
