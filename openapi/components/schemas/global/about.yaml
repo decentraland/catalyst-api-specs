@@ -4,7 +4,6 @@ required:
   - acceptingUsers
   - configurations
   - content
-  - comms
   - lambdas
 properties:
   healthy:
@@ -90,21 +89,4 @@ properties:
       version:
         type: string
       publicUrl:
-        type: string
-  bff:
-    type: object
-    required:
-      - healthy
-      - publicUrl
-      - protocolVersion
-    properties:
-      healthy:
-        type: boolean
-      commitHash:
-        type: string
-      usersCount:
-        type: number
-      publicUrl:
-        type: string
-      protocolVersion:
         type: string

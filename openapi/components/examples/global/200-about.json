@@ -18,11 +18,6 @@
       "healthy": true,
       "commitHash": "18bc402b1b8f0a407a9d66a5ea58b33dd141af5f",
       "version": "4.8.0"
-    },
-    "bff": {
-      "usersCount": 51,
-      "healthy": true,
-      "commitHash": "80bc402b1b8f0a407a9d66a5ea58b33dd141af5f"
     }
   }
 }
