@@ -67,6 +67,7 @@ properties:
     required:
       - healthy
       - protocol
+      - adapter
     properties:
       healthy:
         type: boolean
@@ -76,6 +77,14 @@ properties:
         type: string
       userCount:
         type: string
+      adapter:
+        type: object
+        properties:
+          type:
+            type: string
+            enum: [fixed, archipielago]
+          connectionString:
+            type: string
   lambdas:
     type: object
     required:

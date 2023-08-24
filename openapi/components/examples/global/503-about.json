@@ -12,7 +12,11 @@
     "comms": {
       "healthy": true,
       "protocol": "v3",
-      "commitHash": "70bc402b1b8f0a407a9d66a5ea58b33dd141af5f"
+      "commitHash": "70bc402b1b8f0a407a9d66a5ea58b33dd141af5f",
+      "adapter": {
+        "type": "archipelago",
+        "connectionString": "ws://archipelago:5000"
+      }
     },
     "lambdas": {
       "healthy": true,
