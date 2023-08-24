@@ -79,6 +79,9 @@ properties:
         type: string
       adapter:
         type: object
+        required:
+          - type
+          - connectionString
         properties:
           type:
             type: string
