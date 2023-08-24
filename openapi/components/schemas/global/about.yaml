@@ -78,16 +78,7 @@ properties:
       userCount:
         type: string
       adapter:
-        type: object
-        required:
-          - type
-          - connectionString
-        properties:
-          type:
-            type: string
-            enum: [fixed, archipelago]
-          connectionString:
-            type: string
+        type: string
   lambdas:
     type: object
     required:
