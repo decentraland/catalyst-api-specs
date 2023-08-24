@@ -85,7 +85,7 @@ properties:
         properties:
           type:
             type: string
-            enum: [fixed, archipielago]
+            enum: [fixed, archipelago]
           connectionString:
             type: string
   lambdas:
