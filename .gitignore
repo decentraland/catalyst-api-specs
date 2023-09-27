@@ -4,3 +4,4 @@ node_modules
 .DS_Store
 openapitools.json
 src/client/client.schemas.ts
+yarn-error.log

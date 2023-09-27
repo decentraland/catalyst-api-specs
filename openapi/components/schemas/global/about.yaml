@@ -4,7 +4,6 @@ required:
   - acceptingUsers
   - configurations
   - content
-  - comms
   - lambdas
 properties:
   healthy:
@@ -75,7 +74,11 @@ properties:
         type: string
       commitHash:
         type: string
-      userCount:
+      version:
+        type: string
+      usersCount:
+        type: number
+      adapter:
         type: string
   lambdas:
     type: object
