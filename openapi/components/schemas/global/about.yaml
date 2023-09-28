@@ -45,6 +45,10 @@ properties:
         properties:
           fixedHour:
             type: number
+          textures:
+            type: array
+            items:
+              type: string
   content:
     type: object
     required:
