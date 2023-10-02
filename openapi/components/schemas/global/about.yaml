@@ -109,7 +109,7 @@ properties:
         type: boolean
       commitHash:
         type: string
-      usersCount:
+      userCount:
         type: number
       publicUrl:
         type: string
