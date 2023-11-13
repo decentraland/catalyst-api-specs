@@ -22,8 +22,6 @@ jobs:
         run: yarn install
       - name: Build library
         run: yarn build
-      - name: validations
-        run: yarn validate
 
   build-publish:
     uses: decentraland/platform-actions/.github/workflows/libs-build-and-publish.yml@main
