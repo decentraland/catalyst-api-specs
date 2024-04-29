@@ -47,6 +47,8 @@ properties:
                       type: number
                     b:
                       type: number
+                    a:
+                      type: number
             hair:
               type: object
               properties:
@@ -59,6 +61,8 @@ properties:
                       type: number
                     b:
                       type: number
+                    a:
+                      type: number
             skin:
               type: object
               properties:
@@ -70,6 +74,8 @@ properties:
                     g:
                       type: number
                     b:
+                      type: number
+                    a:
                       type: number
             wearables:
               type: array
