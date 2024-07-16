@@ -30,6 +30,7 @@ properties:
         items:
           type: string
       minimap:
+        deprecated: true
         type: object
         required:
           - enabled
