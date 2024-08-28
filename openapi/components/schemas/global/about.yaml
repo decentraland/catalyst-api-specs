@@ -30,6 +30,7 @@ properties:
         items:
           type: string
       minimap:
+        deprecated: true
         type: object
         required:
           - enabled
@@ -40,6 +41,72 @@ properties:
             type: string
           estateImage:
             type: string
+      map:
+        type: object
+        required:
+          - sizes
+          - minimapEnabled
+        properties:
+          minimapEnabled:
+            type: boolean
+          sizes:
+            type: array
+            items:
+              type: object
+              properties:
+                top:
+                  type: number
+                left:
+                  type: number
+                bottom:
+                  type: number
+                right:
+                  type: number
+          parcelView:
+            type: object
+            required:
+              - version
+            properties:
+              version:
+                type: string
+              imageUrl:
+                type: string
+          satelliteView:
+            type: object
+            required:
+              - version
+            properties:
+              version:
+                type: string
+              baseUrl:
+                type: string
+              suffixUrl:
+                type: string
+              topLeftOffset:
+                type: object
+                properties:
+                  x:
+                    type: number
+                  y:
+                    type: number
+          thumbnailView:
+            type: object
+            required:
+              - version
+            properties:
+              version:
+                type: string
+              baseUrl:
+                type: string
+              suffixUrl:
+                type: string
+              topLeftOffset:
+                type: object
+                properties:
+                  x:
+                    type: number
+                  y:
+                    type: number
       skybox:
         type: object
         properties:
