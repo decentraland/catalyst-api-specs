@@ -1,0 +1,122 @@
+type: object
+properties:
+  elements:
+    type: array
+    description: An array of wearable objects.
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the wearable.
+        type:
+          type: string
+          description: The collection type of the wearable.
+          enum:
+            - base-wearable
+            - on-chain
+            - third-party
+        description:
+          type: string
+          description: A brief description of the wearable.
+        image:
+          type: string
+          description: URL of the wearable's image.
+        thumbnail:
+          type: string
+          description: URL of the wearable's thumbnail.
+        collectionAddress:
+          type: string
+          description: The address of the collection this wearable belongs to.
+        rarity:
+          type: string
+          description: The rarity of the wearable.
+        data:
+          type: object
+          description: Additional wearable data.
+          properties:
+            replaces:
+              type: array
+              description: List of wearable IDs that this one replaces.
+              items:
+                type: string
+            hides:
+              type: array
+              description: List of wearable IDs that this one hides.
+              items:
+                type: string
+            tags:
+              type: array
+              description: List of tags associated with the wearable.
+              items:
+                type: string
+            category:
+              type: string
+              description: The category of the wearable.
+            representations:
+              type: array
+              description: List of representations for the wearable.
+              items:
+                type: object
+                properties:
+                  bodyShapes:
+                    type: array
+                    description: Supported body shapes.
+                    items:
+                      type: string
+                  mainFile:
+                    type: string
+                    description: The main file for the wearable.
+                  overrideReplaces:
+                    type: array
+                    description: Overrides for replaces.
+                    items:
+                      type: object
+                  overrideHides:
+                    type: array
+                    description: Overrides for hides.
+                    items:
+                      type: object
+                  contents:
+                    type: array
+                    description: List of content files.
+                    items:
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                          description: The key of the content file.
+                        url:
+                          type: string
+                          description: URL where the content can be retrieved.
+        i18n:
+          type: array
+          description: Internationalization texts.
+          items:
+            type: object
+            properties:
+              code:
+                type: string
+                description: Language code.
+              text:
+                type: string
+                description: Localized text.
+        createdAt:
+          type: number
+          description: Timestamp (in milliseconds) when the wearable was created.
+        updatedAt:
+          type: number
+          description: Timestamp (in milliseconds) when the wearable was last updated.
+  pagination:
+    type: object
+    description: Pagination metadata.
+    properties:
+      pageNum:
+        type: number
+        description: Current page number.
+      pageSize:
+        type: number
+        description: Number of items per page.
+      total:
+        type: number
+        description: Total number of available items.

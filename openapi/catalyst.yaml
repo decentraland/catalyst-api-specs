@@ -55,6 +55,9 @@ tags:
     description: >-
       This service provides a set of utilities required by the Catalyst Server Clients\Consumers in order to
       retrieve or validate data.
+  - name: Explorer
+    description: >-
+      This service provides a set of utilities required by Explorers to retrieve information for the Backpack, including wearables, collections, and other user inventory data.
 paths:
 
   /about:
@@ -135,3 +138,5 @@ paths:
     $ref: 'paths/comms/comms@islands@{islandId}.yaml'
   /comms/peers:
     $ref: 'paths/comms/comms@peers.yaml'
+  /explorer/{address}/wearables:
+    $ref: 'paths/explorer/explorer@{address}@wearables.yaml'
