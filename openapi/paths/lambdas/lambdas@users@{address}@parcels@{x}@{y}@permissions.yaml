@@ -40,5 +40,25 @@ get:
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-parcel-permissions.json
-    '500':
-      description: 'Failed to fetch permissions for the parcel'
+    '400':
+      description: 'Bad request'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+          examples:
+            invalid-coordinates-format:
+              value:
+                error: 'Coordinates X and Y must be valid numbers'
+              summary: 'Invalid coordinate format'
+            invalid-coordinates-range:
+              value:
+                error: 'Coordinates X and Y must be valid numbers'
+              summary: 'Invalid coordinate range'
+            invalid-address:
+              value:
+                error: 'Invalid Ethereum address'
+              summary: 'Invalid Ethereum address format'
