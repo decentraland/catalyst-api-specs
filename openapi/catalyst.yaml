@@ -103,6 +103,8 @@ paths:
     $ref: 'paths/lambdas/lambdas@users@{address}@names.yaml'
   /lambdas/users/{address}/lands:
     $ref: 'paths/lambdas/lambdas@users@{address}@lands.yaml'
+  /lambdas/users/{address}/parcels/{x}/{y}/permissions:
+    $ref: 'paths/lambdas/lambdas@users@{address}@parcels@{x}@{y}@permissions.yaml'
   /lambdas/users/{address}/third-party-wearables:
     $ref: 'paths/lambdas/lambdas@users@{address}@third-party-wearables.yaml'
   /lambdas/users/{address}/third-party-wearables/{collectionId}:
