@@ -50,14 +50,10 @@ get:
               error:
                 type: string
           examples:
-            invalid-coordinates-format:
+            invalid-coordinates:
               value:
-                error: 'Coordinates X and Y must be valid numbers'
-              summary: 'Invalid coordinate format'
-            invalid-coordinates-range:
-              value:
-                error: 'Coordinates X and Y must be valid numbers'
-              summary: 'Invalid coordinate range'
+                error: 'Coordinates X and Y must be valid numbers in a valid range'
+              summary: 'Invalid coordinate format or range'
             invalid-address:
               value:
                 error: 'Invalid Ethereum address'
