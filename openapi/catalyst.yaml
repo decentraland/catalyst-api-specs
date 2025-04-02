@@ -3,16 +3,16 @@ info:
   title: API Specification for the Decentraland Catalyst Server (BETA)
   version: '1.0'
   description: >-
-     A Catalyst is a Server that runs different services.
-     These services currently work as the backbone for Decentraland and work in a decentralized network.
-     The current specification details the following services:
-     <br/><br/>- Archipelago
-     <br/>- Content Server
-     <br/>- Lambdas Service
-     <br/>
-     <br/>WARNING: We are working to close the version 1.0 of the Catalyst Protocol defined by this API.
-     So far this is what we have and it's public but we are still working on refinement and
-     during this process we may decided to deprecate or change some of the endpoints.
+    A Catalyst is a Server that runs different services.
+    These services currently work as the backbone for Decentraland and work in a decentralized network.
+    The current specification details the following services:
+    <br/><br/>- Archipelago
+    <br/>- Content Server
+    <br/>- Lambdas Service
+    <br/>
+    <br/>WARNING: We are working to close the version 1.0 of the Catalyst Protocol defined by this API.
+    So far this is what we have and it's public but we are still working on refinement and
+    during this process we may decided to deprecate or change some of the endpoints.
   x-logo:
     url: 'https://cryptologos.cc/logos/decentraland-mana-logo.png'
   license:
@@ -32,22 +32,22 @@ tags:
       Endpoints that are about the whole catalyst or about shared services
   - name: Content Server
     description: >-
-     Decentraland is a virtual world that is owned by its users. One of the biggest differentiators about
-     Decentraland is its level of decentralization. Users can own LAND, wearables, and probably other types of
-     items in the future. Each of these items is an NFT in itself, and therefore ownership is determined by the
-     Ethereum (or EVM-compatible) blockchain.
-     <br/><br/>Now, when a new wearable is created, or when a user uploads a scene to their LAND/parcel, all
-     necessary files (3d models, textures, music, etc) are uploaded to a "content server". Why are we using
-     these servers instead of the blockchain? Mainly because it would be prohibitively expensive to store files as
-     big as 3d models in the blockchain. Users would have to pay fees so high to upload content to their parcels
-     that nobody would do it.
-     <br/><br/>So this is where content servers come into play. The content server is mainly a server where users
-     can upload these files we mentioned before. Each server will verify against the blockchain that the user making
-     the upload is actually allowed to do so. For example, in the case of scenes, the server will check that the
-     deployer owns all the parcels they are trying to modify.
-     <br/><br/>And the most important part is that all content servers will then sync with each other.
-     So, for example, if a scene is modified in one server, the update itself will be broadcasted to the other ones.
-     Then, in the case a content server goes down for some reason, all content will still be present in the other ones.
+      Decentraland is a virtual world that is owned by its users. One of the biggest differentiators about
+      Decentraland is its level of decentralization. Users can own LAND, wearables, and probably other types of
+      items in the future. Each of these items is an NFT in itself, and therefore ownership is determined by the
+      Ethereum (or EVM-compatible) blockchain.
+      <br/><br/>Now, when a new wearable is created, or when a user uploads a scene to their LAND/parcel, all
+      necessary files (3d models, textures, music, etc) are uploaded to a "content server". Why are we using
+      these servers instead of the blockchain? Mainly because it would be prohibitively expensive to store files as
+      big as 3d models in the blockchain. Users would have to pay fees so high to upload content to their parcels
+      that nobody would do it.
+      <br/><br/>So this is where content servers come into play. The content server is mainly a server where users
+      can upload these files we mentioned before. Each server will verify against the blockchain that the user making
+      the upload is actually allowed to do so. For example, in the case of scenes, the server will check that the
+      deployer owns all the parcels they are trying to modify.
+      <br/><br/>And the most important part is that all content servers will then sync with each other.
+      So, for example, if a scene is modified in one server, the update itself will be broadcasted to the other ones.
+      Then, in the case a content server goes down for some reason, all content will still be present in the other ones.
   - name: Archipelago
     description: >-
       This service is in charge of clustering users according to their position and assigning a connection string that will allow the user to connect to an specifig transport.
@@ -56,7 +56,6 @@ tags:
       This service provides a set of utilities required by the Catalyst Server Clients\Consumers in order to
       retrieve or validate data.
 paths:
-
   /about:
     $ref: 'paths/global/about.yaml'
   /stats/parcels:
@@ -123,6 +122,8 @@ paths:
     $ref: 'paths/lambdas/lambdas@explore@hot-scenes.yaml'
   /lambdas/explore/realms:
     $ref: 'paths/lambdas/lambdas@explore@realms.yaml'
+  /lambdas/parcels/{x}/{y}/operators:
+    $ref: 'paths/lambdas/lambdas@parcels@{x}@{y}@operators.yaml'
   /lambdas/profiles:
     $ref: 'paths/lambdas/lambdas@profiles.yaml'
   /lambdas/profiles/{id}:
