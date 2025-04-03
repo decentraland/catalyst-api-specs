@@ -1,0 +1,48 @@
+get:
+  operationId: getParcelOperators
+  summary: Get the operators for a parcel
+  tags:
+    - Lambdas
+  description: Get the operators for a parcel
+  parameters:
+    - in: path
+      name: x
+      required: true
+      schema:
+        type: string
+        example: '100'
+      description: >-
+        X coordinate of the parcel
+    - in: path
+      name: y
+      required: true
+      schema:
+        type: string
+        example: '100'
+      description: >-
+        Y coordinate of the parcel
+
+  responses:
+    '200':
+      description: operators for a parcel
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/lambdas/parcel-operators.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-parcel-operators.json
+    '400':
+      description: 'Bad request'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+          examples:
+            invalid-coordinates:
+              value:
+                error: 'Coordinates X and Y must be valid numbers in a valid range'
+              summary: 'Invalid coordinate format or range'
