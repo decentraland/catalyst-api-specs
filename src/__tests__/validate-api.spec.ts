@@ -1,4 +1,4 @@
-import { CATALYST_API, CONTENT_API, COMMS_API, LAMBDAS_API } from '../../lib/index'
+import { CATALYST_API, CONTENT_API, COMMS_API, LAMBDAS_API, EXPLORER_API } from '../../lib/index'
 import { OpenAPISchemaValidator } from 'express-openapi-validator/dist/framework/openapi.schema.validator'
 
 // This test is different to redocly lint
@@ -22,6 +22,11 @@ describe('Validate OAS (Express integration)', () => {
 
   it('Lambdas: should not be errors when validating API with schema validator', () => {
     const result = validator.validate(LAMBDAS_API)
+    expect(result.errors).toHaveLength(0)
+  })
+
+  it('Explorer: should not be errors when validating API with schema validator', () => {
+    const result = validator.validate(EXPLORER_API)
     expect(result.errors).toHaveLength(0)
   })
 })
