@@ -27,7 +27,7 @@
     "build": "yarn build:api && yarn build:src",
     "build:api": "openapi bundle -o lib/api && orval && rm src/client/client.ts",
     "build:src": "tsc -b",
-    "test": "yarn build & run-s test:*",
+    "test": "yarn build && run-s test:api && jest",
     "test:api": "openapi lint",
     "lint:check": "openapi lint",
     "test:src": "jest",

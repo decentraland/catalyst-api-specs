@@ -1,0 +1,60 @@
+get:
+  operationId: getParcelPermissions
+  summary: Get the permissions for a parcel
+  tags:
+    - Lambdas
+  description: Get the permissions a user has for a parcel
+  parameters:
+    - in: path
+      name: address
+      required: true
+      schema:
+        type: string
+        example: '0xddf1eec586d8f8f0eb8c5a3bf51fb99379a55684'
+      description: >-
+        Ethereum address from which you want to get the permissions
+    - in: path
+      name: x
+      required: true
+      schema:
+        type: string
+        example: '100'
+      description: >-
+        X coordinate of the parcel
+    - in: path
+      name: y
+      required: true
+      schema:
+        type: string
+        example: '100'
+      description: >-
+        Y coordinate of the parcel
+
+  responses:
+    '200':
+      description: permissions a user has for a parcel
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/lambdas/parcel-permissions.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-parcel-permissions.json
+    '400':
+      description: 'Bad request'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+          examples:
+            invalid-coordinates:
+              value:
+                error: 'Coordinates X and Y must be valid numbers in a valid range'
+              summary: 'Invalid coordinate format or range'
+            invalid-address:
+              value:
+                error: 'Invalid Ethereum address'
+              summary: 'Invalid Ethereum address format'

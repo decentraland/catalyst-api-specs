@@ -1,0 +1,9 @@
+type: object
+required:
+  - address
+  - operator
+properties:
+  address:
+    type: boolean
+  operator:
+    type: boolean
