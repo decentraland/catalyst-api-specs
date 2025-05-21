@@ -2,8 +2,17 @@ type: object
 required:
   - address
   - operator
+  - updateOperator
+  - updateManager
+  - approvedForAll
 properties:
   address:
     type: boolean
   operator:
+    type: boolean
+  updateOperator:
+    type: boolean
+  updateManager:
+    type: boolean
+  approvedForAll:
     type: boolean
