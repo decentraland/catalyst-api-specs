@@ -1,6 +1,9 @@
 {
   "value": {
     "address": "0xddf1eec586d8f8f0eb8c5a3bf51fb99379a55123",
-    "operator": "0xddf1eec586d8f8f0eb8c5a3bf51fb99379a55684"
+    "operator": "0xddf1eec586d8f8f0eb8c5a3bf51fb99379a55684",
+    "updateOperator": "0xddf1eec586d8f8f0eb8c5a3bf51fb99379a55684",
+    "updateManagers": ["0xddf1eec586d8f8f0eb8c5a3bf51fb99379a55684"],
+    "approvedForAll": ["0xddf1eec586d8f8f0eb8c5a3bf51fb99379a55684"]
   }
 }
