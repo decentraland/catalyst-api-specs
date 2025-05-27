@@ -9,9 +9,11 @@ properties:
   address:
     type: string
   operator:
-    type: ['null', string]
+    type: string
+    nullable: true
   updateOperator:
-    type: ['null', string]
+    type: string
+    nullable: true
   updateManagers:
     type: array
     items:
