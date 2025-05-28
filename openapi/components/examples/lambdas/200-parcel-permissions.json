@@ -1,6 +1,9 @@
 {
   "value": {
     "address": true,
-    "operator": false
+    "operator": false,
+    "updateOperator": false,
+    "updateManager": false,
+    "approvedForAll": false
   }
 }
