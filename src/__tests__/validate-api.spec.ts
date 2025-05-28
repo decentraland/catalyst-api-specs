@@ -17,7 +17,6 @@ describe('Validate OAS (Express integration)', () => {
 
   it('Comms: should not be errors when validating API with schema validator', () => {
     const result = validator.validate(COMMS_API)
-    console.log('Cooms api', COMMS_API)
     expect(result.errors).toHaveLength(0)
   })
 
