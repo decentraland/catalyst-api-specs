@@ -21,7 +21,7 @@ properties:
         tokenId:
           type: string
         price:
-          type: number
+          type: string
   totalAmount:
     type: number
   pageNum:
