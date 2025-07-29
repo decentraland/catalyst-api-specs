@@ -1,0 +1,1476 @@
+{
+    "value": {
+        "elements": [
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:aviatorstyle",
+                "name": "aviatorstyle",
+                "category": "eyewear",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:aviatorstyle"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreifnq5smvw3cpdmplgura4lzahfao4gjruqljylvnh7ylwsjarrtyu",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:aviatorstyle"
+                    ],
+                    "timestamp": 1714483287685,
+                    "content": [
+                        {
+                            "file": "AvatarWearables_TX.png",
+                            "hash": "bafkreie2zkxkaboe6lo2yuafimiu4rzdlyuw4cvyaaocx4szwyranfpoaa"
+                        },
+                        {
+                            "file": "M_Eyewear_AviatorStyle.glb",
+                            "hash": "bafkreibia5f2bd3bwws5wq3wuo52mr5yb3torulw3jq5abhd3m45rg4sfm"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafkreidvmdpycofi6j6xedlkib6ka4yrt5lrtk3b5g5lesuvmlraf2677m"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:aviatorstyle",
+                        "name": "aviatorstyle",
+                        "description": "",
+                        "image": "",
+                        "thumbnail": "thumbnail.png",
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Aviator Sunglasses"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Gafas de Aviador"
+                            }
+                        ],
+                        "data": {
+                            "replaces": [
+                                "mask",
+                                "helmet"
+                            ],
+                            "hides": [],
+                            "removesDefaultHiding": [],
+                            "tags": [
+                                "accesories",
+                                "male",
+                                "man",
+                                "base-wearable"
+                            ],
+                            "category": "eyewear",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "M_Eyewear_AviatorStyle.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "M_Eyewear_AviatorStyle.glb",
+                                        "AvatarWearables_TX.png"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "M_Eyewear_AviatorStyle.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "M_Eyewear_AviatorStyle.glb",
+                                        "AvatarWearables_TX.png"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:baggy_pullover",
+                "name": "baggy_pullover",
+                "category": "upper_body",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:baggy_pullover"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreiadcrwlrll723rkmfd226ql2lurd5steys5kjm7xj2sd3auuko2ki",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:baggy_pullover"
+                    ],
+                    "timestamp": 1714483345850,
+                    "content": [
+                        {
+                            "file": "F_uBody_SolidPullover_512.png.png",
+                            "hash": "bafybeig6uehvsqc3me2xbh2ihbspl22c6eiblwkp5klz2ma6zmvhdbejya"
+                        },
+                        {
+                            "file": "F_uBody_SolidPullover.glb",
+                            "hash": "bafkreibh5aogu6e7dv7gr3obkdzi72g5hqb5il6wyxp36xvy3jgbrxiuee"
+                        },
+                        {
+                            "file": "M_uBody_SolidPullover_512.png.png",
+                            "hash": "bafybeicr2jdv7tfzd7hojpzigxkozmig7inxozybtha7zbzdzrywoeioga"
+                        },
+                        {
+                            "file": "M_uBody_SolidPullover.glb",
+                            "hash": "bafkreifxwhws67qhkibenmq2t2eijjtsz2pymtpakgh6xguoo7i3x2qy5e"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafybeigvvwelwfjuc26xmxwdngebly3g2dinkvoofjczex7we57jdyek4a"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:baggy_pullover",
+                        "name": "baggy_pullover",
+                        "description": "",
+                        "image": "",
+                        "thumbnail": "thumbnail.png",
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Baggy Pullover"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Suéter de Lana Holgado"
+                            }
+                        ],
+                        "data": {
+                            "replaces": [],
+                            "hides": [],
+                            "removesDefaultHiding": [
+                                "hands"
+                            ],
+                            "tags": [
+                                "base-wearable"
+                            ],
+                            "category": "upper_body",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "F_uBody_SolidPullover.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "F_uBody_SolidPullover.glb",
+                                        "F_uBody_SolidPullover_512.png.png",
+                                        "M_uBody_SolidPullover.glb",
+                                        "M_uBody_SolidPullover_512.png.png"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "M_uBody_SolidPullover.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "F_uBody_SolidPullover.glb",
+                                        "F_uBody_SolidPullover_512.png.png",
+                                        "M_uBody_SolidPullover.glb",
+                                        "M_uBody_SolidPullover_512.png.png"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:balbo_beard",
+                "name": "balbo_beard",
+                "category": "facial_hair",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:balbo_beard"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreig3dc7plnnkjaymidmcqjl3i7pru2pbtqcgfo6rzqcc7cipe6575i",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:balbo_beard"
+                    ],
+                    "timestamp": 1699288905401,
+                    "content": [
+                        {
+                            "file": "AvatarWearables_TX.png",
+                            "hash": "bafkreie2zkxkaboe6lo2yuafimiu4rzdlyuw4cvyaaocx4szwyranfpoaa"
+                        },
+                        {
+                            "file": "F_FacialHair_BalboBeard.glb",
+                            "hash": "bafkreido7jhlcywwhwd2hikj4xp43bsj6ia2lmju3mzpqom3g3vvzmykfi"
+                        },
+                        {
+                            "file": "M_FacialHair_BalboBeard.glb",
+                            "hash": "bafkreihrkwaixwfyzbjd3emisy3jni257gr5mgxyypfuteg7gvhxdh64se"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafkreieq63f5niubxntcmy3av3xmntw3wbe46dqee3m6npgub3x6zmzqzi"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:balbo_beard",
+                        "name": "balbo_beard",
+                        "description": "",
+                        "thumbnail": "thumbnail.png",
+                        "data": {
+                            "replaces": [],
+                            "hides": [],
+                            "tags": [
+                                "face",
+                                "facial_hair",
+                                "base-wearable"
+                            ],
+                            "category": "facial_hair",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "M_FacialHair_BalboBeard.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "AvatarWearables_TX.png",
+                                        "F_FacialHair_BalboBeard.glb",
+                                        "M_FacialHair_BalboBeard.glb"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "F_FacialHair_BalboBeard.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "AvatarWearables_TX.png",
+                                        "F_FacialHair_BalboBeard.glb",
+                                        "M_FacialHair_BalboBeard.glb"
+                                    ]
+                                }
+                            ]
+                        },
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Balbo"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Balbo"
+                            }
+                        ],
+                        "createdAt": 1699288904619,
+                        "updatedAt": 1699288904619
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:BaseFemale",
+                "name": "BaseFemale",
+                "category": "body_shape",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreier7sbttkajs77gj7q4shlxvo7k3rcpojpukqo7xggghleurx6uki",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:basefemale"
+                    ],
+                    "timestamp": 1699288905291,
+                    "content": [
+                        {
+                            "file": "Avatar_FemaleSkinBase.png",
+                            "hash": "bafkreidgli7y7lyskioyjcgkub3ja2af7b2cj7hsjjjqvgifjk7eusixoe"
+                        },
+                        {
+                            "file": "BaseFemale.glb",
+                            "hash": "bafkreicjhpml7xdib2knhbl2qn7sgqq7cudwys75xwgejdd47cxp3dkbc4"
+                        },
+                        {
+                            "file": "F_Eyebrows_00.png",
+                            "hash": "bafkreicljlsrh7upl5guvinmtjjqn7eagyu7e6wsef4a5nyerjuyw7t5fu"
+                        },
+                        {
+                            "file": "F_Eyes_00.png",
+                            "hash": "bafkreihm3s5xcauc6i256xnywwssnodcvtrs6z3454itsf2ph63e3tx7iq"
+                        },
+                        {
+                            "file": "F_Mouth_00.png",
+                            "hash": "bafkreiaryit63vshyvyddoo3dfjdapvlfcyf2jfbd6enktal3kbv2pcdru"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafkreigohcob7ium7ynqeya6ceavkkuvdndx6kjprgqah4lgpvmze6jzji"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:BaseFemale",
+                        "name": "BaseFemale",
+                        "description": "",
+                        "thumbnail": "thumbnail.png",
+                        "data": {
+                            "replaces": [],
+                            "hides": [],
+                            "tags": [
+                                "body",
+                                "male",
+                                "man",
+                                "base-wearable"
+                            ],
+                            "category": "body_shape",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "BaseFemale.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "Avatar_FemaleSkinBase.png",
+                                        "BaseFemale.glb",
+                                        "F_Eyebrows_00.png",
+                                        "F_Eyes_00.png",
+                                        "F_Mouth_00.png"
+                                    ]
+                                }
+                            ]
+                        },
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Woman"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Mujer"
+                            }
+                        ],
+                        "createdAt": 1699288904608,
+                        "updatedAt": 1699288904608
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:BaseMale",
+                "name": "BaseMale",
+                "category": "body_shape",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:BaseMale"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreiavl7hrbq4hycv6q3jlzig632cvouw6ms2lbob4b2zy5qx4mbny64",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:basemale"
+                    ],
+                    "timestamp": 1699288905391,
+                    "content": [
+                        {
+                            "file": "Avatar_MaleSkinBase.png",
+                            "hash": "bafkreiaubk2exzcqiutttnjajktvu6uys3zeb4poxpzauv6yccghz5heta"
+                        },
+                        {
+                            "file": "BaseMale.glb",
+                            "hash": "bafkreicxwj4mhufwziveusb733zs3ly2vz7evnpsbybto3izqtfrbr7umq"
+                        },
+                        {
+                            "file": "M_EyeBrows_00.png",
+                            "hash": "bafkreiax475w7ueo4idkzy4i2mizzmfqynipyzb2v4kp5bqncujlqnhxky"
+                        },
+                        {
+                            "file": "M_Eyes_00.png",
+                            "hash": "bafkreihse7i7mqabinjq4aydv3kngpxkoownwx2z3ul5ko3vz3zcn6qzii"
+                        },
+                        {
+                            "file": "M_Mouth_00.png",
+                            "hash": "bafkreih3id67pbqkfw2ikggwv6uz5dmroo4z2nkcdjbzbkpzjhd3rfbz6y"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafkreihqzejw6hhse4tupftqaaxnnwvobslj4xdwwpaj2rbqj4n2o2ymyy"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:BaseMale",
+                        "name": "BaseMale",
+                        "description": "",
+                        "thumbnail": "thumbnail.png",
+                        "data": {
+                            "replaces": [],
+                            "hides": [],
+                            "tags": [
+                                "body",
+                                "male",
+                                "man",
+                                "base-wearable"
+                            ],
+                            "category": "body_shape",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "BaseMale.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "Avatar_MaleSkinBase.png",
+                                        "BaseMale.glb",
+                                        "M_EyeBrows_00.png",
+                                        "M_Eyes_00.png",
+                                        "M_Mouth_00.png"
+                                    ]
+                                }
+                            ]
+                        },
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Man"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Hombre"
+                            }
+                        ],
+                        "createdAt": 1699288904609,
+                        "updatedAt": 1699288904609
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:basketball_shorts",
+                "name": "basketball_shorts",
+                "category": "lower_body",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:basketball_shorts"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreice3gef4tkq232dq4eibpog7tjxukc7gydk3j2oexi2twust7btee",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:basketball_shorts"
+                    ],
+                    "timestamp": 1714483311109,
+                    "content": [
+                        {
+                            "file": "Avatar_FemaleSkinBase.png.png",
+                            "hash": "bafkreidgli7y7lyskioyjcgkub3ja2af7b2cj7hsjjjqvgifjk7eusixoe"
+                        },
+                        {
+                            "file": "Avatar_MaleSkinBase.png",
+                            "hash": "bafkreiaubk2exzcqiutttnjajktvu6uys3zeb4poxpzauv6yccghz5heta"
+                        },
+                        {
+                            "file": "F_lBody_BasketballShorts.glb",
+                            "hash": "bafkreialb676ezgexr6v6wdneiby66m6vvwqwykblkwbboqlottpyp2cyq"
+                        },
+                        {
+                            "file": "M_lBody_BasketballShorts_512.png",
+                            "hash": "bafybeibd7woooqpdemzqk53uz57nmctgxdjtij65ok3jrcnbiso5jpczi4"
+                        },
+                        {
+                            "file": "M_lBody_BasketballShorts.glb",
+                            "hash": "bafkreicnefhvgh6yeypoapbnbrgrdwzcyhajrugoplmzn7a5gmefan6t34"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafkreieknpjio6vxiw3ahfgqffggqh5uc3yuyctjxevfmbn36p3rduwncq"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:basketball_shorts",
+                        "name": "basketball_shorts",
+                        "description": "",
+                        "image": "",
+                        "thumbnail": "thumbnail.png",
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Basketball Shorts"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Pantalones Cortos de Basket"
+                            }
+                        ],
+                        "data": {
+                            "replaces": [],
+                            "hides": [],
+                            "removesDefaultHiding": [],
+                            "tags": [
+                                "bottom",
+                                "male",
+                                "man",
+                                "base-wearable"
+                            ],
+                            "category": "lower_body",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "M_lBody_BasketballShorts.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "F_lBody_BasketballShorts.glb",
+                                        "M_lBody_BasketballShorts_512.png",
+                                        "Avatar_FemaleSkinBase.png.png",
+                                        "M_lBody_BasketballShorts.glb",
+                                        "Avatar_MaleSkinBase.png"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "F_lBody_BasketballShorts.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "F_lBody_BasketballShorts.glb",
+                                        "M_lBody_BasketballShorts_512.png",
+                                        "Avatar_FemaleSkinBase.png.png",
+                                        "M_lBody_BasketballShorts.glb",
+                                        "Avatar_MaleSkinBase.png"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:bear_slippers",
+                "name": "bear_slippers",
+                "category": "feet",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:bear_slippers"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreibf5feli5uhica2nvcejkuiti63cmvzzk2q7ai34zc7bczwqch7ui",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:bear_slippers"
+                    ],
+                    "timestamp": 1699288905403,
+                    "content": [
+                        {
+                            "file": "Avatar_MaleSkinBase.png",
+                            "hash": "bafybeigprldxnlbhmqs3zqousgsvx6sscytcsflm4dh3cxoew7wsu6rrju"
+                        },
+                        {
+                            "file": "AvatarWearables_TX.png",
+                            "hash": "bafkreie2zkxkaboe6lo2yuafimiu4rzdlyuw4cvyaaocx4szwyranfpoaa"
+                        },
+                        {
+                            "file": "BearSlippers_01.glb",
+                            "hash": "bafkreig6pl54rj7y4myxudvrw2im5qtefbipsx4kzhkgas4genkikze5nq"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafkreigi757ffw4esq6ymlbbd6j4dkudgb6cggelr42aw4x245qxsijvd4"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:bear_slippers",
+                        "name": "bear_slippers",
+                        "description": "",
+                        "thumbnail": "thumbnail.png",
+                        "data": {
+                            "replaces": [],
+                            "hides": [],
+                            "tags": [
+                                "shoes",
+                                "male",
+                                "man",
+                                "female",
+                                "woman",
+                                "base-wearable"
+                            ],
+                            "category": "feet",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "BearSlippers_01.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "AvatarWearables_TX.png",
+                                        "Avatar_MaleSkinBase.png",
+                                        "BearSlippers_01.glb"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "BearSlippers_01.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "AvatarWearables_TX.png",
+                                        "Avatar_MaleSkinBase.png",
+                                        "BearSlippers_01.glb"
+                                    ]
+                                }
+                            ]
+                        },
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Bear Slippers"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Pantuflas de Oso"
+                            }
+                        ],
+                        "createdAt": 1699288904620,
+                        "updatedAt": 1699288904620
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:beard",
+                "name": "beard",
+                "category": "facial_hair",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:beard"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreihxeost4sqbneocdgzq3lrh2vwu4yuvtldmluwyam56ubmy3fjpxi",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:beard"
+                    ],
+                    "timestamp": 1699288905401,
+                    "content": [
+                        {
+                            "file": "AvatarWearables_TX.png",
+                            "hash": "bafkreie2zkxkaboe6lo2yuafimiu4rzdlyuw4cvyaaocx4szwyranfpoaa"
+                        },
+                        {
+                            "file": "F_Beard.glb",
+                            "hash": "bafkreihxjdef42tyubvme2u5nrnnjcpvh7wpu627rz3b7xrij2somtrriy"
+                        },
+                        {
+                            "file": "M_Beard.glb",
+                            "hash": "bafkreievmlalsh4tf6kydssspk5jya3sqgy55xlzj3jypfas2yzxu2wleq"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafkreib22i4mgp4ucxjetm3clf5qvjhp5qieycbuzdjfbq4vcqxe4jdg7a"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:beard",
+                        "name": "beard",
+                        "description": "",
+                        "thumbnail": "thumbnail.png",
+                        "data": {
+                            "replaces": [],
+                            "hides": [],
+                            "tags": [
+                                "face",
+                                "facial_hair",
+                                "base-wearable"
+                            ],
+                            "category": "facial_hair",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "M_Beard.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "AvatarWearables_TX.png",
+                                        "F_Beard.glb",
+                                        "M_Beard.glb"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "F_Beard.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "AvatarWearables_TX.png",
+                                        "F_Beard.glb",
+                                        "M_Beard.glb"
+                                    ]
+                                }
+                            ]
+                        },
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Beard"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Barba"
+                            }
+                        ],
+                        "createdAt": 1699288904619,
+                        "updatedAt": 1699288904619
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:bee_t_shirt",
+                "name": "bee_t_shirt",
+                "category": "upper_body",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:bee_t_shirt"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreihifhb2kn5wlw5rjo3ylmwehqlw5i7b6th7gqyd632wbcja7ova5q",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:bee_t_shirt"
+                    ],
+                    "timestamp": 1714483325084,
+                    "content": [
+                        {
+                            "file": "Avatar_MaleSkinBase.png",
+                            "hash": "bafkreiaubk2exzcqiutttnjajktvu6uys3zeb4poxpzauv6yccghz5heta"
+                        },
+                        {
+                            "file": "F_uBody_BeeTShirt.glb",
+                            "hash": "bafkreiee5fjm72vojdqfwth7rhezep7quwfl5bgicpfmyikrrlw24zcgqy"
+                        },
+                        {
+                            "file": "M_uBody_BeeTShirt.glb",
+                            "hash": "bafkreidkzk3kdr7t4dm57ntovj53q6cvwkqm6ugt2uy55yclqunh3ps5pu"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafybeieqypr6byani2hemr2sj2n4hhgy6ngn4el7tbj6fclq4cmixyl5uu"
+                        },
+                        {
+                            "file": "Tshirt_f_Stripe.png.png",
+                            "hash": "bafkreid77ipcgcyy2pkfasoidyyf2i6cqnos3wwjkwyrje7pfs22gob474"
+                        },
+                        {
+                            "file": "Tshirt_m_Stripe.png.png",
+                            "hash": "bafkreib7ascaiiamhdxegrir5upfpbxzgftj2fmo3tbibxpdthk4nvp6zi"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:bee_t_shirt",
+                        "name": "bee_t_shirt",
+                        "description": "",
+                        "image": "",
+                        "thumbnail": "thumbnail.png",
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Bee T-Shirt"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Remera con Estampado de Abeja"
+                            }
+                        ],
+                        "data": {
+                            "replaces": [],
+                            "hides": [],
+                            "removesDefaultHiding": [
+                                "hands"
+                            ],
+                            "tags": [
+                                "Bee",
+                                "shirt",
+                                "yellow",
+                                "black",
+                                "base-wearable"
+                            ],
+                            "category": "upper_body",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "F_uBody_BeeTShirt.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "F_uBody_BeeTShirt.glb",
+                                        "Tshirt_f_Stripe.png.png",
+                                        "Avatar_MaleSkinBase.png",
+                                        "M_uBody_BeeTShirt.glb",
+                                        "Tshirt_m_Stripe.png.png"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "M_uBody_BeeTShirt.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "F_uBody_BeeTShirt.glb",
+                                        "Tshirt_f_Stripe.png.png",
+                                        "Avatar_MaleSkinBase.png",
+                                        "M_uBody_BeeTShirt.glb",
+                                        "Tshirt_m_Stripe.png.png"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:black_glove",
+                "name": "black_glove",
+                "category": "hands_wear",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:black_glove"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreieyjg34sbufuxzxtiuoumwu2yixx7dspp6klrikzxzpodni5lwkji",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:black_glove"
+                    ],
+                    "timestamp": 1699288905408,
+                    "content": [
+                        {
+                            "file": "Avatar_MaleSkinBase.png.png",
+                            "hash": "bafkreiaubk2exzcqiutttnjajktvu6uys3zeb4poxpzauv6yccghz5heta"
+                        },
+                        {
+                            "file": "AvatarWearables_TX.png",
+                            "hash": "bafkreie2zkxkaboe6lo2yuafimiu4rzdlyuw4cvyaaocx4szwyranfpoaa"
+                        },
+                        {
+                            "file": "BlackGlove.glb",
+                            "hash": "bafkreiho6mf5s255esgsixuj4y3vvdfa5br2ndzhahwpvjb75j7fefq5am"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafkreih7lzkurntfaagk7byo5gdyd2xpvnoenugtxd2pc3a2zrbwnmjzlu"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:black_glove",
+                        "name": "black_glove",
+                        "description": "",
+                        "thumbnail": "thumbnail.png",
+                        "data": {
+                            "replaces": [],
+                            "hides": [
+                                "hands"
+                            ],
+                            "tags": [
+                                "gloves",
+                                "hands",
+                                "black",
+                                "base-wearable"
+                            ],
+                            "category": "hands_wear",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "BlackGlove.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "AvatarWearables_TX.png",
+                                        "Avatar_MaleSkinBase.png.png",
+                                        "BlackGlove.glb"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "BlackGlove.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "AvatarWearables_TX.png",
+                                        "Avatar_MaleSkinBase.png.png",
+                                        "BlackGlove.glb"
+                                    ]
+                                }
+                            ]
+                        },
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Black Street Glove"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Guante de Calle Negro"
+                            }
+                        ],
+                        "createdAt": 1699288904625,
+                        "updatedAt": 1699288904625
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:black_jacket",
+                "name": "black_jacket",
+                "category": "upper_body",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:black_jacket"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreibnrv6obxlasykaolufgsukx5dkqmyvbabscgr7rmvvag4oja33wm",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:black_jacket"
+                    ],
+                    "timestamp": 1714483356899,
+                    "content": [
+                        {
+                            "file": "bikerJacket_diffuse512.png.png",
+                            "hash": "bafkreifeftty53rjsm2bae22z5cz4iq6zwvf6o5jjwadjjsw6b7wkdfvbu"
+                        },
+                        {
+                            "file": "F_uBody_BlackJacket_01.glb",
+                            "hash": "bafkreidg6exys2bsd66uwcuoug2vjhqzqii5btxb7krmjgqfg6nd7km4zi"
+                        },
+                        {
+                            "file": "M_uBody_BlackJacket_01.glb",
+                            "hash": "bafkreibun4ofzhdcdl2vcegkrxg6kcmtgzkr7p7v3fqw66b6vyianhkkze"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafybeihipno42haqwvz2ggo2sbybigbykej2xmvlbdcy54gceowmof4nxe"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:black_jacket",
+                        "name": "black_jacket",
+                        "description": "",
+                        "image": "",
+                        "thumbnail": "thumbnail.png",
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Black Jacket"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Chaqueta Negra"
+                            }
+                        ],
+                        "data": {
+                            "replaces": [],
+                            "hides": [],
+                            "removesDefaultHiding": [
+                                "hands"
+                            ],
+                            "tags": [
+                                "base-wearable"
+                            ],
+                            "category": "upper_body",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "M_uBody_BlackJacket_01.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "F_uBody_BlackJacket_01.glb",
+                                        "bikerJacket_diffuse512.png.png",
+                                        "M_uBody_BlackJacket_01.glb"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "F_uBody_BlackJacket_01.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "F_uBody_BlackJacket_01.glb",
+                                        "bikerJacket_diffuse512.png.png",
+                                        "M_uBody_BlackJacket_01.glb"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:black_sun_glasses",
+                "name": "black_sun_glasses",
+                "category": "eyewear",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:black_sun_glasses"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreic5qoksd2hawcmnanfngtzfy7sinho3pnvsuzdp2ftb6eemzuodaa",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:black_sun_glasses"
+                    ],
+                    "timestamp": 1699288905400,
+                    "content": [
+                        {
+                            "file": "AvatarWearables_TX.png",
+                            "hash": "bafkreigfg4kkuhtqpoimp7cvi6xelsjzawxpuazlfq2c6oif6wtcac65ei"
+                        },
+                        {
+                            "file": "F_Eyewear_BlackSunglasses.glb",
+                            "hash": "bafkreih4pfjwlzapezop76bnwdsswpm6lz6lze36nkkvlonnufva7avag4"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafkreiakg7a7hq6z47keiyxkms5mdud4b23d676533x5chpfof3nfzysya"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:black_sun_glasses",
+                        "name": "black_sun_glasses",
+                        "description": "",
+                        "thumbnail": "thumbnail.png",
+                        "data": {
+                            "replaces": [],
+                            "hides": [],
+                            "tags": [
+                                "accesories",
+                                "woman",
+                                "women",
+                                "male",
+                                "man",
+                                "base-wearable"
+                            ],
+                            "category": "eyewear",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "F_Eyewear_BlackSunglasses.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "AvatarWearables_TX.png",
+                                        "F_Eyewear_BlackSunglasses.glb"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "F_Eyewear_BlackSunglasses.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "AvatarWearables_TX.png",
+                                        "F_Eyewear_BlackSunglasses.glb"
+                                    ]
+                                }
+                            ]
+                        },
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Black Sunglasses"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Anteojos Negros"
+                            }
+                        ],
+                        "createdAt": 1699288904618,
+                        "updatedAt": 1699288904618
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:black_top",
+                "name": "black_top",
+                "category": "upper_body",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:black_top"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreigmoduery3boo24mk5pm7yt7g6fn7ejtf64et34tmsqnekysacnbu",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:black_top"
+                    ],
+                    "timestamp": 1714483325964,
+                    "content": [
+                        {
+                            "file": "Avatar_FemaleSkinBase.png.png",
+                            "hash": "bafkreidgli7y7lyskioyjcgkub3ja2af7b2cj7hsjjjqvgifjk7eusixoe"
+                        },
+                        {
+                            "file": "Avatar_MaleSkinBase.png",
+                            "hash": "bafkreiaubk2exzcqiutttnjajktvu6uys3zeb4poxpzauv6yccghz5heta"
+                        },
+                        {
+                            "file": "F_uBody_BlackTop.glb",
+                            "hash": "bafkreicpxccwhy7l5dtaziz7xrgc5o336rcgrextanh63mjka2ahpjso7y"
+                        },
+                        {
+                            "file": "M_uBody_BlackTop.glb",
+                            "hash": "bafkreiawbzoyqemt44mecmdgsv2kgepu3qd672uak5h3reoulllt45ruyy"
+                        },
+                        {
+                            "file": "m_uBody_BlackTop_UPDATEDSKIN_512.png.png",
+                            "hash": "bafkreid27p5brdqxnv3dqjfi2nxsjupjx25gzopv6rfz272kscsr4afdti"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafkreiapjt5c2ckhvvpssj7skc7jmsxayqhmpsqycqjfpws3mms5tcavf4"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:black_top",
+                        "name": "black_top",
+                        "description": "",
+                        "image": "",
+                        "thumbnail": "thumbnail.png",
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Black Top"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Top Negro"
+                            }
+                        ],
+                        "data": {
+                            "replaces": [],
+                            "hides": [],
+                            "removesDefaultHiding": [
+                                "hands"
+                            ],
+                            "tags": [
+                                "top",
+                                "black",
+                                "base-wearable"
+                            ],
+                            "category": "upper_body",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "F_uBody_BlackTop.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "F_uBody_BlackTop.glb",
+                                        "m_uBody_BlackTop_UPDATEDSKIN_512.png.png",
+                                        "Avatar_FemaleSkinBase.png.png",
+                                        "M_uBody_BlackTop.glb",
+                                        "Avatar_MaleSkinBase.png"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "M_uBody_BlackTop.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "F_uBody_BlackTop.glb",
+                                        "m_uBody_BlackTop_UPDATEDSKIN_512.png.png",
+                                        "Avatar_FemaleSkinBase.png.png",
+                                        "M_uBody_BlackTop.glb",
+                                        "Avatar_MaleSkinBase.png"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:blue_bandana",
+                "name": "blue_bandana",
+                "category": "tiara",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:blue_bandana"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreidzmgpdjc7zjgkixrgdgel4l2gu6jxvbqamwpl2kdjk2y4fpjjvvq",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:blue_bandana"
+                    ],
+                    "timestamp": 1699288905416,
+                    "content": [
+                        {
+                            "file": "AvatarWearables_TX.png",
+                            "hash": "bafkreigfg4kkuhtqpoimp7cvi6xelsjzawxpuazlfq2c6oif6wtcac65ei"
+                        },
+                        {
+                            "file": "BlueBandana.glb",
+                            "hash": "bafkreihprikw3jl4dxcqxyi5jrdscps6sokusdfgmgljd4ekdni6i26dyq"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafkreid5cydzi3dh2vlhecbggz6ldzrppkofz354me7ulipym2jatjqmim"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:blue_bandana",
+                        "name": "blue_bandana",
+                        "description": "",
+                        "thumbnail": "thumbnail.png",
+                        "data": {
+                            "replaces": [
+                                "mask",
+                                "hat",
+                                "helmet"
+                            ],
+                            "hides": [],
+                            "tags": [
+                                "accesories",
+                                "male",
+                                "man",
+                                "female",
+                                "woman",
+                                "base-wearable"
+                            ],
+                            "category": "tiara",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "BlueBandana.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "AvatarWearables_TX.png",
+                                        "BlueBandana.glb"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "BlueBandana.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "AvatarWearables_TX.png",
+                                        "BlueBandana.glb"
+                                    ]
+                                }
+                            ]
+                        },
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Blue Bandana"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Bandana Azul"
+                            }
+                        ],
+                        "createdAt": 1699288904629,
+                        "updatedAt": 1699288904629
+                    }
+                }
+            },
+            {
+                "type": "base-wearable",
+                "urn": "urn:decentraland:off-chain:base-avatars:blue_star_earring",
+                "name": "blue_star_earring",
+                "category": "earring",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:off-chain:base-avatars:blue_star_earring"
+                    }
+                ],
+                "amount": 1,
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreib5jprysbkzbvjhxn4ibjoebqray7sho5woau73gtoljfmyszohay",
+                    "type": "wearable",
+                    "pointers": [
+                        "urn:decentraland:off-chain:base-avatars:blue_star_earring"
+                    ],
+                    "timestamp": 1714483281320,
+                    "content": [
+                        {
+                            "file": "AvatarWearables_TX.png",
+                            "hash": "bafkreie2zkxkaboe6lo2yuafimiu4rzdlyuw4cvyaaocx4szwyranfpoaa"
+                        },
+                        {
+                            "file": "F_Earrings_BlueStar.glb",
+                            "hash": "bafkreialhoptkv6ennd77ffnhtssnlgsurskadhzoysgu4donjndd2whli"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafkreihnpwoukvsa35rbzr5hosggtot5gpvkzqdiw5ilswidocozs4emem"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:off-chain:base-avatars:blue_star_earring",
+                        "name": "blue_star_earring",
+                        "description": "",
+                        "image": "",
+                        "thumbnail": "thumbnail.png",
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Blue Star Earring"
+                            },
+                            {
+                                "code": "es",
+                                "text": "Aro Azul con Forma de Estrella"
+                            }
+                        ],
+                        "data": {
+                            "replaces": [],
+                            "hides": [],
+                            "removesDefaultHiding": [],
+                            "tags": [
+                                "accesories",
+                                "female",
+                                "woman",
+                                "base-wearable"
+                            ],
+                            "category": "earring",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "F_Earrings_BlueStar.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "F_Earrings_BlueStar.glb",
+                                        "AvatarWearables_TX.png"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "F_Earrings_BlueStar.glb",
+                                    "overrideReplaces": [],
+                                    "overrideHides": [],
+                                    "contents": [
+                                        "F_Earrings_BlueStar.glb",
+                                        "AvatarWearables_TX.png"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "totalAmount": 282,
+        "pageNum": 1,
+        "pageSize": 15
+    }
+}
