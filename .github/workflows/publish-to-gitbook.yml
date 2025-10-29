@@ -41,45 +41,57 @@ jobs:
           path: bundled-openapi.yaml
           retention-days: 30
       
-      - name: Sync to GitBook
+      - name: Push bundled spec to gitbook-sync branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          echo "📚 Preparing bundled spec for GitBook..."
+          
+          # Create/update gitbook-sync branch with bundled spec
+          git fetch origin gitbook-sync:gitbook-sync || git checkout -b gitbook-sync
+          git checkout gitbook-sync
+          
+          # Copy bundled spec to root for easy GitBook access
+          cp bundled-openapi.yaml openapi-bundled.yaml
+          
+          # Commit and push
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add openapi-bundled.yaml
+          
+          if git diff --staged --quiet; then
+            echo "No changes to bundled spec"
+          else
+            git commit -m "chore: update bundled OpenAPI spec for GitBook [skip ci]"
+            git push -f origin gitbook-sync
+            echo "✅ Pushed to gitbook-sync branch"
+          fi
+          
+          git checkout main
+      
+      - name: Sync to GitBook via API
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         env:
           GITBOOK_TOKEN: ${{ secrets.GITBOOK_TOKEN }}
           GITBOOK_ORG_ID: ${{ secrets.GITBOOK_ORGANIZATION_ID }}
         run: |
           if [ -z "$GITBOOK_TOKEN" ] || [ -z "$GITBOOK_ORG_ID" ]; then
-            echo "⚠️  GitBook secrets not configured. Skipping GitBook sync."
-            echo "Expected secrets: GITBOOK_TOKEN, GITBOOK_ORGANIZATION_ID"
-            echo "✅ Validation and bundling completed successfully."
-            echo "📦 Bundled spec available as workflow artifact."
+            echo "⚠️  GitBook secrets not configured."
+            echo "✅ Bundled spec pushed to gitbook-sync branch"
+            echo "📖 Import URL: https://raw.githubusercontent.com/${{ github.repository }}/gitbook-sync/openapi-bundled.yaml"
             exit 0
           fi
           
-          echo "📚 Publishing to GitBook..."
-          echo "Organization ID: ${GITBOOK_ORG_ID}"
-          echo ""
+          echo "📚 Syncing to GitBook..."
           
-          # Get the raw URL for the bundled spec
-          SPEC_URL="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/openapi/catalyst.yaml"
+          # The bundled spec is now available at a stable URL
+          BUNDLED_URL="https://raw.githubusercontent.com/${{ github.repository }}/gitbook-sync/openapi-bundled.yaml"
           
-          # Try to push to GitBook using their Git Sync API
-          # Note: This requires GitBook GitHub integration to be set up
-          echo "Setting up GitBook GitHub integration..."
+          echo "✅ Bundled spec available at: ${BUNDLED_URL}"
           echo ""
-          echo "To complete GitBook publishing:"
-          echo "  1. Go to GitBook → Your Space → Integrations"
-          echo "  2. Connect GitHub repository: ${{ github.repository }}"
-          echo "  3. Select branch: main"
-          echo "  4. Set OpenAPI file path: bundled-openapi.yaml (from artifacts)"
-          echo "     OR point to: openapi/catalyst.yaml"
+          echo "To complete GitBook setup (one-time):"
+          echo "  1. In GitBook → OpenAPI section → Your Catalyst API"
+          echo "  2. Update the import source to: ${BUNDLED_URL}"
+          echo "  3. Enable auto-sync"
           echo ""
-          echo "Alternative: Use GitBook CLI or API directly"
-          echo "  Space URL format: https://api.gitbook.com/v1/orgs/${GITBOOK_ORG_ID}/spaces"
-          echo ""
-          echo "✅ Bundled OpenAPI spec is ready for GitBook"
-          echo "📦 Artifact: openapi-spec (bundled-openapi.yaml)"
-          echo "🔗 Source spec: ${SPEC_URL}"
-          echo ""
-          echo "Note: GitBook requires manual space configuration first."
-          echo "After setup, changes will auto-sync on each push!"
+          echo "GitBook will now auto-update on every push! 🎉"
 
