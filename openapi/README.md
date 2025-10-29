@@ -2,7 +2,7 @@
 
 This folder contains your entrypoint `openapi.yaml`
 
-That file contains references to the entire API definition
+That file contains references to the entire API definition.
 Here are some sections to pay attention to:
 
 * Top-level **description**: this accepts markdown, and Redoc and Redocly API Reference will render it at the top of the docs.  Consider maintaining your markdown in a separate file and [embedding it](https://redoc.ly/docs/api-reference-docs/embedded-markdown/). Note to Redoc community edition users, the special tags are only available to the Redocly API Reference users, but you can still embed markdown.
