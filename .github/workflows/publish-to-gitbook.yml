@@ -30,26 +30,16 @@ jobs:
       
       - name: Bundle API spec
         run: |
-          npx @redocly/cli bundle openapi/catalyst.yaml -o lib/api.yaml
-          mkdir -p docs/api
-          cp lib/api.yaml docs/api/openapi.yaml
+          npx @redocly/cli bundle openapi/catalyst.yaml -o bundled-openapi.yaml
+          echo "✅ Bundled spec created"
+          ls -lh bundled-openapi.yaml
       
-      - name: Build API documentation
-        run: |
-          npx @redocly/cli build-docs docs/api/openapi.yaml --output=docs/api/index.html
-      
-      - name: Commit bundled spec and docs
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f docs/api/
-          if git diff --staged --quiet; then
-            echo "No changes to API docs"
-          else
-            git commit -m "chore: update bundled API spec and docs for GitBook [skip ci]"
-            git push
-          fi
+      - name: Upload bundled spec as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: openapi-spec
+          path: bundled-openapi.yaml
+          retention-days: 30
       
       - name: Sync to GitBook
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -59,16 +49,36 @@ jobs:
         run: |
           if [ -z "$GITBOOK_TOKEN" ] || [ -z "$GITBOOK_SPACE_ID" ]; then
             echo "⚠️  GitBook secrets not configured. Skipping GitBook sync."
-            echo "To enable GitBook publishing, add GITBOOK_TOKEN and GITBOOK_SPACE_ID secrets."
+            echo "✅ Validation and bundling completed successfully."
+            echo "📦 Bundled spec available as workflow artifact."
             exit 0
           fi
           
           echo "📚 Publishing to GitBook..."
-          curl -X POST "https://api.gitbook.com/v1/spaces/${GITBOOK_SPACE_ID}/content/import" \
+          
+          # Upload the bundled spec directly to GitBook
+          RESPONSE=$(curl -X POST "https://api.gitbook.com/v1/spaces/${GITBOOK_SPACE_ID}/content/import" \
             -H "Authorization: Bearer ${GITBOOK_TOKEN}" \
             -H "Content-Type: application/json" \
-            -d "{
-              \"type\": \"openapi\",
-              \"url\": \"https://raw.githubusercontent.com/${{ github.repository }}/main/docs/api/openapi.yaml\"
-            }" || echo "⚠️  GitBook sync failed. Check your secrets and space configuration."
+            -d @- << EOF
+{
+  "type": "openapi",
+  "content": $(cat bundled-openapi.yaml | jq -Rs .)
+}
+EOF
+          )
+          
+          if [ $? -eq 0 ]; then
+            echo "✅ Successfully published to GitBook!"
+            echo "$RESPONSE"
+          else
+            echo "⚠️  GitBook sync failed. Response:"
+            echo "$RESPONSE"
+            echo ""
+            echo "Alternative: Use GitBook GitHub integration"
+            echo "  1. In GitBook, go to Integrations"
+            echo "  2. Connect your GitHub repository"
+            echo "  3. Point to the bundled spec artifact"
+            exit 1
+          fi
 
