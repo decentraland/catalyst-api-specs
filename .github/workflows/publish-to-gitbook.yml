@@ -9,10 +9,12 @@ on:
       - 'openapi/**'
 
 jobs:
-  validate:
+  validate-bundle-and-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -25,13 +27,48 @@ jobs:
       
       - name: Validate API spec with project config
         run: yarn test:api
-  
-  publish-to-gitbook:
-    needs: validate
-    uses: decentraland/platform-actions/.github/workflows/apps-docs.yml@main
-    with:
-      api-spec-file: 'openapi/catalyst.yaml'
-      api-spec-name: 'catalyst-api'
-      node-version: '20'
-    secrets: inherit
+      
+      - name: Bundle API spec
+        run: |
+          npx @redocly/cli bundle openapi/catalyst.yaml -o lib/api.yaml
+          mkdir -p docs/api
+          cp lib/api.yaml docs/api/openapi.yaml
+      
+      - name: Build API documentation
+        run: |
+          npx @redocly/cli build-docs docs/api/openapi.yaml --output=docs/api/index.html
+      
+      - name: Commit bundled spec and docs
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f docs/api/
+          if git diff --staged --quiet; then
+            echo "No changes to API docs"
+          else
+            git commit -m "chore: update bundled API spec and docs for GitBook [skip ci]"
+            git push
+          fi
+      
+      - name: Sync to GitBook
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GITBOOK_TOKEN: ${{ secrets.GITBOOK_TOKEN }}
+          GITBOOK_SPACE_ID: ${{ secrets.GITBOOK_SPACE_ID }}
+        run: |
+          if [ -z "$GITBOOK_TOKEN" ] || [ -z "$GITBOOK_SPACE_ID" ]; then
+            echo "⚠️  GitBook secrets not configured. Skipping GitBook sync."
+            echo "To enable GitBook publishing, add GITBOOK_TOKEN and GITBOOK_SPACE_ID secrets."
+            exit 0
+          fi
+          
+          echo "📚 Publishing to GitBook..."
+          curl -X POST "https://api.gitbook.com/v1/spaces/${GITBOOK_SPACE_ID}/content/import" \
+            -H "Authorization: Bearer ${GITBOOK_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"type\": \"openapi\",
+              \"url\": \"https://raw.githubusercontent.com/${{ github.repository }}/main/docs/api/openapi.yaml\"
+            }" || echo "⚠️  GitBook sync failed. Check your secrets and space configuration."
 
