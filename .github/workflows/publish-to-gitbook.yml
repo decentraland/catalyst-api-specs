@@ -9,7 +9,25 @@ on:
       - 'openapi/**'
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'yarn'
+      
+      - name: Install dependencies
+        run: yarn install
+      
+      - name: Validate API spec with project config
+        run: yarn test:api
+  
   publish-to-gitbook:
+    needs: validate
     uses: decentraland/platform-actions/.github/workflows/apps-docs.yml@main
     with:
       api-spec-file: 'openapi/catalyst.yaml'
