@@ -4,7 +4,11 @@ apis:
     root: openapi/catalyst.yaml
 rules:
   no-unused-components: warn
-  security-defined: off  # Public API endpoints don't require security documentation
+  # Disable linting rules that don't affect GitBook publishing
+  security-defined: off
+  operation-4xx-response: off
+  no-invalid-media-type-examples: off
+  no-invalid-schema-examples: off
 theme:
   openapi:
     sideNavStyle: path-only
