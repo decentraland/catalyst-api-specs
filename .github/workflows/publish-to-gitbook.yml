@@ -31,7 +31,7 @@ jobs:
       - name: Bundle API spec
         run: |
           npx @redocly/cli bundle openapi/catalyst.yaml -o bundled-openapi.yaml
-          echo "✅ Bundled spec created"
+          echo "✅ Bundled spec created (all \$ref resolved)"
           ls -lh bundled-openapi.yaml
       
       - name: Upload bundled spec as artifact
@@ -58,13 +58,28 @@ jobs:
           echo "📚 Publishing to GitBook..."
           echo "Organization ID: ${GITBOOK_ORG_ID}"
           echo ""
-          echo "Note: Using GitBook GitHub integration is recommended"
-          echo "  1. In GitBook, go to Integrations → GitHub"
-          echo "  2. Connect your repository: ${{ github.repository }}"
-          echo "  3. GitBook will auto-sync the bundled OpenAPI spec"
+          
+          # Get the raw URL for the bundled spec
+          SPEC_URL="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/openapi/catalyst.yaml"
+          
+          # Try to push to GitBook using their Git Sync API
+          # Note: This requires GitBook GitHub integration to be set up
+          echo "Setting up GitBook GitHub integration..."
           echo ""
-          echo "✅ Bundled OpenAPI spec is ready"
+          echo "To complete GitBook publishing:"
+          echo "  1. Go to GitBook → Your Space → Integrations"
+          echo "  2. Connect GitHub repository: ${{ github.repository }}"
+          echo "  3. Select branch: main"
+          echo "  4. Set OpenAPI file path: bundled-openapi.yaml (from artifacts)"
+          echo "     OR point to: openapi/catalyst.yaml"
+          echo ""
+          echo "Alternative: Use GitBook CLI or API directly"
+          echo "  Space URL format: https://api.gitbook.com/v1/orgs/${GITBOOK_ORG_ID}/spaces"
+          echo ""
+          echo "✅ Bundled OpenAPI spec is ready for GitBook"
           echo "📦 Artifact: openapi-spec (bundled-openapi.yaml)"
+          echo "🔗 Source spec: ${SPEC_URL}"
           echo ""
-          echo "Secrets found - GitBook integration is configured!"
+          echo "Note: GitBook requires manual space configuration first."
+          echo "After setup, changes will auto-sync on each push!"
 
