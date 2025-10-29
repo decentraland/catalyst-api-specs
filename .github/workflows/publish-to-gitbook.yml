@@ -45,22 +45,26 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         env:
           GITBOOK_TOKEN: ${{ secrets.GITBOOK_TOKEN }}
-          GITBOOK_SPACE_ID: ${{ secrets.GITBOOK_SPACE_ID }}
+          GITBOOK_ORG_ID: ${{ secrets.GITBOOK_ORGANIZATION_ID }}
         run: |
-          if [ -z "$GITBOOK_TOKEN" ] || [ -z "$GITBOOK_SPACE_ID" ]; then
+          if [ -z "$GITBOOK_TOKEN" ] || [ -z "$GITBOOK_ORG_ID" ]; then
             echo "⚠️  GitBook secrets not configured. Skipping GitBook sync."
+            echo "Expected secrets: GITBOOK_TOKEN, GITBOOK_ORGANIZATION_ID"
             echo "✅ Validation and bundling completed successfully."
             echo "📦 Bundled spec available as workflow artifact."
             exit 0
           fi
           
           echo "📚 Publishing to GitBook..."
+          echo "Organization ID: ${GITBOOK_ORG_ID}"
           echo ""
-          echo "Recommended setup:"
-          echo "  1. In GitBook, go to Integrations"
-          echo "  2. Connect your GitHub repository"
-          echo "  3. Configure GitBook to import OpenAPI from workflow artifacts"
+          echo "Note: Using GitBook GitHub integration is recommended"
+          echo "  1. In GitBook, go to Integrations → GitHub"
+          echo "  2. Connect your repository: ${{ github.repository }}"
+          echo "  3. GitBook will auto-sync the bundled OpenAPI spec"
           echo ""
-          echo "✅ Bundled OpenAPI spec is ready for GitBook import"
-          echo "📦 Download artifact: openapi-spec (bundled-openapi.yaml)"
+          echo "✅ Bundled OpenAPI spec is ready"
+          echo "📦 Artifact: openapi-spec (bundled-openapi.yaml)"
+          echo ""
+          echo "Secrets found - GitBook integration is configured!"
 
