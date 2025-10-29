@@ -55,30 +55,12 @@ jobs:
           fi
           
           echo "📚 Publishing to GitBook..."
-          
-          # Upload the bundled spec directly to GitBook
-          RESPONSE=$(curl -X POST "https://api.gitbook.com/v1/spaces/${GITBOOK_SPACE_ID}/content/import" \
-            -H "Authorization: Bearer ${GITBOOK_TOKEN}" \
-            -H "Content-Type: application/json" \
-            -d @- << EOF
-{
-  "type": "openapi",
-  "content": $(cat bundled-openapi.yaml | jq -Rs .)
-}
-EOF
-          )
-          
-          if [ $? -eq 0 ]; then
-            echo "✅ Successfully published to GitBook!"
-            echo "$RESPONSE"
-          else
-            echo "⚠️  GitBook sync failed. Response:"
-            echo "$RESPONSE"
-            echo ""
-            echo "Alternative: Use GitBook GitHub integration"
-            echo "  1. In GitBook, go to Integrations"
-            echo "  2. Connect your GitHub repository"
-            echo "  3. Point to the bundled spec artifact"
-            exit 1
-          fi
+          echo ""
+          echo "Recommended setup:"
+          echo "  1. In GitBook, go to Integrations"
+          echo "  2. Connect your GitHub repository"
+          echo "  3. Configure GitBook to import OpenAPI from workflow artifacts"
+          echo ""
+          echo "✅ Bundled OpenAPI spec is ready for GitBook import"
+          echo "📦 Download artifact: openapi-spec (bundled-openapi.yaml)"
 
