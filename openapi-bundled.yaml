@@ -2408,6 +2408,8 @@ components:
     profile:
       type: object
       properties:
+        timestamp:
+          type: number
         avatars:
           type: array
           items:
@@ -3329,7 +3331,8 @@ components:
           - '0x22480812a9a0669783c06d359182a583bd1d9fc2'
     200-profiles-ids:
       value:
-        - avatars:
+        - timestamp: 1732684800
+          avatars:
             - userId: '0x5e5d9d1dfd87e9b8b069b8e5d708db92be5ade99'
               email: ''
               name: Paralax24#de99
@@ -3372,7 +3375,8 @@ components:
               tutorialStep: 256
               interests: []
               unclaimedName: Paralax24
-        - avatars:
+        - timestamp: 1732684801
+          avatars:
             - userId: '0x22480812a9a0669783c06d359182a583bd1d9fc2'
               email: ''
               name: cestfini#9fc2
@@ -3417,6 +3421,7 @@ components:
               unclaimedName: cestfini
     200-profiles-id:
       value:
+        timestamp: 1732684800
         avatars:
           - userId: '0x22480812a9a0669783c06d359182a583bd1d9fc2'
             email: ''
