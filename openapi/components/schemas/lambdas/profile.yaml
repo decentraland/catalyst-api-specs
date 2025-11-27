@@ -1,5 +1,7 @@
 type: object
 properties:
+  timestamp:
+    type: number
   avatars:
     type: array
     items:
