@@ -2491,6 +2491,15 @@ components:
                     type: array
                     items:
                       type: string
+                  emotes:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        urn:
+                          type: string
+                        slot:
+                          type: number
               tutorialStep:
                 type: number
               interests:
