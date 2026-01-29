@@ -15,6 +15,10 @@ properties:
           type: string
         nameColor:
           type: object
+          required:
+            - r
+            - g
+            - b
           properties:
             r:
               type: number
