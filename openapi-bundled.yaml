@@ -2421,6 +2421,19 @@ components:
                 type: string
               name:
                 type: string
+              nameColor:
+                type: object
+                required:
+                  - r
+                  - g
+                  - b
+                properties:
+                  r:
+                    type: number
+                  g:
+                    type: number
+                  b:
+                    type: number
               hasClaimedName:
                 type: boolean
               description:
