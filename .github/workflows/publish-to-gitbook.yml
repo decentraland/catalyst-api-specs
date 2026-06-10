@@ -12,12 +12,12 @@ jobs:
   validate-bundle-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '24'
           cache: 'yarn'
@@ -35,7 +35,7 @@ jobs:
           ls -lh bundled-openapi.yaml
       
       - name: Upload bundled spec as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: openapi-spec
           path: bundled-openapi.yaml
