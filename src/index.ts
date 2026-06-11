@@ -23,3 +23,4 @@ function extractAPI(prefix: string): any {
 export const CONTENT_API = extractAPI('/content/')
 export const LAMBDAS_API = extractAPI('/lambdas/')
 export const COMMS_API = extractAPI('/comms/')
+export const EXPLORER_API = extractAPI('/explorer/')

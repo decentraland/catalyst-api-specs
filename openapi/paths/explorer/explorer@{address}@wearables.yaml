@@ -1,0 +1,77 @@
+get:
+  operationId: getExplorerWearables
+  summary: Explorer wearables
+  tags:
+    - Explorer
+  description: >
+    Retrieve a paginated list of wearables for the given explorer address.
+    The response includes base-wearable, on-chain, and third-party wearables.
+    Optional query parameters allow filtering by collection type and third-party
+    collection ID, as well as pagination and sorting.
+  parameters:
+    - name: address
+      in: path
+      required: true
+      description: The wallet address of the user.
+      schema:
+        type: string
+    - name: collectionType
+      in: query
+      required: false
+      description: >
+        Filter wearables by collection type. Valid types are:
+        `base-wearable`, `on-chain`, and `third-party`. If not provided, all types are returned.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+          enum:
+            - base-wearable
+            - on-chain
+            - third-party
+    - name: thirdPartyCollectionId
+      in: query
+      required: false
+      description: Filter third-party wearables by collection ID.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: pageNum
+      in: query
+      required: false
+      description: Page number for pagination.
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+    - name: pageSize
+      in: query
+      required: false
+      description: Number of items per page.
+      schema:
+        type: integer
+        minimum: 1
+        default: 10
+    - name: sort
+      in: query
+      required: false
+      description: >
+        Sorting criteria in the format `<field>:<order>` (e.g., `createdAt:DESC`).
+        If not provided, default sorting is applied.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Explorer wearables.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '../../components/schemas/explorer/wearables-explorer.yaml'
+          examples:
+            default:
+              $ref: '../../components/examples/explorer/200-wearables-explorer.json'
