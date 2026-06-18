@@ -24,7 +24,7 @@
                         "contents": [
                             {
                                 "key": "male/love.glb",
-                                "url": "https://peer-ap1.decentraland.zone/content/contents/bafybeifjc5hgu4l6upbjohndab6gxzhtlmlc7kcl4yeqfko6d6nokw5i7i"
+                                "url": "https://peer.decentraland.zone/content/contents/bafybeifjc5hgu4l6upbjohndab6gxzhtlmlc7kcl4yeqfko6d6nokw5i7i"
                             }
                         ]
                     },
@@ -36,7 +36,7 @@
                         "contents": [
                             {
                                 "key": "female/love.glb",
-                                "url": "https://peer-ap1.decentraland.zone/content/contents/bafybeifjc5hgu4l6upbjohndab6gxzhtlmlc7kcl4yeqfko6d6nokw5i7i"
+                                "url": "https://peer.decentraland.zone/content/contents/bafybeifjc5hgu4l6upbjohndab6gxzhtlmlc7kcl4yeqfko6d6nokw5i7i"
                             }
                         ]
                     }
@@ -44,8 +44,8 @@
                 "tags": ["exclusive"],
                 "loop": false
             },
-            "image": "https://peer-ap1.decentraland.zone/content/contents/bafkreidgtmiajqs42dppy4uzeuycmyf23ti6pyzmti7lkstlky7bg7ijda",
-            "thumbnail": "https://peer-ap1.decentraland.zone/content/contents/bafkreiazd4gb43q2sndulbiy46wrgcqbavl5bcr6mautg23asyoe6qugee",
+            "image": "https://peer.decentraland.zone/content/contents/bafkreidgtmiajqs42dppy4uzeuycmyf23ti6pyzmti7lkstlky7bg7ijda",
+            "thumbnail": "https://peer.decentraland.zone/content/contents/bafkreiazd4gb43q2sndulbiy46wrgcqbavl5bcr6mautg23asyoe6qugee",
             "metrics": {
                 "triangles": 0,
                 "materials": 0,
