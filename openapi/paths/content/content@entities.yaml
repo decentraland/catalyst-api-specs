@@ -17,7 +17,22 @@ post:
     hashes still missing; the request after which all content is stored validates and publishes the
     entity and answers `200`. Repeating a request for an already published entity answers `200` with
     the original `creationTimestamp`. Partial deployments apply to scenes only, and uploads expire a
-    fixed time after the first request.
+    fixed time after the first request. Clients should send every batch as `POST /entities?partial=true`
+    with the `partial` form field set to `true` as well: the query parameter declares the batch before
+    the body is read.
+  parameters:
+    - name: partial
+      in: query
+      required: false
+      schema:
+        type: string
+        enum: ['true']
+      description: >-
+        Declares the request as a partial deployment batch before its body is read. It must be
+        accompanied by the `partial` form field set to `true`, otherwise the request is rejected with
+        `400`. Batches that omit it are still accepted, but a source that has spent its daily quota of
+        regular deployments is rejected with `429` before its body is read unless this parameter is
+        present.
   requestBody:
     content:
       multipart/form-data:
@@ -45,7 +60,8 @@ post:
               type: string
               enum: ['true']
               description: >-
-                Marks the request as one batch of a partial deployment. The entity file (the
+                Marks the request as one batch of a partial deployment. Send it together with the
+                `partial=true` query parameter. The entity file (the
                 multipart file keyed by `entityId`) is required on the first batch; the original
                 signer may omit it on later batches while the upload is live, and any other signer
                 must include it.
@@ -88,17 +104,26 @@ post:
         server response. Terminal for partial deployments too: validation failures, an expired
         upload, a newer entity already deployed on the pointers, and quota rejections (uploads in
         progress, staged bytes or accepted bytes per minute) must not be retried for the same entity.
+        A request with the `partial=true` query parameter whose `partial` form field is missing or not
+        `true` is rejected with this status before anything is counted or deployed.
       content:
         application/json; charset=utf-8:
           schema:
             oneOf:
               - $ref: '../../components/schemas/content/error.yaml'
               - $ref: '../../components/schemas/content/errors.yaml'
+          examples:
+            partialQueryWithoutFormField:
+              summary: The query parameter declares a partial batch but the form does not
+              value:
+                error: "The 'partial=true' query parameter requires the 'partial=true' form field"
     '429':
       description: >-
-        Partial deployments only: the pointers' deployment rate limit is active, or another
-        deployment is in progress on the same pointers. The staged files are kept; retry the request
-        after the `Retry-After` delay.
+        The source has spent its daily quota of regular deployments; partial batches are not counted
+        against it, but one sent without the `partial=true` query parameter is still rejected before
+        its body is read. For partial deployments, also: the pointers' deployment rate limit is
+        active, or another deployment is in progress on the same pointers. The staged files are kept;
+        retry the request after the `Retry-After` delay.
       headers:
         Retry-After:
           schema:
@@ -108,4 +133,6 @@ post:
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: '../../components/schemas/content/errors.yaml'
+            oneOf:
+              - $ref: '../../components/schemas/content/error.yaml'
+              - $ref: '../../components/schemas/content/errors.yaml'
