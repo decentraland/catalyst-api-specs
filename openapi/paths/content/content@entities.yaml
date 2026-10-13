@@ -19,7 +19,8 @@ post:
     the original `creationTimestamp`. Partial deployments apply to scenes only, and uploads expire a
     fixed time after the first request. Clients should send every batch as `POST /entities?partial=true`
     with the `partial` form field set to `true` as well: the query parameter declares the batch before
-    the body is read.
+    the body is read. Clients should send `Content-Length` on every request and retry `429` and `503` only after
+    the `Retry-After` delay.
   parameters:
     - name: partial
       in: query
@@ -101,11 +102,16 @@ post:
     '400':
       description: >-
         Bad request. Returns the error object with the list of errors from the
-        server response. Terminal for partial deployments too: validation failures, an expired
-        upload, a newer entity already deployed on the pointers, and quota rejections (uploads in
-        progress, staged bytes or accepted bytes per minute) must not be retried for the same entity.
-        A request with the `partial=true` query parameter whose `partial` form field is missing or not
-        `true` is rejected with this status before anything is counted or deployed.
+        server response. For partial deployments it means the request can never succeed and must not
+        be retried for the same entity: an invalid signature or entity, a file whose hash doesn't match
+        its field name, an upload started by another account, an expired upload, a newer entity already
+        deployed on the pointers, a scene over its size limit, or an upload or batch larger than a quota
+        on its own. A batch without the entity file is rejected with this status when the server can't
+        use its stored copy (missing, or not matching `entityId`); resending the batch with the entity
+        file replaces the stored copy. A request with the `partial=true` query parameter whose `partial`
+        form field is missing or not `true` is rejected with this status before anything is deployed.
+        Partial batches rejected with this status before joining their upload count against the source's
+        daily quota of regular deployments.
       content:
         application/json; charset=utf-8:
           schema:
@@ -117,18 +123,62 @@ post:
               summary: The query parameter declares a partial batch but the form does not
               value:
                 error: "The 'partial=true' query parameter requires the 'partial=true' form field"
+    '408':
+      description: The request body didn't arrive in time. Retry the request.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '../../components/schemas/content/error.yaml'
+    '413':
+      description: >-
+        The multipart body exceeds a size or count limit (per file, per request or file count). For
+        partial deployments, split the content into smaller batches.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '../../components/schemas/content/error.yaml'
     '429':
       description: >-
-        The source has spent its daily quota of regular deployments; partial batches are not counted
-        against it, but one sent without the `partial=true` query parameter is still rejected before
-        its body is read. For partial deployments, also: the pointers' deployment rate limit is
-        active, or another deployment is in progress on the same pointers. The staged files are kept;
-        retry the request after the `Retry-After` delay.
+        A quota that frees with time; retry the request after the `Retry-After` delay. Already staged
+        files are kept. The source has spent its daily quota of regular deployments: a request without
+        the `partial=true` query parameter is rejected before its body is read, and a partial batch
+        may only continue an upload in progress started by the same signer. Too many concurrent uploads
+        or bytes in flight from the source, or too many requests per minute. For partial deployments,
+        also: the account's uploads in progress or staged bytes, the server's staged bytes, the account's
+        accepted bytes per minute, the uploads in progress on any of the scene's parcels (across accounts,
+        and one account may hold all but one of them), the pointers' deployment rate limit, or another
+        deployment in progress on the same pointers.
       headers:
         Retry-After:
           schema:
             type: integer
             example: 60
+          description: Seconds to wait before retrying the request.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            oneOf:
+              - $ref: '../../components/schemas/content/error.yaml'
+              - $ref: '../../components/schemas/content/errors.yaml'
+    '499':
+      description: >-
+        The client closed the connection before the request body was received. Nothing from the
+        request was stored.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '../../components/schemas/content/error.yaml'
+    '503':
+      description: >-
+        A transient server condition: the node is bootstrapping, the content lock stays busy (garbage
+        collection or cleanup), the server's in-memory upload budget is full, the upload spool can't be
+        read or written, or publishing a completed partial upload failed internally. A partial upload
+        stays live; retry the request after the `Retry-After` delay.
+      headers:
+        Retry-After:
+          schema:
+            type: integer
+            example: 10
           description: Seconds to wait before retrying the request.
       content:
         application/json; charset=utf-8:
