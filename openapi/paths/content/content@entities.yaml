@@ -27,9 +27,10 @@ post:
       required: false
       schema:
         type: string
-        enum: ['true']
+        example: 'true'
       description: >-
-        Declares the request as a partial deployment batch before its body is read. It must be
+        Declares the request as a partial deployment batch before its body is read when set to the
+        literal string `true`; any other value is ignored. It must be
         accompanied by the `partial` form field set to `true`, otherwise the request is rejected with
         `400`. Batches that omit it are still accepted, but a source that has spent its daily quota of
         regular deployments is rejected with `429` before its body is read unless this parameter is
@@ -59,13 +60,13 @@ post:
               type: string
             partial:
               type: string
-              enum: ['true']
+              example: 'true'
               description: >-
-                Marks the request as one batch of a partial deployment. Send it together with the
-                `partial=true` query parameter. The entity file (the
-                multipart file keyed by `entityId`) is required on the first batch; the original
-                signer may omit it on later batches while the upload is live, and any other signer
-                must include it.
+                Marks the request as one batch of a partial deployment when set to the literal string
+                `true`; any other value makes it a regular deployment. Send it together with the
+                `partial=true` query parameter. The entity file (the multipart file keyed by
+                `entityId`) is required on the first batch. Only the signer who started the upload may
+                add batches, and may omit the entity file on later ones while the upload is live.
   responses:
     '200':
       description: >-
@@ -154,20 +155,13 @@ post:
             type: integer
             example: 60
           description: Seconds to wait before retrying the request.
+          required: true
       content:
         application/json; charset=utf-8:
           schema:
             oneOf:
               - $ref: '../../components/schemas/content/error.yaml'
               - $ref: '../../components/schemas/content/errors.yaml'
-    '499':
-      description: >-
-        The client closed the connection before the request body was received. Nothing from the
-        request was stored.
-      content:
-        application/json; charset=utf-8:
-          schema:
-            $ref: '../../components/schemas/content/error.yaml'
     '503':
       description: >-
         A transient server condition: the node is bootstrapping, the content lock stays busy (garbage
