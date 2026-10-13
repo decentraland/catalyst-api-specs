@@ -15,8 +15,9 @@ post:
     each carrying a subset of its content files keyed by their content hash. The signed `entityId`
     identifies the upload. Every request except the completing one answers `202` with the content
     hashes still missing; the request after which all content is stored validates and publishes the
-    entity and answers `200`. Repeating a request for an already published entity answers `200` with
-    the original `creationTimestamp`. Partial deployments apply to scenes only, and uploads expire a
+    entity and answers `200`. Repeating a partial request with the `partial=true` query parameter for
+    an already published entity answers `200` with the original `creationTimestamp`; without the query
+    parameter, a source that has spent its daily quota gets `429` instead. Partial deployments apply to scenes only, and uploads expire a
     fixed time after the first request. Clients should send every batch as `POST /entities?partial=true`
     with the `partial` form field set to `true` as well: the query parameter declares the batch before
     the body is read. Clients should send `Content-Length` on every request and retry `429` and `503` only after
@@ -112,7 +113,8 @@ post:
         file replaces the stored copy. A request with the `partial=true` query parameter whose `partial`
         form field is missing or not `true` is rejected with this status before anything is deployed.
         Partial batches rejected with this status before joining their upload count against the source's
-        daily quota of regular deployments.
+        daily quota of regular deployments, except malformed requests the multipart parser rejects (not
+        multipart, duplicate or malformed fields).
       content:
         application/json; charset=utf-8:
           schema:
@@ -132,23 +134,26 @@ post:
             $ref: '../../components/schemas/content/error.yaml'
     '413':
       description: >-
-        The multipart body exceeds a size or count limit (per file, per request or file count). For
-        partial deployments, split the content into smaller batches.
+        The multipart body exceeds a size or count limit: a file, the whole request (including a
+        declared `Content-Length` over the cap), the number of files or form fields, or a field's size.
+        For partial deployments, split the content into smaller batches.
       content:
         application/json; charset=utf-8:
           schema:
             $ref: '../../components/schemas/content/error.yaml'
     '429':
-      description: >-
-        A quota that frees with time; retry the request after the `Retry-After` delay. Already staged
-        files are kept. The source has spent its daily quota of regular deployments: a request without
-        the `partial=true` query parameter is rejected before its body is read, and a partial batch
-        may only continue an upload in progress started by the same signer. Too many concurrent uploads
-        or bytes in flight from the source, or too many requests per minute. For partial deployments,
-        also: the account's uploads in progress or staged bytes, the server's staged bytes, the account's
-        accepted bytes per minute, the uploads in progress on any of the scene's parcels (across accounts,
-        and one account may hold all but one of them), the pointers' deployment rate limit, or another
-        deployment in progress on the same pointers.
+      description: |-
+        A quota that frees with time. Retry the request after the `Retry-After` delay; staged files
+        are kept. Causes include:
+
+        - The source has spent its daily quota of regular deployments. Requests without the
+          `partial=true` query parameter are rejected before their body is read, and partial batches
+          may only continue an upload the same signer started.
+        - Too many concurrent uploads, bytes in flight or requests per minute from the source.
+        - For partial deployments, a quota on uploads in progress or staged bytes (per account, per
+          parcel or per server), on accepted bytes per minute, the pointers' deployment rate limit, or
+          another deployment in progress on the same pointers. See the
+          [ADR-325 quotas](https://adr.decentraland.org/adr/ADR-325#quotas).
       headers:
         Retry-After:
           schema:
@@ -164,10 +169,9 @@ post:
               - $ref: '../../components/schemas/content/errors.yaml'
     '503':
       description: >-
-        A transient server condition: the node is bootstrapping, the content lock stays busy (garbage
-        collection or cleanup), the server's in-memory upload budget is full, the upload spool can't be
-        read or written, or publishing a completed partial upload failed internally. A partial upload
-        stays live; retry the request after the `Retry-After` delay.
+        The server is temporarily unable to process the request, for example while it is bootstrapping,
+        busy or out of upload capacity, or when publishing a completed partial upload fails. A partial
+        upload stays live; retry the request after the `Retry-After` delay.
       headers:
         Retry-After:
           schema:
@@ -180,3 +184,9 @@ post:
             oneOf:
               - $ref: '../../components/schemas/content/error.yaml'
               - $ref: '../../components/schemas/content/errors.yaml'
+    '500':
+      description: Unexpected server error.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '../../components/schemas/content/error.yaml'
