@@ -8,6 +8,34 @@ post:
     also the files associated with it, such as 3D models, as well as information about the entity and requester.
     This request will succeed only if the hash of the entity file matches the entityId and also
     if the signature is valid has the correct permission to modify the pointers associated with it.
+
+
+    **Partial (batched) deployments** ([ADR-325](https://adr.decentraland.org/adr/ADR-325)). A scene
+    too large for one request can be uploaded across several requests that set `partial` to `true`,
+    each carrying a subset of its content files keyed by their content hash. The signed `entityId`
+    identifies the upload. Every request except the completing one answers `202` with the content
+    hashes still missing; the request after which all content is stored validates and publishes the
+    entity and answers `200`. Repeating a partial request with the `partial=true` query parameter for
+    an already published entity answers `200` with the original `creationTimestamp`; without the query
+    parameter, a source that has spent its daily quota gets `429` instead. Partial deployments apply to scenes only, and uploads expire a
+    fixed time after the first request. Clients should send every batch as `POST /entities?partial=true`
+    with the `partial` form field set to `true` as well: the query parameter declares the batch before
+    the body is read. Clients should send `Content-Length` on every request and retry `429` and `503` only after
+    the `Retry-After` delay.
+  parameters:
+    - name: partial
+      in: query
+      required: false
+      schema:
+        type: string
+        example: 'true'
+      description: >-
+        Declares the request as a partial deployment batch before its body is read when set to the
+        literal string `true`; any other value is ignored. It must be
+        accompanied by the `partial` form field set to `true`, otherwise the request is rejected with
+        `400`. Batches that omit it are still accepted, but a source that has spent its daily quota of
+        regular deployments is rejected with `429` before its body is read unless this parameter is
+        present.
   requestBody:
     content:
       multipart/form-data:
@@ -31,6 +59,15 @@ post:
               example: '0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7'
             signature:
               type: string
+            partial:
+              type: string
+              example: 'true'
+              description: >-
+                Marks the request as one batch of a partial deployment when set to the literal string
+                `true`; any other value makes it a regular deployment. Send it together with the
+                `partial=true` query parameter. The entity file (the multipart file keyed by
+                `entityId`) is required on the first batch. Only the signer who started the upload may
+                add batches, and may omit the entity file on later ones while the upload is live.
   responses:
     '200':
       description: >-
@@ -46,13 +83,110 @@ post:
                 type: number
           example:
             creationTimestamp: 1628607669304
+    '202':
+      description: >-
+        Partial deployment batch accepted. The files in this request are stored but the entity is
+        not published yet. `missing` lists the content hashes the server still needs for this
+        upload and is authoritative: send those hashes in further partial requests.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: object
+            required: ['missing']
+            properties:
+              missing:
+                type: array
+                items:
+                  type: string
+          example:
+            missing:
+              - bafkreigdkbkfpqr4fn2xkxpbh6hcxdxdzxvnyqubjx3pzh7hmi4ctbcxtq
     '400':
       description: >-
         Bad request. Returns the error object with the list of errors from the
-        server response.
+        server response. For partial deployments it means the request can never succeed and must not
+        be retried for the same entity: an invalid signature or entity, a file whose hash doesn't match
+        its field name, an upload started by another account, an expired upload, a newer entity already
+        deployed on the pointers, a scene over its size limit, or an upload or batch larger than a quota
+        on its own. A batch without the entity file is rejected with this status when the server can't
+        use its stored copy (missing, or not matching `entityId`); resending the batch with the entity
+        file replaces the stored copy. A request with the `partial=true` query parameter whose `partial`
+        form field is missing or not `true` is rejected with this status before anything is deployed.
+        Partial batches rejected with this status before joining their upload count against the source's
+        daily quota of regular deployments, except malformed requests the multipart parser rejects (not
+        multipart, duplicate or malformed fields).
       content:
         application/json; charset=utf-8:
           schema:
             oneOf:
               - $ref: '../../components/schemas/content/error.yaml'
               - $ref: '../../components/schemas/content/errors.yaml'
+          examples:
+            partialQueryWithoutFormField:
+              summary: The query parameter declares a partial batch but the form does not
+              value:
+                error: "The 'partial=true' query parameter requires the 'partial=true' form field"
+    '408':
+      description: The request body didn't arrive in time. Retry the request.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '../../components/schemas/content/error.yaml'
+    '413':
+      description: >-
+        The multipart body exceeds a size or count limit: a file, the whole request (including a
+        declared `Content-Length` over the cap), the number of files or form fields, or a field's size.
+        For partial deployments, split the content into smaller batches.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '../../components/schemas/content/error.yaml'
+    '429':
+      description: |-
+        A quota that frees with time. Retry the request after the `Retry-After` delay; staged files
+        are kept. Causes include:
+
+        - The source has spent its daily quota of regular deployments. Requests without the
+          `partial=true` query parameter are rejected before their body is read, and partial batches
+          may only continue an upload the same signer started.
+        - Too many concurrent uploads, bytes in flight or requests per minute from the source.
+        - For partial deployments, a quota on uploads in progress or staged bytes (per account, per
+          parcel or per server), on accepted bytes per minute, the pointers' deployment rate limit, or
+          another deployment in progress on the same pointers. See the
+          [ADR-325 quotas](https://adr.decentraland.org/adr/ADR-325#quotas).
+      headers:
+        Retry-After:
+          schema:
+            type: integer
+            example: 60
+          description: Seconds to wait before retrying the request.
+          required: true
+      content:
+        application/json; charset=utf-8:
+          schema:
+            oneOf:
+              - $ref: '../../components/schemas/content/error.yaml'
+              - $ref: '../../components/schemas/content/errors.yaml'
+    '503':
+      description: >-
+        The server is temporarily unable to process the request, for example while it is bootstrapping,
+        busy or out of upload capacity, or when publishing a completed partial upload fails. A partial
+        upload stays live; retry the request after the `Retry-After` delay.
+      headers:
+        Retry-After:
+          schema:
+            type: integer
+            example: 10
+          description: Seconds to wait before retrying the request.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            oneOf:
+              - $ref: '../../components/schemas/content/error.yaml'
+              - $ref: '../../components/schemas/content/errors.yaml'
+    '500':
+      description: Unexpected server error.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '../../components/schemas/content/error.yaml'
