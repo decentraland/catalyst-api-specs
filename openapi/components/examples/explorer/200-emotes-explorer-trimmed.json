@@ -1,0 +1,44 @@
+{
+    "value": {
+        "elements": [
+            {
+                "entity": {
+                    "id": "bafkreieegykh4hph5tgcfbaubti3ihgepqiczo2hkiuu4t2adr3yp4cere",
+                    "thumbnail": "bafkreibn42ziwhrwy3nt5oozjvc64z4kl25fmdikcxrrksyacnk7t2kggu",
+                    "individualData": [
+                        {
+                            "id": "urn:decentraland:matic:collections-v2:0x0a2efdce6246ea3bd39d3330c5d8f97391bab11d:0:80",
+                            "tokenId": "80",
+                            "transferredAt": "1760366533",
+                            "price": "50000000000000000000"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:matic:collections-v2:0x0a2efdce6246ea3bd39d3330c5d8f97391bab11d:0",
+                        "name": "Hula Hoop",
+                        "rarity": "legendary",
+                        "data": {
+                            "category": "stunt",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "amount": 1
+            }
+        ],
+        "totalAmount": 39,
+        "pageNum": 1,
+        "pageSize": 1
+    }
+}

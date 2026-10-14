@@ -1,0 +1,107 @@
+{
+    "value": {
+        "elements": [
+            {
+                "type": "on-chain",
+                "urn": "urn:decentraland:matic:collections-v2:0x0a2efdce6246ea3bd39d3330c5d8f97391bab11d:0",
+                "amount": "1",
+                "individualData": [
+                    {
+                        "id": "urn:decentraland:matic:collections-v2:0x0a2efdce6246ea3bd39d3330c5d8f97391bab11d:0:80",
+                        "tokenId": "80",
+                        "transferredAt": "1760366533",
+                        "price": "50000000000000000000"
+                    }
+                ],
+                "name": "Hula Hoop",
+                "rarity": "legendary",
+                "category": "stunt",
+                "entity": {
+                    "version": "v3",
+                    "id": "bafkreieegykh4hph5tgcfbaubti3ihgepqiczo2hkiuu4t2adr3yp4cere",
+                    "type": "emote",
+                    "pointers": [
+                        "urn:decentraland:matic:collections-v2:0x0a2efdce6246ea3bd39d3330c5d8f97391bab11d:0"
+                    ],
+                    "timestamp": 1697432251872,
+                    "content": [
+                        {
+                            "file": "female/HulaHoop.glb",
+                            "hash": "bafybeih3xqxdifppjib7zvq7cg42hu2wp2aw5gvawc75sbl342clyk6pqu"
+                        },
+                        {
+                            "file": "image.png",
+                            "hash": "bafkreigld6kov7c7pwaybiz557vzp67xkvync73scwglv6pyylpxeurlte"
+                        },
+                        {
+                            "file": "male/HulaHoop.glb",
+                            "hash": "bafybeih3xqxdifppjib7zvq7cg42hu2wp2aw5gvawc75sbl342clyk6pqu"
+                        },
+                        {
+                            "file": "thumbnail.png",
+                            "hash": "bafkreibn42ziwhrwy3nt5oozjvc64z4kl25fmdikcxrrksyacnk7t2kggu"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:matic:collections-v2:0x0a2efdce6246ea3bd39d3330c5d8f97391bab11d:0",
+                        "name": "Hula Hoop",
+                        "description": "Who you hula hooping with?",
+                        "collectionAddress": "0x0a2efdce6246ea3bd39d3330c5d8f97391bab11d",
+                        "rarity": "legendary",
+                        "i18n": [
+                            {
+                                "code": "en",
+                                "text": "Hula Hoop"
+                            }
+                        ],
+                        "emoteDataADR74": {
+                            "category": "stunt",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ],
+                                    "mainFile": "male/HulaHoop.glb",
+                                    "contents": [
+                                        "male/HulaHoop.glb"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ],
+                                    "mainFile": "female/HulaHoop.glb",
+                                    "contents": [
+                                        "female/HulaHoop.glb"
+                                    ]
+                                }
+                            ],
+                            "tags": [
+                                "canessa",
+                                "canessas",
+                                "hula",
+                                "hulahoop",
+                                "hoop",
+                                "emote"
+                            ],
+                            "loop": true
+                        },
+                        "image": "image.png",
+                        "thumbnail": "thumbnail.png",
+                        "metrics": {
+                            "triangles": 0,
+                            "materials": 0,
+                            "textures": 0,
+                            "meshes": 0,
+                            "bodies": 0,
+                            "entities": 1
+                        }
+                    }
+                }
+            }
+        ],
+        "totalAmount": 39,
+        "pageNum": 1,
+        "pageSize": 1
+    }
+}

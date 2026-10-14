@@ -1,0 +1,41 @@
+type: object
+description: An emote owned by the address, grouped by URN.
+required:
+  - type
+  - urn
+  - name
+  - category
+  - rarity
+  - amount
+  - individualData
+  - entity
+properties:
+  type:
+    type: string
+    enum:
+      - on-chain
+  urn:
+    type: string
+  name:
+    type: string
+  category:
+    type: string
+    example: dance
+  rarity:
+    type: string
+    example: legendary
+  amount:
+    description: Number of owned copies. Sent as a string.
+    oneOf:
+      - type: number
+      - type: string
+  individualData:
+    type: array
+    items:
+      $ref: ./explorer-individual-data.yaml
+  itemType:
+    type: string
+    description: Present when the item source reports it.
+    example: emote_v1
+  entity:
+    $ref: ../content/entity.yaml

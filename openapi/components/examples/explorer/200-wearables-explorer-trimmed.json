@@ -1,0 +1,81 @@
+{
+    "value": {
+        "elements": [
+            {
+                "entity": {
+                    "id": "bafkreibz64kqeueu3wgskmpsbxku6ircrd4tnryqrkoerrom633dmchshe",
+                    "thumbnail": "bafybeih5jcj6aremttdoixfmbdi3yawjpacuak5565zcnzxldaudsdicsy",
+                    "individualData": [
+                        {
+                            "id": "urn:decentraland:matic:collections-v2:0x21aa54b72247e8b02a8eb7669a68698930c00c90:0:18",
+                            "tokenId": "18",
+                            "transferredAt": "1689165984",
+                            "price": "15000000000000000000"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:matic:collections-v2:0x21aa54b72247e8b02a8eb7669a68698930c00c90:0",
+                        "name": "Neo Gaucho Pants x DCL Argentina",
+                        "rarity": "legendary",
+                        "isSmart": false,
+                        "data": {
+                            "category": "lower_body",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "amount": 1
+            },
+            {
+                "entity": {
+                    "id": "bafkreig53ydsy7tnivg2fzky6tse52vwwylqstvelvseg73hijobx5mtpm",
+                    "thumbnail": "bafybeih72il6zldridqw5do3cyfysljzwcqxvs2zhmesxyeog3cwzd4v7e",
+                    "individualData": [
+                        {
+                            "id": "urn:decentraland:matic:collections-v2:0x21aa54b72247e8b02a8eb7669a68698930c00c90:1:105312291668557186697918027683670432318895095400549111254310977554",
+                            "tokenId": "105312291668557186697918027683670432318895095400549111254310977554",
+                            "transferredAt": "1689165984",
+                            "price": "15000000000000000000"
+                        }
+                    ],
+                    "metadata": {
+                        "id": "urn:decentraland:matic:collections-v2:0x21aa54b72247e8b02a8eb7669a68698930c00c90:1",
+                        "name": "Solar Pampas Top x DCL Argentina",
+                        "rarity": "legendary",
+                        "isSmart": false,
+                        "data": {
+                            "category": "upper_body",
+                            "representations": [
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseFemale"
+                                    ]
+                                },
+                                {
+                                    "bodyShapes": [
+                                        "urn:decentraland:off-chain:base-avatars:BaseMale"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "amount": 1
+            }
+        ],
+        "totalAmount": 155,
+        "pageNum": 1,
+        "pageSize": 2
+    }
+}

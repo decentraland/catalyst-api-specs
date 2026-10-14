@@ -1,0 +1,14 @@
+name: category
+in: query
+required: false
+description: >-
+  Only return elements of the given category (case-insensitive). Repeat the parameter to match any of
+  several categories.
+style: form
+explode: true
+schema:
+  type: array
+  items:
+    type: string
+  example:
+    - upper_body

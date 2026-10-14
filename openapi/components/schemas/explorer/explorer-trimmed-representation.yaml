@@ -1,0 +1,8 @@
+type: object
+required:
+  - bodyShapes
+properties:
+  bodyShapes:
+    type: array
+    items:
+      type: string

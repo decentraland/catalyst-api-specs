@@ -54,7 +54,8 @@ tags:
       retrieve or validate data.
   - name: Explorer
     description: >-
-      This service provides a set of utilities required by Explorers to retrieve information for the Backpack, including wearables, collections, and other user inventory data.
+      Endpoints used by Explorers to list the wearables and emotes owned by an address, for example to populate
+      the backpack.
 paths:
   /about:
     $ref: 'paths/global/about.yaml'
@@ -132,3 +133,5 @@ paths:
     $ref: 'paths/lambdas/lambdas@third-party-integrations.yaml'
   /explorer/{address}/wearables:
     $ref: 'paths/explorer/explorer@{address}@wearables.yaml'
+  /explorer/{address}/emotes:
+    $ref: 'paths/explorer/explorer@{address}@emotes.yaml'

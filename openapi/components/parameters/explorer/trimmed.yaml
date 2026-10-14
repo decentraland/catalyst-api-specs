@@ -1,0 +1,9 @@
+name: trimmed
+in: query
+required: false
+description: >-
+  When `true` or `1`, each element is returned in its trimmed form: a reduced entity with only the fields
+  needed to render the backpack. Any other value returns the full form.
+schema:
+  type: boolean
+  default: false

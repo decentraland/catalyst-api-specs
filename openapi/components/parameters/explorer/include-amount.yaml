@@ -1,0 +1,9 @@
+name: includeAmount
+in: query
+required: false
+description: >-
+  When `true` or `1` together with `trimmed`, adds the number of owned copies as `amount` to each trimmed
+  element. Ignored without `trimmed`.
+schema:
+  type: boolean
+  default: false
