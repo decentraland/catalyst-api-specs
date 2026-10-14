@@ -1,0 +1,109 @@
+required:
+  - deployments
+  - filters
+  - pagination
+type: object
+properties:
+  deployments:
+    type: array
+    items:
+      required:
+        - entityVersion
+        - entityType
+        - entityId
+        - entityTimestamp
+        - deployedBy
+        - localTimestamp
+      type: object
+      properties:
+        entityVersion:
+          type: string
+        entityType:
+          type: string
+        entityId:
+          type: string
+        entityTimestamp:
+          type: number
+        deployedBy:
+          type: string
+          description: Address of the deployer
+        localTimestamp:
+          type: number
+          description: Timestamp at which this server stored the deployment
+        pointers:
+          type: array
+          description: Present when `pointers` is in `fields`
+          items:
+            type: string
+        content:
+          type: array
+          description: Present when `content` is in `fields`
+          items:
+            type: object
+            required:
+              - key
+              - hash
+            properties:
+              key:
+                type: string
+                description: File name
+              hash:
+                type: string
+        metadata:
+          type: object
+          description: Present when `metadata` is in `fields` and the entity has metadata
+        auditInfo:
+          type: object
+          description: Present when `auditInfo` is in `fields`
+          required:
+            - version
+            - authChain
+            - localTimestamp
+          properties:
+            version:
+              type: string
+            authChain:
+              $ref: 'auth-chain.yaml'
+            localTimestamp:
+              type: number
+  filters:
+    type: object
+    description: Filters applied to the request
+    properties:
+      from:
+        type: number
+      to:
+        type: number
+      entityTypes:
+        type: array
+        items:
+          type: string
+      entityIds:
+        type: array
+        items:
+          type: string
+      pointers:
+        type: array
+        items:
+          type: string
+      onlyCurrentlyPointed:
+        type: boolean
+  pagination:
+    type: object
+    required:
+      - offset
+      - limit
+      - moreData
+    properties:
+      offset:
+        type: number
+      limit:
+        type: number
+      moreData:
+        type: boolean
+        description: Whether there are more deployments after this page
+      lastId:
+        type: string
+      next:
+        type: string
+        description: Query string to request the next page, present when `moreData` is true

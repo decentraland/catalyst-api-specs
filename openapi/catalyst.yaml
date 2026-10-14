@@ -83,6 +83,10 @@ paths:
     $ref: paths/content/content@snapshots.yaml
   /content/status:
     $ref: paths/content/content@status.yaml
+  /content/deployments:
+    $ref: paths/content/content@deployments.yaml
+  /content/entities/{entityType}:
+    $ref: 'paths/content/content@entities@{entityType}.yaml'
   /lambdas/status:
     $ref: paths/lambdas/lambdas@status.yaml
   /lambdas/collections:
@@ -91,6 +95,8 @@ paths:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@thumbnail.yaml'
   /lambdas/collections/contents/{urn}/image:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image.yaml'
+  /lambdas/collections/standard/erc721/{chainId}/{contract}/{option}:
+    $ref: 'paths/lambdas/lambdas@collections@standard@erc721@{chainId}@{contract}@{option}.yaml'
   /lambdas/collections/standard/erc721/{chainId}/{contract}/{option}/{emission}:
     $ref: 'paths/lambdas/lambdas@collections@standard@erc721@{chainId}@{contract}@{option}@{emission}.yaml'
   /lambdas/users/{address}/wearables:

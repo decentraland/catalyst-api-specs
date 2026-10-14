@@ -3,54 +3,48 @@ get:
   summary: Get ERC721 Entity
   tags:
     - Lambdas
-  description: Retrieve ERC721/NFT Entity details
+  description: >-
+    Retrieve the ERC721 metadata of a standard (with rarity) wearable or emote of a collection.
+    Also served by the content server at
+    `/content/queries/erc721/{chainId}/{contract}/{option}/{emission}`.
   parameters:
     - in: path
       name: chainId
       required: true
       schema:
         type: string
-        example: 137
+        example: '137'
       description: >-
-        Ethereum chain ID:
-          ETHEREUM_MAINNET = 1
-          ETHEREUM_RINKEBY = 4
-          ETHEREUM_GOERLI = 5
-          ETHEREUM_KOVAN = 42
-          MATIC_MAINNET = 137
-          MATIC_MUMBAI = 80001
+        Chain ID of the collection: 1 (Ethereum), 11155111 (Sepolia), 137 (Polygon), 80002 (Amoy).
+        The legacy test networks 3, 4, 5, 42 and 80001 are also accepted.
     - in: path
       name: contract
       required: true
       schema:
         type: string
-        example: '0x123db7844eaf7da11d88cf1754945bbd020742ef'
-      description: Hash of the Contract. This will be used to build the URN that identifies the NFT.
+        example: '0x8e674db9b2fc0759b2d94cace9c4bae334a8f0c3'
+      description: >-
+        Address of the collection contract (`collections-v2`), or the name of a `collections-v1`
+        collection. Used to build the URN of the item.
     - in: path
       name: option
       required: true
       schema:
         type: string
-        example: '3'
-      description: Token Identifier
+        example: '0'
+      description: Id of the item in the collection
     - in: path
       name: emission
       required: true
       schema:
         type: string
-        example: legendary
+        example: '5'
       description: >-
-          Optional rarity description that will be return as part of the NFT description
-          common: 100000
-          uncommon: 10000
-          rare: 5000
-          epic: 1000
-          legendary: 100
-          mythic: 10
-          unique: 1
+        Issue number of the token. It is included in the description of the response as
+        `DCL Wearable <emission>/<max supply of the item rarity>`.
   responses:
     '200':
-      description: Resource image
+      description: ERC721 metadata of the item
       content:
         application/json; charset=utf-8:
           schema:
@@ -59,8 +53,25 @@ get:
             default:
               $ref: ../../components/examples/lambdas/200-erc721.json
     '400':
-      description: 'Bad Request: invalid chain ID'
+      description: Invalid chain ID, or the item has no rarity
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/content/error.yaml
+          examples:
+            chainId:
+              summary: Invalid chain ID
+              value:
+                error: Invalid chainId '999'
+            notStandard:
+              summary: The item has no rarity
+              value:
+                error: Wearable is not standard.
     '404':
-      description: Entity Not Found
-    '500':
-      description: Internal Server Error
+      description: No active entity for the item, or it is denylisted
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/content/error.yaml
+          example:
+            error: Entity does not exist

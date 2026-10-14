@@ -3,17 +3,29 @@ items:
   required:
     - entityType
     - entityId
+    - failureTimestamp
     - reason
+    - authChain
     - errorDescription
   type: object
   properties:
-    failedDeploymentsRepo:
-      type: string
     entityType:
       type: string
     entityId:
       type: string
+    failureTimestamp:
+      type: number
     reason:
       type: string
+    authChain:
+      $ref: 'auth-chain.yaml'
     errorDescription:
       type: string
+    snapshotHash:
+      type: string
+      description: Hash of the snapshot the entity was found in, when it was synchronized from a snapshot
+    retryCount:
+      type: number
+    nextRetryAt:
+      type: number
+      description: Timestamp after which the deployment will be retried

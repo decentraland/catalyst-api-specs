@@ -4,9 +4,10 @@ get:
   tags:
     - Content Server
   description: >-
-    Get the list of entity ids whose deployments are associated with the specified
-    content hash. This endpoint is currently intended for troubleshooting as
-    there is no specific use case for it.
+    Get the list of active entity ids whose deployments reference the specified
+    content hash. Denylisted entities are omitted and the list is capped at 15000 ids.
+    This endpoint is currently intended for troubleshooting as there is no specific
+    use case for it.
   parameters:
     - in: path
       name: hashId
@@ -28,7 +29,7 @@ get:
             - QmY4GFuf2jR3ocfuXuFLgvUrGEpjo84Byg44Pv2wduuinW
             - QmZbAEFPF7LSq9xVZTCAZoHPNV1QX7YiSbKL2g881MJLj8
     '404':
-      description: Entities not found for the specified hash
+      description: No active entity references the specified hash
       content:
         application/json; charset=utf-8:
           schema:

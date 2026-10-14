@@ -1,7 +1,13 @@
 type: object
+required:
+  - id
+  - description
+  - language
+  - attributes
 properties:
   id:
     type: string
+    description: URN of the item
   name:
     type: string
   description:
@@ -10,8 +16,10 @@ properties:
     type: string
   image:
     type: string
+    description: URL of the item image, if it has one
   thumbnail:
     type: string
+    description: URL of the item thumbnail, if it has one
   attributes:
     type: array
     items:

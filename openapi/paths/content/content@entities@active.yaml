@@ -4,10 +4,10 @@ post:
   tags:
     - Content Server
   description: >-
-    Returns the list of entities of the specified type with the specified id or
-    pointers. Only one of these filters must be specified in the body.
-
+    Returns the active entities with the specified ids or pointers. Exactly one of `ids` or `pointers`
+    must be set in the body, with between 1 and 1000 values. Denylisted entities are omitted.
   requestBody:
+    required: true
     content:
       application/json:
         schema:
@@ -16,18 +16,24 @@ post:
             pointers:
               description: >-
                 Entities must be filtered by pointer XOR entityId (ids). Use this parameter if
-                you want to retrieve an entity of the specified type with this pointer.
+                you want to retrieve the active entities on these pointers.
               type: array
+              minItems: 1
+              maxItems: 1000
               items:
                 type: string
+                minLength: 1
                 example: urn:decentraland:mumbai:collections-v2:0xf6426e0c70c17509038aba78137e721d187499d6:0
             ids:
               description: >-
                 Entities must be filtered by pointer (pointers) XOR entityId. Use this parameter if
-                you want to retrieve an entity of the specified type with this entityId.
+                you want to retrieve the active entities with these entityIds.
               type: array
+              minItems: 1
+              maxItems: 1000
               items:
                 type: string
+                minLength: 1
                 example: QmeA8RpAtqU6gCebNaWRXtM9nQs3ugzzbeQm3L7uKrP4Jp
   responses:
     '200':
@@ -44,15 +50,42 @@ post:
               $ref: ../../components/examples/content/200-entities-active.json
     '400':
       description: >-
-        Bad request: ids or pointers must be present in the request, but not
-        both
+        Bad request: the body is not valid JSON, or doesn't contain exactly one of `ids` or `pointers`
+        as a list of 1 to 1000 non-empty strings
       content:
         application/json; charset=utf-8:
           schema:
-            $ref: ../../components/schemas/content/error.yaml
+            type: object
+            required:
+              - ok
+              - message
+            properties:
+              ok:
+                type: boolean
+                example: false
+              message:
+                type: string
+              data:
+                type: array
+                description: Schema validation errors
+                items:
+                  type: object
           examples:
             default:
               value:
-                {
-                "error": "ids or pointers must be present in the request, but not both"
-                }
+                ok: false
+                message: Invalid JSON body
+                data:
+                  - instancePath: ''
+                    schemaPath: '#/oneOf'
+                    keyword: oneOf
+                    params:
+                      passingSchemas: null
+                    message: must match exactly one schema in oneOf
+    '413':
+      description: The request body is larger than the server limit (10 MB by default)
+      content:
+        text/plain:
+          schema:
+            type: string
+            example: Payload Too Large
