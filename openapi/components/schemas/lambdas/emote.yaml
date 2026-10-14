@@ -1,14 +1,28 @@
 type: object
 required:
   - urn
+  - amount
+  - individualData
   - name
+  - rarity
   - category
 properties:
   urn:
     type: string
   amount:
     type: number
+    description: Number of tokens of this item owned by the address
+  individualData:
+    $ref: ./item-individual-data.yaml
+  name:
+    type: string
+  rarity:
+    type: string
   category:
     type: string
   entity:
+    description: Present only when `includeEntities` is set
     $ref: ../content/entity.yaml
+  definition:
+    description: Present only when `includeDefinitions` is set
+    $ref: ./emote-definition.yaml

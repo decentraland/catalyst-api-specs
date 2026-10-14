@@ -1,0 +1,11 @@
+type: array
+items:
+  type: object
+  required:
+    - code
+    - text
+  properties:
+    code:
+      type: string
+    text:
+      type: string

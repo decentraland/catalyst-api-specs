@@ -1,0 +1,12 @@
+type: object
+required:
+  - valid
+properties:
+  valid:
+    type: boolean
+  ownerAddress:
+    type: string
+    description: Address of the first link of the chain. Present only when the signature is valid.
+  error:
+    type: string
+    description: Reason the validation failed

@@ -3,14 +3,18 @@ get:
   summary: Get Collections
   tags:
     - Lambdas
-  description: Retrieve the list of collections URNs
+  description: >-
+    Retrieve the list of collections: the base wearables and base emotes collections followed by the
+    on-chain collections, sorted by URN
   responses:
     '200':
       description: Array of collections URNs and names
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             type: object
+            required:
+              - collections
             properties:
               collections:
                 type: array
@@ -28,4 +32,8 @@ get:
             default:
               $ref: ../../components/examples/lambdas/200-collections.json
     '500':
-      description:  Internal Server Error
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml

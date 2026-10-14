@@ -1,0 +1,44 @@
+get:
+  deprecated: true
+  operationId: getAvatarDetailsLegacy
+  summary: Get Avatar details (legacy)
+  tags:
+    - Lambdas
+  description: >-
+    Legacy alias of `/lambdas/profiles/{id}`. When the address has no deployed profile it responds 200 with
+    `{ "avatars": [], "timestamp": 0 }` instead of 404.
+  parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        type: string
+        example: '0x22480812a9a0669783c06d359182a583bd1d9fc2'
+      description: Ethereum address of the user
+  responses:
+    '200':
+      description: Profile of the user, or an empty profile when there is none
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/profile.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-profiles-id.json
+            not-found:
+              summary: No deployed profile
+              value:
+                avatars: []
+                timestamp: 0
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml
+    '503':
+      description: An upstream source is saturated. Retry shortly.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

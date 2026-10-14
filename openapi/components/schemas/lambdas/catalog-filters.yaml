@@ -1,0 +1,13 @@
+type: object
+description: Filters applied to the search, lowercased
+properties:
+  collectionIds:
+    type: array
+    items:
+      type: string
+  itemIds:
+    type: array
+    items:
+      type: string
+  textSearch:
+    type: string

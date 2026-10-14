@@ -1,0 +1,12 @@
+type: array
+description: Files of the representation, with their absolute content server URL
+items:
+  type: object
+  required:
+    - key
+    - url
+  properties:
+    key:
+      type: string
+    url:
+      type: string

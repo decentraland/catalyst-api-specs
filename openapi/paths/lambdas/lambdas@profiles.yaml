@@ -3,12 +3,23 @@ post:
   summary: Get Avatars details
   tags:
     - Lambdas
-  description: Returns all the Avatars details associated with the Ethereum addresses in the body
+  description: >-
+    Returns the profiles of the Ethereum addresses in the body. Addresses without a deployed profile are
+    omitted from the response.
+  parameters:
+    - in: header
+      name: If-Modified-Since
+      schema:
+        type: string
+        example: 'Wed, 21 Oct 2025 07:28:00 GMT'
+      description: >-
+        HTTP date. If none of the requested profiles was modified after it, the response is a 304 with no body.
   requestBody:
+    required: true
     description: >-
        The body only has the `ids` property representing a list of Ethereum addresses
     content:
-      application/json; charset=utf-8:
+      application/json:
         schema:
           $ref: ../../components/schemas/lambdas/post-profiles.yaml
         examples:
@@ -26,6 +37,34 @@ post:
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-profiles-ids.json
-
     '304':
       description: No profile was modified since `If-Modified-Since` header
+    '400':
+      description: '`ids` is missing, empty or has more than 1000 addresses'
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+          examples:
+            missing-ids:
+              summary: Missing ids
+              value:
+                error: Bad request
+                message: 'No profile ids were specified. Expected ids:string[] in body'
+            too-many-ids:
+              summary: Too many ids
+              value:
+                error: Bad request
+                message: Too many profile ids were specified. Maximum allowed is 1000
+    '500':
+      description: Internal Server Error, also returned when the body is not valid JSON
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml
+    '503':
+      description: An upstream source is saturated. Retry shortly.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

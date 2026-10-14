@@ -3,7 +3,9 @@ get:
   summary: Returns the list of third party wearables for the given collection
   tags:
     - Lambdas
-  description: Returns the list of third party wearables for the given collection
+  description: >-
+    Returns a paginated list of the third party (linked) wearables of the given collection
+    owned by the provided address
   parameters:
     - in: path
       name: address
@@ -20,26 +22,39 @@ get:
         type: string
         example: 'urn:decentraland:matic:collections-thirdparty:ntr1-meta:ntr1-meta-1ef79e7b'
       description: >-
-        Third Party collection Id to filter wearables.
+        Third party collection URN. Only the third party part of the URN (the first five segments) is used,
+        so every collection of that third party is matched.
+    - in: query
+      name: includeDefinitions
+      allowEmptyValue: true
+      schema:
+        type: boolean
+        example: true
+      description: >-
+        If present (any value), each element is extended with its wearable definition.
     - in: query
       name: pageNum
       schema:
-        type: string
-        example: "1"
+        type: integer
+        minimum: 1
+        default: 1
+        example: 1
       description: >-
         The number of the requested page.
     - in: query
       name: pageSize
       schema:
-        type: string
-        example: "10"
+        type: integer
+        minimum: 1
+        default: 100
+        example: 10
       description: >-
         The size of the requested page.
   responses:
     '200':
       description: Returns the list of third party wearables
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             type: object
             required:
@@ -58,3 +73,26 @@ get:
                 type: number
               pageSize:
                 type: number
+    '400':
+      description: The collection id is not a third party collection URN
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+          examples:
+            default:
+              value:
+                error: Bad request
+                message: 'Invalid collection id: invalid-urn not a valid URN'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml
+    '502':
+      description: The wearables could not be fetched from the upstream sources
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

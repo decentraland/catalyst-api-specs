@@ -1,0 +1,69 @@
+{
+  "value": [
+    {
+      "urn": "urn:decentraland:matic:collections-v2:0x0a2efdce6246ea3bd39d3330c5d8f97391bab11d:0",
+      "amount": 1,
+      "definition": {
+        "id": "urn:decentraland:matic:collections-v2:0x0a2efdce6246ea3bd39d3330c5d8f97391bab11d:0",
+        "name": "Hula Hoop",
+        "description": "Who you hula hooping with?",
+        "collectionAddress": "0x0a2efdce6246ea3bd39d3330c5d8f97391bab11d",
+        "rarity": "legendary",
+        "i18n": [
+          {
+            "code": "en",
+            "text": "Hula Hoop"
+          }
+        ],
+        "emoteDataADR74": {
+          "category": "stunt",
+          "representations": [
+            {
+              "bodyShapes": [
+                "urn:decentraland:off-chain:base-avatars:BaseMale"
+              ],
+              "mainFile": "male/HulaHoop.glb",
+              "contents": [
+                {
+                  "key": "male/HulaHoop.glb",
+                  "url": "https://peer-ec1.decentraland.org/content/contents/bafybeih3xqxdifppjib7zvq7cg42hu2wp2aw5gvawc75sbl342clyk6pqu"
+                }
+              ]
+            },
+            {
+              "bodyShapes": [
+                "urn:decentraland:off-chain:base-avatars:BaseFemale"
+              ],
+              "mainFile": "female/HulaHoop.glb",
+              "contents": [
+                {
+                  "key": "female/HulaHoop.glb",
+                  "url": "https://peer-ec1.decentraland.org/content/contents/bafybeih3xqxdifppjib7zvq7cg42hu2wp2aw5gvawc75sbl342clyk6pqu"
+                }
+              ]
+            }
+          ],
+          "tags": [
+            "canessa",
+            "canessas",
+            "hula",
+            "hulahoop",
+            "hoop",
+            "emote"
+          ],
+          "loop": true
+        },
+        "image": "https://peer-ec1.decentraland.org/content/contents/bafkreigld6kov7c7pwaybiz557vzp67xkvync73scwglv6pyylpxeurlte",
+        "thumbnail": "https://peer-ec1.decentraland.org/content/contents/bafkreibn42ziwhrwy3nt5oozjvc64z4kl25fmdikcxrrksyacnk7t2kggu",
+        "metrics": {
+          "triangles": 0,
+          "materials": 0,
+          "textures": 0,
+          "meshes": 0,
+          "bodies": 0,
+          "entities": 1
+        }
+      }
+    }
+  ]
+}

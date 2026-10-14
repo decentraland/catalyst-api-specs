@@ -107,6 +107,8 @@ paths:
     $ref: 'paths/lambdas/lambdas@users@{address}@names.yaml'
   /lambdas/users/{address}/lands:
     $ref: 'paths/lambdas/lambdas@users@{address}@lands.yaml'
+  /lambdas/users/{address}/lands-permissions:
+    $ref: 'paths/lambdas/lambdas@users@{address}@lands-permissions.yaml'
   /lambdas/users/{address}/parcels/{x}/{y}/permissions:
     $ref: 'paths/lambdas/lambdas@users@{address}@parcels@{x}@{y}@permissions.yaml'
   /lambdas/users/{address}/third-party-wearables:
@@ -115,6 +117,16 @@ paths:
     $ref: 'paths/lambdas/lambdas@users@{address}@third-party-wearables@{collectionId}.yaml'
   /lambdas/collections/wearables:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
+  /lambdas/collections/emotes:
+    $ref: 'paths/lambdas/lambdas@collections@emotes.yaml'
+  /lambdas/collections/wearables-by-owner/{owner}:
+    $ref: 'paths/lambdas/lambdas@collections@wearables-by-owner@{owner}.yaml'
+  /lambdas/collections/emotes-by-owner/{owner}:
+    $ref: 'paths/lambdas/lambdas@collections@emotes-by-owner@{owner}.yaml'
+  /lambdas/nfts/collections:
+    $ref: paths/lambdas/lambdas@nfts@collections.yaml
+  /lambdas/names/{name}/owner:
+    $ref: 'paths/lambdas/lambdas@names@{name}@owner.yaml'
   /lambdas/contracts/servers:
     $ref: 'paths/lambdas/lambdas@contracts@servers.yaml'
   /lambdas/contracts/pois:
@@ -123,16 +135,14 @@ paths:
     $ref: 'paths/lambdas/lambdas@contracts@denylisted-names.yaml'
   /lambdas/crypto/validate-signature:
     $ref: 'paths/lambdas/lambdas@crypto@validate-signature.yaml'
-  /lambdas/explore/hot-scenes:
-    $ref: 'paths/lambdas/lambdas@explore@hot-scenes.yaml'
-  /lambdas/explore/realms:
-    $ref: 'paths/lambdas/lambdas@explore@realms.yaml'
   /lambdas/parcels/{x}/{y}/operators:
     $ref: 'paths/lambdas/lambdas@parcels@{x}@{y}@operators.yaml'
   /lambdas/profiles:
     $ref: 'paths/lambdas/lambdas@profiles.yaml'
   /lambdas/profiles/{id}:
     $ref: 'paths/lambdas/lambdas@profiles@{id}.yaml'
+  /lambdas/profile/{id}:
+    $ref: 'paths/lambdas/lambdas@profile@{id}.yaml'
   /lambdas/outfits/{id}:
     $ref: 'paths/lambdas/lambdas@outfits@{id}.yaml'
   /lambdas/third-party-integrations:

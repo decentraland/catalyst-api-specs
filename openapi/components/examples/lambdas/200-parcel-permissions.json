@@ -1,6 +1,6 @@
 {
   "value": {
-    "address": true,
+    "owner": true,
     "operator": false,
     "updateOperator": false,
     "updateManager": false,

@@ -1,0 +1,35 @@
+type: object
+required:
+  - elements
+  - totalAmount
+  - pageNum
+  - pageSize
+properties:
+  elements:
+    type: array
+    items:
+      type: object
+      required:
+        - id
+        - x
+        - y
+        - owner
+        - updateOperator
+      properties:
+        id:
+          type: string
+          description: Parcel id in the LAND subgraph
+        x:
+          type: string
+        y:
+          type: string
+        owner:
+          type: string
+        updateOperator:
+          type: string
+  totalAmount:
+    type: number
+  pageNum:
+    type: number
+  pageSize:
+    type: number

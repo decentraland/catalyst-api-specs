@@ -96,6 +96,11 @@ properties:
               type: array
               items:
                 type: string
+            forceRender:
+              type: array
+              description: Wearable categories rendered even when hidden by other wearables
+              items:
+                type: string
             emotes:
               type: array
               items:
@@ -112,4 +117,48 @@ properties:
           items:
             type: string
         unclaimedName:
+          type: string
+        hasConnectedWeb3:
+          type: boolean
+        blocked:
+          type: array
+          items:
+            type: string
+        muted:
+          type: array
+          items:
+            type: string
+        links:
+          type: array
+          items:
+            type: object
+            required:
+              - title
+              - url
+            properties:
+              title:
+                type: string
+              url:
+                type: string
+        country:
+          type: string
+        employmentStatus:
+          type: string
+        gender:
+          type: string
+        pronouns:
+          type: string
+        relationshipStatus:
+          type: string
+        sexualOrientation:
+          type: string
+        language:
+          type: string
+        profession:
+          type: string
+        birthdate:
+          type: number
+        realName:
+          type: string
+        hobbies:
           type: string

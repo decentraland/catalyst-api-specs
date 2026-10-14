@@ -1,29 +1,67 @@
 {
   "value": {
     "healthy": false,
-    "configurations": {
-      "realmName": "zeus"
-    },
     "content": {
       "healthy": false,
-      "commitHash": "58bc402b1b8f0a407a9d66a5ea58b33dd141af5f",
-      "version": "4.8.0"
-    },
-    "comms": {
-      "healthy": true,
-      "protocol": "v3",
-      "commitHash": "70bc402b1b8f0a407a9d66a5ea58b33dd141af5f"
+      "version": "8.2.1",
+      "synchronizationStatus": "Bootstrapping",
+      "commitHash": "c8d76b606d1cdf1ca73dc56517eb73e97e384d98",
+      "publicUrl": "https://peer-ec1.decentraland.org/content/"
     },
     "lambdas": {
       "healthy": true,
-      "commitHash": "18bc402b1b8f0a407a9d66a5ea58b33dd141af5f",
-      "version": "4.8.0"
+      "version": "4.14.0",
+      "commitHash": "7514e8f39481754acd3fea146f780ddecebd8ce9",
+      "publicUrl": "https://peer-ec1.decentraland.org/lambdas/"
+    },
+    "configurations": {
+      "networkId": 1,
+      "globalScenesUrn": [],
+      "scenesUrn": [],
+      "realmName": "hephaestus",
+      "map": {
+        "minimapEnabled": true,
+        "sizes": [
+          {
+            "left": -150,
+            "top": 150,
+            "right": 150,
+            "bottom": -150
+          },
+          {
+            "left": 62,
+            "top": 158,
+            "right": 162,
+            "bottom": 151
+          },
+          {
+            "left": 151,
+            "top": 150,
+            "right": 163,
+            "bottom": 59
+          }
+        ],
+        "satelliteView": {
+          "version": "v1",
+          "baseUrl": "https://genesis.city/map/latest",
+          "suffixUrl": ".jpg",
+          "topLeftOffset": {
+            "x": -2,
+            "y": -6
+          }
+        },
+        "parcelView": {
+          "version": "v1",
+          "imageUrl": "https://api.decentraland.org/v1/minimap.png"
+        }
+      }
     },
     "bff": {
-      "usersCount": 51,
       "healthy": true,
-      "commitHash": "80bc402b1b8f0a407a9d66a5ea58b33dd141af5f"
-    }
+      "protocolVersion": "1.0_0",
+      "userCount": 0,
+      "publicUrl": "/bff"
+    },
+    "acceptingUsers": false
   }
 }
-

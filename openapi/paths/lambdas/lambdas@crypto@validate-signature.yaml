@@ -5,19 +5,22 @@ post:
   tags:
     - Lambdas
   description: >-
-    Given a signed message and it's AuthChain, validate it's authenticity.
+    Given a signed message and its AuthChain, validate its authenticity.
     A message can be signed, for example, to prove ownership of the Entity pointers that they want to modify.
+    An invalid signature is reported with a 200 response and `valid: false`.
   requestBody:
+    required: true
     description: >-
        The body has 3 properties. The timestamp, the signedMessage that you wish to validate and the AuthChain.
+       No other properties are allowed.
        <br/>The structure of the AuthChain is described as follows:
        <br/>- The first element of the chain is the original signer, and the one who will be used to validate against the blockchain
        <br/>- The last element of the chain contains the EHash and a signature
        <br/>- In between are ephemeral keys that can be used for signing
     content:
-      application/json; charset=utf-8:
+      application/json:
         schema:
-          type: object
+          $ref: ../../components/schemas/lambdas/validate-signature-request.yaml
         examples:
           default:
             $ref: ../../components/examples/lambdas/body-validate-signature.json
@@ -27,7 +30,7 @@ post:
       content:
         application/json:
           schema:
-            type: object
+            $ref: ../../components/schemas/lambdas/validate-signature-response.yaml
           examples:
             valid-signature:
               $ref: ../../components/examples/lambdas/200-validate-signature-true.json
@@ -35,4 +38,46 @@ post:
               $ref: ../../components/examples/lambdas/200-validate-signature-false.json
     '400':
       description: >-
-        Bad Request: Expected 'signedMessage' property to be set
+        The body is not valid JSON or does not match the schema, the AuthChain has more than 10 links,
+        or neither `signedMessage` nor `timestamp` is set
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ../../components/schemas/lambdas/schema-validation-error.yaml
+              - $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+          examples:
+            invalid-body:
+              summary: Body does not match the schema
+              value:
+                ok: false
+                message: Invalid JSON body
+                data:
+                  - instancePath: ''
+                    schemaPath: '#/required'
+                    keyword: required
+                    params:
+                      missingProperty: authChain
+                    message: "must have required property 'authChain'"
+            missing-message:
+              summary: Missing signed message
+              value:
+                error: Bad request
+                message: "Expected 'signedMessage' property to be set"
+    '415':
+      description: The `Content-Type` header is not `application/json`
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/schema-validation-error.yaml
+          examples:
+            default:
+              value:
+                ok: false
+                message: Content-Type must be application/json
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml

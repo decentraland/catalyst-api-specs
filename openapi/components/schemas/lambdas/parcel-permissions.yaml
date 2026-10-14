@@ -1,12 +1,12 @@
 type: object
 required:
-  - address
+  - owner
   - operator
   - updateOperator
   - updateManager
   - approvedForAll
 properties:
-  address:
+  owner:
     type: boolean
   operator:
     type: boolean

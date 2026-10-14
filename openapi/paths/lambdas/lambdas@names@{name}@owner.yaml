@@ -1,0 +1,39 @@
+get:
+  operationId: getNameOwner
+  summary: Get the owner of a name
+  tags:
+    - Lambdas
+  description: Returns the address that owns the given Decentraland name
+  parameters:
+    - in: path
+      name: name
+      required: true
+      schema:
+        type: string
+        example: cryptonico
+      description: Decentraland name, with or without the `.dcl.eth` suffix. Case-insensitive.
+  responses:
+    '200':
+      description: Owner of the name
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/name-owner.yaml
+          examples:
+            default:
+              value:
+                owner: '0xa87d168717538e86d71ac48baccaeb84162de602'
+    '404':
+      description: The name has no owner. The response has no body.
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml
+    '502':
+      description: The name could not be fetched from the upstream sources
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

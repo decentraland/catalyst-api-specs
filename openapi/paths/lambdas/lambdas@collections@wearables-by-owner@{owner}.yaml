@@ -1,0 +1,84 @@
+get:
+  operationId: getWearablesByOwner
+  summary: Get wearables by owner
+  tags:
+    - Lambdas
+  description: >-
+    Legacy endpoint that returns every on-chain wearable owned by the address, with no pagination.
+    When `collectionId` is set, the third party wearables of that collection are returned instead.
+  parameters:
+    - in: path
+      name: owner
+      required: true
+      schema:
+        type: string
+        example: '0xa87d168717538e86d71ac48baccaeb84162de602'
+      description: Ethereum address of the owner
+    - in: query
+      name: collectionId
+      schema:
+        type: string
+        example: 'urn:decentraland:matic:collections-thirdparty:ntr1-meta:ntr1-meta-1ef79e7b'
+      description: >-
+        Third party collection URN. Only the third party part of the URN (the first five segments) is used.
+    - in: query
+      name: includeDefinitions
+      allowEmptyValue: true
+      schema:
+        type: boolean
+        example: true
+      description: >-
+        If present (any value, `false` included), each element is extended with its wearable definition.
+  responses:
+    '200':
+      description: Wearables owned by the address
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+              required:
+                - urn
+                - amount
+              properties:
+                urn:
+                  type: string
+                amount:
+                  type: number
+                  description: Number of tokens of this item owned by the address
+                definition:
+                  description: Present only when `includeDefinitions` is set
+                  $ref: ../../components/schemas/lambdas/wearable-definition.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-wearables-by-owner.json
+    '400':
+      description: '`collectionId` is not a third party collection URN'
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+          examples:
+            default:
+              value:
+                error: Bad request
+                message: "'collectionId' must be a valid third-party collection URN"
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml
+    '502':
+      description: The wearables could not be fetched from the upstream sources
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+    '503':
+      description: An upstream source is saturated. Retry shortly.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

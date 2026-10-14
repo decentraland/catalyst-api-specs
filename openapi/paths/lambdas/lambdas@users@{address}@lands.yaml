@@ -3,7 +3,7 @@ get:
   summary: Get list of lands for an address
   tags:
     - Lambdas
-  description: Get a list of lands owned by the given address
+  description: Get a paginated list of the parcels and estates owned by the given address
   parameters:
     - in: path
       name: address
@@ -16,27 +16,40 @@ get:
     - in: query
       name: pageNum
       schema:
-        type: string
-        example: "1"
+        type: integer
+        minimum: 1
+        default: 1
+        example: 1
       description: >-
-        The number of the requested page. It needs `pageSize` to be present to enable a paginated response.
+        The number of the requested page.
     - in: query
       name: pageSize
       schema:
-        type: string
-        example: "10"
+        type: integer
+        minimum: 1
+        default: 100
+        example: 10
       description: >-
-        The size of the requested page. It needs `pageNum` to be present to enable a paginated response.
-
+        The size of the requested page.
   responses:
     '200':
       description: List of lands owned by the given address
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             $ref: ../../components/schemas/lambdas/lands-paginated.yaml
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-lands-paginated.json
     '500':
-      description: 'Failed to fetch lands for the address'
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml
+    '502':
+      description: The lands could not be fetched and there is no cached result for the address
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

@@ -1,0 +1,83 @@
+type: object
+description: Wearable metadata with its file references resolved to content server URLs
+required:
+  - id
+  - name
+  - description
+  - i18n
+  - data
+  - image
+  - thumbnail
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  description:
+    type: string
+  collectionAddress:
+    type: string
+  rarity:
+    type: string
+  i18n:
+    $ref: ./item-i18n.yaml
+  data:
+    type: object
+    required:
+      - replaces
+      - hides
+      - tags
+      - category
+      - representations
+    properties:
+      replaces:
+        type: array
+        items:
+          type: string
+      hides:
+        type: array
+        items:
+          type: string
+      removesDefaultHiding:
+        type: array
+        items:
+          type: string
+      tags:
+        type: array
+        items:
+          type: string
+      category:
+        type: string
+      representations:
+        type: array
+        items:
+          type: object
+          required:
+            - bodyShapes
+            - mainFile
+            - contents
+            - overrideHides
+            - overrideReplaces
+          properties:
+            bodyShapes:
+              type: array
+              items:
+                type: string
+            mainFile:
+              type: string
+            overrideReplaces:
+              type: array
+              items:
+                type: string
+            overrideHides:
+              type: array
+              items:
+                type: string
+            contents:
+              $ref: ./item-contents.yaml
+  image:
+    type: string
+  thumbnail:
+    type: string
+  metrics:
+    $ref: ./item-metrics.yaml

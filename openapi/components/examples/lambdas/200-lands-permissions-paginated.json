@@ -1,0 +1,16 @@
+{
+  "value": {
+    "elements": [
+      {
+        "id": "0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d-34028236692093846346337460743176821145500",
+        "x": "100",
+        "y": "-100",
+        "owner": "0x2981aa7d75eaa42b248e304e378c7139868d4776",
+        "updateOperator": "0xddf1eec586d8f8f0eb8c5a3bf51fb99379a55684"
+      }
+    ],
+    "totalAmount": 1,
+    "pageNum": 1,
+    "pageSize": 100
+  }
+}

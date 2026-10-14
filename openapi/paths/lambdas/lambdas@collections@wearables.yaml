@@ -5,7 +5,9 @@ get:
   tags:
     - Lambdas
   description: >-
-    Search for wearables based on the applied filters and retrieve detailed information
+    Search the wearables catalog, base wearables included, and retrieve their definitions. At least one of
+    `textSearch`, `collectionId` or `wearableId` is required. Results are sorted by URN, base wearables first,
+    and paginated with the `lastId` cursor.
   parameters:
     - in: query
       name: collectionId
@@ -13,44 +15,51 @@ get:
         type: array
         items:
           type: string
-          example: urn:decentraland:ethereum:collections-v1:mf_sammichgamer
-      description: Lis of URNs that identify the collection. Maximum amount of ids allowed is 500.
+        example:
+          - urn:decentraland:ethereum:collections-v1:mf_sammichgamer
+      style: form
+      explode: true
+      description: Collection URN to search in. Can be repeated up to 500 times.
     - in: query
       name: wearableId
       schema:
         type: array
         items:
           type: string
-          example: urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat
-      description: List of wearables URNs to search. Maximum amount of ids allowed is 500.
+        example:
+          - urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat
+      style: form
+      explode: true
+      description: Wearable URN to retrieve. Can be repeated up to 500 times.
     - in: query
       name: textSearch
       schema:
         type: string
+        minLength: 3
         example: Hoodie
-      description: Search text
+      description: Text to search for in the wearables. Case-insensitive, at least 3 characters.
     - in: query
       name: limit
       schema:
         type: integer
+        minimum: 1
+        maximum: 500
+        default: 500
         example: 2
       description: >-
-         Limit the quantity of results that will be returned by the request.
-         You can only request up to 500 results.
+        Maximum number of wearables to return. Values that are not a number between 1 and 500 fall back to 500.
     - in: query
       name: lastId
       schema:
         type: string
         example: urn:decentraland:ethereum:collections-v1:binance_us_collection:binance_us_hat
       description: >-
-        The result will always be ordered by the local timestamp fields but in case
-        of timestamp collisions, you can use the lastId field to filter the
-        result
+        URN of the last wearable of the previous page. Only wearables with a greater URN are returned.
   responses:
     '200':
-      description: Catalyst services health information
+      description: Wearables matching the filters
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             $ref: ../../components/schemas/lambdas/wearables.yaml
           examples:
@@ -59,23 +68,33 @@ get:
     '400':
       description: Bad Request
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
-            type: string
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
           examples:
             MissingFilter:
               summary: Missing Filter
-              value: >-
-                You must use one of the filters: 'textSearch', 'collectionId' or 'wearableId'
+              value:
+                error: Bad request
+                message: "You must use one of the filters: 'textSearch', 'collectionId' or 'wearableId'"
             TextSearch:
               summary: Bad search text
-              value: >-
-                The text search must be at least 3 characters long
-            Limit:
-              summary: Too many wearables requested
-              value: >-
-                You can't ask for more than 500 wearables
+              value:
+                error: Bad request
+                message: The text search must be at least 3 characters long
+            Ids:
+              summary: Too many wearable ids
+              value:
+                error: Bad request
+                message: You can't ask for more than 500 wearables
             Collection:
-              summary: Too many items in the collection
-              value: >-
-                You can't filter for more than 500 collection ids
+              summary: Too many collection ids
+              value:
+                error: Bad request
+                message: You can't filter for more than 500 collection ids
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml

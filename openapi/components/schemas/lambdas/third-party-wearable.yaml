@@ -1,6 +1,8 @@
 type: object
 required:
   - urn
+  - amount
+  - individualData
   - name
   - category
   - entity
@@ -9,16 +11,23 @@ properties:
     type: string
   amount:
     type: number
+  individualData:
+    type: array
+    items:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+        tokenId:
+          type: string
   name:
     type: string
   category:
     type: string
   entity:
     $ref: ../content/entity.yaml
-  individualData:
-    type: array
-    items:
-      type: object
-      properties:
-          id:
-            type: string
+  definition:
+    description: Present only when `includeDefinitions` is set
+    $ref: ./wearable-definition.yaml
