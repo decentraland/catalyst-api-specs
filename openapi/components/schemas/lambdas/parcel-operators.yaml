@@ -1,8 +1,24 @@
 type: object
 required:
   - address
+  - operator
+  - updateOperator
+  - updateManagers
+  - approvedForAll
 properties:
   address:
     type: string
   operator:
     type: string
+    nullable: true
+  updateOperator:
+    type: string
+    nullable: true
+  updateManagers:
+    type: array
+    items:
+      type: string
+  approvedForAll:
+    type: array
+    items:
+      type: string

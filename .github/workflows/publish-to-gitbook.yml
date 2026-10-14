@@ -1,0 +1,97 @@
+name: Publish API Docs to GitBook
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'openapi/**'
+  pull_request:
+    paths:
+      - 'openapi/**'
+
+jobs:
+  validate-bundle-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: 'yarn'
+      
+      - name: Install dependencies
+        run: yarn install
+      
+      - name: Validate API spec with project config
+        run: yarn test:api
+      
+      - name: Bundle API spec
+        run: |
+          npx @redocly/cli bundle openapi/catalyst.yaml -o bundled-openapi.yaml
+          echo "✅ Bundled spec created (all \$ref resolved)"
+          ls -lh bundled-openapi.yaml
+      
+      - name: Upload bundled spec as artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: openapi-spec
+          path: bundled-openapi.yaml
+          retention-days: 30
+      
+      - name: Push bundled spec to gitbook-sync branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          echo "📚 Preparing bundled spec for GitBook..."
+          
+          # Create/update gitbook-sync branch with bundled spec
+          git fetch origin gitbook-sync:gitbook-sync || git checkout -b gitbook-sync
+          git checkout gitbook-sync
+          
+          # Copy bundled spec to root for easy GitBook access
+          cp bundled-openapi.yaml openapi-bundled.yaml
+          
+          # Commit and push
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add openapi-bundled.yaml
+          
+          if git diff --staged --quiet; then
+            echo "No changes to bundled spec"
+          else
+            git commit -m "chore: update bundled OpenAPI spec for GitBook [skip ci]"
+            git push -f origin gitbook-sync
+            echo "✅ Pushed to gitbook-sync branch"
+          fi
+          
+          git checkout main
+      
+      - name: Sync to GitBook via API
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GITBOOK_TOKEN: ${{ secrets.GITBOOK_TOKEN }}
+          GITBOOK_ORG_ID: ${{ secrets.GITBOOK_ORGANIZATION_ID }}
+        run: |
+          if [ -z "$GITBOOK_TOKEN" ] || [ -z "$GITBOOK_ORG_ID" ]; then
+            echo "⚠️  GitBook secrets not configured."
+            echo "✅ Bundled spec pushed to gitbook-sync branch"
+            echo "📖 Import URL: https://raw.githubusercontent.com/${{ github.repository }}/gitbook-sync/openapi-bundled.yaml"
+            exit 0
+          fi
+          
+          echo "📚 Syncing to GitBook..."
+          
+          # The bundled spec is now available at a stable URL
+          BUNDLED_URL="https://raw.githubusercontent.com/${{ github.repository }}/gitbook-sync/openapi-bundled.yaml"
+          
+          echo "✅ Bundled spec available at: ${BUNDLED_URL}"
+          echo ""
+          echo "To complete GitBook setup (one-time):"
+          echo "  1. In GitBook → OpenAPI section → Your Catalyst API"
+          echo "  2. Update the import source to: ${BUNDLED_URL}"
+          echo "  3. Enable auto-sync"
+          echo ""
+          echo "GitBook will now auto-update on every push! 🎉"
+

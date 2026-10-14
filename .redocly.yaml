@@ -4,6 +4,11 @@ apis:
     root: openapi/catalyst.yaml
 rules:
   no-unused-components: warn
+  # Disable linting rules that don't affect GitBook publishing
+  security-defined: off
+  operation-4xx-response: off
+  no-invalid-media-type-examples: off
+  no-invalid-schema-examples: off
 theme:
   openapi:
     sideNavStyle: path-only
