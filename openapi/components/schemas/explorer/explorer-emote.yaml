@@ -25,10 +25,8 @@ properties:
     type: string
     example: legendary
   amount:
-    description: Number of owned copies. Sent as a string.
-    oneOf:
-      - type: number
-      - type: string
+    type: number
+    description: Number of owned copies.
   individualData:
     type: array
     items:

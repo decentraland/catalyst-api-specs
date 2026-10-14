@@ -11,12 +11,8 @@ properties:
   tokenId:
     type: string
   transferredAt:
-    description: Unix timestamp, in seconds, of the transfer to the current owner. Sent as a string.
-    oneOf:
-      - type: string
-      - type: number
+    type: string
+    description: Unix timestamp, in seconds, of the transfer to the current owner, as a string.
   price:
-    description: Price paid, in wei. Sent as a string.
-    oneOf:
-      - type: string
-      - type: number
+    type: string
+    description: Price paid, in wei, as a string.

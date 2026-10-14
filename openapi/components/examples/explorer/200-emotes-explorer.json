@@ -4,7 +4,7 @@
             {
                 "type": "on-chain",
                 "urn": "urn:decentraland:matic:collections-v2:0x0a2efdce6246ea3bd39d3330c5d8f97391bab11d:0",
-                "amount": "1",
+                "amount": 1,
                 "individualData": [
                     {
                         "id": "urn:decentraland:matic:collections-v2:0x0a2efdce6246ea3bd39d3330c5d8f97391bab11d:0:80",
