@@ -25,3 +25,21 @@ describe('Validate OAS (Express integration)', () => {
     expect(result.errors).toHaveLength(0)
   })
 })
+
+describe('Extract the APIs of each service', () => {
+  it.each([
+    ['/content/', CONTENT_API],
+    ['/lambdas/', LAMBDAS_API],
+    ['/explorer/', EXPLORER_API]
+  ])('should keep only and every %s path', (prefix, api) => {
+    expect(Object.keys(api.paths)).toEqual(Object.keys(CATALYST_API.paths).filter((path) => path.startsWith(prefix)))
+  })
+
+  it('should not extract an empty API', () => {
+    expect([CONTENT_API, LAMBDAS_API, EXPLORER_API].map((api) => Object.keys(api.paths).length > 0)).toEqual([
+      true,
+      true,
+      true
+    ])
+  })
+})

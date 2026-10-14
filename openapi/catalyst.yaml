@@ -6,9 +6,9 @@ info:
     A Catalyst is a Server that runs different services.
     These services currently work as the backbone for Decentraland and work in a decentralized network.
     The current specification details the following services:
-    <br/><br/>- Archipelago
-    <br/>- Content Server
+    <br/><br/>- Content Server
     <br/>- Lambdas Service
+    <br/>- Explorer
     <br/>
     <br/>WARNING: We are working to close the version 1.0 of the Catalyst Protocol defined by this API.
     So far this is what we have and it's public but we are still working on refinement and

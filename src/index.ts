@@ -12,7 +12,7 @@ export const CATALYST_API = parseAPI('api.yaml')
 function extractAPI(prefix: string): any {
   const paths: Record<string, any> = {}
 
-  for (const k in paths) {
+  for (const k in CATALYST_API.paths) {
     if (k.startsWith(prefix)) {
       paths[k] = CATALYST_API.paths[k]
     }
