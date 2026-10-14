@@ -48,9 +48,6 @@ tags:
       <br/><br/>And the most important part is that all content servers will then sync with each other.
       So, for example, if a scene is modified in one server, the update itself will be broadcasted to the other ones.
       Then, in the case a content server goes down for some reason, all content will still be present in the other ones.
-  - name: Archipelago
-    description: >-
-      This service is in charge of clustering users according to their position and assigning a connection string that will allow the user to connect to an specifig transport.
   - name: Lambdas
     description: >-
       This service provides a set of utilities required by the Catalyst Server Clients\Consumers in order to
@@ -61,8 +58,6 @@ tags:
 paths:
   /about:
     $ref: 'paths/global/about.yaml'
-  /stats/parcels:
-    $ref: 'paths/global/stats@parcels.yaml'
   /content/audit/{entityType}/{entityId}:
     $ref: 'paths/content/content@audit@{entityType}@{entityId}.yaml'
   /content/challenge:
@@ -135,11 +130,5 @@ paths:
     $ref: 'paths/lambdas/lambdas@outfits@{id}.yaml'
   /lambdas/third-party-integrations:
     $ref: 'paths/lambdas/lambdas@third-party-integrations.yaml'
-  /comms/islands:
-    $ref: 'paths/comms/comms@islands.yaml'
-  /comms/islands/{islandId}:
-    $ref: 'paths/comms/comms@islands@{islandId}.yaml'
-  /comms/peers:
-    $ref: 'paths/comms/comms@peers.yaml'
   /explorer/{address}/wearables:
     $ref: 'paths/explorer/explorer@{address}@wearables.yaml'
