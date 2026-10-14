@@ -15,8 +15,9 @@ get:
           - 'wearable'
           - 'emote'
           - 'store'
+          - 'outfits'
         example: profile
-      description: Type of the entity to audit. The plural form (e.g. `profiles`) is also accepted.
+      description: Type of the entity to audit.
     - in: path
       name: entityId
       required: true

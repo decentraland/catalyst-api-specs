@@ -2,7 +2,7 @@ name: direction
 in: query
 required: false
 description: >-
-  Sort direction (case-insensitive). Defaults to `ASC` when `orderBy` is `name` and to `DESC` otherwise.
+  Sort direction. Defaults to `ASC` when `orderBy` is `name` and to `DESC` otherwise.
 schema:
   type: string
   enum:

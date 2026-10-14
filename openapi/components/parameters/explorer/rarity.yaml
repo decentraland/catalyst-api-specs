@@ -2,8 +2,8 @@ name: rarity
 in: query
 required: false
 description: >-
-  Only return elements of this rarity (case-insensitive). Elements without rarity are excluded. Any other
-  value is rejected with a 400.
+  Only return elements of this rarity. Elements without rarity are excluded. Any other value is rejected
+  with a 400.
 schema:
   type: string
   enum:

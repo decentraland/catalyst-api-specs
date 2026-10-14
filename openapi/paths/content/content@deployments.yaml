@@ -39,6 +39,7 @@ get:
             - wearable
             - emote
             - store
+            - outfits
       description: Type of the entities to return. Repeat the parameter to filter by several types.
     - in: query
       name: entityId
@@ -80,9 +81,7 @@ get:
           - local_timestamp
           - entity_timestamp
         default: local_timestamp
-      description: >-
-        Field used to order the deployments. The camel case forms (`localTimestamp`,
-        `entityTimestamp`) are also accepted.
+      description: Field used to order the deployments.
     - in: query
       name: sortingOrder
       schema:

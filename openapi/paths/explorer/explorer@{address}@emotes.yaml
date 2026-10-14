@@ -35,7 +35,7 @@ get:
     '200':
       description: Emotes owned by the given address.
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             $ref: ../../components/schemas/explorer/emotes-explorer.yaml
           examples:
@@ -46,7 +46,7 @@ get:
     '400':
       description: Invalid `collectionType`, `rarity`, `orderBy` or `direction`, or `pageSize` above 1000.
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             $ref: ../../components/schemas/lambdas/lambdas-error.yaml
           example:
@@ -55,12 +55,12 @@ get:
     '502':
       description: The owned emotes could not be fetched from their sources.
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             $ref: ../../components/schemas/lambdas/lambdas-error.yaml
     '503':
       description: The service is overloaded. Retry shortly.
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             $ref: ../../components/schemas/lambdas/lambdas-error.yaml

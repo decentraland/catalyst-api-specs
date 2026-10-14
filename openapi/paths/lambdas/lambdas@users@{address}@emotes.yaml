@@ -19,19 +19,23 @@ get:
       name: includeEntities
       allowEmptyValue: true
       schema:
-        type: boolean
-        example: true
+        type: string
+        enum:
+          - 'true'
       description: >-
-        If present (any value), each element is extended with its content server entity.
+        Presence flag: when present with any value (even `false`),
+        each element is extended with its content server entity. Omit it to disable.
         Cannot be combined with `includeDefinitions`.
     - in: query
       name: includeDefinitions
       allowEmptyValue: true
       schema:
-        type: boolean
-        example: true
+        type: string
+        enum:
+          - 'true'
       description: >-
-        If present (any value), each element is extended with its emote definition.
+        Presence flag: when present with any value (even `false`),
+        each element is extended with its emote definition. Omit it to disable.
         Cannot be combined with `includeEntities`.
     - in: query
       name: category
@@ -61,7 +65,7 @@ get:
           - date
         example: rarity
       description: >-
-        Field to sort by. `date` is the transfer date of the tokens. Case-insensitive.
+        Field to sort by. `date` is the transfer date of the tokens.
     - in: query
       name: direction
       schema:
@@ -71,7 +75,7 @@ get:
           - DESC
         example: DESC
       description: >-
-        Sort direction. Defaults to `ASC` when sorting by `name` and to `DESC` otherwise. Case-insensitive.
+        Sort direction. Defaults to `ASC` when sorting by `name` and to `DESC` otherwise.
     - in: query
       name: pageNum
       schema:

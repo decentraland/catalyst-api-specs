@@ -70,6 +70,7 @@ get:
             - wearable
             - emote
             - store
+            - outfits
           example: profile
       description: >-
         The type of entities that will be shown in the collection. Repeat the parameter to filter by
@@ -85,8 +86,7 @@ get:
       description: >-
         This value is used as the field to order all the deployments in the
         collection. If no parameter is sent, then the default field to order
-        with will be local_timestamp. The camel case forms (`localTimestamp`,
-        `entityTimestamp`) are also accepted.
+        with will be local_timestamp.
     - in: query
       name: sortingOrder
       schema:

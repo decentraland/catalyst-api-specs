@@ -28,10 +28,12 @@ get:
       name: includeDefinitions
       allowEmptyValue: true
       schema:
-        type: boolean
-        example: true
+        type: string
+        enum:
+          - 'true'
       description: >-
-        If present (any value), each element is extended with its wearable definition.
+        Presence flag: when present with any value (even `false`),
+        each element is extended with its wearable definition. Omit it to disable.
     - in: query
       name: pageNum
       schema:

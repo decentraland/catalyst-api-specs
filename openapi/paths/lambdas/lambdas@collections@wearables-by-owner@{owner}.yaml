@@ -25,10 +25,12 @@ get:
       name: includeDefinitions
       allowEmptyValue: true
       schema:
-        type: boolean
-        example: true
+        type: string
+        enum:
+          - 'true'
       description: >-
-        If present (any value, `false` included), each element is extended with its wearable definition.
+        Presence flag: when present with any value (even `false`),
+        each element is extended with its wearable definition. Omit it to disable.
   responses:
     '200':
       description: Wearables owned by the address

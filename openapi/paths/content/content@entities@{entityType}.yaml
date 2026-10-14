@@ -20,10 +20,10 @@ get:
           - wearable
           - emote
           - store
+          - outfits
         example: scene
       description: >-
-        Type of the entities. The plural form (e.g. `scenes`) is also accepted. It is validated but
-        entities of any type are returned.
+        Type of the entities. It is validated but entities of any type are returned.
     - in: query
       name: pointer
       schema:
