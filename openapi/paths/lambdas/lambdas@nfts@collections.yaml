@@ -1,0 +1,39 @@
+get:
+  deprecated: true
+  operationId: getNftsCollections
+  summary: Get Collections (alias)
+  tags:
+    - Lambdas
+  description: >-
+    Same response as `/lambdas/collections`, served under the path lamb2 uses internally
+  responses:
+    '200':
+      description: Array of collections URNs and names
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - collections
+            properties:
+              collections:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - id
+                    - name
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-collections.json
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml

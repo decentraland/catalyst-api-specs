@@ -22,6 +22,7 @@ properties:
           type: string
         price:
           type: string
+          description: Price in wei of the active order, if any
   totalAmount:
     type: number
   pageNum:

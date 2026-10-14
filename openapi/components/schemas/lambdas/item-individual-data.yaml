@@ -1,0 +1,21 @@
+type: array
+description: One entry per owned token
+items:
+  type: object
+  required:
+    - id
+    - tokenId
+    - transferredAt
+    - price
+  properties:
+    id:
+      type: string
+      description: Item URN followed by `:<tokenId>`
+    tokenId:
+      type: string
+    transferredAt:
+      type: string
+      description: Unix timestamp in seconds, sent as a string
+    price:
+      type: string
+      description: Price in wei, sent as a string

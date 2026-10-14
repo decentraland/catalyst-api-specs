@@ -1,0 +1,18 @@
+type: object
+description: >-
+  One owned copy of the item. Base wearables only carry `id`; third-party wearables may add `tokenId`; on-chain
+  items carry all fields.
+required:
+  - id
+properties:
+  id:
+    type: string
+    description: Identifier of the owned copy (the item URN followed by the token id for on-chain items).
+  tokenId:
+    type: string
+  transferredAt:
+    type: string
+    description: Unix timestamp, in seconds, of the transfer to the current owner, as a string.
+  price:
+    type: string
+    description: Price paid, in wei, as a string.

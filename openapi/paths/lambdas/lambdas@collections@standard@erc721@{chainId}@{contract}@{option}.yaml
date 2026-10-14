@@ -1,0 +1,70 @@
+get:
+  operationId: getStandardErc721WithoutEmission
+  summary: Get ERC721 Entity without emission
+  tags:
+    - Lambdas
+  description: >-
+    Retrieve the ERC721 metadata of a standard (with rarity) wearable or emote of a collection.
+    The `description` of the response is empty; use the path with `emission` to include the issue
+    number.
+    Also served by the content server at
+    `/content/queries/erc721/{chainId}/{contract}/{option}`.
+  parameters:
+    - in: path
+      name: chainId
+      required: true
+      schema:
+        type: string
+        example: '137'
+      description: >-
+        Chain ID of the collection: 1 (Ethereum), 11155111 (Sepolia), 137 (Polygon), 80002 (Amoy).
+        The legacy test networks 3, 4, 5, 42 and 80001 are also accepted.
+    - in: path
+      name: contract
+      required: true
+      schema:
+        type: string
+        example: '0x8e674db9b2fc0759b2d94cace9c4bae334a8f0c3'
+      description: >-
+        Address of the collection contract (`collections-v2`), or the name of a `collections-v1`
+        collection. Used to build the URN of the item.
+    - in: path
+      name: option
+      required: true
+      schema:
+        type: string
+        example: '0'
+      description: Id of the item in the collection
+  responses:
+    '200':
+      description: ERC721 metadata of the item
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/lambdas/erc721.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/lambdas/200-erc721.json
+    '400':
+      description: Invalid chain ID, or the item has no rarity
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/content/error.yaml
+          examples:
+            chainId:
+              summary: Invalid chain ID
+              value:
+                error: Invalid chainId '999'
+            notStandard:
+              summary: The item has no rarity
+              value:
+                error: Wearable is not standard.
+    '404':
+      description: No active entity for the item, or it is denylisted
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/content/error.yaml
+          example:
+            error: Entity does not exist

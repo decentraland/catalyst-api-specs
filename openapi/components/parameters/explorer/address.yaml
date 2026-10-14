@@ -1,0 +1,7 @@
+name: address
+in: path
+required: true
+description: Ethereum address of the owner.
+schema:
+  type: string
+  example: '0xa87d168717538e86d71ac48baccaeb84162de602'

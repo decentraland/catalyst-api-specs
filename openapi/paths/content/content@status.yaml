@@ -3,7 +3,7 @@ get:
   summary: Content Server status
   tags:
     - Content Server
-  description: Retrieve deteailed information about the content server status
+  description: Retrieve the version, network and synchronization state of the content server
   responses:
     '200':
       description: Content Server status information

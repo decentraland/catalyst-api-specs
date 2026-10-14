@@ -1,0 +1,14 @@
+type: object
+required:
+  - ok
+  - message
+properties:
+  ok:
+    type: boolean
+  message:
+    type: string
+  data:
+    type: array
+    description: JSON schema validation errors
+    items:
+      type: object

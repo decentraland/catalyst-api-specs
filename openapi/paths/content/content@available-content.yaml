@@ -3,17 +3,21 @@ get:
   summary: Validates if file exists on the Server
   tags:
     - Content Server
-  description: 'Given a list of hashes, validates if the corresponding files exist in the storage of the server'
+  description: >-
+    Given a list of hashes, validates if the corresponding files exist in the storage of the server.
+    Denylisted hashes are omitted from the response.
   parameters:
     - in: query
       name: cid
       required: true
       schema:
         type: array
+        minItems: 1
+        maxItems: 1000
         items:
           type: string
           example: QmWFLwHGfvhB9a1epaRpS38HEwbHvhpaYzHEsNhDRgon7P
-      description: Hash of the content file
+      description: Hash of the content file. Repeat the parameter to check several files (up to 1000).
   responses:
     '200':
       description: >-
@@ -27,8 +31,17 @@ get:
             default:
               $ref: ../../components/examples/content/200-available-content.json
     '400':
-      description: Missing query parameters in the request
+      description: No `cid` was set, or more than 1000 were requested
       content:
         application/json; charset=utf-8:
           schema:
             $ref: ../../components/schemas/content/error.yaml
+          examples:
+            missing:
+              summary: No cid set
+              value:
+                error: Please set at least one cid.
+            tooMany:
+              summary: Too many cids
+              value:
+                error: Too many cids requested; the maximum allowed is 1000.

@@ -1,9 +1,30 @@
 get:
   operationId: getFailedDeployments
   summary: List of failed deployments
-  description: Retrieves a list of the failed deployments
+  description: >-
+    Retrieves the deployments this server failed to synchronize from other servers and will retry.
+    Without `offset` and `limit` the whole list is returned; with either of them, a page of at most
+    1000 items is returned.
   tags:
     - Content Server
+  parameters:
+    - in: query
+      name: offset
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+      description: Number of failed deployments to skip
+    - in: query
+      name: limit
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1000
+        default: 1000
+      description: Maximum number of failed deployments to return
   responses:
     '200':
       description: Failed deployments list

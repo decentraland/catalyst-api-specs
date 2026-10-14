@@ -1,0 +1,16 @@
+{
+  "value": [
+    {
+      "urn": "urn:decentraland:matic:collections-v2:0x21aa54b72247e8b02a8eb7669a68698930c00c90:0",
+      "amount": 1
+    },
+    {
+      "urn": "urn:decentraland:matic:collections-v2:0x21aa54b72247e8b02a8eb7669a68698930c00c90:1",
+      "amount": 1
+    },
+    {
+      "urn": "urn:decentraland:matic:collections-v2:0x21aa54b72247e8b02a8eb7669a68698930c00c90:2",
+      "amount": 1
+    }
+  ]
+}

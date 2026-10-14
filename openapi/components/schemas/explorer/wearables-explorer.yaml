@@ -1,0 +1,21 @@
+type: object
+required:
+  - elements
+  - totalAmount
+  - pageNum
+  - pageSize
+properties:
+  elements:
+    type: array
+    description: Full elements by default, trimmed elements when `trimmed` is set.
+    items:
+      oneOf:
+        - $ref: ./explorer-wearable.yaml
+        - $ref: ./explorer-wearable-trimmed.yaml
+  totalAmount:
+    type: number
+    description: Number of elements matching the filters across all pages.
+  pageNum:
+    type: number
+  pageSize:
+    type: number

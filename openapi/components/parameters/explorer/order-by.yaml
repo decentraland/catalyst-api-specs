@@ -1,0 +1,14 @@
+name: orderBy
+in: query
+required: false
+description: >-
+  Field to sort by. `rarity` sorts by rarity tier, `name` alphabetically and `date` by
+  transfer date (most recent transfer for `DESC`, oldest for `ASC`). Elements without the field, such as base or
+  third-party wearables for `rarity` and `date`, go last with `DESC` and first with `ASC`. Ties are broken by URN.
+schema:
+  type: string
+  enum:
+    - rarity
+    - name
+    - date
+  default: rarity

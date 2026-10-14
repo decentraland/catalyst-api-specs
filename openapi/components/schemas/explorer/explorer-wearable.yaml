@@ -1,0 +1,44 @@
+type: object
+description: A wearable owned by the address, grouped by URN.
+required:
+  - type
+  - urn
+  - name
+  - category
+  - amount
+  - individualData
+  - entity
+properties:
+  type:
+    type: string
+    enum:
+      - base-wearable
+      - on-chain
+      - third-party
+  urn:
+    type: string
+  name:
+    type: string
+  category:
+    type: string
+    example: upper_body
+  amount:
+    type: number
+    description: Number of owned copies.
+  individualData:
+    type: array
+    items:
+      $ref: ./explorer-individual-data.yaml
+  rarity:
+    type: string
+    description: Only present for on-chain wearables.
+    example: legendary
+  itemType:
+    type: string
+    description: Only present for on-chain wearables.
+    enum:
+      - wearable_v1
+      - wearable_v2
+      - smart_wearable_v1
+  entity:
+    $ref: ../content/entity.yaml

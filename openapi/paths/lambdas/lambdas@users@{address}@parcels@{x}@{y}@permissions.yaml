@@ -3,7 +3,9 @@ get:
   summary: Get the permissions for a parcel
   tags:
     - Lambdas
-  description: Get the permissions a user has for a parcel
+  description: >-
+    Get the permissions an address has over a parcel, using the same rights resolution as
+    `/lambdas/parcels/{x}/{y}/operators`
   parameters:
     - in: path
       name: address
@@ -17,44 +19,60 @@ get:
       name: x
       required: true
       schema:
-        type: string
-        example: '100'
+        type: integer
+        example: 100
       description: >-
         X coordinate of the parcel
     - in: path
       name: y
       required: true
       schema:
-        type: string
-        example: '100'
+        type: integer
+        example: 100
       description: >-
         Y coordinate of the parcel
-
   responses:
     '200':
-      description: permissions a user has for a parcel
+      description: Permissions the address has over the parcel
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             $ref: ../../components/schemas/lambdas/parcel-permissions.yaml
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-parcel-permissions.json
     '400':
-      description: 'Bad request'
+      description: The coordinates or the address are invalid
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              error:
-                type: string
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
           examples:
             invalid-coordinates:
+              summary: Invalid coordinate format or range
               value:
-                error: 'Coordinates X and Y must be valid numbers in a valid range'
-              summary: 'Invalid coordinate format or range'
+                error: Bad request
+                message: Coordinates X and Y must be valid numbers in a valid range
             invalid-address:
+              summary: Invalid Ethereum address format
               value:
-                error: 'Invalid Ethereum address'
-              summary: 'Invalid Ethereum address format'
+                error: Bad request
+                message: Address must be a valid Ethereum address
+    '404':
+      description: No parcel or estate was found for the coordinates
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+          examples:
+            not-found:
+              summary: Parcel not found
+              value:
+                error: Bad Request
+                message: 'Parcel or estate rights not found for x: 100, y: 100'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml

@@ -14,7 +14,7 @@ get:
       description: Ethereum address of the user
   responses:
     '200':
-      description: Array of Avatars
+      description: Profile of the user
       content:
         application/json:
           schema:
@@ -22,3 +22,26 @@ get:
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-profiles-id.json
+    '404':
+      description: The address has no deployed profile
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+          examples:
+            default:
+              value:
+                error: Not Found
+                message: Profile not found
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml
+    '503':
+      description: An upstream source is saturated. Retry shortly.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

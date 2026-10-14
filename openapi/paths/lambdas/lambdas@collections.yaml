@@ -3,14 +3,19 @@ get:
   summary: Get Collections
   tags:
     - Lambdas
-  description: Retrieve the list of collections URNs
+  description: >-
+    Retrieve the list of collections: the base wearables and base emotes collections, then the Ethereum
+    collections, then the Polygon collections. Each network's collections are sorted by URN and capped at
+    the first 1000, so the list as a whole is not sorted and may be incomplete.
   responses:
     '200':
       description: Array of collections URNs and names
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             type: object
+            required:
+              - collections
             properties:
               collections:
                 type: array
@@ -28,4 +33,8 @@ get:
             default:
               $ref: ../../components/examples/lambdas/200-collections.json
     '500':
-      description:  Internal Server Error
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml

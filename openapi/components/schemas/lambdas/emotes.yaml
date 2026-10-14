@@ -1,0 +1,14 @@
+type: object
+required:
+  - emotes
+  - filters
+  - pagination
+properties:
+  emotes:
+    type: array
+    items:
+      $ref: ./emote-definition.yaml
+  filters:
+    $ref: ./catalog-filters.yaml
+  pagination:
+    $ref: ./catalog-pagination.yaml

@@ -1,0 +1,6 @@
+name: name
+in: query
+required: false
+description: Only return elements whose name contains this text (case-insensitive).
+schema:
+  type: string

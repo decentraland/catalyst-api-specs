@@ -1,0 +1,62 @@
+type: object
+description: Emote metadata with its file references resolved to content server URLs
+required:
+  - id
+  - name
+  - description
+  - i18n
+  - emoteDataADR74
+  - image
+  - thumbnail
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  description:
+    type: string
+  collectionAddress:
+    type: string
+  rarity:
+    type: string
+  i18n:
+    $ref: ./item-i18n.yaml
+  emoteDataADR74:
+    type: object
+    required:
+      - category
+      - representations
+      - tags
+      - loop
+    properties:
+      category:
+        type: string
+      representations:
+        type: array
+        items:
+          type: object
+          required:
+            - bodyShapes
+            - mainFile
+            - contents
+          properties:
+            bodyShapes:
+              type: array
+              items:
+                type: string
+            mainFile:
+              type: string
+            contents:
+              $ref: ./item-contents.yaml
+      tags:
+        type: array
+        items:
+          type: string
+      loop:
+        type: boolean
+  image:
+    type: string
+  thumbnail:
+    type: string
+  metrics:
+    $ref: ./item-metrics.yaml

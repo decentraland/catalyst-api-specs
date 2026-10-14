@@ -3,40 +3,71 @@ get:
   summary: Get list of names for an address
   tags:
     - Lambdas
-  description: Get a list of names owned by the given address
+  description: Get a paginated list of the Decentraland names owned by the given address
   parameters:
     - in: path
       name: address
       required: true
       schema:
         type: string
-        example: '0xddf1eec586d8f8f0eb8c5a3bf51fb99379a55684'
+        example: '0xa87d168717538e86d71ac48baccaeb84162de602'
       description: >-
         Ethereum address from which you want to get the list of names
     - in: query
       name: pageNum
       schema:
-        type: string
-        example: "1"
+        type: integer
+        minimum: 1
+        default: 1
+        example: 1
       description: >-
-        The number of the requested page. It needs `pageSize` to be present to enable a paginated response.
+        The number of the requested page.
     - in: query
       name: pageSize
       schema:
-        type: string
-        example: "10"
+        type: integer
+        minimum: 1
+        maximum: 1000
+        default: 100
+        example: 10
       description: >-
-        The size of the requested page. It needs `pageNum` to be present to enable a paginated response.
-
+        The size of the requested page.
   responses:
     '200':
       description: List of names owned by the given address
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             $ref: ../../components/schemas/lambdas/names-paginated.yaml
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-names-paginated.json
+    '400':
+      description: '`pageSize` is above 1000'
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+          examples:
+            default:
+              value:
+                error: Bad request
+                message: max allowed pageSize is 1000
     '500':
-      description: 'Failed to fetch names for the address'
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml
+    '502':
+      description: The names could not be fetched from the upstream sources
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+    '503':
+      description: An upstream source is saturated. Retry shortly.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

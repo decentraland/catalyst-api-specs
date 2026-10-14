@@ -1,0 +1,9 @@
+name: pageSize
+in: query
+required: false
+description: Number of elements per page. Values above 1000 are rejected with a 400.
+schema:
+  type: integer
+  minimum: 1
+  maximum: 1000
+  default: 100

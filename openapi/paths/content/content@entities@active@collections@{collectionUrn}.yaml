@@ -4,7 +4,9 @@ get:
   tags:
     - Content Server
   description: >-
-    Returns the list of active entities which have at least one pointer that matches the prefix given
+    Returns a page of the active entities which have at least one pointer that matches the given
+    collection URN or third party id as a prefix. Denylisted entities are omitted from `entities`
+    but still counted in `total`.
   parameters:
     - in: path
       name: collectionUrn
@@ -12,23 +14,30 @@ get:
       schema:
         type: string
         example: 'urn:decentraland:matic:collections-v2:0x8e674db9b2fc0759b2d94cace9c4bae334a8f0c3'
-      description: 'urn prefix to filter the entities by'
+      description: >-
+        URN of a collection (`collections-v1`, `collections-v2`, `base-avatars`, `base-emotes`)
+        or a third party id (`collections-thirdparty`) to filter the entities by
     - in: query
       name: pageSize
       required: false
       schema:
-        type: number
-      description: Page size (max 1000)
+        type: integer
+        minimum: 1
+        maximum: 1000
+        default: 100
+      description: Page size
     - in: query
-      name: pageNumber
+      name: pageNum
       required: false
       schema:
-        type: number
-      description: "Page number (default: 1)"
+        type: integer
+        minimum: 1
+        default: 1
+      description: Page number, starting at 1
   responses:
     '200':
       description: >-
-        List of entity Ids matching the condition
+        Total number of matching entities and the entities of the requested page
       content:
         application/json; charset=utf-8:
           schema:
@@ -46,3 +55,18 @@ get:
           examples:
             default:
               $ref: ../../components/examples/content/200-active-collections.json
+    '400':
+      description: Invalid URN, a URN that is not a collection or third party id, or invalid pagination
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/content/error.yaml
+          examples:
+            invalidUrn:
+              summary: Invalid URN
+              value:
+                error: 'Invalid URN format: foo'
+            pageSize:
+              summary: Page size too large
+              value:
+                error: max allowed pageSize is 1000

@@ -6,9 +6,9 @@ info:
     A Catalyst is a Server that runs different services.
     These services currently work as the backbone for Decentraland and work in a decentralized network.
     The current specification details the following services:
-    <br/><br/>- Archipelago
-    <br/>- Content Server
+    <br/><br/>- Content Server
     <br/>- Lambdas Service
+    <br/>- Explorer
     <br/>
     <br/>WARNING: We are working to close the version 1.0 of the Catalyst Protocol defined by this API.
     So far this is what we have and it's public but we are still working on refinement and
@@ -48,18 +48,17 @@ tags:
       <br/><br/>And the most important part is that all content servers will then sync with each other.
       So, for example, if a scene is modified in one server, the update itself will be broadcasted to the other ones.
       Then, in the case a content server goes down for some reason, all content will still be present in the other ones.
-  - name: Archipelago
-    description: >-
-      This service is in charge of clustering users according to their position and assigning a connection string that will allow the user to connect to an specifig transport.
   - name: Lambdas
     description: >-
       This service provides a set of utilities required by the Catalyst Server Clients\Consumers in order to
       retrieve or validate data.
+  - name: Explorer
+    description: >-
+      Endpoints used by Explorers to list the wearables and emotes owned by an address, for example to populate
+      the backpack.
 paths:
   /about:
     $ref: 'paths/global/about.yaml'
-  /stats/parcels:
-    $ref: 'paths/global/stats@parcels.yaml'
   /content/audit/{entityType}/{entityId}:
     $ref: 'paths/content/content@audit@{entityType}@{entityId}.yaml'
   /content/challenge:
@@ -84,6 +83,10 @@ paths:
     $ref: paths/content/content@snapshots.yaml
   /content/status:
     $ref: paths/content/content@status.yaml
+  /content/deployments:
+    $ref: paths/content/content@deployments.yaml
+  /content/entities/{entityType}:
+    $ref: 'paths/content/content@entities@{entityType}.yaml'
   /lambdas/status:
     $ref: paths/lambdas/lambdas@status.yaml
   /lambdas/collections:
@@ -92,6 +95,8 @@ paths:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@thumbnail.yaml'
   /lambdas/collections/contents/{urn}/image:
     $ref: 'paths/lambdas/lambdas@collections@contents@{urn}@image.yaml'
+  /lambdas/collections/standard/erc721/{chainId}/{contract}/{option}:
+    $ref: 'paths/lambdas/lambdas@collections@standard@erc721@{chainId}@{contract}@{option}.yaml'
   /lambdas/collections/standard/erc721/{chainId}/{contract}/{option}/{emission}:
     $ref: 'paths/lambdas/lambdas@collections@standard@erc721@{chainId}@{contract}@{option}@{emission}.yaml'
   /lambdas/users/{address}/wearables:
@@ -102,6 +107,8 @@ paths:
     $ref: 'paths/lambdas/lambdas@users@{address}@names.yaml'
   /lambdas/users/{address}/lands:
     $ref: 'paths/lambdas/lambdas@users@{address}@lands.yaml'
+  /lambdas/users/{address}/lands-permissions:
+    $ref: 'paths/lambdas/lambdas@users@{address}@lands-permissions.yaml'
   /lambdas/users/{address}/parcels/{x}/{y}/permissions:
     $ref: 'paths/lambdas/lambdas@users@{address}@parcels@{x}@{y}@permissions.yaml'
   /lambdas/users/{address}/third-party-wearables:
@@ -110,6 +117,16 @@ paths:
     $ref: 'paths/lambdas/lambdas@users@{address}@third-party-wearables@{collectionId}.yaml'
   /lambdas/collections/wearables:
     $ref: 'paths/lambdas/lambdas@collections@wearables.yaml'
+  /lambdas/collections/emotes:
+    $ref: 'paths/lambdas/lambdas@collections@emotes.yaml'
+  /lambdas/collections/wearables-by-owner/{owner}:
+    $ref: 'paths/lambdas/lambdas@collections@wearables-by-owner@{owner}.yaml'
+  /lambdas/collections/emotes-by-owner/{owner}:
+    $ref: 'paths/lambdas/lambdas@collections@emotes-by-owner@{owner}.yaml'
+  /lambdas/nfts/collections:
+    $ref: paths/lambdas/lambdas@nfts@collections.yaml
+  /lambdas/names/{name}/owner:
+    $ref: 'paths/lambdas/lambdas@names@{name}@owner.yaml'
   /lambdas/contracts/servers:
     $ref: 'paths/lambdas/lambdas@contracts@servers.yaml'
   /lambdas/contracts/pois:
@@ -118,23 +135,19 @@ paths:
     $ref: 'paths/lambdas/lambdas@contracts@denylisted-names.yaml'
   /lambdas/crypto/validate-signature:
     $ref: 'paths/lambdas/lambdas@crypto@validate-signature.yaml'
-  /lambdas/explore/hot-scenes:
-    $ref: 'paths/lambdas/lambdas@explore@hot-scenes.yaml'
-  /lambdas/explore/realms:
-    $ref: 'paths/lambdas/lambdas@explore@realms.yaml'
   /lambdas/parcels/{x}/{y}/operators:
     $ref: 'paths/lambdas/lambdas@parcels@{x}@{y}@operators.yaml'
   /lambdas/profiles:
     $ref: 'paths/lambdas/lambdas@profiles.yaml'
   /lambdas/profiles/{id}:
     $ref: 'paths/lambdas/lambdas@profiles@{id}.yaml'
+  /lambdas/profile/{id}:
+    $ref: 'paths/lambdas/lambdas@profile@{id}.yaml'
   /lambdas/outfits/{id}:
     $ref: 'paths/lambdas/lambdas@outfits@{id}.yaml'
   /lambdas/third-party-integrations:
     $ref: 'paths/lambdas/lambdas@third-party-integrations.yaml'
-  /comms/islands:
-    $ref: 'paths/comms/comms@islands.yaml'
-  /comms/islands/{islandId}:
-    $ref: 'paths/comms/comms@islands@{islandId}.yaml'
-  /comms/peers:
-    $ref: 'paths/comms/comms@peers.yaml'
+  /explorer/{address}/wearables:
+    $ref: 'paths/explorer/explorer@{address}@wearables.yaml'
+  /explorer/{address}/emotes:
+    $ref: 'paths/explorer/explorer@{address}@emotes.yaml'

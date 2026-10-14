@@ -3,14 +3,16 @@ get:
   summary: Get Outfits
   tags:
     - Lambdas
-  description: Given a Ethereum address of a user, return the Outfits entity.
+  description: >-
+    Given a Ethereum address of a user, return their Outfits entity. Outfits with wearables the user no longer
+    owns are removed from the metadata, as are outfits in slots above 4 when the user owns no name.
   parameters:
     - in: path
       name: id
       required: true
       schema:
         type: string
-        example: '0x22480812a9a0669783c06d359182a583bd1d9fc2'
+        example: '0xa87d168717538e86d71ac48baccaeb84162de602'
       description: Ethereum address of the user
   responses:
     '200':
@@ -22,3 +24,32 @@ get:
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-outfits-id.json
+    '404':
+      description: The address has no Outfits entity
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+          examples:
+            default:
+              value:
+                error: Not Found
+                message: Outfits not found
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml
+    '502':
+      description: The owned wearables or names could not be fetched from the upstream sources
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+    '503':
+      description: An upstream source is saturated. Retry shortly.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

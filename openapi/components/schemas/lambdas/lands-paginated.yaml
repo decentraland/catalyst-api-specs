@@ -20,17 +20,21 @@ properties:
           type: string
         tokenId:
           type: string
-        price:
-          type: string
         category:
           type: string
+          description: '`parcel` or `estate`'
         x:
           type: string
+          description: Present only for parcels
         y:
           type: string
-        image:
-          type: string
+          description: Present only for parcels
         description:
+          type: string
+        price:
+          type: string
+          description: Price in wei of the active order, if any
+        image:
           type: string
   totalAmount:
     type: number

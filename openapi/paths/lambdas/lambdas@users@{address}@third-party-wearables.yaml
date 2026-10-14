@@ -3,7 +3,9 @@ get:
   summary: Returns the list of third party wearables for the provided address
   tags:
     - Lambdas
-  description: Returns the list of third party wearables for the provided address
+  description: >-
+    Returns a paginated list of the third party (linked) wearables owned by the provided address,
+    across all registered third party collections
   parameters:
     - in: path
       name: address
@@ -14,24 +16,72 @@ get:
       description: >-
         Ethereum address from which you want to get the list of wearables
     - in: query
-      name: pageNum
+      name: includeDefinitions
+      allowEmptyValue: true
       schema:
         type: string
-        example: "1"
+        enum:
+          - 'true'
+      description: >-
+        Presence flag: when present with any value (even `false`),
+        each element is extended with its wearable definition. Omit it to disable.
+    - in: query
+      name: category
+      schema:
+        type: array
+        items:
+          type: string
+        example:
+          - upper_body
+      style: form
+      explode: true
+      description: Only return wearables of these categories. Can be repeated.
+    - in: query
+      name: name
+      schema:
+        type: string
+        example: hoodie
+      description: Only return wearables whose name contains this text. Case-insensitive.
+    - in: query
+      name: orderBy
+      schema:
+        type: string
+        enum:
+          - name
+        default: name
+      description: Field to sort by.
+    - in: query
+      name: direction
+      schema:
+        type: string
+        enum:
+          - ASC
+          - DESC
+        default: ASC
+      description: Sort direction.
+    - in: query
+      name: pageNum
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+        example: 1
       description: >-
         The number of the requested page.
     - in: query
       name: pageSize
       schema:
-        type: string
-        example: "10"
+        type: integer
+        minimum: 1
+        default: 100
+        example: 10
       description: >-
         The size of the requested page.
   responses:
     '200':
       description: Returns the list of third party wearables
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             type: object
             required:
@@ -50,3 +100,26 @@ get:
                 type: number
               pageSize:
                 type: number
+    '400':
+      description: Invalid `orderBy`/`direction` combination
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+          examples:
+            default:
+              value:
+                error: Bad request
+                message: 'Invalid sorting requested: rarity DESC'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml
+    '502':
+      description: The wearables could not be fetched from the upstream sources
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

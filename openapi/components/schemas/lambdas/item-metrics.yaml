@@ -1,0 +1,14 @@
+type: object
+properties:
+  triangles:
+    type: number
+  materials:
+    type: number
+  textures:
+    type: number
+  meshes:
+    type: number
+  bodies:
+    type: number
+  entities:
+    type: number

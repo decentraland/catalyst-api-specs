@@ -1,0 +1,10 @@
+name: direction
+in: query
+required: false
+description: >-
+  Sort direction. Defaults to `ASC` when `orderBy` is `name` and to `DESC` otherwise.
+schema:
+  type: string
+  enum:
+    - ASC
+    - DESC

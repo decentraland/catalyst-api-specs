@@ -3,7 +3,12 @@ get:
   summary: Download content file
   tags:
     - Content Server
-  description: Download the binary file associated with the specified hashId
+  description: >-
+    Download the binary file associated with the specified hashId. Supports a single byte range
+    via the `Range` header and conditional requests via `If-None-Match`. Downloads are rate limited
+    per client.
+    The `Content-Type` is `application/octet-stream` by default; with `includeMimeType` it is the type
+    detected from the file contents (falling back to `application/octet-stream`).
   parameters:
     - in: path
       name: hashId
@@ -13,47 +18,173 @@ get:
         example: QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu
       description: >-
         Hash of the file to be retrieved, you can search for the hashId in the
-        content section of a deployment. If the entity version greater than or equal to v4, 
-        then the hashing algorithm will be IPFS, if the entity version is v3 or below then 
+        content section of a deployment. If the entity version greater than or equal to v4,
+        then the hashing algorithm will be IPFS, if the entity version is v3 or below then
         it will be SHA-256
+    - in: query
+      name: includeMimeType
+      required: false
+      allowEmptyValue: true
+      schema:
+        type: string
+      description: >-
+        When present (with any value), the `Content-Type` header is detected from the file contents.
+        Otherwise it is `application/octet-stream`.
+    - in: header
+      name: Range
+      required: false
+      schema:
+        type: string
+        example: bytes=0-1023
+      description: Single byte range to return, as `bytes=<start>-<end>`, `bytes=<start>-` or `bytes=-<suffix>`
+    - in: header
+      name: If-None-Match
+      required: false
+      schema:
+        type: string
+        example: '"QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu"'
+      description: ETag of a cached copy. A match answers `304` without a body
   responses:
     '200':
-      description: Binary file with the specified hashId
+      description: The file
       headers:
         ETag:
           schema:
             type: string
-            example: QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu
-          description: Double-quoted string with the hashId
-        Access-Control-Expose-Headers:
-          schema:
-            type: string
-            example: ETag
-          description: Which headers can be exposed as part of the response
+            example: '"QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu"'
+          description: Double-quoted hash of the file
         Cache-Control:
           schema:
             type: string
-            example: 'public,max-age=31536000,immutable'
-          description: Rules for caching in the request/response
+            example: 'public,max-age=31536000,s-maxage=31536000,immutable'
+          description: Files are immutable and can be cached indefinitely
+        Accept-Ranges:
+          schema:
+            type: string
+            example: bytes
+          description: Byte ranges are supported
+        Content-Length:
+          schema:
+            type: integer
+          description: Size of the returned bytes
+        Content-Encoding:
+          schema:
+            type: string
+            example: gzip
+          description: Present when the file is stored compressed
+        Access-Control-Expose-Headers:
+          schema:
+            type: string
+            example: ETag, Content-Range, Accept-Ranges, Content-Length
+          description: Headers exposed to browsers
       content:
         application/octet-stream:
           schema:
             type: string
             format: binary
-            example: binary
+        '*/*':
+          schema:
+            type: string
+            format: binary
+    '206':
+      description: The requested byte range of the file
+      headers:
+        ETag:
+          schema:
+            type: string
+            example: '"QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu"'
+          description: Double-quoted hash of the file
+        Cache-Control:
+          schema:
+            type: string
+            example: 'public,max-age=31536000,s-maxage=31536000,immutable'
+          description: Files are immutable and can be cached indefinitely
+        Accept-Ranges:
+          schema:
+            type: string
+            example: bytes
+          description: Byte ranges are supported
+        Content-Length:
+          schema:
+            type: integer
+          description: Size of the returned bytes
+        Content-Encoding:
+          schema:
+            type: string
+            example: gzip
+          description: Present when the file is stored compressed
+        Access-Control-Expose-Headers:
+          schema:
+            type: string
+            example: ETag, Content-Range, Accept-Ranges, Content-Length
+          description: Headers exposed to browsers
+        Content-Range:
+          schema:
+            type: string
+            example: bytes 0-1023/461132
+          description: Returned byte range and total size of the file
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+        '*/*':
+          schema:
+            type: string
+            format: binary
+    '304':
+      description: The `If-None-Match` header matches the ETag of the file
+      headers:
+        ETag:
+          schema:
+            type: string
+            example: '"QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu"'
+          description: Double-quoted hash of the file
+        Cache-Control:
+          schema:
+            type: string
+            example: 'public,max-age=31536000,s-maxage=31536000,immutable'
+          description: Files are immutable and can be cached indefinitely
     '404':
-      description: File with the specified hashId Not Found
+      description: No file with the specified hashId, the hashId is not a valid content hash, or the file is denylisted
       content:
         application/json; charset=utf-8:
           schema:
+            $ref: ../../components/schemas/content/error.yaml
+          example:
+            error: No content found with hash QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu
+    '416':
+      description: The requested range can't be satisfied
+      headers:
+        Content-Range:
+          schema:
             type: string
-            example: Not Found
+            example: bytes */461132
+          description: Total size of the file
+    '429':
+      description: Too many requests from this client
+      headers:
+        Retry-After:
+          schema:
+            type: integer
+            example: 30
+          description: Seconds to wait before retrying the request.
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/content/error.yaml
+          example:
+            error: Too many requests
 head:
   operationId: headContentFile
   summary: Check if a content file exists
   tags:
     - Content Server
-  description: Check if a content file exists
+  description: >-
+    Same as the GET request, without the body. Useful to check whether a file exists and read its
+    headers.
+    The `Content-Type` is `application/octet-stream` by default; with `includeMimeType` it is the type
+    detected from the file contents.
   parameters:
     - in: path
       name: hashId
@@ -62,30 +193,131 @@ head:
         type: string
         example: QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu
       description: >-
-        Hash of the file to be checked
+        Hash of the file to be retrieved, you can search for the hashId in the
+        content section of a deployment. If the entity version greater than or equal to v4,
+        then the hashing algorithm will be IPFS, if the entity version is v3 or below then
+        it will be SHA-256
+    - in: query
+      name: includeMimeType
+      required: false
+      allowEmptyValue: true
+      schema:
+        type: string
+      description: >-
+        When present (with any value), the `Content-Type` header is detected from the file contents.
+        Otherwise it is `application/octet-stream`.
+    - in: header
+      name: Range
+      required: false
+      schema:
+        type: string
+        example: bytes=0-1023
+      description: Single byte range to return, as `bytes=<start>-<end>`, `bytes=<start>-` or `bytes=-<suffix>`
+    - in: header
+      name: If-None-Match
+      required: false
+      schema:
+        type: string
+        example: '"QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu"'
+      description: ETag of a cached copy. A match answers `304` without a body
   responses:
     '200':
-      description: Content file exists
+      description: The file exists
       headers:
         ETag:
           schema:
             type: string
-            example: QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu
-          description: Double-quoted string with the hashId
-        Access-Control-Expose-Headers:
-          schema:
-            type: string
-            example: ETag
-          description: Which headers can be exposed as part of the response
+            example: '"QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu"'
+          description: Double-quoted hash of the file
         Cache-Control:
           schema:
             type: string
-            example: 'public,max-age=31536000,immutable'
-          description: Rules for caching in the request/response
-    '404':
-      description: File with the specified hashId Not Found
-      content:
-        application/json; charset=utf-8:
+            example: 'public,max-age=31536000,s-maxage=31536000,immutable'
+          description: Files are immutable and can be cached indefinitely
+        Accept-Ranges:
           schema:
             type: string
-            example: Not Found
+            example: bytes
+          description: Byte ranges are supported
+        Content-Length:
+          schema:
+            type: integer
+          description: Size of the returned bytes
+        Content-Encoding:
+          schema:
+            type: string
+            example: gzip
+          description: Present when the file is stored compressed
+        Access-Control-Expose-Headers:
+          schema:
+            type: string
+            example: ETag, Content-Range, Accept-Ranges, Content-Length
+          description: Headers exposed to browsers
+    '206':
+      description: The requested byte range can be served
+      headers:
+        ETag:
+          schema:
+            type: string
+            example: '"QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu"'
+          description: Double-quoted hash of the file
+        Cache-Control:
+          schema:
+            type: string
+            example: 'public,max-age=31536000,s-maxage=31536000,immutable'
+          description: Files are immutable and can be cached indefinitely
+        Accept-Ranges:
+          schema:
+            type: string
+            example: bytes
+          description: Byte ranges are supported
+        Content-Length:
+          schema:
+            type: integer
+          description: Size of the returned bytes
+        Content-Encoding:
+          schema:
+            type: string
+            example: gzip
+          description: Present when the file is stored compressed
+        Access-Control-Expose-Headers:
+          schema:
+            type: string
+            example: ETag, Content-Range, Accept-Ranges, Content-Length
+          description: Headers exposed to browsers
+        Content-Range:
+          schema:
+            type: string
+            example: bytes 0-1023/461132
+          description: Returned byte range and total size of the file
+    '304':
+      description: The `If-None-Match` header matches the ETag of the file
+      headers:
+        ETag:
+          schema:
+            type: string
+            example: '"QmVzr55TyXcrbQUWBN6rf7K7zkZsTFnBK19LvgYM9CxFbu"'
+          description: Double-quoted hash of the file
+        Cache-Control:
+          schema:
+            type: string
+            example: 'public,max-age=31536000,s-maxage=31536000,immutable'
+          description: Files are immutable and can be cached indefinitely
+    '404':
+      description: No file with the specified hashId, the hashId is not a valid content hash, or the file is denylisted
+    '416':
+      description: The requested range can't be satisfied
+      headers:
+        Content-Range:
+          schema:
+            type: string
+            example: bytes */461132
+          description: Total size of the file
+    '429':
+      description: Too many requests from this client
+      headers:
+        Retry-After:
+          schema:
+            type: integer
+            example: 30
+          description: Seconds to wait before retrying the request.

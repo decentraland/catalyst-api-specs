@@ -1,0 +1,89 @@
+get:
+  operationId: getEntitiesByType
+  summary: List active entities by pointers or ids
+  deprecated: true
+  tags:
+    - Content Server
+  description: >-
+    Returns the active entities with the specified ids or pointers. Exactly one of `id` or `pointer`
+    must be set, with up to 1000 values. Denylisted entities are omitted. This endpoint is deprecated;
+    use `POST /content/entities/active` instead.
+  parameters:
+    - in: path
+      name: entityType
+      required: true
+      schema:
+        type: string
+        enum:
+          - scene
+          - profile
+          - wearable
+          - emote
+          - store
+          - outfits
+        example: scene
+      description: >-
+        Type of the entities. It is validated but entities of any type are returned.
+    - in: query
+      name: pointer
+      schema:
+        type: array
+        maxItems: 1000
+        items:
+          type: string
+          example: '0,0'
+      description: Pointer of the entities to return. Repeat the parameter to request several pointers.
+    - in: query
+      name: id
+      schema:
+        type: array
+        maxItems: 1000
+        items:
+          type: string
+          example: QmQ9UorFsVTpaVpCwJZAzFyCmaGf7Ksi6aQHYTJVKyzVMh
+      description: Id of the entities to return. Repeat the parameter to request several ids.
+    - in: query
+      name: fields
+      schema:
+        type: string
+        example: pointers,metadata
+      description: >-
+        Comma separated list of the fields to include, among `content`, `pointers` and `metadata`.
+        All of them are included by default; omitted `content` and `pointers` are returned empty.
+  responses:
+    '200':
+      description: List of entities corresponding to the matching ids or pointers
+      headers:
+        Cache-Control:
+          schema:
+            type: string
+            example: public, max-age=10
+          description: Short cache window for the response
+      content:
+        application/json; charset=utf-8:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/content/entity.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/content/200-entities-active.json
+    '400':
+      description: Unrecognized entity type, or not exactly one of `id` or `pointer`, or too many values
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/content/error.yaml
+          examples:
+            entityType:
+              summary: EntityType not recognized
+              value:
+                error: 'Unrecognized type: houses'
+            filters:
+              summary: Missing or both filters
+              value:
+                error: ids or pointers must be present, but not both
+            tooMany:
+              summary: Too many values
+              value:
+                error: Too many ids or pointers; the maximum allowed is 1000

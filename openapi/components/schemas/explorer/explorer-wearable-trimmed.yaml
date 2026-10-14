@@ -1,0 +1,55 @@
+type: object
+description: Trimmed form of an owned wearable, returned when `trimmed` is set.
+required:
+  - entity
+properties:
+  entity:
+    type: object
+    required:
+      - id
+      - individualData
+      - metadata
+    properties:
+      id:
+        type: string
+        description: Entity id.
+      thumbnail:
+        type: string
+        description: Content hash of the thumbnail file.
+      individualData:
+        type: array
+        items:
+          $ref: ./explorer-individual-data.yaml
+      metadata:
+        type: object
+        required:
+          - id
+          - name
+          - isSmart
+          - data
+        properties:
+          id:
+            type: string
+            description: Item URN.
+          name:
+            type: string
+          rarity:
+            type: string
+            description: Absent when the entity metadata has no rarity, as with base wearables.
+          isSmart:
+            type: boolean
+          data:
+            type: object
+            required:
+              - category
+              - representations
+            properties:
+              category:
+                type: string
+              representations:
+                type: array
+                items:
+                  $ref: ./explorer-trimmed-representation.yaml
+  amount:
+    type: number
+    description: Number of owned copies. Only present when `includeAmount` is set.

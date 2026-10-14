@@ -22,4 +22,10 @@ get:
             default:
               $ref: ../../components/examples/content/200-snapshots.json
     '503':
-      description: New Snapshots not yet created
+      description: The server hasn't generated its snapshots yet
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: ../../components/schemas/content/error.yaml
+          example:
+            error: New Snapshots not yet created

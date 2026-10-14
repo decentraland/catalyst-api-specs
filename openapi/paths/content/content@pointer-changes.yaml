@@ -4,9 +4,8 @@ get:
   tags:
     - Content Server
   description: >-
-    List of all deltas from the deployments inside the filters that affect the given pointers.
-    It returns a list of changes with the `before` field (the entity that was overridden with this deployment) and
-    `after` (the entity that overrides the current one if present).
+    Paginated list of the deployments that changed the entity a pointer resolves to, most recent
+    first by default. Use the `next` field of the pagination to fetch the following page.
   parameters:
     - in: query
       name: from
@@ -15,9 +14,8 @@ get:
         type: integer
         example: 1606829553969
       description: >-
-        Acts as a filter in the collection of deployments, this value is the
-        minimum value of local timestamp that any deployment in the collection
-        will have.
+        Minimum timestamp (in milliseconds) of the deployments to return. It applies to the field
+        set in `sortingField`, local timestamp by default.
     - in: query
       name: to
       allowEmptyValue: true
@@ -25,9 +23,8 @@ get:
         type: integer
         example: 1606829553969
       description: >-
-        Acts as a filter in the collection of deployments, this value is the
-        maximum value of local timestamp that any deployment in the collection
-        will have.
+        Maximum timestamp (in milliseconds) of the deployments to return. It applies to the field
+        set in `sortingField`, local timestamp by default.
     - in: query
       name: lastId
       allowEmptyValue: true
@@ -38,27 +35,46 @@ get:
         It is the last entity id that was visited, so it will be skipped when
         showing current page.
     - in: query
+      name: offset
+      allowEmptyValue: true
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 5000
+        default: 0
+      description: >-
+        Number of deployments to skip. It can't be higher than 5000; use the `next` field of the
+        pagination to go further.
+    - in: query
       name: limit
       allowEmptyValue: true
       schema:
         type: integer
+        minimum: 1
+        maximum: 500
+        default: 500
         example: 100
       description: >-
         The deployments are a paginated collection, this parameter corresponds
-        to the limit for each page. The default value is 500.
+        to the limit for each page. Values out of range fall back to 500.
     - in: query
       name: entityType
       allowEmptyValue: true
       schema:
-        type: string
-        enum:
-          - scene
-          - profile
-          - wearable
-        example: profile
+        type: array
+        items:
+          type: string
+          enum:
+            - scene
+            - profile
+            - wearable
+            - emote
+            - store
+            - outfits
+          example: profile
       description: >-
-        The type of entities that will be shown in the collection, many values
-        can be sent. Valid values are: profile, scene and wearable.
+        The type of entities that will be shown in the collection. Repeat the parameter to filter by
+        several types.
     - in: query
       name: sortingField
       schema:
@@ -110,3 +126,11 @@ get:
                 error: >-
                   Offset can't be higher than 5000. Please use the 'next' property
                   for pagination.
+            sortingField:
+              summary: Sorting field not recognized
+              value:
+                error: Found an unrecognized sort field param
+            sortingOrder:
+              summary: Sorting order not recognized
+              value:
+                error: Found an unrecognized sort order param

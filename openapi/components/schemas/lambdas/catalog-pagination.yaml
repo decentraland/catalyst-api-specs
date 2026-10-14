@@ -1,0 +1,12 @@
+type: object
+required:
+  - limit
+properties:
+  limit:
+    type: number
+  lastId:
+    type: string
+    description: The `lastId` received in the request, if any
+  next:
+    type: string
+    description: Query string to request the next page. Absent on the last page.

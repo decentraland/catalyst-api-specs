@@ -3,57 +3,110 @@ get:
   summary: Get list of emotes for an address
   tags:
     - Lambdas
-  description: Get a list of emotes owned by the given address
+  description: >-
+    Get a paginated list of the on-chain emotes owned by the given address, grouped by item.
+    Base emotes are not included.
   parameters:
-    - in: query
-      name: collectionId
-      schema:
-        type: string
-        example: 'urn:decentraland:matic:collections-thirdparty:ntr1-meta:ntr1-meta-1ef79e7b'
-      description: >-
-        Third Party collection Id to filter emotes, if this param is not sent then the 3rd parties emotes are not shown. If it is sent, only the 3rd parties emotes are shown.
-    - in: query
-      name: includeEntities
-      schema:
-        type: boolean
-        example: true
-      description: >-
-        If present, response will be extended with the entity data.
     - in: path
       name: address
       required: true
       schema:
         type: string
-        example: '0xf4f7512c68f358856514cd4e449fc6c5ac04bb15'
+        example: '0xa87d168717538e86d71ac48baccaeb84162de602'
       description: >-
         Ethereum address from which you want to get the list of emotes
     - in: query
-      name: pageNum
+      name: includeEntities
+      allowEmptyValue: true
       schema:
         type: string
-        example: "1"
+        enum:
+          - 'true'
+      description: >-
+        Presence flag: when present with any value (even `false`),
+        each element is extended with its content server entity. Omit it to disable.
+        Cannot be combined with `includeDefinitions`.
+    - in: query
+      name: includeDefinitions
+      allowEmptyValue: true
+      schema:
+        type: string
+        enum:
+          - 'true'
+      description: >-
+        Presence flag: when present with any value (even `false`),
+        each element is extended with its emote definition. Omit it to disable.
+        Cannot be combined with `includeEntities`.
+    - in: query
+      name: category
+      schema:
+        type: string
+        example: dance
+      description: Only return emotes of this category. Case-insensitive.
+    - in: query
+      name: rarity
+      schema:
+        type: string
+        example: legendary
+      description: Only return emotes of this rarity. Case-insensitive.
+    - in: query
+      name: name
+      schema:
+        type: string
+        example: hula
+      description: Only return emotes whose name contains this text. Case-insensitive.
+    - in: query
+      name: orderBy
+      schema:
+        type: string
+        enum:
+          - rarity
+          - name
+          - date
+        example: rarity
+      description: >-
+        Field to sort by. `date` is the transfer date of the tokens.
+    - in: query
+      name: direction
+      schema:
+        type: string
+        enum:
+          - ASC
+          - DESC
+        example: DESC
+      description: >-
+        Sort direction. Defaults to `ASC` when sorting by `name` and to `DESC` otherwise.
+    - in: query
+      name: pageNum
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+        example: 1
       description: >-
         The number of the requested page.
     - in: query
       name: pageSize
       schema:
-        type: string
-        example: "10"
+        type: integer
+        minimum: 1
+        maximum: 1000
+        default: 100
+        example: 10
       description: >-
-        The size of the requested page
-
+        The size of the requested page.
   responses:
     '200':
       description: List of emotes owned by the given address
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             type: object
             required:
               - elements
-              - totalAmount
               - pageNum
               - pageSize
+              - totalAmount
             properties:
               elements:
                 type: array
@@ -68,5 +121,39 @@ get:
           examples:
             default:
               $ref: ../../components/examples/lambdas/200-emotes-paginated.json
+    '400':
+      description: >-
+        Invalid parameters: `includeEntities` combined with `includeDefinitions`, `pageSize` above 1000
+        or an invalid `orderBy`/`direction` combination
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+          examples:
+            default:
+              value:
+                error: Bad request
+                message: Cannot use includeEntities and includeDefinitions together
     '500':
-      description: 'Failed to fetch emotes for the address'
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-internal-error.yaml
+    '502':
+      description: The emotes could not be fetched from the upstream sources
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+          examples:
+            default:
+              value:
+                error: The requested items cannot be fetched right now
+                message: Cannot fetch elements for 0xa87d168717538e86d71ac48baccaeb84162de602
+    '503':
+      description: An upstream source is saturated. Retry shortly.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

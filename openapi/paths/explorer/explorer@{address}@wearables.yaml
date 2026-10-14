@@ -1,0 +1,101 @@
+get:
+  operationId: getExplorerWearables
+  summary: Explorer wearables
+  tags:
+    - Explorer
+  description: >-
+    Get a paginated list of the wearables owned by the given address, grouped by URN. Base, on-chain and
+    third-party wearables are combined in a single list, then filtered, sorted and paginated.
+  parameters:
+    - $ref: ../../components/parameters/explorer/address.yaml
+    - name: collectionType
+      in: query
+      required: false
+      description: >-
+        Only return wearables of the given collection types. Repeat the parameter to request several. Defaults to
+        all types. Any other value is rejected with a 400.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+          enum:
+            - base-wearable
+            - on-chain
+            - third-party
+    - name: thirdPartyCollectionId
+      in: query
+      required: false
+      description: >-
+        Only return third-party wearables from the given third-party collections, identified by their URN
+        (`urn:decentraland:{network}:collections-thirdparty:{thirdPartyName}`; any further segments are ignored).
+        Repeat the parameter to request several. Values that are not third-party URNs are ignored. Defaults to all
+        owned third-party wearables.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: isSmartWearable
+      in: query
+      required: false
+      description: >-
+        When `true`, only return on-chain smart wearables. Base and third-party wearables are excluded.
+      schema:
+        type: boolean
+        default: false
+    - name: network
+      in: query
+      required: false
+      description: >-
+        Only return on-chain wearables from this network. Base and third-party wearables are excluded. Any other
+        value is ignored.
+      schema:
+        type: string
+        enum:
+          - ETHEREUM
+          - MATIC
+    - $ref: ../../components/parameters/explorer/category.yaml
+    - $ref: ../../components/parameters/explorer/name.yaml
+    - $ref: ../../components/parameters/explorer/rarity.yaml
+    - $ref: ../../components/parameters/explorer/order-by.yaml
+    - $ref: ../../components/parameters/explorer/direction.yaml
+    - $ref: ../../components/parameters/explorer/page-num.yaml
+    - $ref: ../../components/parameters/explorer/page-size.yaml
+    - $ref: ../../components/parameters/explorer/trimmed.yaml
+    - $ref: ../../components/parameters/explorer/include-amount.yaml
+  responses:
+    '200':
+      description: Wearables owned by the given address.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/explorer/wearables-explorer.yaml
+          examples:
+            default:
+              $ref: ../../components/examples/explorer/200-wearables-explorer.json
+            trimmed:
+              $ref: ../../components/examples/explorer/200-wearables-explorer-trimmed.json
+    '400':
+      description: Invalid `collectionType`, `rarity`, `orderBy` or `direction`, or `pageSize` above 1000.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+          example:
+            error: Bad request
+            message: 'Invalid collection type. Valid types are: base-wearable, on-chain, third-party.'
+    '502':
+      description: The owned wearables could not be fetched from their sources.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml
+    '503':
+      description: The service is overloaded. Retry shortly.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/lambdas/lambdas-error.yaml

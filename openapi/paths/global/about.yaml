@@ -8,7 +8,7 @@ get:
     '200':
       description: Catalyst services health information
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             $ref: ../../components/schemas/global/about.yaml
           examples:
@@ -17,7 +17,7 @@ get:
     '503':
       description: Service Unavailable - Some catalyst service is not Healthy
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             $ref: ../../components/schemas/global/about.yaml
           examples:

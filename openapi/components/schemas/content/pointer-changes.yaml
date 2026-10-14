@@ -8,20 +8,61 @@ properties:
       required:
         - entityType
         - entityId
+        - entityTimestamp
         - localTimestamp
         - pointers
         - authChain
       type: object
       properties:
+        deploymentId:
+          type: number
         entityType:
           type: string
         entityId:
           type: string
+        entityTimestamp:
+          type: number
         localTimestamp:
           type: number
         pointers:
           type: array
           items:
             type: string
+        deployerAddress:
+          type: string
+        version:
+          type: string
         authChain:
           $ref: 'auth-chain.yaml'
+  filters:
+    type: object
+    description: Filters applied to the request
+    properties:
+      entityTypes:
+        type: array
+        items:
+          type: string
+      from:
+        type: number
+      to:
+        type: number
+      includeAuthChain:
+        type: boolean
+  pagination:
+    type: object
+    required:
+      - offset
+      - limit
+      - moreData
+    properties:
+      offset:
+        type: number
+      limit:
+        type: number
+      moreData:
+        type: boolean
+        description: Whether there are more deployments after this page
+      next:
+        type: string
+        description: Query string to request the next page, present when `moreData` is true
+        example: '?to=1628612397349&limit=3&lastId=QmQSBke1rXUtPYHLJvJdrfX85n68YMSRgb4KeGhNL8w8KL'

@@ -1,14 +1,14 @@
 get:
   operationId: getLambdaStatus
-  summary: Catalyst Server status
+  summary: Lambdas status
   tags:
     - Lambdas
-  description: Retrieve detailed information about the services
+  description: Retrieve the version and commit of the Lambdas service and its current time
   responses:
     '200':
-      description: Catalyst services information
+      description: Lambdas service information
       content:
-        application/json; charset=utf-8:
+        application/json:
           schema:
             $ref: ../../components/schemas/lambdas/status-lambdas.yaml
           examples:

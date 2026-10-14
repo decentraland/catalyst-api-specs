@@ -13,8 +13,11 @@ get:
           - 'profile'
           - 'scene'
           - 'wearable'
+          - 'emote'
+          - 'store'
+          - 'outfits'
         example: profile
-      description: Specify the type of entity to audit
+      description: Type of the entity to audit.
     - in: path
       name: entityId
       required: true
@@ -23,12 +26,13 @@ get:
         example: QmQgezF4UWTZpD5VqKs2AGCzucRJdm8zU87MxdSRH9heZR
       description: id of the entity
   description: >-
-    Get information about an entity, such us Scenes Profiles or Wearables,
-    with the specified entityId.
+    Get the audit information (entity version, deployment local timestamp and auth chain) of the
+    deployment of the entity with the specified type and id. Entities that are no longer active and
+    denylisted entities are included.
   security: []
   responses:
     '200':
-      description: 'Entity version, AuthChain and if the deployment was overwritten'
+      description: Entity version, deployment local timestamp and auth chain
       content:
         application/json; charset=utf-8:
           schema:
@@ -45,9 +49,10 @@ get:
           example:
             error: 'Unrecognized type: Houses'
     '404':
-      description: Not Found
+      description: No deployment found for the entity type and id
       content:
         application/json; charset=utf-8:
           schema:
             $ref: ../../components/schemas/content/error.yaml
-          example: Not Found
+          example:
+            error: No deployment found

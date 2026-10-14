@@ -1,8 +1,13 @@
 type: object
+required:
+  - version
+  - currentTime
+  - commitHash
 properties:
   version:
     type: string
   currentTime:
     type: number
+    description: Server time in milliseconds since epoch
   commitHash:
     type: string

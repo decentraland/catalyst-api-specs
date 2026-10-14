@@ -56,9 +56,13 @@ post:
                 $ref: ../../components/examples/content/auth-chain.json
             ethAddress:
               type: string
+              deprecated: true
+              description: Ignored. The signer is taken from `authChain`.
               example: '0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7'
             signature:
               type: string
+              deprecated: true
+              description: Ignored. The signature is taken from `authChain`.
             partial:
               type: string
               example: 'true'

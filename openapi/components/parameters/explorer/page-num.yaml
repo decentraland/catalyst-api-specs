@@ -1,0 +1,8 @@
+name: pageNum
+in: query
+required: false
+description: Number of the requested page, starting at 1.
+schema:
+  type: integer
+  minimum: 1
+  default: 1
